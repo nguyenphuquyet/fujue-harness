@@ -3,17 +3,17 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-09-28-apply-patch-file-editing.md
 /agent-note-apply-patch-file-editing:
-  en: 2ff887cb8deab0eb
-  zh: b503b00d8690955c
+  en: 17e94b12ec84e5ee
+  zh: fd5b93a746642d52
 /agent-note-apply-patch-file-editing/problem:
   en: de9b76d89795ccec
   zh: 588d45b7d9ca9582
 /agent-note-apply-patch-file-editing/decision:
-  en: e3e174513948d0dd
-  zh: 80b13d7e40d38dee
+  en: 167df5f8f869fdbd
+  zh: 6e92958b3cd9b032
 /agent-note-apply-patch-file-editing/alternatives-considered:
-  en: fb743c9558cf24ed
-  zh: e74bdfff00dea417
+  en: a8fb4addec999a40
+  zh: c5ba2b9a4d7a99f5
 /agent-note-apply-patch-file-editing/consequences:
   en: b58b7324663c3c90
   zh: 649c18a83e33e71d

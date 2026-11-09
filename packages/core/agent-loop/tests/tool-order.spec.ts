@@ -5,21 +5,21 @@
  * happened to register in. Registration order is a concurrent loading artifact
  * and must not leak downstream.
  */
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
+import { createUserMessage } from '@quyet/llm'
 
 import { describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import SessionStore, { SessionId, foldRequestHeader } from '@deepseek-ai/dsh-session'
-import SystemPrompt, { TOOL_ORDER_REST } from '@deepseek-ai/dsh-system-prompt'
-import type { Config as SystemPromptConfig } from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import AgentRegistry, { type Agent } from '@deepseek-ai/dsh-agent'
+import { Context } from '@quyet/cordis'
+import LlmRuntime from '@quyet/llm'
+import SessionStore, { SessionId, foldRequestHeader } from '@quyet/session'
+import SystemPrompt, { TOOL_ORDER_REST } from '@quyet/system-prompt'
+import type { Config as SystemPromptConfig } from '@quyet/system-prompt'
+import ToolRuntime from '@quyet/tools'
+import { defineContentToolFixture } from '@quyet/tool-testkit'
+import AgentRegistry, { type Agent } from '@quyet/agent'
 
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import AgentLoop from '@quyet/agent-loop'
+import SessionProjectionRegistry from '@quyet/session-projection'
 import { MockAdapter, textResponse } from './mock-adapter.ts'
 
 async function harness(adapter: MockAdapter, toolOrder?: SystemPromptConfig['toolOrder']) {

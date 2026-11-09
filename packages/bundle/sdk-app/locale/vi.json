@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "Cấu hình SDK",
-    "description": "Cung cấp JSON-RPC qua đầu vào và đầu ra chuẩn, đồng thời quản lý vòng đời tiến trình trên dsh-base."
+    "description": "Cung cấp JSON-RPC qua đầu vào và đầu ra chuẩn, đồng thời quản lý vòng đời tiến trình trên quyet-base."
   }
 }

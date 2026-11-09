@@ -1,18 +1,18 @@
 /** Account route cancellation uses the real loop, registry, and tool lifecycle. */
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
 import { afterEach, expect, it, vi } from 'vitest'
-import { installAccountTaskCancellation, type DeepSeekAccount } from '@deepseek-ai/dsh-deepseek-account'
-import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime, { createUserMessage, LlmAdapter, type GenerateOptions, type StreamChunk, ToolCallId } from '@deepseek-ai/dsh-llm'
-import AgentRegistry, { type Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionStore, { SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as DeepSeek from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import * as AccountProvider from '@deepseek-ai/dsh-llm-deepseek-account'
+import { installAccountTaskCancellation, type DeepSeekAccount } from '@quyet/deepseek-account'
+import { Context } from '@quyet/cordis'
+import LlmRuntime, { createUserMessage, LlmAdapter, type GenerateOptions, type StreamChunk, ToolCallId } from '@quyet/llm'
+import AgentRegistry, { type Agent } from '@quyet/agent'
+import AgentLoop from '@quyet/agent-loop'
+import SessionStore, { SessionId } from '@quyet/session'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import SystemPrompt from '@quyet/system-prompt'
+import ToolRuntime from '@quyet/tools'
+import { defineContentToolFixture } from '@quyet/tool-testkit'
+import * as DeepSeek from '@quyet/llm-deepseek-api-key'
+import * as AccountProvider from '@quyet/llm-deepseek-account'
 import { assemble } from './assemble.ts'
 
 const contexts: Context[] = []
@@ -205,7 +205,7 @@ it('propagates account sign-out to the HTTP request signal', async () => {
     const listed = listingRequest(url)
     if (listed !== undefined) return listed
     const signal = init!.signal!
-    expect(new Headers(init!.headers).get('x-dsh-auth-token')).toBe('fixture-account-token')
+    expect(new Headers(init!.headers).get('x-quyet-auth-token')).toBe('fixture-account-token')
     started.resolve(signal)
     return new Promise<Response>((_resolve, reject) => {
       signal.addEventListener('abort', () => { reject(new Error('request aborted', { cause: signal.reason })) }, { once: true })

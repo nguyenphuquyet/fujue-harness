@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-agent-tool-presentation",
-  "description": "Deprecated tool presentation selector; use dsh-tool-executor-native or dsh-tool-executor-ptc directly",
+  "name": "@quyet/agent-tool-presentation",
+  "description": "Deprecated tool presentation selector; use quyet-tool-executor-native or quyet-tool-executor-ptc directly",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/core/agent-tool-presentation"
   },
   "type": "module",
@@ -29,21 +29,21 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-ptc": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@quyet/tool-executor-native": "workspace:*",
+    "@quyet/tool-executor-ptc": "workspace:*",
+    "@quyet/schemastery": "workspace:~"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/tools": "workspace:*",
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-ptc-runtime": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/agent": "workspace:*",
+    "@quyet/ptc-runtime": "workspace:*",
+    "@quyet/scope": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/cordis": "workspace:~"
   }
 }

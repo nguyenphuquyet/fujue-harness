@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleIdentifier</key>
-    <string>com.deepseek.harness.computer-use</string>
+    <string>com.quyet.harness.computer-use</string>
     <key>CFBundleExecutable</key>
-    <string>dsh-cua-native</string>
+    <string>quyet-cua-native</string>
     <key>CFBundleName</key>
-    <string>DSH Computer Use</string>
+    <string>Quyết Computer Use</string>
     <key>CFBundleDisplayName</key>
-    <string>DSH Computer Use</string>
+    <string>Quyết Computer Use</string>
     <key>CFBundleIconFile</key>
-    <string>DSHComputerUse.icns</string>
+    <string>QuyetComputerUse.icns</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleVersion</key>

@@ -1,9 +1,9 @@
 /** Browser conversation preferences. */
-import type {} from '@deepseek-ai/dsh-settings'
+import type {} from '@quyet/settings'
 
-import type { Volatile, Context } from '@deepseek-ai/cordis'
+import type { Volatile, Context } from '@quyet/cordis'
 import type { BusyEnterBehavior } from './submission-settings.ts'
-import z from '@deepseek-ai/schemastery'
+import z from '@quyet/schemastery'
 import { BUSY_ENTER_FIELD } from './submission-settings.ts'
 
 import { ConversationSettingsFields } from './submission-settings.ts'

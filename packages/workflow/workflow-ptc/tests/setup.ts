@@ -2,24 +2,24 @@ import { externalTestParent } from '../../../subagent/subagent/tests/external-ac
 import { mkdtemp, mkdir, rm } from 'node:fs/promises'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionStore from '@deepseek-ai/dsh-session'
-import SessionProjections from '@deepseek-ai/dsh-session-projection'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import FileSystem from '@deepseek-ai/dsh-fs-local'
-import Subprocess from '@deepseek-ai/dsh-subprocess-local'
-import Sandbox from '@deepseek-ai/dsh-sandbox-local'
-import SandboxPolicy from '@deepseek-ai/dsh-sandbox-policy'
-import type { SandboxMode } from '@deepseek-ai/dsh-sandbox'
-import NodePtcRuntime from '@deepseek-ai/dsh-ptc-runtime-node'
-import type { Config as NodeRuntimeConfig } from '@deepseek-ai/dsh-ptc-runtime-node'
+import type { Context } from '@quyet/cordis'
+import type { Agent } from '@quyet/agent'
+import AgentRegistry from '@quyet/agent'
+import SessionStore from '@quyet/session'
+import SessionProjections from '@quyet/session-projection'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
+import FileSystem from '@quyet/fs-local'
+import Subprocess from '@quyet/subprocess-local'
+import Sandbox from '@quyet/sandbox-local'
+import SandboxPolicy from '@quyet/sandbox-policy'
+import type { SandboxMode } from '@quyet/sandbox'
+import NodePtcRuntime from '@quyet/ptc-runtime-node'
+import type { Config as NodeRuntimeConfig } from '@quyet/ptc-runtime-node'
 import { onTestFinished } from 'vitest'
 
 /** Mount real Node execution services with a private working directory and awaited cleanup. */
 export async function mountPtcRuntime(ctx: Context, mode: SandboxMode = 'danger-full-access', executionMode: NodeRuntimeConfig['executionMode'] = 'per-call') {
-  const root = await mkdtemp(join(homedir(), '.dsh-workflow-test-'))
+  const root = await mkdtemp(join(homedir(), '.quyet-workflow-test-'))
   onTestFinished(async () => {
     await ctx.fiber.dispose()
     await rm(root, { recursive: true, force: true })

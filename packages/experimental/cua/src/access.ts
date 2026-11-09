@@ -1,11 +1,11 @@
 /** Browser controls for the provider's application decisions and native permission work. */
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-config-editor'
-import type {} from '@deepseek-ai/dsh-ptc-runtime'
-import { resolvePersistentExecution } from '@deepseek-ai/dsh-ptc-runtime-node/configuration'
-import { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@quyet/cordis'
+import type {} from '@quyet/config-editor'
+import type {} from '@quyet/ptc-runtime'
+import { resolvePersistentExecution } from '@quyet/ptc-runtime-node/configuration'
+import { Remote, TypertRemoteService } from '@quyet/typert-protocol'
 import { ApplicationAccess, type AccessOptions } from './application-access.ts'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { JsonValue } from '@quyet/util-values'
 import { z } from 'zod'
 import { ApplicationIcon } from './protocol.ts'
 import { NativeClient, type NativeClientConfig, type NativeChannelFactory } from './native-client.ts'
@@ -25,7 +25,7 @@ const systemPermissions = z.object({
   launchApplication: z.object({ name: z.string().min(1), path: z.string().min(1), icon: ApplicationIcon.optional() }).optional(),
 })
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     /** Native permission controls and executor-owned application consent. */
     cuaAccess: CuaAccess

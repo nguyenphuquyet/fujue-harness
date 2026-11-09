@@ -3,26 +3,26 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-07-07-tool-call-timeout-policy.md
 /agent-note-tool-call-timeout-policy-as-a-plugin:
-  en: 46fa7d1eac4fe061
-  zh: 7a62f8f7b1c66722
+  en: 2962455de6ebb8d3
+  zh: cd06deb595d9842a
 /agent-note-tool-call-timeout-policy-as-a-plugin/problem:
-  en: b5fffa80b58fb184
-  zh: aadf28f95924b1ad
+  en: 0e85f887ad407783
+  zh: 9eff89c96070a720
 /agent-note-tool-call-timeout-policy-as-a-plugin/decision:
-  en: 04889f664ab7657d
-  zh: 2af5913f5e9c1927
+  en: 640f2bd8f0afd3d6
+  zh: 24086462561c594d
 /agent-note-tool-call-timeout-policy-as-a-plugin/decision/the-tools-execute-around-dispatch-extension-point:
-  en: 8c3b46fa8a48a863
-  zh: 662eb09bb7542be8
+  en: a9bdc0ff08f3a3bc
+  zh: b7cb93448dfccdfb
 /agent-note-tool-call-timeout-policy-as-a-plugin/decision/the-timeout-policy-plugin:
-  en: 96f5932514a33e41
-  zh: 5951d9451ccef1bf
+  en: 38ccdcd3eb0c5372
+  zh: 4aa1be1065c3e09f
 /agent-note-tool-call-timeout-policy-as-a-plugin/decision/existing-tool-adaptation:
-  en: 43add9b1f723ce89
-  zh: f3ee56f97faa2e60
+  en: d7c03d57159b034e
+  zh: e47db90c3e8696d0
 /agent-note-tool-call-timeout-policy-as-a-plugin/alternatives-considered:
-  en: dc6da8743b4266fb
-  zh: 5c28667d952b230a
+  en: 3de66f7fb4b28567
+  zh: 66a48fa090314416
 /agent-note-tool-call-timeout-policy-as-a-plugin/consequences:
-  en: f7429a5c1fe6b6a1
-  zh: 748401be79f89b05
+  en: e5952243a1d14b34
+  zh: 672142858f7f2556

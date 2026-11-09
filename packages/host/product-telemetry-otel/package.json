@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-product-telemetry-otel",
+  "name": "@quyet/host-product-telemetry-otel",
   "description": "Explicit product usage events exported through OpenTelemetry HTTP logs",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/host/product-telemetry-otel"
   },
   "type": "module",
@@ -29,20 +29,20 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/schemastery": "workspace:~",
     "@opentelemetry/api-logs": "0.222.0",
     "@opentelemetry/otlp-exporter-base": "0.222.0",
     "@opentelemetry/sdk-logs": "0.222.0"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-otel": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/otel": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*",
-    "@deepseek-ai/dsh-otel": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/loader-smoke": "workspace:*",
+    "@quyet/otel": "workspace:*"
   }
 }

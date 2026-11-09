@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-fs-search",
+  "name": "@quyet/tool-fs-search",
   "description": "Model-facing filesystem discovery tools (glob, grep) backed by the packaged ripgrep binary (@vscode/ripgrep)",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/fs/tool-fs-search"
   },
   "type": "module",
@@ -30,36 +30,36 @@
   "license": "MIT",
   "dependencies": {
     "@vscode/ripgrep": "^1.18.0",
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@quyet/schemastery": "workspace:~"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-output-retention": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-spill": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-working-directory": "workspace:*"
+    "@quyet/llm": "workspace:*",
+    "@quyet/output-retention": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/spill": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/working-directory": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-output-retention": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-spill": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*"
+    "@quyet/agent": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/subprocess-local": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/output-retention": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/spill": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/tool-executor-native": "workspace:*",
+    "@quyet/tool-testkit": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/scope": "workspace:*",
+    "@quyet/working-directory": "workspace:*",
+    "@quyet/agent-loop-testkit": "workspace:*"
   }
 }

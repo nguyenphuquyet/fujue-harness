@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-file-actions",
+  "name": "@quyet/client-ui-file-actions",
   "description": "Original-file saving and image clipboard actions for Web and Desktop",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/client/ui-file-actions"
   },
   "type": "module",
@@ -29,13 +29,13 @@
       "types": "./lib/types/types.d.ts"
     }
   },
-  "dsh": {
+  "quyet": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-context-menu",
-        "@deepseek-ai/dsh-api-workspace-files",
-        "@deepseek-ai/dsh-api-session-controller"
+        "@quyet/client-locale",
+        "@quyet/client-ui-context-menu",
+        "@quyet/api-workspace-files",
+        "@quyet/api-session-controller"
       ],
       "platform": "web"
     }
@@ -46,23 +46,23 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-util-file-drag": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-context-menu": "workspace:*",
-    "@deepseek-ai/dsh-api-workspace-files": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-util-workspace-path": "workspace:*",
+    "@quyet/client-ui-primitives": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/client-ui-slots": "workspace:*",
+    "@quyet/api-session-controller": "workspace:*",
+    "@quyet/client-test-runtime": "workspace:*",
+    "@quyet/util-file-drag": "workspace:*",
+    "@quyet/client-locale": "workspace:*",
+    "@quyet/client-ui-context-menu": "workspace:*",
+    "@quyet/api-workspace-files": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/util-workspace-path": "workspace:*",
     "mime": "^4.1.0",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*"
+    "@quyet/client-ui-renderer": "workspace:*"
   },
   "files": [
     "locale/*.json",

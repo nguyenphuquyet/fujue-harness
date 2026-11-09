@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-08-15-max-token-replay-state-alignment.md
-2026-08-15-max-token-replay-state-alignment.md: 066c1f19d251c064ffd99ffed8b07c0df238ee5f
-2026-08-15-max-token-replay-state-alignment.zh.md: 36c9b7cba1523fab8506dfc554cf7cba9de8a2ca
+2026-08-15-max-token-replay-state-alignment.md: e4fb67ead3bad8cfb6cc8a0a5fb81f4f23ec0b98
+2026-08-15-max-token-replay-state-alignment.zh.md: 3a304ad0426ad628e0901a2c25619d82dbd09908

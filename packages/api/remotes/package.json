@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-api-remotes",
+  "name": "@quyet/api-remotes",
   "description": "Remote BFF assembly for application-selected Host capabilities",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/api/remotes"
   },
   "type": "module",
@@ -30,10 +30,10 @@
     "./package.json": "./package.json",
     "./locale/*.json": "./locale/*.json"
   },
-  "dsh": {
+  "quyet": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-gateway"
+        "@quyet/api-gateway"
       ],
       "platform": "web",
       "immediately": true
@@ -52,56 +52,56 @@
     "lib/types/**/*.d.ts"
   ],
   "dependencies": {
-    "@deepseek-ai/dsh-deque": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@quyet/deque": "workspace:*",
+    "@quyet/util-values": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-scope": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/scope": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-api-job-controller": "workspace:*",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-api-settings-controller": "workspace:*",
-    "@deepseek-ai/dsh-api-workspace-controller": "workspace:*",
-    "@deepseek-ai/dsh-api-workspace-files": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-file-upload": "workspace:*",
-    "@deepseek-ai/dsh-commands": "workspace:*",
-    "@deepseek-ai/dsh-cordis-host-runner": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-file-reference": "workspace:*",
-    "@deepseek-ai/dsh-goal": "workspace:*",
-    "@deepseek-ai/dsh-host-plugin-inventory": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-message-feedback": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
-    "@deepseek-ai/dsh-schedule": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-reference": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-user-approval": "workspace:*",
-    "@deepseek-ai/dsh-user-questions": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-preset-registry": "workspace:*",
+    "@quyet/api-gateway": "workspace:*",
+    "@quyet/api-job-controller": "workspace:*",
+    "@quyet/api-session-controller": "workspace:*",
+    "@quyet/api-settings-controller": "workspace:*",
+    "@quyet/api-workspace-controller": "workspace:*",
+    "@quyet/api-workspace-files": "workspace:*",
+    "@quyet/client-connection": "workspace:*",
+    "@quyet/client-file-upload": "workspace:*",
+    "@quyet/commands": "workspace:*",
+    "@quyet/cordis-host-runner": "workspace:*",
+    "@quyet/credentials": "workspace:*",
+    "@quyet/file-reference": "workspace:*",
+    "@quyet/goal": "workspace:*",
+    "@quyet/host-plugin-inventory": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/message-feedback": "workspace:*",
+    "@quyet/permission-presets": "workspace:*",
+    "@quyet/schedule": "workspace:*",
+    "@quyet/scope": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-reference": "workspace:*",
+    "@quyet/settings": "workspace:*",
+    "@quyet/subagent": "workspace:*",
+    "@quyet/typert-protocol": "workspace:*",
+    "@quyet/user-approval": "workspace:*",
+    "@quyet/user-questions": "workspace:*",
+    "@quyet/cordis": "workspace:~",
     "zod": "4.4.3",
-    "@deepseek-ai/dsh-command-feedback": "workspace:*",
-    "@deepseek-ai/dsh-api-terminal-controller": "workspace:*",
-    "@deepseek-ai/dsh-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-mcp-manager": "workspace:*",
-    "@deepseek-ai/dsh-plugin-market": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-office-to-pdf": "workspace:*",
-    "@deepseek-ai/dsh-api-account-controller": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-account": "workspace:*",
-    "@deepseek-ai/dsh-client-product-analytics": "workspace:*",
-    "@deepseek-ai/dsh-agent-team": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-trajectory": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*"
+    "@quyet/command-feedback": "workspace:*",
+    "@quyet/api-terminal-controller": "workspace:*",
+    "@quyet/plugin-manager": "workspace:*",
+    "@quyet/mcp-manager": "workspace:*",
+    "@quyet/plugin-market": "workspace:*",
+    "@quyet/client-ui-plugin-manager": "workspace:*",
+    "@quyet/office-to-pdf": "workspace:*",
+    "@quyet/api-account-controller": "workspace:*",
+    "@quyet/deepseek-account": "workspace:*",
+    "@quyet/client-product-analytics": "workspace:*",
+    "@quyet/agent-team": "workspace:*",
+    "@quyet/client-ui-trajectory": "workspace:*",
+    "@quyet/web": "workspace:*"
   }
 }

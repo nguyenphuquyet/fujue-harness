@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/process/2026-09-22-desktop-main-bundle-after-workspace-tsdown.md
-2026-09-22-desktop-main-bundle-after-workspace-tsdown.md: 14cdec05f876d2656f2b232dae3dfc15374f4b99
-2026-09-22-desktop-main-bundle-after-workspace-tsdown.zh.md: f0fcaf6529634150e7d69cdb1395ec62eb45b454
+2026-09-22-desktop-main-bundle-after-workspace-tsdown.md: 50626ff87da68872e7ca8877e47ea052001d6788
+2026-09-22-desktop-main-bundle-after-workspace-tsdown.zh.md: 843b2e8618febec62b188195542f39fc7400c1b9

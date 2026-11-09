@@ -1,18 +1,18 @@
 /** Original-file actions independent of menu or image component ownership. */
-import { IconCopyOutlineRegular, IconDownloadOutlineRegular, IconSaveOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import { IconCopyOutlineRegular, IconDownloadOutlineRegular, IconSaveOutlineRegular } from '@quyet/client-ui-primitives'
+import type { Context } from '@quyet/cordis'
+import type {} from '@quyet/client-ui-renderer/client'
 import type { DesktopFileActions, FileActions } from '../types.ts'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
+import type {} from '@quyet/client-locale/client'
 import { registerFileMenus } from './context-menus.tsx'
 import { zh, en, ja, es, fr, de, ru, pt, vi, type FileActionKey } from './locales.ts'
 import { BrowserFileActions } from './files.ts'
 
 export type { FileActions, FileActionSource, FileSaveResult } from '../types.ts'
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context { /** Original-file saving and image clipboard commands. */ fileActions: FileActions }
 }
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@quyet/client-ui-slots' {
   interface LocaleNamespaceMap {
     /** Original-file action labels and feedback. */
     fileActions: FileActionKey
@@ -22,7 +22,7 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
 export const inject = []
 /** @param ctx - plugin-owned Client context. */
 export function apply(ctx: Context): void {
-  const desktop = (window as Window & { dshDesktop?: { fileActions?: DesktopFileActions } }).dshDesktop?.fileActions
+  const desktop = (window as Window & { quyetDesktop?: { fileActions?: DesktopFileActions } }).quyetDesktop?.fileActions
   const actions = new BrowserFileActions(desktop)
   ctx.provide('fileActions', actions)
   ctx.effect(() => () => { actions.dispose() }, 'file actions: lifetime')

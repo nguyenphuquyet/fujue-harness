@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-plugin-market",
+  "name": "@quyet/plugin-market",
   "description": "Configured plugin market indexes for the Web Discover page and the plugin_market agent tool",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/boot/plugin-market"
   },
   "type": "module",
@@ -51,15 +51,15 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-atomic-write": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
-    "@deepseek-ai/dsh-plugin-detail": "workspace:*",
-    "@deepseek-ai/dsh-plugin-market-index": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/atomic-write": "workspace:*",
+    "@quyet/brand": "workspace:*",
+    "@quyet/package-manifest": "workspace:*",
+    "@quyet/plugin-detail": "workspace:*",
+    "@quyet/plugin-market-index": "workspace:*",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/util-values": "workspace:*",
+    "@quyet/schemastery": "workspace:~",
     "execa": "^10.0.1",
     "hosted-git-info": "^9.0.3",
     "minisearch": "^7.2.0",
@@ -67,35 +67,35 @@
     "zod": "^4.4.3"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/plugin-manager": "workspace:*",
+    "@quyet/settings": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/typert-protocol": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-settings": {
+    "@quyet/settings": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/cosmokit": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-config-editor": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/cosmokit": "workspace:~",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/client-connection": "workspace:*",
+    "@quyet/config-editor": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/plugin-manager": "workspace:*",
+    "@quyet/settings": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/tool-executor-native": "workspace:*",
+    "@quyet/tool-testkit": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/typert-protocol": "workspace:*",
     "@types/hosted-git-info": "^3.0.5",
     "@types/semver": "^7.8.0"
   }

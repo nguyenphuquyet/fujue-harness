@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-web-fetch-http",
-  "description": "Anonymous HTTP(S) fetch provider for the DeepSeek Harness web capability seam (ctx.web)",
+  "name": "@quyet/web-fetch-http",
+  "description": "Anonymous HTTP(S) fetch provider for the JueTech Harness web capability seam (ctx.web)",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/web/web-fetch-http"
   },
   "type": "module",
@@ -29,18 +29,18 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/web": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/schemastery": "workspace:~",
     "undici": "8.11.2"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*",
-    "@deepseek-ai/dsh-http-proxy": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/web": "workspace:*",
+    "@quyet/http-proxy": "workspace:*"
   }
 }

@@ -2,24 +2,24 @@
  * Cross-session snapshot preparation. Hosts adapt mentions into structured
  * references; this service owns exact reads, projection, budgets, and durable context.
  *
- * @module @deepseek-ai/dsh-session-reference
+ * @module @quyet/session-reference
  */
 
-import { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import { createUserMessage, freezeMessage, LlmError } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, LlmCallConfig, LlmResolvedModelInfo, UserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import { Context } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import type { Agent, PreStepDecision } from '@quyet/agent'
+import { Remote, TypertRemoteService } from '@quyet/typert-protocol'
+import { createUserMessage, freezeMessage, LlmError } from '@quyet/llm'
+import type { ContentBlock, LlmCallConfig, LlmResolvedModelInfo, UserMessage } from '@quyet/llm'
+import type { SessionId } from '@quyet/session'
 // Type-only: the `title` projection key plus the live registry and durable
 // cache Context merges — the two projection faces discovery labels from.
-import type { ProjectionSnapshot } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type {} from '@deepseek-ai/dsh-session-title'
-import type {} from '@deepseek-ai/dsh-subagent'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type { SessionRecord, SessionSurfaceSnapshot } from '@deepseek-ai/dsh-session-query'
+import type { ProjectionSnapshot } from '@quyet/session-projection'
+import type {} from '@quyet/session-projection-cache'
+import type {} from '@quyet/session-title'
+import type {} from '@quyet/subagent'
+import type {} from '@quyet/system-prompt'
+import type { SessionRecord, SessionSurfaceSnapshot } from '@quyet/session-query'
 import { prepareReferenceOmission, REFERENCE_WARNING } from './spill.ts'
 import {
   DEFAULT_CANDIDATE_LIMIT,
@@ -66,7 +66,7 @@ const PROMPT_SUFFIX = '\n</referenced-sessions>'
 /** Projection keys a discovery label is answered from. */
 const LABEL_KEYS = ['title', 'subagent'] as const
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     sessionReferenceResolver: SessionReferenceResolver
   }

@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/user/develop/practice/index.md
 /three-role-capability-design:
-  en: 16d18db6160c9f61
-  zh: 823ea7e889390fab
+  en: 5c2907b279477d59
+  zh: 14d23fe53d219d74
 /three-role-capability-design/concept-reference:
   en: 4e60abf663a9748f
   zh: 3c80c65e519a51dd
 /three-role-capability-design/bash-example:
-  en: 548526d726675a23
-  zh: 51f065f8b23ea6f9
+  en: fafb19d2db7fa62a
+  zh: 68b5b2e3ac4b6d48
 /three-role-capability-design/benefits-of-the-split:
   en: 026507583f272d46
   zh: db37713da87a0e0e
@@ -21,8 +21,8 @@
   en: bdf8329fe9d51537
   zh: 416b7d81d8d30881
 /three-role-capability-design/benefits-of-the-split/decouple-dependencies:
-  en: 068feeea47c2ab74
-  zh: b53112b27f3bf82f
+  en: 3a054397eca907bd
+  zh: 802bc021f02050af
 /three-role-capability-design/tutorial-develop-a-three-role-capability:
   en: 7bd3c99c2cdb06ad
   zh: 264d321e9fa35dd8
@@ -42,5 +42,5 @@
   en: 5822e06c2cfce8e1
   zh: aed13f901bb8891e
 /three-role-capability-design/next-steps:
-  en: 27b5fd93b6ab9e75
-  zh: 598c47f40a4ac25b
+  en: 0492f84daefe2c0f
+  zh: b83cb220d63767d9

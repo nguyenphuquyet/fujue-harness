@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-action-cards",
+  "name": "@quyet/action-cards",
   "description": "Optional action cards below answers: one shared proposal tool, card state, user actions and status notices",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/action-cards"
   },
   "type": "module",
@@ -36,28 +36,28 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/typert-protocol": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/session": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*",
-    "@deepseek-ai/dsh-tool-skill": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/typert-protocol": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-loop": "workspace:*",
+    "@quyet/agent-loop-testkit": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/api-remote-access": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/skill": "workspace:*",
+    "@quyet/tool-skill": "workspace:*",
+    "@quyet/tool-testkit": "workspace:*",
+    "@quyet/util-values": "workspace:*"
   },
   "dependencies": {
     "zod": "4.4.3"

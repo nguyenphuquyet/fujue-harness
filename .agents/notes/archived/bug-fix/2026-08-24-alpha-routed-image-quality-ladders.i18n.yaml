@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-08-24-alpha-routed-image-quality-ladders.md
-2026-08-24-alpha-routed-image-quality-ladders.md: 8a66d392e79c7c6cd1f447488021170c4953c9a2
-2026-08-24-alpha-routed-image-quality-ladders.zh.md: e43fc1de4098de4f0de6add7bd633c2c7863f66a
+2026-08-24-alpha-routed-image-quality-ladders.md: a5c39c135302f7b8e08694ffe31a8c7d9ed8be5d
+2026-08-24-alpha-routed-image-quality-ladders.zh.md: ded85171c268b16c374eb019a4a311119ba956bc

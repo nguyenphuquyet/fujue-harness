@@ -1,5 +1,5 @@
 /** Keyless assembled-Web evidence for conversational Schedule delivery. */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture } from '@quyet/tool-testkit'
 
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
@@ -10,21 +10,21 @@ import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { dump } from 'js-yaml'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'
-import type { Agent, AgentHandle } from '@deepseek-ai/dsh-agent'
-import { entryListSchema } from '@deepseek-ai/cordis-plugin-include'
-import { bundlePatchPaths, composeEntries, loadOverlayPatches } from '@deepseek-ai/dsh-app-boot'
-import { MessageId, ToolCallId, createUserMessage, LlmAdapter } from '@deepseek-ai/dsh-llm'
+import type { Agent, AgentHandle } from '@quyet/agent'
+import { entryListSchema } from '@quyet/cordis-plugin-include'
+import { bundlePatchPaths, composeEntries, loadOverlayPatches } from '@quyet/app-boot'
+import { MessageId, ToolCallId, createUserMessage, LlmAdapter } from '@quyet/llm'
 import { appendDelivery } from '../../../packages/schedule/schedule/src/delivery-history.ts'
-import type { ScheduleTask } from '@deepseek-ai/dsh-schedule'
-import type { ContextFormed, GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'
+import type { ScheduleTask } from '@quyet/schedule'
+import type { ContextFormed, GenerateOptions, StreamChunk } from '@quyet/llm'
+import { SessionId, type SessionEvent } from '@quyet/session'
 import {
   ScheduleId,
   createAfterScheduleRecord,
   createEveryScheduleRecord,
   type EveryScheduleRecord,
   type ScheduleRecord,
-} from '@deepseek-ai/dsh-schedule'
+} from '@quyet/schedule'
 import {
   assertFixtureInventory,
   captureStableAria,
@@ -42,7 +42,7 @@ import {
   saveFailureShot,
 } from './support.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@quyet/llm' {
   interface MessageSourceMap {
     'schedule-web-e2e': { kind: 'schedule-web-e2e' } & ContextFormed
   }
@@ -74,7 +74,7 @@ const CATALOG_FIXTURE = join(CATALOG_SNAPSHOT_DIR, 'session.v3.jsonl')
 const CATALOG_EXPECTED = join(CATALOG_SNAPSHOT_DIR, 'catalog.expected.md')
 const BASE_PATCH = fileURLToPath(new URL('../../../packages/bundle/base/cordis.patch.yml', import.meta.url))
 const WEB_BUNDLE = fileURLToPath(new URL('../../../packages/bundle/web-app/', import.meta.url))
-const WEB_PATCHES = bundlePatchPaths(WEB_BUNDLE, (JSON.parse(readFileSync(join(WEB_BUNDLE, 'package.json'), 'utf8')) as { dsh: { bundle: { patch: string[] } } }).dsh.bundle)
+const WEB_PATCHES = bundlePatchPaths(WEB_BUNDLE, (JSON.parse(readFileSync(join(WEB_BUNDLE, 'package.json'), 'utf8')) as { quyet: { bundle: { patch: string[] } } }).quyet.bundle)
 
 /**
  * Write the overlay that makes every step carry a fresh clock reading.
@@ -323,7 +323,7 @@ describe.skipIf(MODE === 'record')('web e2e: conversational reminders', () => {
   const everyAdapter = new EveryReminderAdapter()
 
   beforeAll(async () => {
-    const root = await mkdtemp(join(tmpdir(), 'dsh-schedule-every-step-'))
+    const root = await mkdtemp(join(tmpdir(), 'quyet-schedule-every-step-'))
     overlayRoot = root
     scaffold = await launchWebScaffold({
       extraOverlayPath: [await writeEveryStepOverlay(root)],
@@ -347,7 +347,7 @@ describe.skipIf(MODE === 'record')('web e2e: conversational reminders', () => {
       locale: 'en-US',
       timezoneId: AT_BROWSER_ZONE,
     })
-    await page.addInitScript(() => { localStorage.setItem('dsh.locale', 'en') })
+    await page.addInitScript(() => { localStorage.setItem('quyet.locale', 'en') })
     tripwire = watchConsole(page)
     await page.goto(scaffold.authenticatedUrl, { waitUntil: 'load' })
     await page.waitForSelector('[class*="frame"]', { timeout: 30_000 })
@@ -784,7 +784,7 @@ describe.skipIf(MODE === 'record')('web e2e: active Schedule catalog', () => {
 
   beforeAll(async () => {
     const fixture = await readFile(CATALOG_FIXTURE, 'utf8')
-    const root = await mkdtemp(join(tmpdir(), 'dsh-schedule-catalog-'))
+    const root = await mkdtemp(join(tmpdir(), 'quyet-schedule-catalog-'))
     overlayRoot = root
     scaffold = await launchWebScaffold({
       extraOverlayPath: [await writeEveryStepOverlay(root)],
@@ -819,7 +819,7 @@ describe.skipIf(MODE === 'record')('web e2e: active Schedule catalog', () => {
       timezoneId: AT_BROWSER_ZONE,
     })
     await page.clock.setFixedTime(new Date(CATALOG_NOW))
-    await page.addInitScript(() => { localStorage.setItem('dsh.locale', 'en') })
+    await page.addInitScript(() => { localStorage.setItem('quyet.locale', 'en') })
     tripwire = watchConsole(page)
     await page.goto(scaffold.authenticatedUrl, { waitUntil: 'load' })
     await page.waitForSelector('[class*="frame"]', { timeout: 30_000 })
@@ -967,8 +967,8 @@ describe.skipIf(MODE === 'record')('web e2e: active Schedule catalog', () => {
     // The delivered composition carries the Schedule service and its task page;
     // the clock stays preset-level, so no Host row declares it.
     for (const row of [
-      { id: 'schedule', name: '@deepseek-ai/dsh-schedule' },
-      { id: 'ui-schedule', name: '@deepseek-ai/dsh-client-ui-schedule' },
+      { id: 'schedule', name: '@quyet/schedule' },
+      { id: 'ui-schedule', name: '@quyet/client-ui-schedule' },
     ]) {
       expect(shipped.filter(entry => entry.id === row.id && entry.name === row.name && entry.disabled !== true))
         .toHaveLength(1)
@@ -984,17 +984,17 @@ describe.skipIf(MODE === 'record')('web e2e: active Schedule catalog', () => {
     for (const id of ['preset-standard', 'preset-ptc', 'preset-cordis']) {
       const plugins = presetPlugins(id)
       expect(plugins.filter(row => row.id === 'time-context'
-        && row.name === '@deepseek-ai/dsh-time-context')).toHaveLength(1)
+        && row.name === '@quyet/time-context')).toHaveLength(1)
       expect(plugins.filter(row => row.id === 'tool-schedule'
-        && row.name === '@deepseek-ai/dsh-tool-schedule')).toHaveLength(1)
-      for (const name of ['@deepseek-ai/dsh-time-context', '@deepseek-ai/dsh-tool-schedule']) {
+        && row.name === '@quyet/tool-schedule')).toHaveLength(1)
+      for (const name of ['@quyet/time-context', '@quyet/tool-schedule']) {
         const matches = plugins.filter(row => row.name === name)
         expect(matches).toHaveLength(1)
         expect(matches[0]?.disabled).not.toBe(true)
       }
     }
-    expect(presetPlugins('preset-minimal').some(row => row.name === '@deepseek-ai/dsh-time-context'
-      || row.name === '@deepseek-ai/dsh-tool-schedule')).toBe(false)
+    expect(presetPlugins('preset-minimal').some(row => row.name === '@quyet/time-context'
+      || row.name === '@quyet/tool-schedule')).toBe(false)
 
     await page.getByRole('button', { name: 'Automation tasks', exact: true }).click()
     const manager = page.getByTestId('task-manager-page')

@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write
-2026-06-22-fork-snapshot-scenarios.md: 806ce2c1f3681810f609141936741c199e48fb67
-2026-06-22-fork-snapshot-scenarios.zh.md: 72f242784efef56f38590c393935e2d344cb89e2
+2026-06-22-fork-snapshot-scenarios.md: ede213bd53594fa8d13f954e6e1bc377af828853
+2026-06-22-fork-snapshot-scenarios.zh.md: 63605d96ef6ac7c679a00dc6b0dd003d51d8761c

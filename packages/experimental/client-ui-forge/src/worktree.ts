@@ -1,15 +1,15 @@
 /** The worktree a Session requests before it starts: its record, its projection, and its creation. */
 
 import { isAbsolute, relative, sep } from 'node:path'
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { generatedWorktreeName } from '@deepseek-ai/dsh-experimental-worktree'
-import type { CreatedWorktree, CreateWorktreePhase } from '@deepseek-ai/dsh-experimental-worktree'
-import { appendPluginRecord, pluginRecordOf } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'
-import type { ProjectionDefinition, ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type { Context } from '@quyet/cordis'
+import type { Agent, PreStepDecision } from '@quyet/agent'
+import { generatedWorktreeName } from '@quyet/experimental-worktree'
+import type { CreatedWorktree, CreateWorktreePhase } from '@quyet/experimental-worktree'
+import { appendPluginRecord, pluginRecordOf } from '@quyet/session'
+import type { Session, SessionEvent } from '@quyet/session'
+import type { ProjectionDefinition, ProjectionHandle } from '@quyet/session-projection'
+import { assertNever } from '@quyet/util-values'
+import type {} from '@quyet/working-directory'
 import { z } from 'zod'
 import type {
   ForgeMissingWorktree, ForgeSessionWorktree, ForgeWorktreeCreation, ForgeWorktreeFailure, ForgeWorktreeRestoration, ForgeWorktreeState,

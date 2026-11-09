@@ -1,13 +1,13 @@
-import { Context } from '@deepseek-ai/cordis'
-import ForgeService, { changeRequestKey } from '@deepseek-ai/dsh-experimental-forge'
+import { Context } from '@quyet/cordis'
+import ForgeService, { changeRequestKey } from '@quyet/experimental-forge'
 import type {
   ChangeRequestKey, ChangeRequestRef, ChangeRequestSnapshot, ForgeActionFailure, ForgeFailure, ForgeProvider, ForgeReadiness,
   ForgeRepository,
-} from '@deepseek-ai/dsh-experimental-forge'
-import { createAssistantMessage, createToolResultMessage, ToolCallId } from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+} from '@quyet/experimental-forge'
+import { createAssistantMessage, createToolResultMessage, ToolCallId } from '@quyet/llm'
+import SessionStore from '@quyet/session'
+import type { Session } from '@quyet/session'
+import SessionProjectionRegistry from '@quyet/session-projection'
 import ForgeSessionService from '../src/index.ts'
 import type { Config } from '../src/index.ts'
 

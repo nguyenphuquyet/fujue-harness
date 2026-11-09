@@ -2,16 +2,16 @@
 
 import { randomUUID } from 'node:crypto'
 import { mkdir } from 'node:fs/promises'
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent, AgentOptions, AgentSetup } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-agent-default-model'
-import { installModelSelection } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-agent-preset-registry'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { Session, SessionId } from '@deepseek-ai/dsh-session'
-import { SessionQueryError, type SessionObservation } from '@deepseek-ai/dsh-session-query'
-import { RemoteError, remoteErrorOf } from '@deepseek-ai/dsh-typert-protocol'
-import type {} from '@deepseek-ai/dsh-typert-registry'
+import type { Context } from '@quyet/cordis'
+import type { Agent, AgentOptions, AgentSetup } from '@quyet/agent'
+import type {} from '@quyet/agent-default-model'
+import { installModelSelection } from '@quyet/agent'
+import type {} from '@quyet/agent-preset-registry'
+import { brandString } from '@quyet/brand'
+import type { Session, SessionId } from '@quyet/session'
+import { SessionQueryError, type SessionObservation } from '@quyet/session-query'
+import { RemoteError, remoteErrorOf } from '@quyet/typert-protocol'
+import type {} from '@quyet/typert-registry'
 
 /** Cold Session identity absent from persistence. */
 export class ApiSessionNotFound extends Error {}

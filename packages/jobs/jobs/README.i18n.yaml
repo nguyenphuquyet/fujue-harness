@@ -5,57 +5,57 @@
 /:
   en: 4055a3bc920e4ac2
   zh: 3bc99f3b5bc2fd71
-/deepseek-ai-dsh-jobs:
-  en: 721d849fde0fbebe
-  zh: 9578ffb37edc5d7b
-/deepseek-ai-dsh-jobs/summary:
-  en: eea29995f4b49a6d
-  zh: acdded5ddee3a974
-/deepseek-ai-dsh-jobs/table-of-contents:
+/quyet-jobs:
+  en: 3dab9708f841464a
+  zh: eb078f032d115e69
+/quyet-jobs/summary:
+  en: ede12762b6c9948e
+  zh: 9b2bf1775db9615a
+/quyet-jobs/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-jobs/use-this-package:
-  en: 1246c880d1c61927
-  zh: 157c703fd2da6b9c
-/deepseek-ai-dsh-jobs/use-this-package/what-a-background-job-gives-you:
-  en: 3df0e02f9928afb2
-  zh: 63cae8da533ec266
-/deepseek-ai-dsh-jobs/use-this-package/the-ownership-boundary:
+/quyet-jobs/use-this-package:
+  en: d92df7901358f018
+  zh: e832cda69a5bd281
+/quyet-jobs/use-this-package/what-a-background-job-gives-you:
+  en: 8366b61ff0518bd8
+  zh: b5e85547d78a4ee8
+/quyet-jobs/use-this-package/the-ownership-boundary:
   en: 167ab1eab8fad704
   zh: 7da554826fb483c1
-/deepseek-ai-dsh-jobs/use-this-package/starting-background-work-needs-a-controller:
-  en: 68075d00cde8763d
-  zh: 4bc42c01d9e4dc8d
-/deepseek-ai-dsh-jobs/use-this-package/smallest-working-composition:
-  en: cce846c7e3b0c33e
-  zh: 17f353d970b4216d
-/deepseek-ai-dsh-jobs/use-this-package/what-can-go-wrong:
+/quyet-jobs/use-this-package/starting-background-work-needs-a-controller:
+  en: a43c09d4c1fdb51b
+  zh: 9086cbafed1d4394
+/quyet-jobs/use-this-package/smallest-working-composition:
+  en: f43cebdf760bae14
+  zh: fc7fc826f51e2bf6
+/quyet-jobs/use-this-package/what-can-go-wrong:
   en: fcfee3f72ea703ac
   zh: 80299901bd44783b
-/deepseek-ai-dsh-jobs/understand-the-implementation:
+/quyet-jobs/understand-the-implementation:
   en: 7e13d669ecc96d59
   zh: b5fe7ae65812d926
-/deepseek-ai-dsh-jobs/understand-the-implementation/design-philosophy:
-  en: 2a42e1e06dfc469e
-  zh: 5c2c77eca52846f0
-/deepseek-ai-dsh-jobs/understand-the-implementation/source-map:
+/quyet-jobs/understand-the-implementation/design-philosophy:
+  en: 49b59124361016ff
+  zh: 156ce8e410ef116b
+/quyet-jobs/understand-the-implementation/source-map:
   en: c9a58b4340999ae4
   zh: ef68a0b71a06d183
-/deepseek-ai-dsh-jobs/understand-the-implementation/service-operations:
-  en: b2e4ef34ccf1e749
-  zh: 128b57b57ed09316
-/deepseek-ai-dsh-jobs/further-exploration:
-  en: e8ef9de5f929d7e8
-  zh: 850c4aefbdd40c44
-/deepseek-ai-dsh-jobs/model-experience:
+/quyet-jobs/understand-the-implementation/service-operations:
+  en: 99f2565ac1c6e993
+  zh: 2c9e5dd039ae0612
+/quyet-jobs/further-exploration:
+  en: 41911f29d7a68065
+  zh: c08a601dd08f04b8
+/quyet-jobs/model-experience:
   en: efb58cac0fc08163
   zh: 838791f77fd79917
-/deepseek-ai-dsh-jobs/model-experience/kv-cache-effect:
+/quyet-jobs/model-experience/kv-cache-effect:
   en: e290ccc9b3c92c08
   zh: d75d48f485447a74
-/deepseek-ai-dsh-jobs/known-limitations-and-deferred-work:
+/quyet-jobs/known-limitations-and-deferred-work:
   en: bf4e5e0bd25d579e
   zh: ed995c02012f0c72
-/deepseek-ai-dsh-jobs/known-limitations-and-deferred-work/dev-note:
+/quyet-jobs/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

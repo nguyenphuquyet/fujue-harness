@@ -19,31 +19,31 @@
  *
  * See packages/plan/plan-mode/README.md.
  *
- * @module @deepseek-ai/dsh-plan-mode
+ * @module @quyet/plan-mode
  */
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { Context, Service } from '@quyet/cordis'
+import { brandString } from '@quyet/brand'
 import { z as zod } from 'zod'
 import type { ZodType } from 'zod'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import type { Session, UserMessage } from '@deepseek-ai/dsh-session'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import { UserQuestionError, type AskUserQuestionAnswer } from '@deepseek-ai/dsh-user-questions'
-import type { CommandDefinitionId, CommandId } from '@deepseek-ai/dsh-commands'
-import type {} from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionDefinition, ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
+import type { Agent, PreStepDecision } from '@quyet/agent'
+import { createUserMessage } from '@quyet/llm'
+import type { ContextFormed } from '@quyet/llm'
+import type { Session, UserMessage } from '@quyet/session'
+import { defineTool } from '@quyet/tools'
+import { UserQuestionError, type AskUserQuestionAnswer } from '@quyet/user-questions'
+import type { CommandDefinitionId, CommandId } from '@quyet/commands'
+import type {} from '@quyet/session-projection'
+import type { ProjectionDefinition, ProjectionHandle } from '@quyet/session-projection'
 import type { PlanProjection, PlanUnitState } from './types.ts'
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@quyet/llm' {
   interface MessageSourceMap {
     'plan-mode': { kind: 'plan-mode' } & ContextFormed
   }
 }
 export type * from './types.ts'
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@quyet/session/types' {
   interface SessionEventMap {
     /**
      * Whether plan mode is in force from this point on: log-only, non-surface,
@@ -54,7 +54,7 @@ declare module '@deepseek-ai/dsh-session/types' {
   }
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     planMode: PlanModeController
   }
@@ -219,19 +219,19 @@ export class PlanModeController extends Service {
       try {
         this.onBoundary(agent.session)
       } catch (error) {
-        ctx.logger.warn('dsh-plan-mode: failed to append selected plan mode at step start: %o', error)
+        ctx.logger.warn('quyet-plan-mode: failed to append selected plan mode at step start: %o', error)
         return decision
       }
       return !pending.narrate || narration === undefined
         ? decision
         : { ...decision, messages: [...decision.messages, narration] }
     })
-    ctx.effect(() => () => { disposed = true }, 'dsh-plan-mode: close service lifetime')
+    ctx.effect(() => () => { disposed = true }, 'quyet-plan-mode: close service lifetime')
 
     // The command child activates only when a command registry is composed.
     ctx.inject(['commands'], (commandCtx) => {
       commandCtx.commands.register({
-        definitionId: brandString<CommandDefinitionId>('@deepseek-ai/dsh-plan-mode'),
+        definitionId: brandString<CommandDefinitionId>('@quyet/plan-mode'),
         name: 'plan',
         description: 'Enter or leave plan mode',
         input: { hint: '[off|message]', attachments: true },

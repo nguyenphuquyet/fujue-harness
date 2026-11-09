@@ -5,24 +5,24 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { expect, it, onTestFinished } from 'vitest'
 import * as yaml from 'js-yaml'
-import type { Context } from '@deepseek-ai/cordis'
-import { entryListSchema } from '@deepseek-ai/cordis-plugin-include'
-import Timer from '@deepseek-ai/cordis-plugin-timer'
-import { boot, initProfile, loadProfileDirectory, readProfilePatches, type ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import Hmr from '@deepseek-ai/dsh-hmr'
-import PluginManager from '@deepseek-ai/dsh-plugin-manager'
-import Sessions from '@deepseek-ai/dsh-session'
-import Projections from '@deepseek-ai/dsh-session-projection'
-import Agents from '@deepseek-ai/dsh-agent'
-import Llm from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import Tools from '@deepseek-ai/dsh-tools'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import Skills from '@deepseek-ai/dsh-skill'
-import Access from '@deepseek-ai/dsh-api-remote-access'
-import * as ActionCards from '@deepseek-ai/dsh-action-cards'
-import * as Pages from '@deepseek-ai/dsh-creation-recommendations'
-import * as Plugins from '@deepseek-ai/dsh-plugin-recommendations'
+import type { Context } from '@quyet/cordis'
+import { entryListSchema } from '@quyet/cordis-plugin-include'
+import Timer from '@quyet/cordis-plugin-timer'
+import { boot, initProfile, loadProfileDirectory, readProfilePatches, type ProfileContext } from '@quyet/app-boot'
+import Hmr from '@quyet/hmr'
+import PluginManager from '@quyet/plugin-manager'
+import Sessions from '@quyet/session'
+import Projections from '@quyet/session-projection'
+import Agents from '@quyet/agent'
+import Llm from '@quyet/llm'
+import SystemPrompt from '@quyet/system-prompt'
+import Tools from '@quyet/tools'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
+import Skills from '@quyet/skill'
+import Access from '@quyet/api-remote-access'
+import * as ActionCards from '@quyet/action-cards'
+import * as Pages from '@quyet/creation-recommendations'
+import * as Plugins from '@quyet/plugin-recommendations'
 
 interface Row { readonly id: string; readonly name: string }
 
@@ -30,9 +30,9 @@ const manifest = JSON.parse(readFileSync(new URL('../package.json', import.meta.
   name: string
   publishConfig: { access: string }
   dependencies: Record<string, string>
-  dsh: { bundle: { patch: string } }
+  quyet: { bundle: { patch: string } }
 }
-const patch = yaml.load(readFileSync(new URL(`../${manifest.dsh.bundle.patch}`, import.meta.url), 'utf8'), {
+const patch = yaml.load(readFileSync(new URL(`../${manifest.quyet.bundle.patch}`, import.meta.url), 'utf8'), {
   schema: entryListSchema,
 }) as { insert: Row[] }[]
 const rows = patch[0]?.insert ?? []
@@ -44,30 +44,30 @@ function browserRow(): object {
 
 /** Source modules standing in for the row packages, which the Loader would otherwise import from their built lib. */
 const MODULES: Readonly<Record<string, object>> = {
-  '@deepseek-ai/dsh-action-cards': ActionCards,
-  '@deepseek-ai/dsh-client-ui-action-cards': browserRow(),
-  '@deepseek-ai/dsh-creation-recommendations': Pages,
-  '@deepseek-ai/dsh-client-ui-creation-recommendations': browserRow(),
-  '@deepseek-ai/dsh-plugin-recommendations': Plugins,
-  '@deepseek-ai/dsh-client-ui-plugin-recommendations': browserRow(),
+  '@quyet/action-cards': ActionCards,
+  '@quyet/client-ui-action-cards': browserRow(),
+  '@quyet/creation-recommendations': Pages,
+  '@quyet/client-ui-creation-recommendations': browserRow(),
+  '@quyet/plugin-recommendations': Plugins,
+  '@quyet/client-ui-plugin-recommendations': browserRow(),
 }
 
 it('publishes one layer inserting the card service, the card display and both features with their card bodies', () => {
   expect(manifest.publishConfig.access).toBe('public')
-  expect(manifest.dsh.bundle.patch).toBe('./cordis.patch.yml')
+  expect(manifest.quyet.bundle.patch).toBe('./cordis.patch.yml')
   expect(patch).toEqual([{ insert: [
-    { id: 'action-cards', name: '@deepseek-ai/dsh-action-cards' },
-    { id: 'client-ui-action-cards', name: '@deepseek-ai/dsh-client-ui-action-cards' },
-    { id: 'creation-recommendations', name: '@deepseek-ai/dsh-creation-recommendations' },
-    { id: 'client-ui-creation-recommendations', name: '@deepseek-ai/dsh-client-ui-creation-recommendations' },
-    { id: 'plugin-recommendations', name: '@deepseek-ai/dsh-plugin-recommendations' },
-    { id: 'client-ui-plugin-recommendations', name: '@deepseek-ai/dsh-client-ui-plugin-recommendations' },
+    { id: 'action-cards', name: '@quyet/action-cards' },
+    { id: 'client-ui-action-cards', name: '@quyet/client-ui-action-cards' },
+    { id: 'creation-recommendations', name: '@quyet/creation-recommendations' },
+    { id: 'client-ui-creation-recommendations', name: '@quyet/client-ui-creation-recommendations' },
+    { id: 'plugin-recommendations', name: '@quyet/plugin-recommendations' },
+    { id: 'client-ui-plugin-recommendations', name: '@quyet/client-ui-plugin-recommendations' },
   ] }])
   expect(Object.keys(manifest.dependencies).sort()).toEqual(rows.map(row => row.name).sort())
 })
 
 it('addresses every row through its own id and switches the shared card service and each feature', async () => {
-  const home = await mkdtemp(join(tmpdir(), 'dsh-personalized-recommendations-'))
+  const home = await mkdtemp(join(tmpdir(), 'quyet-personalized-recommendations-'))
   let owner: Context | undefined
   onTestFinished(async () => { await owner?.fiber.dispose(); await rm(home, { recursive: true, force: true }) })
   const dir = join(home, 'profiles', 'test')
@@ -78,7 +78,7 @@ it('addresses every row through its own id and switches the shared card service 
     const path = join(root, 'node_modules', name)
     await mkdir(path, { recursive: true })
     await writeFile(join(path, 'package.json'), JSON.stringify({
-      name, version: '1.0.0', dsh: { bundle: { patch: './cordis.patch.yml' } },
+      name, version: '1.0.0', quyet: { bundle: { patch: './cordis.patch.yml' } },
     }))
     await writeFile(join(path, 'cordis.patch.yml'), JSON.stringify([{ insert: inserted }]))
   }

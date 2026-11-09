@@ -3,35 +3,35 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/client/ui-settings-plugins/README.md
 /:
-  en: 06bd505cb0147b05
-  zh: 8d7646e22faac71b
-/deepseek-ai-dsh-client-ui-settings-plugins:
-  en: 3ceabe2cdb5492f6
-  zh: 6ea0cb3f93e5bdf5
-/deepseek-ai-dsh-client-ui-settings-plugins/summary:
+  en: 2844f062854b99be
+  zh: 3b52cde02c9b1b42
+/quyet-client-ui-settings-plugins:
+  en: 00c005018e58bda4
+  zh: 806a8481e32a0c41
+/quyet-client-ui-settings-plugins/summary:
   en: d9b27f1dd9713b4f
   zh: 3ec674429179ae7d
-/deepseek-ai-dsh-client-ui-settings-plugins/table-of-contents:
+/quyet-client-ui-settings-plugins/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-client-ui-settings-plugins/use-this-package:
-  en: b4deec821244f970
-  zh: 49b3afedc992b7fe
-/deepseek-ai-dsh-client-ui-settings-plugins/understand-the-implementation:
+/quyet-client-ui-settings-plugins/use-this-package:
+  en: 8f35492cfe88a98e
+  zh: ff71e1946422daad
+/quyet-client-ui-settings-plugins/understand-the-implementation:
   en: c5cfef002b32c7c1
   zh: 0249b45a28c16b61
-/deepseek-ai-dsh-client-ui-settings-plugins/further-exploration:
-  en: 54ba782a2b26f615
-  zh: fee9148d9658d83f
-/deepseek-ai-dsh-client-ui-settings-plugins/model-experience:
+/quyet-client-ui-settings-plugins/further-exploration:
+  en: b17e6af5c49d3815
+  zh: 6395b2987cc896e0
+/quyet-client-ui-settings-plugins/model-experience:
   en: 6b7c6f82ab6c8435
   zh: 4517689c899abcbe
-/deepseek-ai-dsh-client-ui-settings-plugins/model-experience/kv-cache-effect:
+/quyet-client-ui-settings-plugins/model-experience/kv-cache-effect:
   en: ca75c51c89c2c9b0
   zh: 6e1c9a8fdde89577
-/deepseek-ai-dsh-client-ui-settings-plugins/known-limitations-and-deferred-work:
+/quyet-client-ui-settings-plugins/known-limitations-and-deferred-work:
   en: 4950e959be39bc0c
   zh: 8f0703f3304d9336
-/deepseek-ai-dsh-client-ui-settings-plugins/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-settings-plugins/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: e88aeb617ffb74ea

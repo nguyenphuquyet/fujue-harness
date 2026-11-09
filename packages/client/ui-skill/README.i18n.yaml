@@ -3,56 +3,56 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/client/ui-skill/README.md
 /:
-  en: 490d60d7bec05d21
-  zh: 72a1300893d68f31
-/deepseek-ai-dsh-client-ui-skill:
-  en: 17b91cfc2300ea2b
-  zh: 1fcd42e48e14c5ec
-/deepseek-ai-dsh-client-ui-skill/summary:
-  en: fad7bff8d3371dfc
-  zh: c546189c87d6fbf2
-/deepseek-ai-dsh-client-ui-skill/table-of-contents:
+  en: 6a2a18bba5c4e244
+  zh: 7edf658c79700d06
+/quyet-client-ui-skill:
+  en: 969d9242244f1d13
+  zh: d337f812bb8cb051
+/quyet-client-ui-skill/summary:
+  en: 44f784102d00a6be
+  zh: 2dd159529bde21b1
+/quyet-client-ui-skill/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-client-ui-skill/use-this-package:
+/quyet-client-ui-skill/use-this-package:
   en: 2f17d0875048ef3c
   zh: 6878ee4c75f2b2cf
-/deepseek-ai-dsh-client-ui-skill/use-this-package/what-the-source-offers:
+/quyet-client-ui-skill/use-this-package/what-the-source-offers:
   en: 2ba1a6158c85b46e
   zh: 9ab58ceef8743849
-/deepseek-ai-dsh-client-ui-skill/use-this-package/the-skill-tool-row:
+/quyet-client-ui-skill/use-this-package/the-skill-tool-row:
   en: 270bc37a226ed247
   zh: 15a1c4c82c3a1f00
-/deepseek-ai-dsh-client-ui-skill/understand-the-implementation:
+/quyet-client-ui-skill/understand-the-implementation:
   en: df2a0ee9d2638f41
   zh: 3b4af7e505e990ca
-/deepseek-ai-dsh-client-ui-skill/understand-the-implementation/candidate-flow:
+/quyet-client-ui-skill/understand-the-implementation/candidate-flow:
   en: e8921ef18728794c
   zh: dabc89ee5186d8c6
-/deepseek-ai-dsh-client-ui-skill/understand-the-implementation/registration:
-  en: 4b06a66c56d19ff9
-  zh: d9c8d118f73d89bb
-/deepseek-ai-dsh-client-ui-skill/further-exploration:
-  en: 54198f095d0cc569
-  zh: 4eba4413e159967b
-/deepseek-ai-dsh-client-ui-skill/model-experience:
+/quyet-client-ui-skill/understand-the-implementation/registration:
+  en: f2e036a7f4a42c5c
+  zh: 2dcf5d9d16657f16
+/quyet-client-ui-skill/further-exploration:
+  en: cdd7d76fb8bb37a4
+  zh: cf41f3ff8de2dd63
+/quyet-client-ui-skill/model-experience:
   en: 215e7ba838619b7b
   zh: a311da3843709f90
-/deepseek-ai-dsh-client-ui-skill/model-experience/user-explicit-skill-invocation:
+/quyet-client-ui-skill/model-experience/user-explicit-skill-invocation:
   en: ae1928252b0ea55c
   zh: 6c78cb51c6805a2d
-/deepseek-ai-dsh-client-ui-skill/model-experience/user-explicit-skill-invocation/what-the-model-sees:
-  en: 02313760445799a2
-  zh: 46007ed9e9f35b44
-/deepseek-ai-dsh-client-ui-skill/model-experience/user-explicit-skill-invocation/token-effect:
+/quyet-client-ui-skill/model-experience/user-explicit-skill-invocation/what-the-model-sees:
+  en: 38a2b6f5e89c9db8
+  zh: 1615fba79a6d325e
+/quyet-client-ui-skill/model-experience/user-explicit-skill-invocation/token-effect:
   en: cb759321f8c62a96
   zh: 6d479501856d9cd6
-/deepseek-ai-dsh-client-ui-skill/model-experience/user-explicit-skill-invocation/kv-cache-effect:
+/quyet-client-ui-skill/model-experience/user-explicit-skill-invocation/kv-cache-effect:
   en: da53c649077dad7e
   zh: 845f77793f8e10a2
-/deepseek-ai-dsh-client-ui-skill/known-limitations-and-deferred-work:
+/quyet-client-ui-skill/known-limitations-and-deferred-work:
   en: 3c5dd1c12e5a5d61
   zh: 19e27163cb94dbc1
-/deepseek-ai-dsh-client-ui-skill/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-skill/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

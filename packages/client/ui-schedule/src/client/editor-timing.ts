@@ -1,6 +1,6 @@
 /** Lossless guided and Custom editor projections for typed Schedule timing. */
-import type { ScheduleCatalogEntry, ScheduleTiming } from '@deepseek-ai/dsh-schedule/client'
-import { Cron, RRule, parseLocalCalendar, resolveLocalInstant } from '@deepseek-ai/dsh-util-time'
+import type { ScheduleCatalogEntry, ScheduleTiming } from '@quyet/schedule/client'
+import { Cron, RRule, parseLocalCalendar, resolveLocalInstant } from '@quyet/util-time'
 import { hostFrequencyKind, ruleFields } from './task-record.ts'
 
 /** Periods represented by guided controls, plus a lossless advanced editor. */

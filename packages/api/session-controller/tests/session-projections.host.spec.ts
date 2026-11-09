@@ -11,27 +11,27 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { mkdtemp, readFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@quyet/cordis'
 import { z } from 'zod'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import { AttachmentStore } from '@deepseek-ai/dsh-attachment'
-import { agentPresetProjectionDefinition } from '@deepseek-ai/dsh-agent-preset-registry'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { SESSION_FORMAT_VERSION, SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionHeader, UserMessage } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
-import type { SessionProjectionSummaryExcluded } from '@deepseek-ai/dsh-session-projection/types'
-import SessionProjectionCache, { projectionCacheDomainSpec } from '@deepseek-ai/dsh-session-projection-cache'
-import { titleProjectionDefinition } from '@deepseek-ai/dsh-session-title'
-import Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
-import type { SessionControlFrame, SessionFollowFrame } from '@deepseek-ai/dsh-api-session-controller/types'
+import AgentRegistry from '@quyet/agent'
+import { AttachmentStore } from '@quyet/attachment'
+import { agentPresetProjectionDefinition } from '@quyet/agent-preset-registry'
+import { createUserMessage } from '@quyet/llm'
+import SessionStore, { SESSION_FORMAT_VERSION, SessionId, SessionLogOffset, SessionSeq } from '@quyet/session'
+import type { Session, SessionEvent, SessionHeader, UserMessage } from '@quyet/session'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import type { ProjectionDefinition } from '@quyet/session-projection'
+import type { SessionProjectionSummaryExcluded } from '@quyet/session-projection/types'
+import SessionProjectionCache, { projectionCacheDomainSpec } from '@quyet/session-projection-cache'
+import { titleProjectionDefinition } from '@quyet/session-title'
+import Storage from '@quyet/storage'
+import * as StorageDomain from '@quyet/storage-domain'
+import * as StorageJson from '@quyet/storage-json'
+import type { SessionControlFrame, SessionFollowFrame } from '@quyet/api-session-controller/types'
 import {
   mountAgentLoopTestDependencies,
   mountAgentLoopTestHarness,
-} from '@deepseek-ai/dsh-agent-loop-testkit'
+} from '@quyet/agent-loop-testkit'
 import { createSessionTestRemote, testSessionPersistence, type TestSessionRemote } from './test-remote.ts'
 
 const ownedContexts = new Set<Context>()
@@ -41,7 +41,7 @@ afterEach(async () => {
 })
 let nextHarnessSession = 1
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@quyet/session-projection/types' {
   interface SessionProjectionMap {
     'test/last-user': { text: string } | null
     'test/summary-excluded': SessionProjectionSummaryExcluded<number>
@@ -588,7 +588,7 @@ describe('session.list projections column', () => {
   })
 
   it('keeps persisted host-only state out of a cold session.list response', async () => {
-    const root = await mkdtemp(join(tmpdir(), 'dsh-api-projcache-'))
+    const root = await mkdtemp(join(tmpdir(), 'quyet-api-projcache-'))
     const ctx = new Context()
     try {
       await ctx.plugin(Storage)
@@ -641,7 +641,7 @@ describe('session.list projections column', () => {
   })
 
   it('lists a forked Session\'s cached title after a Host restart without opening its body', async () => {
-    const root = await mkdtemp(join(tmpdir(), 'dsh-api-projcache-'))
+    const root = await mkdtemp(join(tmpdir(), 'quyet-api-projcache-'))
     const id = SessionId('session-cold-fork')
     /** One Host process over `root`: storage stack, registry with the title unit, and the cache. */
     const boot = async (): Promise<Context> => {

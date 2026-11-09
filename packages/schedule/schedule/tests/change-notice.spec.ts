@@ -3,17 +3,17 @@ import { afterEach, expect, it, vi } from 'vitest'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage, LlmAdapter } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
+import { Context } from '@quyet/cordis'
+import AgentLoop from '@quyet/agent-loop'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
+import { createUserMessage, LlmAdapter } from '@quyet/llm'
+import type { GenerateOptions, StreamChunk } from '@quyet/llm'
+import { SessionId } from '@quyet/session'
+import type { Session } from '@quyet/session'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
+import Storage from '@quyet/storage'
+import * as StorageDomain from '@quyet/storage-domain'
+import * as StorageJson from '@quyet/storage-json'
 import ScheduleService from '../src/index.ts'
 
 /** A rule whose only occurrence lies beyond every test run, so no delivery competes with the notices. */
@@ -44,7 +44,7 @@ class ReplyAdapter extends LlmAdapter {
 
 /** Schedule service beside a production AgentLoop with one idle Agent that answers through {@link ReplyAdapter}. */
 async function setup() {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-schedule-notice-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-schedule-notice-'))
   roots.push(root)
   const ctx = new Context()
   contexts.push(ctx)

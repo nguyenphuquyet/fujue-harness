@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/simplification/2026-08-08-remove-cli-demo.md
-2026-08-08-remove-cli-demo.md: c23b622ccc1d9a7d87750c44c9b8df0bc68e314f
-2026-08-08-remove-cli-demo.zh.md: dec370ff11b099feab2d760b5646b6dc9bd422e5
+2026-08-08-remove-cli-demo.md: de64616d60da9d1dfefaf832bb6c8496b82023e7
+2026-08-08-remove-cli-demo.zh.md: 4d0c0212fd791af20ca5e30f36864f294ec00bb4

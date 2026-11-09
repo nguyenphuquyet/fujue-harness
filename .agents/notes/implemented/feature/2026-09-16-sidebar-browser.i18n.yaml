@@ -3,20 +3,20 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-09-16-sidebar-browser.md
 /agent-note-sandboxed-sidebar-browser:
-  en: eae586a5966353a5
-  zh: ca3a7283e3fae594
+  en: ad11b42bd43e439b
+  zh: e0783c86aa6e5fd2
 /agent-note-sandboxed-sidebar-browser/problem:
   en: 5236141e90e42b81
   zh: 1af6306b20797603
 /agent-note-sandboxed-sidebar-browser/decision:
-  en: 123077d0c519f6c9
-  zh: fc447d313dc72e0c
+  en: 31d64ff13b69c465
+  zh: 8bb6f1e608e93e4c
 /agent-note-sandboxed-sidebar-browser/web-navigation-states:
   en: 6aec277c70600c7d
   zh: e2b53f01072b2423
 /agent-note-sandboxed-sidebar-browser/electron-carrier:
-  en: dd20fa5656fc5779
-  zh: 94b5908de0695755
+  en: 0af8371247dd3225
+  zh: f7ca6f5f8d3a81bd
 /agent-note-sandboxed-sidebar-browser/alternatives-considered:
   en: 73919eb8d5618982
   zh: 18d2f5becae72790

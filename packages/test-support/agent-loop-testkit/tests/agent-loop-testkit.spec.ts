@@ -2,12 +2,12 @@ import { describe, expect, it } from 'vitest'
 import { mkdtemp, realpath, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import FsLocal from '@deepseek-ai/dsh-fs-local'
-import { PtcRuntime, type PtcRunRequest, type PtcRunResult, type PtcRunSpec } from '@deepseek-ai/dsh-ptc-runtime'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { Session, SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
-import { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
+import { Context } from '@quyet/cordis'
+import FsLocal from '@quyet/fs-local'
+import { PtcRuntime, type PtcRunRequest, type PtcRunResult, type PtcRunSpec } from '@quyet/ptc-runtime'
+import { createUserMessage } from '@quyet/llm'
+import { Session, SessionId, SessionSeq } from '@quyet/session'
+import { renderPrompt } from '@quyet/system-prompt'
 import {
   createInboxStub,
   mountAgentLoopTestDependencies,
@@ -31,7 +31,7 @@ class FixtureRuntime extends PtcRuntime {
   }
 }
 
-describe('dsh-agent-loop-testkit', () => {
+describe('quyet-agent-loop-testkit', () => {
   it('rejects an invalid program concurrency limit during prerequisite mounting', async () => {
     const ctx = new Context()
     try {

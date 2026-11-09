@@ -3,20 +3,20 @@ import { mkdtemp, readFile, realpath, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { promisify } from 'node:util'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { unsupportedModel, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import SandboxProvider from '@deepseek-ai/dsh-sandbox'
-import type { ConfinedArgv, SandboxMode, SandboxPolicy } from '@deepseek-ai/dsh-sandbox'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import LocalSandbox from '@deepseek-ai/dsh-sandbox-local'
-import { Session, SessionId, SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import WorkingDirectoryService from '@deepseek-ai/dsh-working-directory'
+import { Context } from '@quyet/cordis'
+import AgentRegistry from '@quyet/agent'
+import type { Agent } from '@quyet/agent'
+import { unsupportedModel, unsupportedInbox } from '@quyet/agent-loop-testkit'
+import LocalFileSystem from '@quyet/fs-local'
+import SandboxProvider from '@quyet/sandbox'
+import type { ConfinedArgv, SandboxMode, SandboxPolicy } from '@quyet/sandbox'
+import SandboxPolicyService from '@quyet/sandbox-policy'
+import LocalSandbox from '@quyet/sandbox-local'
+import { Session, SessionId, SESSION_FORMAT_VERSION } from '@quyet/session'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import LocalSubprocessRuntime from '@quyet/subprocess-local'
+import SystemPrompt from '@quyet/system-prompt'
+import WorkingDirectoryService from '@quyet/working-directory'
 import WorktreeService from '../src/index.ts'
 import type { Config } from '../src/index.ts'
 
@@ -52,7 +52,7 @@ export function testAgent(ctx: Context, cwd: string, name = 'worktree-test'): Ag
 }
 
 export async function repository(parent = tmpdir()): Promise<string> {
-  const path = await realpath(await mkdtemp(join(parent, 'dsh-worktree-')))
+  const path = await realpath(await mkdtemp(join(parent, 'quyet-worktree-')))
   try {
     await git(path, 'init', '-b', 'main')
     await git(path, 'config', 'core.autocrlf', 'false')

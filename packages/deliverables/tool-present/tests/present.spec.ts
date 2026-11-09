@@ -1,20 +1,20 @@
 /** Explicit deliveries commit only after a successful final tool result. */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { executeToolFixture } from '@quyet/tool-testkit'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
+import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@quyet/agent-loop-testkit'
 import { mkdtemp, rm, writeFile, symlink, realpath } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, relative } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry, { type Agent } from '@deepseek-ai/dsh-agent'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
-import { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION, Session, SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { defineTool } from '@deepseek-ai/dsh-tools'
+import { Context } from '@quyet/cordis'
+import AgentRegistry, { type Agent } from '@quyet/agent'
+import LocalFileSystem from '@quyet/fs-local'
+import { createScope, type Scope } from '@quyet/scope'
+import { ToolCallId } from '@quyet/llm'
+import { SESSION_FORMAT_VERSION, Session, SessionId } from '@quyet/session'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import SystemPrompt from '@quyet/system-prompt'
+import ToolRuntime, { defineTool } from '@quyet/tools'
 import type { PresentedFile } from '../src/types.ts'
 import * as Present from '../src/index.ts'
 
@@ -54,7 +54,7 @@ async function agent(ctx: Context, cwd: string | undefined): Promise<Agent> {
 
 
 async function setup() {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-present-minimal-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-present-minimal-'))
   cleanups.push(() => rm(root, { recursive: true, force: true }))
   const ctx = new Context()
   provideWorkingDirectoryFixture(ctx)
@@ -175,7 +175,7 @@ it('requires an agent, an open turn, and a workspace', async () => {
 
 it('declares readable files outside the Session directory using absolute and relative paths', async () => {
   const { root, execute, owner } = await setup()
-  const outside = await mkdtemp(join(tmpdir(), 'dsh-present-external-'))
+  const outside = await mkdtemp(join(tmpdir(), 'quyet-present-external-'))
   cleanups.push(() => rm(outside, { recursive: true, force: true }))
   const file = join(outside, 'report.txt')
   await writeFile(file, 'external report')

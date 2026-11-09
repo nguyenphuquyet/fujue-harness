@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/proposed/simplification/2026-09-19-prune-stream-visibility-helpers.md
 /agent-note-prune-unused-stream-visibility-helpers:
-  en: 5d82ce82cac8a687
-  zh: 4cfc68fceb215e35
+  en: f05693144fd14130
+  zh: a9fad34bb86f96d8
 /agent-note-prune-unused-stream-visibility-helpers/problem:
-  en: 0665c67fb7460f1f
-  zh: 28215a7a02e9262b
+  en: 592db47233f76ba3
+  zh: 417d26a0cdbd7ca6
 /agent-note-prune-unused-stream-visibility-helpers/proposal:
-  en: b3f72cf66541614f
-  zh: cc214a5dc75ae6b7
+  en: 3ac097c17ae5d116
+  zh: 341f86f1099042c7
 /agent-note-prune-unused-stream-visibility-helpers/alternatives-considered:
   en: 1a190cf86a9f7ec9
   zh: 2a30aa235c69bdc7

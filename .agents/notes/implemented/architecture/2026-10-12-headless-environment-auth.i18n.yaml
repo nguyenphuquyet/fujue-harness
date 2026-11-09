@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-10-12-headless-environment-auth.md
 /agent-note-headless-jobs-omit-the-interactive-credential-store:
-  en: c768db5a7e821bf0
-  zh: 423b3e423d071ddc
+  en: ed2125de1cf7cc20
+  zh: 57b431b4bdd18f53
 /agent-note-headless-jobs-omit-the-interactive-credential-store/problem:
-  en: 829df36d87975148
-  zh: 171d29ef2f2e5079
+  en: 712e5e29d2bdd459
+  zh: d83f88ff2ed92aaa
 /agent-note-headless-jobs-omit-the-interactive-credential-store/decision:
-  en: af275ffea713f76b
-  zh: 12a3bacfcb147df7
+  en: d9155ee9aae0d1bf
+  zh: 85f5b8af08e7185c
 /agent-note-headless-jobs-omit-the-interactive-credential-store/alternatives-considered:
   en: f6f8dfde4789adc8
   zh: ced62f3d1ec402e6

@@ -1,16 +1,16 @@
 // @vitest-environment jsdom
 /** Independent domain image positions with one shared official gallery Factory. */
-import * as fileDragPlugin from '@deepseek-ai/dsh-client-ui-file-drag/client'
-import { contextMenuHook } from '@deepseek-ai/dsh-client-test-runtime'
+import * as fileDragPlugin from '@quyet/client-ui-file-drag/client'
+import { contextMenuHook } from '@quyet/client-test-runtime'
 import { act, cleanup, within } from '@testing-library/react'
 import { afterEach, describe, expect, it, onTestFinished, vi } from 'vitest'
-import { AttachmentId } from '@deepseek-ai/dsh-attachment'
-import { SessionId } from '@deepseek-ai/dsh-session/types'
-import { SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { UiConversation } from '@deepseek-ai/dsh-client-ui-conversation/src/client/conversation/assembly.ts'
-import { en, zh } from '@deepseek-ai/dsh-client-ui-conversation/src/client/locales.ts'
-import type { MessageImagesOwnerProps } from '@deepseek-ai/dsh-client-ui-conversation/client'
+import { AttachmentId } from '@quyet/attachment'
+import { SessionId } from '@quyet/session/types'
+import { SlotTestRuntime } from '@quyet/client-test-runtime'
+import { LocaleRuntime } from '@quyet/client-locale/client'
+import { UiConversation } from '@quyet/client-ui-conversation/src/client/conversation/assembly.ts'
+import { en, zh } from '@quyet/client-ui-conversation/src/client/locales.ts'
+import type { MessageImagesOwnerProps } from '@quyet/client-ui-conversation/client'
 import * as attachmentPlugin from '../src/client/index.ts'
 
 afterEach(cleanup)

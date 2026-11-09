@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-08-18-arbitrary-seq-session-fork.md
-2026-08-18-arbitrary-seq-session-fork.md: d2963caf57436cc231f4bc11d0bbb593752f1cde
-2026-08-18-arbitrary-seq-session-fork.zh.md: bd7b33bff075811de8fd099465c4bed701f02d51
+2026-08-18-arbitrary-seq-session-fork.md: cfe68c3b13b023bec74c02ba3a1c6cbd6d7ce448
+2026-08-18-arbitrary-seq-session-fork.zh.md: 1a03d5a0ce1b9acb465b2295f8c2cffe4176cd2d

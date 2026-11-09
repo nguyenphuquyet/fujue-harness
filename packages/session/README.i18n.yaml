@@ -6,8 +6,8 @@
   en: 4301d9cb9fc0a0e9
   zh: 3127f24ac355656b
 /session-durable-session-data-plane:
-  en: 16a515a77b72eab0
-  zh: 005647121230f6ec
+  en: 441bb39c72836ea6
+  zh: dc59d0c3d223f118
 /session-durable-session-data-plane/summary:
   en: 4cced6bd65f9b42c
   zh: 1e5c5fd08f3e2655
@@ -18,20 +18,20 @@
   en: 7be50f4cafe40dab
   zh: a6f06f187e686c05
 /session-durable-session-data-plane/packages/persistence:
-  en: cbe033c3f37b8aa7
-  zh: 69aa84f0712d0111
+  en: 6868b23bfdd86178
+  zh: 6d413dd42cadabf9
 /session-durable-session-data-plane/packages/projection:
-  en: 706441e1ab2fa853
-  zh: a7fa44caab3ddada
+  en: ce74535bcf73e7fe
+  zh: d63ef8bb404f0d62
 /session-durable-session-data-plane/packages/titles:
-  en: 81245e5ca5f8b773
-  zh: 0abee7434238c342
+  en: c0590c47cda03115
+  zh: 02bca7f80bd9a387
 /session-durable-session-data-plane/packages/telemetry:
-  en: e0edfc0566463495
-  zh: 4af9904d7ba97d97
+  en: dd2de01d36409e32
+  zh: dceab2d8036623e3
 /session-durable-session-data-plane/related-documentation:
-  en: 9380a0278b1453e8
-  zh: 6cf3e8d1e5e9f27a
+  en: 61a22ae2240e7cbb
+  zh: a12adfb9a2f67c14
 /session-durable-session-data-plane/dev-note:
   en: b75c8458928b72b9
   zh: 003ba4e17b4b5269

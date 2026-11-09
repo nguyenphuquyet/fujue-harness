@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write
-2026-08-13-remove-first-run-beta-notice.md: 535d0a20a5805c137551e6047f40fc5cf53153b8
-2026-08-13-remove-first-run-beta-notice.zh.md: 20626bbd9d0bd13c00d4ee66f5dbc267c2e92082
+2026-08-13-remove-first-run-beta-notice.md: 67b6da918547dd0ef4b88d5d3c10822bc9589af7
+2026-08-13-remove-first-run-beta-notice.zh.md: b3da5e7f3a1fff5ae7a81c54c74410ea7577ccd9

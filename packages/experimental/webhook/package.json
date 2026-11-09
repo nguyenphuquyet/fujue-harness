@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-webhook",
-  "description": "Fire-and-forget webhook rule runtime that creates Workspace-backed DeepSeek Harness Sessions",
+  "name": "@quyet/webhook",
+  "description": "Fire-and-forget webhook rule runtime that creates Workspace-backed JueTech Harness Sessions",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/webhook"
   },
   "type": "module",
@@ -34,31 +34,31 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-default-model": "workspace:*",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-default-model": "workspace:*",
+    "@quyet/agent-preset-registry": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/permission-presets": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-title": "workspace:*",
+    "@quyet/workspace": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-default-model": "workspace:*",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-include": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-default-model": "workspace:*",
+    "@quyet/agent-preset-registry": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/permission-presets": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-title": "workspace:*",
+    "@quyet/workspace": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@quyet/brand": "workspace:*",
+    "@quyet/util-values": "workspace:*"
   }
 }

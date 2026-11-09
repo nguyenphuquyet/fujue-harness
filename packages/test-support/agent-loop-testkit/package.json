@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-agent-loop-testkit",
+  "name": "@quyet/agent-loop-testkit",
   "description": "Prerequisite mounting, production AgentLoop drivers, and Inbox stubs for tests",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/test-support/agent-loop-testkit"
   },
   "type": "module",
@@ -27,32 +27,32 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*"
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-loop": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/working-directory": "workspace:*",
+    "@quyet/fs-local": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-ptc": "workspace:*"
+    "@quyet/tool-executor-native": "workspace:*",
+    "@quyet/tool-executor-ptc": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-ptc-runtime": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*"
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-loop": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/ptc-runtime": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/working-directory": "workspace:*",
+    "@quyet/fs-local": "workspace:*"
   }
 }

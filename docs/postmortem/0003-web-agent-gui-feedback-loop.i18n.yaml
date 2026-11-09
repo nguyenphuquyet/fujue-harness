@@ -3,26 +3,26 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/postmortem/0003-web-agent-gui-feedback-loop.md
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui:
-  en: 348d9ff129e5494a
-  zh: ac88ae827ead8ec1
+  en: 75b9757ba5faafb6
+  zh: f7a5ace46f4e6162
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui/executive-summary:
-  en: 562cbc1e8c6eb15a
-  zh: 0bfbc34b7d2ef54a
+  en: 44471639c434e6c9
+  zh: de9f824b2aa7a2ad
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui/summary:
-  en: 4cd79ce01e271fb2
-  zh: d9792ae3754d683a
+  en: a8218e81494540f1
+  zh: 79700682e6f0b4bb
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui/impact:
   en: 48899c487352c865
   zh: 7ba3a7ecb1fde2e7
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui/timeline:
-  en: 83f1a82b09afcaba
-  zh: 9eccf9379a322184
+  en: fa22d65053b3694d
+  zh: 1fc9035212faa4ca
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui/root-cause:
-  en: 7d18f95cdf38e8ad
-  zh: 69488576b9eca212
+  en: 099e3b261e07c205
+  zh: ade40b2a80039748
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui/guardrails-added:
-  en: 8b1a87b2b9d9437d
-  zh: 59d0cf5e753d9f67
+  en: 9cf5e87a8d3f414f
+  zh: b346b38a798fa4e2
 /post-mortem-0003-web-agent-validated-a-replacement-server-instead-of-its-current-gui/lessons:
   en: f7830cb5a4fe0be4
   zh: 8422af4234ac9e40

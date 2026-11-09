@@ -60,7 +60,7 @@ describe('npm resolution benchmark', () => {
   })
 
   it('combines installed metadata with current publishable workspace fields', () => {
-    const root = mkdtempSync(join(tmpdir(), 'dsh-npm-registry-index-'))
+    const root = mkdtempSync(join(tmpdir(), 'quyet-npm-registry-index-'))
     roots.push(root)
     writeJson(root, 'node_modules/.pnpm/external@2.0.0/node_modules/external/package.json', {
       name: 'external',
@@ -69,30 +69,30 @@ describe('npm resolution benchmark', () => {
       devDependencies: { ignored: '^1.0.0' },
     })
     writeJson(root, 'apps/cli/package.json', {
-      name: '@deepseek-ai/dsh',
+      name: '@quyet/harness',
       version: '0.1.0',
-      dependencies: { '@deepseek-ai/dsh-child': 'workspace:^', external: '^2.0.0' },
+      dependencies: { '@quyet/child': 'workspace:^', external: '^2.0.0' },
       devDependencies: { ignored: 'workspace:^' },
     })
     writeJson(root, 'packages/core/child/package.json', {
-      name: '@deepseek-ai/dsh-child',
+      name: '@quyet/child',
       version: '0.1.0',
     })
 
     const index = buildRegistryIndex(root)
 
     expect(index.get('external')?.get('2.0.0')).toMatchObject({ dependencies: { child: '^1.0.0' } })
-    expect(index.get('@deepseek-ai/dsh')?.get('0.1.0')).toEqual({
-      name: '@deepseek-ai/dsh',
+    expect(index.get('@quyet/harness')?.get('0.1.0')).toEqual({
+      name: '@quyet/harness',
       version: '0.1.0',
-      dependencies: { '@deepseek-ai/dsh-child': '^0.1.0', external: '^2.0.0' },
+      dependencies: { '@quyet/child': '^0.1.0', external: '^2.0.0' },
     })
   })
 
   it('runs npm against the local registry without requesting an archive', async () => {
     const index: RegistryIndex = new Map([[
-      '@deepseek-ai/dsh',
-      new Map([['0.1.0', { name: '@deepseek-ai/dsh', version: '0.1.0' }]]),
+      '@quyet/harness',
+      new Map([['0.1.0', { name: '@quyet/harness', version: '0.1.0' }]]),
     ]])
     const result = await benchmarkNpmResolution(index, '0.1.0', 10_000)
 
@@ -104,28 +104,28 @@ describe('npm resolution benchmark', () => {
 
   it('returns npm placement for two aliased package versions without requesting archives', async () => {
     const index: RegistryIndex = new Map([[
-      '@deepseek-ai/dsh',
+      '@quyet/harness',
       new Map([
-        ['0.1.0', { name: '@deepseek-ai/dsh', version: '0.1.0' }],
-        ['0.2.0', { name: '@deepseek-ai/dsh', version: '0.2.0' }],
+        ['0.1.0', { name: '@quyet/harness', version: '0.1.0' }],
+        ['0.2.0', { name: '@quyet/harness', version: '0.2.0' }],
       ]),
     ]])
 
     const result = await resolveNpmPackageLock(index, {
-      '@deepseek-ai/dsh': '0.2.0',
-      'dsh-previous': 'npm:@deepseek-ai/dsh@0.1.0',
+      '@quyet/harness': '0.2.0',
+      'quyet-previous': 'npm:@quyet/harness@0.1.0',
     }, 10_000)
 
     expect(result.archiveRequests).toBe(0)
-    expect(result.packageLock.packages['node_modules/@deepseek-ai/dsh']?.version).toBe('0.2.0')
-    expect(result.packageLock.packages['node_modules/dsh-previous']).toMatchObject({
-      name: '@deepseek-ai/dsh',
+    expect(result.packageLock.packages['node_modules/@quyet/harness']?.version).toBe('0.2.0')
+    expect(result.packageLock.packages['node_modules/quyet-previous']).toMatchObject({
+      name: '@quyet/harness',
       version: '0.1.0',
     })
   })
 
   it('isolates peer resolution from inherited npm configuration', async () => {
-    const root = mkdtempSync(join(tmpdir(), 'dsh-hostile-npm-config-'))
+    const root = mkdtempSync(join(tmpdir(), 'quyet-hostile-npm-config-'))
     roots.push(root)
     const userConfig = join(root, 'user.npmrc')
     writeFileSync(userConfig, '@deepseek-ai:registry=http://127.0.0.1:1/\nlegacy-peer-deps=true\nomit=peer\n')
@@ -139,21 +139,21 @@ describe('npm resolution benchmark', () => {
     process.env.npm_config_omit = 'peer'
     try {
       const index: RegistryIndex = new Map([
-        ['@deepseek-ai/dsh', new Map([['0.1.0', {
-          name: '@deepseek-ai/dsh',
+        ['@quyet/harness', new Map([['0.1.0', {
+          name: '@quyet/harness',
           version: '0.1.0',
-          peerDependencies: { '@deepseek-ai/dsh-peer': '1.0.0' },
+          peerDependencies: { '@quyet/peer': '1.0.0' },
         }]])],
-        ['@deepseek-ai/dsh-peer', new Map([['1.0.0', {
-          name: '@deepseek-ai/dsh-peer',
+        ['@quyet/peer', new Map([['1.0.0', {
+          name: '@quyet/peer',
           version: '1.0.0',
         }]])],
       ])
 
-      const result = await resolveNpmPackageLock(index, { '@deepseek-ai/dsh': '0.1.0' }, 10_000)
+      const result = await resolveNpmPackageLock(index, { '@quyet/harness': '0.1.0' }, 10_000)
 
       expect(result.archiveRequests).toBe(0)
-      expect(result.packageLock.packages['node_modules/@deepseek-ai/dsh-peer']?.version).toBe('1.0.0')
+      expect(result.packageLock.packages['node_modules/@quyet/peer']?.version).toBe('1.0.0')
     } finally {
       if (previous.userConfig === undefined) delete process.env.npm_config_userconfig
       else process.env.npm_config_userconfig = previous.userConfig

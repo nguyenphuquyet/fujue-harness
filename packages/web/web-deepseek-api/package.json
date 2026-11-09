@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-web-deepseek-api",
-  "description": "DeepSeek Search and Fetch API providers for the DeepSeek Harness web capability seam (ctx.web)",
+  "name": "@quyet/web-deepseek-api",
+  "description": "DeepSeek Search and Fetch API providers for the JueTech Harness web capability seam (ctx.web)",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/web/web-deepseek-api"
   },
   "type": "module",
@@ -29,42 +29,42 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-account": "workspace:*",
-    "@deepseek-ai/dsh-launch-environment": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-api-key": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-account": "workspace:*"
+    "@quyet/agent": "workspace:*",
+    "@quyet/credentials": "workspace:*",
+    "@quyet/deepseek-account": "workspace:*",
+    "@quyet/launch-environment": "workspace:*",
+    "@quyet/llm-deepseek": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/web": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/llm": "workspace:*",
+    "@quyet/llm-deepseek-api-key": "workspace:*",
+    "@quyet/llm-deepseek-account": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@quyet/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-credentials-local": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-account": "workspace:*",
-    "@deepseek-ai/dsh-launch-environment": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-http-proxy": "workspace:*",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-api-key": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-account": "workspace:*",
-    "@deepseek-ai/dsh-app-boot": "workspace:*"
+    "@quyet/agent": "workspace:*",
+    "@quyet/credentials": "workspace:*",
+    "@quyet/credentials-local": "workspace:*",
+    "@quyet/deepseek-account": "workspace:*",
+    "@quyet/launch-environment": "workspace:*",
+    "@quyet/llm-deepseek": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/web": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/http-proxy": "workspace:*",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/llm": "workspace:*",
+    "@quyet/llm-deepseek-api-key": "workspace:*",
+    "@quyet/llm-deepseek-account": "workspace:*",
+    "@quyet/app-boot": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-deepseek-account": {
+    "@quyet/deepseek-account": {
       "optional": true
     }
   }

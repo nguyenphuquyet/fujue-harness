@@ -1,20 +1,20 @@
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@quyet/session-projection'
 import { randomUUID } from 'node:crypto'
 import { afterEach, beforeEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { Session, SessionId } from '@deepseek-ai/dsh-session'
-import { ToolCallId } from '@deepseek-ai/dsh-llm/brand'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { bindScopeParent, createScope, scopeOf } from '@deepseek-ai/dsh-scope'
-import type { ScopeKey } from '@deepseek-ai/dsh-scope'
-import { JobId } from '@deepseek-ai/dsh-jobs'
+import { Context } from '@quyet/cordis'
+import { Session, SessionId } from '@quyet/session'
+import { ToolCallId } from '@quyet/llm/brand'
+import { createUserMessage } from '@quyet/llm'
+import AgentRegistry from '@quyet/agent'
+import type { Agent } from '@quyet/agent'
+import { bindScopeParent, createScope, scopeOf } from '@quyet/scope'
+import type { ScopeKey } from '@quyet/scope'
+import { JobId } from '@quyet/jobs'
 import type {
   JobEvent, JobEventFilter, JobHandle, JobHooks, JobKind, JobOutcome, JobOutputSource, JobSpec, JobView,
-} from '@deepseek-ai/dsh-jobs'
-import LocalJobRegistry, { type Config as JobsConfig } from '@deepseek-ai/dsh-jobs-local'
-import { unsupportedModel, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+} from '@quyet/jobs'
+import LocalJobRegistry, { type Config as JobsConfig } from '@quyet/jobs-local'
+import { unsupportedModel, unsupportedInbox } from '@quyet/agent-loop-testkit'
 
 vi.mock('node:crypto', async (importOriginal) => {
   const actual = await importOriginal<typeof import('node:crypto')>()
@@ -23,7 +23,7 @@ vi.mock('node:crypto', async (importOriginal) => {
 
 const randomUuid = vi.mocked(randomUUID)
 
-declare module '@deepseek-ai/dsh-jobs' {
+declare module '@quyet/jobs' {
   interface JobKindMap {
     'test-task': 'test-task'
     workflow: 'workflow'
@@ -181,7 +181,7 @@ describe('LocalJobRegistry.start', () => {
     const ctx = new Context()
     await ctx.plugin(LocalJobRegistry)
     expect(() => ctx.jobs.start(producer().spec))
-      .toThrow('background jobs unavailable: no job controller serves this agent (load @deepseek-ai/dsh-tool-jobs in its composition)')
+      .toThrow('background jobs unavailable: no job controller serves this agent (load @quyet/tool-jobs in its composition)')
   })
 
   it('refuses an owner whose own composition attaches no controller', async () => {

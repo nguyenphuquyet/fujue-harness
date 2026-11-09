@@ -14,19 +14,19 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { CommandId } from '@deepseek-ai/dsh-commands/brand'
+import { Context } from '@quyet/cordis'
+import AgentRegistry from '@quyet/agent'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import type { Agent } from '@quyet/agent'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@quyet/agent-loop-testkit'
+import { createUserMessage } from '@quyet/llm'
+import SessionStore, { SessionSeq } from '@quyet/session'
+import type { Session, SessionEvent, SessionId } from '@quyet/session'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
+import { CommandId } from '@quyet/commands/brand'
 // Side-effect type imports: the configuration-event SessionEventMap merges.
-import type {} from '@deepseek-ai/dsh-permission-presets'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
+import type {} from '@quyet/permission-presets'
+import type {} from '@quyet/sandbox-policy'
 import type { SessionSummary } from '../src/types.ts'
 import { createSessionTestRemote, type TestSessionRemote } from './test-remote.ts'
 
@@ -100,7 +100,7 @@ describe('summary blank = conversation not started', () => {
  * the Session Controller observes the published Session.
  */
 async function resumeHarness(): Promise<{ ctx: Context; remote: TestSessionRemote; cwd: string }> {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-list-blank-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-list-blank-'))
   ownedRoots.add(root)
   const ctx = new Context()
   ownedContexts.add(ctx)

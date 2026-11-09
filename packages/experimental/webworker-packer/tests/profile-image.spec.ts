@@ -9,9 +9,9 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it, type TestContext } from 'vitest'
-import { OPTIONAL_BUNDLES, PROFILE_TEMPLATES } from '@deepseek-ai/dsh-official-bundles'
+import { OPTIONAL_BUNDLES, PROFILE_TEMPLATES } from '@quyet/official-bundles'
 import yaml from 'js-yaml'
-import { entryListSchema } from '@deepseek-ai/cordis-plugin-include'
+import { entryListSchema } from '@quyet/cordis-plugin-include'
 import { HOME_PATCH_PATH, MANIFEST_PATH, packVfsImage } from '../src/pack.ts'
 import { installationManifest, platformHomePatch, profileRoster } from '../src/repository.ts'
 
@@ -24,10 +24,10 @@ describe('profile roster', () => {
     expect(roster).toEqual(expect.arrayContaining([
       ...bundles,
       // Rows inserted by the base and Web bundles.
-      '@deepseek-ai/dsh-plugin-manager', '@deepseek-ai/dsh-host-webserver',
+      '@quyet/plugin-manager', '@quyet/host-webserver',
       // Rows inserted by optional bundles, including grouped ones.
-      '@deepseek-ai/dsh-session-title-all-prompts-llm', '@deepseek-ai/dsh-experimental-inspector',
-      '@deepseek-ai/dsh-tool-session-query',
+      '@quyet/session-title-all-prompts-llm', '@quyet/experimental-inspector',
+      '@quyet/tool-session-query',
     ]))
     expect(new Set(roster).size).toBe(roster.length)
     expect(roster.every(name => name.startsWith('@') || !name.includes('/'))).toBe(true)
@@ -39,7 +39,7 @@ describe('profile roster', () => {
 
   it('names the CLI manifest as the installation', () => {
     expect(installationManifest(repoRoot)).toEqual({
-      name: '@deepseek-ai/dsh',
+      name: '@quyet/harness',
       manifest: join(repoRoot, 'apps/cli/package.json'),
     })
   })
@@ -49,14 +49,14 @@ describe('platform home patch', () => {
   it('keeps the composed JSONL row config and sets the plaintext compression the Worker requires', () => {
     expect(platformHomePatch(repoRoot, 'web')).toEqual([{
       id: 'session-persistence-jsonl',
-      config: { root: { __jsExpr: "dshHomePath('sessions')" }, compression: 'none' },
+      config: { root: { __jsExpr: "quyetHomePath('sessions')" }, compression: 'none' },
     }])
   })
 })
 
 describe('image layout', () => {
   function subject(test: TestContext): { root: string; installation: string } {
-    const root = mkdtempSync(join(tmpdir(), 'dsh-image-installation-'))
+    const root = mkdtempSync(join(tmpdir(), 'quyet-image-installation-'))
     test.onTestFinished(() => { rmSync(root, { recursive: true, force: true }) })
     mkdirSync(join(root, 'subject/lib'), { recursive: true })
     writeFileSync(join(root, 'subject/package.json'), JSON.stringify({ name: 'subject', files: ['lib'], exports: { '.': './lib/index.js' } }))
@@ -85,14 +85,14 @@ describe('image layout', () => {
 
   it('writes the home patch the image app-boot reads, keeping expression values', (test) => {
     const { root, installation } = subject(test)
-    const homePatch = [{ id: 'session-persistence-jsonl', config: { root: { __jsExpr: "dshHomePath('sessions')" }, compression: 'none' } }]
+    const homePatch = [{ id: 'session-persistence-jsonl', config: { root: { __jsExpr: "quyetHomePath('sessions')" }, compression: 'none' } }]
     const result = packVfsImage({
       profile: 'web', roster: ['subject'], installation: { name: '@scope/app', manifest: installation },
       workspaces: new Map([['subject', join(root, 'subject')]]), resolveFrom: root, entries: [], homePatch,
     })
     expect(HOME_PATCH_PATH).toBe('home/cordis.patch.yml')
     const text = new TextDecoder().decode(result.files[HOME_PATCH_PATH])
-    expect(text).toContain("!!js dshHomePath('sessions')")
+    expect(text).toContain("!!js quyetHomePath('sessions')")
     expect(yaml.load(text, { schema: entryListSchema })).toEqual(homePatch)
   })
 

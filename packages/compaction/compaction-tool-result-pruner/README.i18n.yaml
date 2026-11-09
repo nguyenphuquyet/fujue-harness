@@ -5,63 +5,63 @@
 /:
   en: 9ed7a84c51988fdb
   zh: 4df60a349c2be7dc
-/deepseek-ai-dsh-compaction-tool-result-pruner:
-  en: d1e83d1d335479f8
-  zh: 747c5b2af42365a3
-/deepseek-ai-dsh-compaction-tool-result-pruner/summary:
-  en: a711510ce8293003
-  zh: 0150d10c05bc2e59
-/deepseek-ai-dsh-compaction-tool-result-pruner/table-of-contents:
+/quyet-compaction-tool-result-pruner:
+  en: c520555ab53ffec9
+  zh: 90450215e78f3cc6
+/quyet-compaction-tool-result-pruner/summary:
+  en: 527433c4ff9296ec
+  zh: b11f467ae4602cef
+/quyet-compaction-tool-result-pruner/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-compaction-tool-result-pruner/use-this-package:
-  en: 03aed6a1e84dad5f
-  zh: e9a62ff6294041a6
-/deepseek-ai-dsh-compaction-tool-result-pruner/use-this-package/smallest-working-composition:
+/quyet-compaction-tool-result-pruner/use-this-package:
+  en: cc7ba04232159ae2
+  zh: 061589765956f393
+/quyet-compaction-tool-result-pruner/use-this-package/smallest-working-composition:
   en: 55eadf840a54d2f8
   zh: cc6bf82f58058c7b
-/deepseek-ai-dsh-compaction-tool-result-pruner/use-this-package/what-gets-trimmed:
+/quyet-compaction-tool-result-pruner/use-this-package/what-gets-trimmed:
   en: a5cb5c94edcd91e3
   zh: ed95adc91d11bbda
-/deepseek-ai-dsh-compaction-tool-result-pruner/use-this-package/setting-the-size-limits:
-  en: 9a357040ff261f6e
-  zh: 7434bb64ca9bd094
-/deepseek-ai-dsh-compaction-tool-result-pruner/use-this-package/when-trimming-runs:
-  en: d72e0074faebe148
-  zh: dfb484a385a7ebbf
-/deepseek-ai-dsh-compaction-tool-result-pruner/understand-the-implementation:
+/quyet-compaction-tool-result-pruner/use-this-package/setting-the-size-limits:
+  en: f63e0ec13d84052e
+  zh: 5408146d5d47e412
+/quyet-compaction-tool-result-pruner/use-this-package/when-trimming-runs:
+  en: 5b0d2314d9124bd2
+  zh: f632c97bac08d650
+/quyet-compaction-tool-result-pruner/understand-the-implementation:
   en: 57aaa53880042873
   zh: 667f54624411c37d
-/deepseek-ai-dsh-compaction-tool-result-pruner/understand-the-implementation/design-philosophy:
+/quyet-compaction-tool-result-pruner/understand-the-implementation/design-philosophy:
   en: 5adff8207c6294e0
   zh: ccba42d804989abb
-/deepseek-ai-dsh-compaction-tool-result-pruner/understand-the-implementation/pruning-mechanics:
+/quyet-compaction-tool-result-pruner/understand-the-implementation/pruning-mechanics:
   en: 9813749e4f016897
   zh: f2b2b5d6e5e8977a
-/deepseek-ai-dsh-compaction-tool-result-pruner/understand-the-implementation/source-map:
+/quyet-compaction-tool-result-pruner/understand-the-implementation/source-map:
   en: 4544e91902960a0e
   zh: 0b07cb7e3d96267b
-/deepseek-ai-dsh-compaction-tool-result-pruner/further-exploration:
-  en: 3253e154e7610bbd
-  zh: ba28c7411fd5c8bb
-/deepseek-ai-dsh-compaction-tool-result-pruner/model-experience:
+/quyet-compaction-tool-result-pruner/further-exploration:
+  en: a3bda51bbbd17bde
+  zh: 8de501cef4f00290
+/quyet-compaction-tool-result-pruner/model-experience:
   en: 215e7ba838619b7b
   zh: a311da3843709f90
-/deepseek-ai-dsh-compaction-tool-result-pruner/model-experience/pruned-tool-result:
+/quyet-compaction-tool-result-pruner/model-experience/pruned-tool-result:
   en: 0b0dfb7ec1bf906f
   zh: 68f70bde796751cd
-/deepseek-ai-dsh-compaction-tool-result-pruner/model-experience/pruned-tool-result/what-the-model-sees:
+/quyet-compaction-tool-result-pruner/model-experience/pruned-tool-result/what-the-model-sees:
   en: 8514b5a6586bd65d
   zh: 2a0648bea6cb81b6
-/deepseek-ai-dsh-compaction-tool-result-pruner/model-experience/pruned-tool-result/token-effect:
+/quyet-compaction-tool-result-pruner/model-experience/pruned-tool-result/token-effect:
   en: 1b11d405468e8d5d
   zh: 06dc9aef281c776d
-/deepseek-ai-dsh-compaction-tool-result-pruner/model-experience/pruned-tool-result/kv-cache-effect:
+/quyet-compaction-tool-result-pruner/model-experience/pruned-tool-result/kv-cache-effect:
   en: aac7de507412ba39
   zh: bdd8f391ad9c9a81
-/deepseek-ai-dsh-compaction-tool-result-pruner/known-limitations-and-deferred-work:
+/quyet-compaction-tool-result-pruner/known-limitations-and-deferred-work:
   en: 2a7be98dc032e9bc
   zh: d6710b1130722d12
-/deepseek-ai-dsh-compaction-tool-result-pruner/known-limitations-and-deferred-work/dev-note:
+/quyet-compaction-tool-result-pruner/known-limitations-and-deferred-work/dev-note:
   en: 19120c19286532da
   zh: 49187f1e83b31007

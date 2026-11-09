@@ -1,14 +1,14 @@
 // @vitest-environment jsdom
-import { Context } from '@deepseek-ai/cordis'
-import { createScope, scopeOf } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { Context } from '@quyet/cordis'
+import { createScope, scopeOf } from '@quyet/api-session-controller/client'
+import type { ToolCallId } from '@quyet/llm'
+import type { SessionId } from '@quyet/session/types'
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { ApprovalCard } from '../src/client/ApprovalCard.tsx'
 import { ApprovalWarning } from '../src/client/ApprovalWarning.tsx'
-import { Modal } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { FactoryComponentPropsOf } from '@deepseek-ai/dsh-client-ui-slots'
+import { Modal } from '@quyet/client-ui-primitives'
+import type { FactoryComponentPropsOf } from '@quyet/client-ui-slots'
 import { ApprovalPanel } from '../src/client/ApprovalPanel.tsx'
 import type { ApprovalCardInput, ApprovalComposerProps, ApprovalInjected } from '../src/client/contract/slots.ts'
 import { PendingApproval } from '../src/client/contract/slots.ts'
@@ -550,7 +550,7 @@ it('opens and dismisses risk details without answering the approval', () => {
   const onAllow = vi.fn(async () => {}), onReject = vi.fn(async () => {})
   const props = {
     requestKey: 'risk-approval', title: 'Control this app?',
-    warning: { label: 'Risks', title: 'Computer use risks', detail: 'Background control.\n\nAccount restrictions.\n\nStop in DSH.' },
+    warning: { label: 'Risks', title: 'Computer use risks', detail: 'Background control.\n\nAccount restrictions.\n\nStop in Quyết.' },
     canAnswer: () => true, onAllow, onReject, renderSlot: () => null, t: (key: string) => key,
   } as FactoryComponentPropsOf<'conversation.approval.card'>
   const view = render(<ApprovalCard {...props} />)

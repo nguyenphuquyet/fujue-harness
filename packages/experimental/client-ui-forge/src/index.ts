@@ -1,20 +1,20 @@
 /** Host Remote of the forge panel: checkout, code host, sign-in, change request, and worktree state per Session. */
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-api-remote-access'
-import { changeRequestKey } from '@deepseek-ai/dsh-experimental-forge'
-import type { ChangeRequestSnapshot, ForgeActionFailure, ForgeFailure, ForgeReviewRequest, ForgeReviewResult, MergeMethod } from '@deepseek-ai/dsh-experimental-forge'
-import type { SessionChangeRequest } from '@deepseek-ai/dsh-experimental-forge-session'
-import type {} from '@deepseek-ai/dsh-experimental-worktree'
-import { appendPluginRecord } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type {} from '@deepseek-ai/dsh-session-query'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
-import { Remote, RemoteError, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
+import { Context, Service } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import type { Agent } from '@quyet/agent'
+import type {} from '@quyet/api-remote-access'
+import { changeRequestKey } from '@quyet/experimental-forge'
+import type { ChangeRequestSnapshot, ForgeActionFailure, ForgeFailure, ForgeReviewRequest, ForgeReviewResult, MergeMethod } from '@quyet/experimental-forge'
+import type { SessionChangeRequest } from '@quyet/experimental-forge-session'
+import type {} from '@quyet/experimental-worktree'
+import { appendPluginRecord } from '@quyet/session'
+import type { Session, SessionEvent } from '@quyet/session'
+import type { ProjectionHandle } from '@quyet/session-projection'
+import type {} from '@quyet/session-projection-cache'
+import type {} from '@quyet/session-query'
+import { MAX_TIMER_DELAY_MS } from '@quyet/timeout'
+import { Remote, RemoteError, TypertRemoteService } from '@quyet/typert-protocol'
 import { gitIn, inspectCheckout, listBranches } from './git.ts'
 import type { Inspection } from './git.ts'
 import { parseDiff } from './diff.ts'
@@ -34,7 +34,7 @@ import type { HeldWork } from './worktree.ts'
 
 export type * from './types.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     /** Remote that serves the forge panel of the GUI. */
     forgePanel: ForgePanelController
@@ -71,7 +71,7 @@ export class ForgePanelController extends TypertRemoteService {
     maxOutputBytes: z.number().default(1_048_576),
     readinessTimeoutMs: z.number().default(15_000),
     maxBranches: z.number().default(50),
-    worktreePrefix: z.string().default('dsh-'),
+    worktreePrefix: z.string().default('quyet-'),
     maxDiffBytes: z.number().default(8_388_608),
     maxUntrackedFiles: z.number().default(100),
     maxCachedDiffBytes: z.number().default(16_777_216),

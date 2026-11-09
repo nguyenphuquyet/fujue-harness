@@ -5,36 +5,36 @@
 /:
   en: e8056e7ebc59ace5
   zh: 69512c6dc08b162f
-/deepseek-ai-dsh-ssh:
-  en: aa72983e0421a4ab
-  zh: 5a916f668fa9be67
-/deepseek-ai-dsh-ssh/summary:
-  en: e502352c9360fce5
-  zh: c61e21f82e4743d5
-/deepseek-ai-dsh-ssh/table-of-contents:
+/quyet-ssh:
+  en: 06fc4cc1005b4dab
+  zh: eb2ecc297db9ac05
+/quyet-ssh/summary:
+  en: bdc9dfd3f1447390
+  zh: 1e3d6a10d2f4c4d0
+/quyet-ssh/table-of-contents:
   en: d152484eb41ac6b4
   zh: 725b47765ee8f30b
-/deepseek-ai-dsh-ssh/use-this-package:
-  en: ef938522efc14404
-  zh: c1111eeedd46a25b
-/deepseek-ai-dsh-ssh/use-this-package/deployment-prerequisites:
-  en: 9be90e9dad103726
-  zh: af9e050b0ab50d04
-/deepseek-ai-dsh-ssh/understand-the-implementation:
+/quyet-ssh/use-this-package:
+  en: d59aac637a4c79ae
+  zh: c5b00ac52c2df504
+/quyet-ssh/use-this-package/deployment-prerequisites:
+  en: 6be90474bd7bcb5a
+  zh: 8bd953e8fe8a6e14
+/quyet-ssh/understand-the-implementation:
   en: 6156b76f56e241c3
   zh: 6688f94f6db930e4
-/deepseek-ai-dsh-ssh/further-exploration:
-  en: 1d179b90a32af26b
-  zh: 683cf3c0085147e1
-/deepseek-ai-dsh-ssh/model-experience:
+/quyet-ssh/further-exploration:
+  en: 5bf8b85fa78564d7
+  zh: ffb09585592aeef4
+/quyet-ssh/model-experience:
   en: 46f8a19ad50774a3
   zh: cfa8af8f94f691f5
-/deepseek-ai-dsh-ssh/model-experience/kv-cache-effect:
+/quyet-ssh/model-experience/kv-cache-effect:
   en: 21f304c66e5ba98b
   zh: 18185d5b164f8216
-/deepseek-ai-dsh-ssh/known-limitations-and-deferred-work:
+/quyet-ssh/known-limitations-and-deferred-work:
   en: c173949c197e6deb
   zh: a951c8cfeca150ab
-/deepseek-ai-dsh-ssh/known-limitations-and-deferred-work/dev-note:
+/quyet-ssh/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 8ec3e73528ddb1a6

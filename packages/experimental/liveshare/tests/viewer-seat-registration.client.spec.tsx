@@ -10,12 +10,12 @@
  * keeps rendering.
  */
 
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import { Context } from '@deepseek-ai/cordis'
-import type { SessionReference } from '@deepseek-ai/dsh-api-session-controller/client'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
-import { SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
+import type { Context as ClientContext } from '@quyet/cordis'
+import { Context } from '@quyet/cordis'
+import type { SessionReference } from '@quyet/api-session-controller/client'
+import { LocaleRuntime } from '@quyet/client-locale/client'
+import { SlotRegistry } from '@quyet/client-ui-renderer/client'
+import { SlotTestRuntime } from '@quyet/client-test-runtime'
 import { afterEach, describe, expect, it, onTestFinished } from 'vitest'
 import { act, cleanup, waitFor } from '@testing-library/react'
 import { en, NS, zh } from '../src/client/locales.ts'

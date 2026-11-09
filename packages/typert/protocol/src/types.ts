@@ -1,11 +1,11 @@
 /**
  * Compiler-independent Typert protocol shared by business packages, generated
  * Remote artifacts, the Host Gateway, and Client API implementations.
- * @module @deepseek-ai/dsh-typert-protocol/types
+ * @module @quyet/typert-protocol/types
  */
 
-import type { Context, Events } from '@deepseek-ai/cordis'
-import type { Branded } from '@deepseek-ai/dsh-brand'
+import type { Context, Events } from '@quyet/cordis'
+import type { Branded } from '@quyet/brand'
 import type { ZodType } from 'zod'
 import type { TypertOwnedValue } from './owned-value.ts'
 
@@ -944,7 +944,7 @@ export interface TypertRegistryContract {
   readonly resources: TypertResourceRegistry
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     typert: TypertRegistryContract
     /**

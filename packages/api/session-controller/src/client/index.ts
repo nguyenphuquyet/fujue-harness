@@ -1,10 +1,10 @@
 /** Client Session object layer, Agent scopes, and Remote lifecycle wiring. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-agent/types'
-import type { ConnectionHandle } from '@deepseek-ai/dsh-client-connection/client'
-import type {} from '@deepseek-ai/dsh-client-file-upload/client'
-import { typertOwnedValue } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@quyet/cordis'
+import type {} from '@quyet/agent/types'
+import type { ConnectionHandle } from '@quyet/client-connection/client'
+import type {} from '@quyet/client-file-upload/client'
+import { typertOwnedValue } from '@quyet/typert-protocol'
 import { createSessionControlStream } from './transport.ts'
 import { ClientSessions } from './sessions/service.ts'
 import type { SessionRemotes } from './sessions/remotes.ts'
@@ -87,7 +87,7 @@ export interface SessionReferenceSourceMap {
 /** Declaration-merge-extensible labels carried by independent Client references. */
 export type SessionReferenceSource = Extract<keyof SessionReferenceSourceMap, string>
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     /** Client Session object layer and Agent scope owner. */
     sessions: import('./contract/sessions.ts').ISessions

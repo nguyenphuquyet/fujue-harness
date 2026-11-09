@@ -3,23 +3,23 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-09-22-fatal-diagnostics-and-crash-reports.md
 /agent-note-fatal-diagnostics-and-desktop-crash-reports:
-  en: a87890699e70ccc6
-  zh: 189d21b852a20760
+  en: 02f1f946d4eabcc1
+  zh: 16eb09c4195b0a92
 /agent-note-fatal-diagnostics-and-desktop-crash-reports/problem:
-  en: f7d0c561d7576f9a
-  zh: ac96a7d1c470c8cf
+  en: 8d310d248da91132
+  zh: 3a8b512e1319ba75
 /agent-note-fatal-diagnostics-and-desktop-crash-reports/decision:
-  en: ac461e0ea1702ecc
-  zh: 745def8581dc7974
+  en: 1b8fb63b7f3cc392
+  zh: 09c5122471176c24
 /agent-note-fatal-diagnostics-and-desktop-crash-reports/relationship-to-earlier-decisions:
-  en: eced414858f08ef9
-  zh: 40639593b0d5bb6f
+  en: 13b55c28642d1c82
+  zh: f95586686227be4c
 /agent-note-fatal-diagnostics-and-desktop-crash-reports/relationship-to-the-desktop-logging-design:
-  en: ca4a912437c7b02e
-  zh: 2c7953ce5e8c196f
+  en: 3bb30842795ec377
+  zh: 4f7b2e908cbf3cb8
 /agent-note-fatal-diagnostics-and-desktop-crash-reports/testing:
-  en: 864a8e71e3b3378b
-  zh: a71807db24d9409c
+  en: aa993f97e6f4bb46
+  zh: 8e4496dc200cdeb9
 /agent-note-fatal-diagnostics-and-desktop-crash-reports/consequences:
   en: a9bf0176caf92221
   zh: 169d31d00bd28585

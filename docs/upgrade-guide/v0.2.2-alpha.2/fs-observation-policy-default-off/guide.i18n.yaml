@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/upgrade-guide/v0.2.2-alpha.2/fs-observation-policy-default-off/guide.md
 /:
-  en: 94b863d7f57ffb37
-  zh: 158af8a6f172ee5f
+  en: 44b0a55d2fe8578e
+  zh: bd5ad5391477e801
 /filesystem-mutations-no-longer-require-a-prior-read-by-default:
-  en: e6dd0c06f99737e4
-  zh: a706b0bbdea94aac
+  en: 2256ca500b250d63
+  zh: d2703ccde6329876
 /filesystem-mutations-no-longer-require-a-prior-read-by-default/change:
-  en: d7a64f82068f7869
-  zh: 8a42e9c0a56cd3e5
+  en: fd3e687804dae922
+  zh: 68d6649b0e11178a
 /filesystem-mutations-no-longer-require-a-prior-read-by-default/migration:
-  en: c156c11ab737f75a
-  zh: faadea98c8558d07
+  en: 18c15959f8eaba13
+  zh: a6a70a08e0ed21db

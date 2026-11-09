@@ -35,23 +35,23 @@ const signingEnvironment = process.argv.includes('--signed') ? loadDesktopPackag
 const signingRun = process.argv.includes('--signed')
   ? createPackagingRun(join(output, 'packaging-runs'), { target: 'installer-test' }) : undefined
 const sign = process.argv.includes('--signed') ? createWindowsTokenSigner({
-  certificateFile: signingEnvironment.DSH_DESKTOP_WINDOWS_CER_FILE,
-  signTool: signingEnvironment.DSH_DESKTOP_WINDOWS_SIGNTOOL,
-  tokenPin: signingEnvironment.DSH_DESKTOP_WINDOWS_TOKEN_PIN,
-  keyContainer: signingEnvironment.DSH_DESKTOP_WINDOWS_KEY_CONTAINER,
+  certificateFile: signingEnvironment.QUYET_DESKTOP_WINDOWS_CER_FILE,
+  signTool: signingEnvironment.QUYET_DESKTOP_WINDOWS_SIGNTOOL,
+  tokenPin: signingEnvironment.QUYET_DESKTOP_WINDOWS_TOKEN_PIN,
+  keyContainer: signingEnvironment.QUYET_DESKTOP_WINDOWS_KEY_CONTAINER,
   runDirectory: signingRun.directory,
 }) : undefined
 let succeeded = false
 try {
   Object.assign(process.env, {
-    DSH_DESKTOP_APP_ID: `com.deepseek.harness.installertest.n${id}`,
-    DSH_DESKTOP_TARGET_PLATFORM: 'win32', DSH_DESKTOP_TARGET_ARCH: 'x64',
-    DSH_DESKTOP_UNSIGNED: '1', CSC_IDENTITY_AUTO_DISCOVERY: 'false', ELECTRON_BUILDER_7Z_FILTER: 'BCJ',
-    DSH_DESKTOP_MANDATORY_UPDATE_TEST_ORIGIN: signingEnvironment.DSH_DESKTOP_MANDATORY_UPDATE_TEST_ORIGIN
+    QUYET_DESKTOP_APP_ID: `com.quyet.harness.installertest.n${id}`,
+    QUYET_DESKTOP_TARGET_PLATFORM: 'win32', QUYET_DESKTOP_TARGET_ARCH: 'x64',
+    QUYET_DESKTOP_UNSIGNED: '1', CSC_IDENTITY_AUTO_DISCOVERY: 'false', ELECTRON_BUILDER_7Z_FILTER: 'BCJ',
+    QUYET_DESKTOP_MANDATORY_UPDATE_TEST_ORIGIN: signingEnvironment.QUYET_DESKTOP_MANDATORY_UPDATE_TEST_ORIGIN
       ?? 'https://test.example.com',
-    DSH_DESKTOP_MANDATORY_UPDATE_CONFIG: signingEnvironment.DSH_DESKTOP_MANDATORY_UPDATE_CONFIG
+    QUYET_DESKTOP_MANDATORY_UPDATE_CONFIG: signingEnvironment.QUYET_DESKTOP_MANDATORY_UPDATE_CONFIG
       ?? JSON.stringify({ allowedAuthOrigins: ['https://login.example.com'] }),
-    ...signingRun ? { DSH_DESKTOP_PACKAGING_RUN_DIR: signingRun.directory } : {},
+    ...signingRun ? { QUYET_DESKTOP_PACKAGING_RUN_DIR: signingRun.directory } : {},
   })
   const { createElectronBuilderConfig } = await import('../electron-builder.config.mjs')
   const childOptions = { env: scrubWindowsSigningEnvironment(process.env), windowsHide: true, maxBuffer: 8 * 1024 * 1024 }

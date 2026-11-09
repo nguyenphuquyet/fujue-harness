@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-07-22-slot-type-chain-implementation.md
 /agent-note-the-slot-system-standard-single-register-four-props-shares-and-the-framework-store-seat:
-  en: 0b4cb1d5ce96bedc
-  zh: 7c1bb3080595d445
+  en: bd2da686506aef67
+  zh: 460067a6590b21d6
 /agent-note-the-slot-system-standard-single-register-four-props-shares-and-the-framework-store-seat/problem:
   en: 4f8d6891a8ba7061
   zh: 5a619e562e00458d
 /agent-note-the-slot-system-standard-single-register-four-props-shares-and-the-framework-store-seat/decision:
-  en: b6c8cb5ad821e582
-  zh: 0a3fbb3752b33571
+  en: 36ff2be5e9668dc2
+  zh: 5c60288f66d03c19
 /agent-note-the-slot-system-standard-single-register-four-props-shares-and-the-framework-store-seat/decision/root-is-the-only-a-priori-slot:
   en: 43b856b4a8cf371f
   zh: cde298ab8b8a3815
@@ -21,8 +21,8 @@
   en: c1892cb7309c0824
   zh: 21983594d0c7f24f
 /agent-note-the-slot-system-standard-single-register-four-props-shares-and-the-framework-store-seat/decision/the-chain-kind-entries-self-nominate-first-match-renders:
-  en: dad15e2e1309c9a4
-  zh: ee2d13b27c92a73b
+  en: 75ce44fcef1e0b29
+  zh: 7e032988563a2bb6
 /agent-note-the-slot-system-standard-single-register-four-props-shares-and-the-framework-store-seat/decision/the-store-seat-framework-engine-registrant-schema:
   en: 2645acc9d29c20ec
   zh: a8a2fd293ef5da04

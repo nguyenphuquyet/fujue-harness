@@ -1,20 +1,20 @@
 /**
  * Parent-owned durable subagent catalog events and their chunked projection.
  *
- * @module @deepseek-ai/dsh-subagent/catalog
+ * @module @quyet/subagent/catalog
  */
 
 import { z } from 'zod'
-import { appendChunkedList, chunkedListSchema, iterateChunkedList } from '@deepseek-ai/dsh-chunked-list'
-import type { ChunkedList } from '@deepseek-ai/dsh-chunked-list'
+import { appendChunkedList, chunkedListSchema, iterateChunkedList } from '@quyet/chunked-list'
+import type { ChunkedList } from '@quyet/chunked-list'
 import type {
   Session,
   SessionEvent,
   SessionHeader,
   SessionId,
   SessionLogOffset,
-} from '@deepseek-ai/dsh-session'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
+} from '@quyet/session'
+import type { ProjectionDefinition } from '@quyet/session-projection'
 import { isAgentName } from './names.ts'
 import type { SubagentCatalogEntry } from './projection-types.ts'
 
@@ -43,7 +43,7 @@ export type SubagentCatalogEvent =
     ))
   )
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@quyet/session/types' {
   interface SessionEventMap {
     /**
      * A direct child's identity and available discovery fields.

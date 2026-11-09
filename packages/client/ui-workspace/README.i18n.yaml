@@ -3,71 +3,71 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/client/ui-workspace/README.md
 /:
-  en: 7c0f613105d4008a
-  zh: c36c0cdff7e77576
-/deepseek-ai-dsh-client-ui-workspace:
-  en: b286adf3aca51710
-  zh: 6122f6e7c8015197
-/deepseek-ai-dsh-client-ui-workspace/summary:
+  en: e1f63f58eb9b6884
+  zh: 59f498fb6aec1b69
+/quyet-client-ui-workspace:
+  en: 9b49b3addcde5ad9
+  zh: 8dcc7625cd4ebd83
+/quyet-client-ui-workspace/summary:
   en: 1a76ace6a18e3ab5
   zh: b274d1e98e133851
-/deepseek-ai-dsh-client-ui-workspace/table-of-contents:
+/quyet-client-ui-workspace/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-client-ui-workspace/use-this-package:
+/quyet-client-ui-workspace/use-this-package:
   en: 9226c42c2559fbf0
   zh: 5527f59aa379c9fd
-/deepseek-ai-dsh-client-ui-workspace/use-this-package/reordering-and-view-options:
+/quyet-client-ui-workspace/use-this-package/reordering-and-view-options:
   en: 55054408b8593c70
   zh: 9fdf9861a48abba3
-/deepseek-ai-dsh-client-ui-workspace/use-this-package/workspace-hierarchy:
+/quyet-client-ui-workspace/use-this-package/workspace-hierarchy:
   en: cd8635fa6516441d
   zh: c06e251fe3dd895b
-/deepseek-ai-dsh-client-ui-workspace/use-this-package/search:
+/quyet-client-ui-workspace/use-this-package/search:
   en: 148f2ab562fecc09
   zh: 9ba7c07999705b31
-/deepseek-ai-dsh-client-ui-workspace/use-this-package/managing-sessions:
-  en: 29b6b357fc6be99a
-  zh: 182996efed35029c
-/deepseek-ai-dsh-client-ui-workspace/use-this-package/pending-interactions:
+/quyet-client-ui-workspace/use-this-package/managing-sessions:
+  en: 99f8119ab500379b
+  zh: c2ae4a0af33d6000
+/quyet-client-ui-workspace/use-this-package/pending-interactions:
   en: 9fb88260380bf093
   zh: 3bace2b96ecd4a82
-/deepseek-ai-dsh-client-ui-workspace/use-this-package/active-schedule-markers:
-  en: 668ee06286b227b6
-  zh: aafdb03cde1b93c9
-/deepseek-ai-dsh-client-ui-workspace/understand-the-implementation:
-  en: 8f170900a4096408
-  zh: 85332e80adf39403
-/deepseek-ai-dsh-client-ui-workspace/understand-the-implementation/the-directory-flow-hole:
+/quyet-client-ui-workspace/use-this-package/active-schedule-markers:
+  en: 246a73b4647c6d36
+  zh: f47496388711db97
+/quyet-client-ui-workspace/understand-the-implementation:
+  en: 452e6061201af8bd
+  zh: 8a089b3fcf850749
+/quyet-client-ui-workspace/understand-the-implementation/the-directory-flow-hole:
   en: 868904dbfb5713f8
   zh: 35d3c285ed770885
-/deepseek-ai-dsh-client-ui-workspace/understand-the-implementation/session-row-actions:
-  en: 511408e373ff8c70
-  zh: 7ae3b396171821a4
-/deepseek-ai-dsh-client-ui-workspace/understand-the-implementation/session-row-actions/packaged-client-plugin:
+/quyet-client-ui-workspace/understand-the-implementation/session-row-actions:
+  en: 5c693067629ea444
+  zh: 964b935c3df93b9f
+/quyet-client-ui-workspace/understand-the-implementation/session-row-actions/packaged-client-plugin:
   en: 36934671b80b11ae
   zh: 8e0aea6162e35e77
-/deepseek-ai-dsh-client-ui-workspace/understand-the-implementation/session-row-actions/dynamic-client-package:
-  en: ad4a333892f2fe92
-  zh: 3a670fd401f4d7a7
-/deepseek-ai-dsh-client-ui-workspace/understand-the-implementation/view-state:
-  en: dcf2a7d1c9b0d7ab
-  zh: ed55345f218f0735
-/deepseek-ai-dsh-client-ui-workspace/understand-the-implementation/hover-cards:
+/quyet-client-ui-workspace/understand-the-implementation/session-row-actions/dynamic-client-package:
+  en: fcb98c1ab4b230ba
+  zh: a9427767a0905203
+/quyet-client-ui-workspace/understand-the-implementation/view-state:
+  en: d74c60844d5f7929
+  zh: d5cb4202fa79f371
+/quyet-client-ui-workspace/understand-the-implementation/hover-cards:
   en: 8bcb7bd90d7c5773
   zh: 17663be926a099d2
-/deepseek-ai-dsh-client-ui-workspace/further-exploration:
-  en: 2abbf27abbd71ba4
-  zh: ace33fa2ea042357
-/deepseek-ai-dsh-client-ui-workspace/model-experience:
+/quyet-client-ui-workspace/further-exploration:
+  en: b3f8f6d39b296379
+  zh: fbad518dfdd8dd1a
+/quyet-client-ui-workspace/model-experience:
   en: 3120df665299c634
   zh: 1d9f365d091d0d2a
-/deepseek-ai-dsh-client-ui-workspace/model-experience/kv-cache-effect:
+/quyet-client-ui-workspace/model-experience/kv-cache-effect:
   en: ca75c51c89c2c9b0
   zh: de54f3467ef3b9be
-/deepseek-ai-dsh-client-ui-workspace/known-limitations-and-deferred-work:
+/quyet-client-ui-workspace/known-limitations-and-deferred-work:
   en: 8211860a1b10ac61
   zh: 4ef11b1fce30cacd
-/deepseek-ai-dsh-client-ui-workspace/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-workspace/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

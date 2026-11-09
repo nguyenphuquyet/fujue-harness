@@ -3,20 +3,20 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/process/2026-09-28-dual-release-install-layout-work-budget.md
 /agent-note-dual-release-install-layout-work-budget:
-  en: 808f7c1d11ce15b5
-  zh: 861c63dd2de66452
+  en: 2156fa6a160b7bba
+  zh: ac94f3662d1cd446
 /agent-note-dual-release-install-layout-work-budget/problem:
-  en: 46916488210ba493
-  zh: 98107c3805a22b2c
+  en: 9ead3b4bec4ae73d
+  zh: e16035e5bd852e05
 /agent-note-dual-release-install-layout-work-budget/decision:
-  en: b900469750b27f81
-  zh: d5380d7751332e9c
+  en: c75cb42c17657904
+  zh: 14e01785c17f7430
 /agent-note-dual-release-install-layout-work-budget/what-the-resolution-costs:
-  en: 463df1fae15ae2fc
-  zh: 733c9ddb4900e3fc
+  en: 3c79f7175314e17d
+  zh: 2b408cdcfd4aa0bb
 /agent-note-dual-release-install-layout-work-budget/alternatives-considered:
   en: 29987b7634c84d28
   zh: a1469e4b6aaa46e2
 /agent-note-dual-release-install-layout-work-budget/consequences:
-  en: 4226e2216abe042d
-  zh: db8f308ef40f47e9
+  en: 3796c11a05083445
+  zh: 9f7f7cd0038290b6

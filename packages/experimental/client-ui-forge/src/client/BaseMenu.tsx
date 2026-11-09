@@ -5,9 +5,9 @@ import clsx from 'clsx'
 import {
   Button, IconBranchOutlineRegular, IconCheckOutlineRegular, IconChevronDownOutlineRegular, IconSearchOutlineRegular,
   IconWarningTriangleOutlineRegular, Input, Menu, MenuItemButton, StateDot, Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { PropsLocale } from '@deepseek-ai/dsh-client-ui-slots'
-import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
+} from '@quyet/client-ui-primitives'
+import type { PropsLocale } from '@quyet/client-ui-slots'
+import type { RemoteResult } from '@quyet/typert-protocol'
 import type { ForgeBaseBranch, ForgeBaseBranches } from '../types.ts'
 import type { NS } from './locales.ts'
 import css from './BaseMenu.module.css'

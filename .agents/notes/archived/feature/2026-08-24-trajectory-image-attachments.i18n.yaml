@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-08-24-trajectory-image-attachments.md
-2026-08-24-trajectory-image-attachments.md: be35b762dba6ed35ada83dc0d24e9c6e46c84ecc
-2026-08-24-trajectory-image-attachments.zh.md: 5e28d0de4b20ce4fcb6599d6b8202c8998faf7c1
+2026-08-24-trajectory-image-attachments.md: af3029ec9e4e44c4df12181148eed6298a2d9f6d
+2026-08-24-trajectory-image-attachments.zh.md: d394784f76484aec84768b51f3af0c1d58d00d6d

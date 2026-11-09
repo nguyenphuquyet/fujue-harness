@@ -3,29 +3,29 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/subsystems/subagent.md
 /subagents:
-  en: 3d828004dee084c6
-  zh: f71296b677691151
+  en: bce6078bf4166a9e
+  zh: b3c8d8cb6a535370
 /subagents/capabilities-and-activation-requests:
-  en: f09270fcd7bfa26a
-  zh: 082664920b3c65e2
+  en: 9ea6be652fa9bf3f
+  zh: 5b61309e3f8c9db9
 /subagents/local-children-and-activations:
-  en: 6f87231d18d82916
-  zh: 9f064b23058f8766
+  en: 9f1442043fee67f1
+  zh: ec27fb3f2892b8e3
 /subagents/agent-names:
-  en: 55b2912080a2b021
-  zh: d234521ecce44275
+  en: 6f29f2359a767a74
+  zh: 9ff81863c6f984c3
 /subagents/messages-and-interruption:
   en: 9befacb931520842
   zh: c214b4fffa779b06
 /subagents/durable-enumeration:
-  en: e02e1703b183594c
-  zh: 130d475a4304f453
+  en: 5d1729007013552c
+  zh: c02e2f1062663c14
 /subagents/results-and-backend-handles:
   en: 69ea5bed7d9fb64a
   zh: b187a822b813e80a
 /subagents/the-provider-contract-subagentprovider:
-  en: 226ba8094a8cf96c
-  zh: 719678662905d1eb
+  en: 5eab197e02281721
+  zh: f73a053795958f93
 /subagents/durable-enumeration-listdescendants-and-catalog-entries:
-  en: 992acbcc3ac77e30
-  zh: 83b9dd42ade734ab
+  en: 330ad3925db5488f
+  zh: 41760cc9409c75e2

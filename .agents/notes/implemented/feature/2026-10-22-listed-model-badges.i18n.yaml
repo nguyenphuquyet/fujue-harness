@@ -3,17 +3,17 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-10-22-listed-model-badges.md
 /agent-note-model-selector-badges-come-from-the-model-listing:
-  en: cc4b8fee78e75a98
-  zh: 3cf21a37bea4410c
+  en: 185c17407d67ad25
+  zh: d3cf815a76139c0f
 /agent-note-model-selector-badges-come-from-the-model-listing/problem:
   en: ed011e743511ef25
   zh: 2389e339f1a6dcbf
 /agent-note-model-selector-badges-come-from-the-model-listing/decision:
-  en: 84b99f80d8824117
-  zh: 94cd96f59caf5b43
+  en: 42f066530cbf2df6
+  zh: dc965e09e030eb02
 /agent-note-model-selector-badges-come-from-the-model-listing/alternatives-considered:
-  en: 079466e0dd56584e
-  zh: 8e33049c422d77cb
+  en: 3055b46ad1b4a344
+  zh: b776294787f718a6
 /agent-note-model-selector-badges-come-from-the-model-listing/consequences:
-  en: 3ba39c2a109e49cd
-  zh: 3eb16676854230f9
+  en: af067f5eeca9a4b3
+  zh: 1595b6a1e34b6150

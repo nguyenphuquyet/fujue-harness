@@ -1,19 +1,19 @@
 /** Remote contribution and slot registrations of the forge panel. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { RemoteHostFacts } from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-ui-layout/client'
-import { IconBranchOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
-import type { HostObservable } from '@deepseek-ai/dsh-client-ui-slots'
-import type {} from '@deepseek-ai/dsh-client-ui-workspace/client'
-import type {} from '@deepseek-ai/dsh-experimental-client-ui-forge/remote'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { RemoteResult, TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@quyet/cordis'
+import type { RemoteHostFacts } from '@quyet/api-remotes/client'
+import type {} from '@quyet/api-session-controller/client'
+import type {} from '@quyet/client-locale/client'
+import type {} from '@quyet/client-ui-conversation/client'
+import type {} from '@quyet/client-ui-layout/client'
+import { IconBranchOutlineRegular } from '@quyet/client-ui-primitives'
+import type {} from '@quyet/client-ui-renderer/client'
+import type {} from '@quyet/client-ui-sidebar-right/client'
+import type { HostObservable } from '@quyet/client-ui-slots'
+import type {} from '@quyet/client-ui-workspace/client'
+import type {} from '@quyet/experimental-client-ui-forge/remote'
+import type { SessionId } from '@quyet/session/types'
+import type { RemoteResult, TypertRemoteContribution } from '@quyet/typert-protocol'
 import type { ForgeChangeRequestListState, ForgeChangeRequestStatesFrame, ForgePanelChangeRequest } from '../types.ts'
 import { ReviewQueue } from './review-queue.ts'
 import { formatReviewComment, type ReviewSelection } from './review.ts'
@@ -40,7 +40,7 @@ import { WorktreeToggle, type WorktreeToggleInjected } from './WorktreeToggle.ts
 export const inject = ['remote', 'slots', 'locale', 'sidebarRightTabs', 'sidebarRight', 'sessions']
 
 /** Registry id of the forge tab type, also its slot key. */
-export const TAB_ID = '@deepseek-ai/dsh-experimental-client-ui-forge'
+export const TAB_ID = '@quyet/experimental-client-ui-forge'
 
 /** Kind of the forge tab. */
 export const TAB_KIND = 'forge-panel'
@@ -209,7 +209,7 @@ function registerUi(ctx: Context): void {
       reviewQueue: ({ id, signal }) => {
         let queue = store.reviews.get(signal)
         if (queue === undefined) {
-          const records = new ReviewQueue(`dsh.forge-review.tab.v1.${JSON.stringify([sessionId, id])}`)
+          const records = new ReviewQueue(`quyet.forge-review.tab.v1.${JSON.stringify([sessionId, id])}`)
           queue = records
           store.reviews.set(signal, records)
           const clear = (): void => { if (!records.close()) notices.report('review.saveFailed') }

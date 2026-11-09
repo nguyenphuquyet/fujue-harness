@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-tool-web",
-  "description": "Model-facing web tools (web_search, web_fetch) over the DeepSeek Harness web capability seam (ctx.web)",
+  "name": "@quyet/tool-web",
+  "description": "Model-facing web tools (web_search, web_fetch) over the JueTech Harness web capability seam (ctx.web)",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/web/tool-web"
   },
   "type": "module",
@@ -29,37 +29,37 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/llm": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/web": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-output-retention": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/output-retention": "workspace:*",
+    "@quyet/util-values": "workspace:*",
+    "@quyet/schemastery": "workspace:~",
     "@joplin/turndown-plugin-gfm": "^1.0.67",
     "turndown": "^7.2.4"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-spill-local": "workspace:*",
-    "@deepseek-ai/dsh-spill-policy": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-call-timeout-policy": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*",
-    "@deepseek-ai/dsh-web-deepseek-api": "workspace:*",
-    "@deepseek-ai/dsh-web-fetch-http": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/spill-local": "workspace:*",
+    "@quyet/spill-policy": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/tool-call-timeout-policy": "workspace:*",
+    "@quyet/tool-executor-native": "workspace:*",
+    "@quyet/tool-testkit": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/web": "workspace:*",
+    "@quyet/web-deepseek-api": "workspace:*",
+    "@quyet/web-fetch-http": "workspace:*",
     "@types/turndown": "^5.0.6",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-token-meter": "workspace:*",
-    "@deepseek-ai/dsh-launch-environment": "workspace:*"
+    "@quyet/scope": "workspace:*",
+    "@quyet/token-meter": "workspace:*",
+    "@quyet/launch-environment": "workspace:*"
   }
 }

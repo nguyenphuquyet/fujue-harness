@@ -2,18 +2,18 @@
 # section, a hash of its English and Chinese blocks outside code blocks and generated regions.
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write python/sdk-runtime/README.md
-/deepseek-harness-runtime-bin:
-  en: 1ea1d8e6d2c14b02
-  zh: 8e0b9903158667a1
-/deepseek-harness-runtime-bin/installed-commands-and-artifacts:
-  en: 68407e833c62ee1f
-  zh: 9590f73d7daf8032
-/deepseek-harness-runtime-bin/python-module-api:
-  en: 78a200e328d96637
-  zh: f3b7a0b69b7a39e0
-/deepseek-harness-runtime-bin/packaged-profile-resolution:
-  en: 0f476fb87a1a3349
-  zh: 359dbd9b24b18b46
-/deepseek-harness-runtime-bin/build-and-distribution:
-  en: 2512cd7c3624ef6e
-  zh: 455f6a528e5f9d61
+/quyet-harness-runtime-bin:
+  en: 867724d13c419ced
+  zh: ba9812da3c73fc40
+/quyet-harness-runtime-bin/installed-commands-and-artifacts:
+  en: b004d9c459283351
+  zh: 108a078ae85da315
+/quyet-harness-runtime-bin/python-module-api:
+  en: 21d46368da1333ec
+  zh: 4e0e5ee8ed19d5b0
+/quyet-harness-runtime-bin/packaged-profile-resolution:
+  en: 4a23cab5daff3916
+  zh: 3c76ffc57df66843
+/quyet-harness-runtime-bin/build-and-distribution:
+  en: 651daadaaeb35ca9
+  zh: a6c1d0bab0507017

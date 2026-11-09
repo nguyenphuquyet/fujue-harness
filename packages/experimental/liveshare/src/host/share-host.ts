@@ -2,12 +2,12 @@
 
 import { homedir } from 'node:os'
 import { dirname, join } from 'node:path'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-remote-access'
-import type {} from '@deepseek-ai/dsh-api-session-controller'
-import type {} from '@deepseek-ai/dsh-client-connection'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-workspace'
+import type { Context } from '@quyet/cordis'
+import type {} from '@quyet/api-remote-access'
+import type {} from '@quyet/api-session-controller'
+import type {} from '@quyet/client-connection'
+import { SessionId } from '@quyet/session'
+import type {} from '@quyet/workspace'
 import {
   loadOwnerState,
   writeOwnerState,
@@ -43,11 +43,11 @@ import {
 import { readViewerAsset } from './viewer-assets.ts'
 import type { ForkShareState } from './fork-policy.ts'
 import type { ForkToolExecution } from './fork-tool-guard.ts'
-import type { ShareRpcActor } from '@deepseek-ai/dsh-experimental-liveshare-protocol'
+import type { ShareRpcActor } from '@quyet/experimental-liveshare-protocol'
 import {
   identityKeyOf,
   type IdentityActor,
-} from '@deepseek-ai/dsh-experimental-liveshare-protocol'
+} from '@quyet/experimental-liveshare-protocol'
 
 export const name = 'liveshare-share-host'
 export const inject = ['connection']
@@ -614,8 +614,8 @@ export async function apply(ctx: Context, config: Config): Promise<() => Promise
 }
 
 function defaultOwnerStateFile(): string {
-  const dshHome = nonEmpty(process.env.DSH_HOME) ?? join(homedir(), '.dsh')
-  return join(dshHome, 'liveshare', 'owner-shares.json')
+  const quyetHome = nonEmpty(process.env.QUYET_HOME) ?? join(homedir(), '.quyet')
+  return join(quyetHome, 'liveshare', 'owner-shares.json')
 }
 
 function nonEmpty(value: string | undefined): string | undefined {

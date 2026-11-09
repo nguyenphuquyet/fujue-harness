@@ -1,4 +1,4 @@
-/** Prepare one operator-owned firewall fault for an installed, independently verified qualification executable. */
+﻿/** Prepare one operator-owned firewall fault for an installed, independently verified qualification executable. */
 import { lstat, mkdir, readFile, realpath, writeFile } from 'node:fs/promises'
 import { basename, isAbsolute, join, relative, resolve, sep } from 'node:path'
 import { readInstalledUpdateRun } from './installed-update-qualification.ts'
@@ -45,7 +45,7 @@ export async function prepareInstalledUpdateNetwork(manifest: string, executable
   const path = join(directory, 'plan.json')
   await writeFile(path, `${JSON.stringify({ schemaVersion: 1, runId: run.id, executable: installed,
     sha512Hex: Buffer.from(signature.sha512, 'base64').toString('hex').toUpperCase(),
-    ruleName: `DSH-Update-Qualification-${run.id}`, manifest: resolve(manifest), receipt: resolve(receipt),
+    ruleName: `QUYET-Update-Qualification-${run.id}`, manifest: resolve(manifest), receipt: resolve(receipt),
     receiptSha512: await installedUpdateFileHash(receipt), networkChanged: false }, null, 2)}\n`, { flag: 'wx', flush: true })
   return path
 }

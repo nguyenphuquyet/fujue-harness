@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/testing/2026-09-27-plugin-install-interceptor-lifetime.md
-2026-09-27-plugin-install-interceptor-lifetime.md: b1f1a5641d78483bc1954513ecfcf841951efe01
-2026-09-27-plugin-install-interceptor-lifetime.zh.md: 1e9ff9090086d08226f2bfd0b216610b27097b69
+2026-09-27-plugin-install-interceptor-lifetime.md: 0d1927a120d370c68362bbfb020154a17cc0f394
+2026-09-27-plugin-install-interceptor-lifetime.zh.md: 99332464ff122ecaf3ed765c4017e6bf668aac28

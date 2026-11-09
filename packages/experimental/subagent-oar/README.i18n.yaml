@@ -5,63 +5,63 @@
 /:
   en: e2a966cf2f6d7f5f
   zh: e19b979aeef0d29a
-/deepseek-ai-dsh-experimental-subagent-oar:
-  en: fef097906f8c0a35
-  zh: 3fb2737b8974edc0
-/deepseek-ai-dsh-experimental-subagent-oar/summary:
+/quyet-experimental-subagent-oar:
+  en: 7bd47ffeb0efaa0e
+  zh: 7eb3a1512bd9bc0a
+/quyet-experimental-subagent-oar/summary:
   en: 75bc60daa998f16a
   zh: 31f09b5ed600232d
-/deepseek-ai-dsh-experimental-subagent-oar/table-of-contents:
+/quyet-experimental-subagent-oar/table-of-contents:
   en: d152484eb41ac6b4
   zh: 8d1e20b826450ffe
-/deepseek-ai-dsh-experimental-subagent-oar/use-this-package:
+/quyet-experimental-subagent-oar/use-this-package:
   en: bbff250eba0f1b89
   zh: 0a618f05cc88ee2b
-/deepseek-ai-dsh-experimental-subagent-oar/use-this-package/compose-a-profile:
-  en: 60804c44d0c2bb40
-  zh: 74471620c96b8c78
-/deepseek-ai-dsh-experimental-subagent-oar/use-this-package/what-you-get:
-  en: e4b715738e3f238d
-  zh: 0c6d561b99d4b07e
-/deepseek-ai-dsh-experimental-subagent-oar/use-this-package/configure-a-runtime-instance:
-  en: cfc28b43567604a6
-  zh: 04ef0d698c3b47f7
-/deepseek-ai-dsh-experimental-subagent-oar/understand-the-implementation:
-  en: 19b537fd24aa1dfd
-  zh: fee12542bb2fc1a6
-/deepseek-ai-dsh-experimental-subagent-oar/further-exploration:
-  en: 089fe63b9b457247
-  zh: 482382e68e5c4e2e
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience:
+/quyet-experimental-subagent-oar/use-this-package/compose-a-profile:
+  en: 409eb537a4088d85
+  zh: 318e136b322848c5
+/quyet-experimental-subagent-oar/use-this-package/what-you-get:
+  en: 2dbccc54120aee14
+  zh: 6a650274130563b5
+/quyet-experimental-subagent-oar/use-this-package/configure-a-runtime-instance:
+  en: 63fdaa6bdf0dc57c
+  zh: fdf00cd2ba2bc158
+/quyet-experimental-subagent-oar/understand-the-implementation:
+  en: fb0c89c16ca063f9
+  zh: a35c3d539bba6ae6
+/quyet-experimental-subagent-oar/further-exploration:
+  en: 2146b6993a67df92
+  zh: cbbe4666e5e1c237
+/quyet-experimental-subagent-oar/model-experience:
   en: 215e7ba838619b7b
   zh: a311da3843709f90
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/child-request:
+/quyet-experimental-subagent-oar/model-experience/child-request:
   en: 1796fa78833bfc2b
   zh: b78af12284632249
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/child-request/what-the-model-sees:
+/quyet-experimental-subagent-oar/model-experience/child-request/what-the-model-sees:
   en: 16dd6345fbe5b557
   zh: adbd8e9b2f4d247f
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/child-request/token-effect:
+/quyet-experimental-subagent-oar/model-experience/child-request/token-effect:
   en: 51b1a72453170ef9
   zh: 521ff4e9e9a84186
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/child-request/kv-cache-effect:
+/quyet-experimental-subagent-oar/model-experience/child-request/kv-cache-effect:
   en: 26a77ed7165e7414
   zh: 61d802041b7663c6
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/parent-results-indirectly:
+/quyet-experimental-subagent-oar/model-experience/parent-results-indirectly:
   en: cc55ad2a7e04a064
   zh: e7d3d72a5b1e80e3
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/parent-results-indirectly/what-the-model-sees:
-  en: 2d1cdcc92211fdec
-  zh: 016169e5fb65eb86
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/parent-results-indirectly/token-effect:
+/quyet-experimental-subagent-oar/model-experience/parent-results-indirectly/what-the-model-sees:
+  en: 63f0a8a57c9e9da4
+  zh: e3a296493ba4c923
+/quyet-experimental-subagent-oar/model-experience/parent-results-indirectly/token-effect:
   en: 99d04595c61a32fc
   zh: 47f6253729070269
-/deepseek-ai-dsh-experimental-subagent-oar/model-experience/parent-results-indirectly/kv-cache-effect:
-  en: ba649995f08b9e09
-  zh: a153047f0c25645a
-/deepseek-ai-dsh-experimental-subagent-oar/known-limitations-and-deferred-work:
-  en: 8eec39a3eb58a185
-  zh: 68feb7901d4b50b9
-/deepseek-ai-dsh-experimental-subagent-oar/known-limitations-and-deferred-work/dev-note:
+/quyet-experimental-subagent-oar/model-experience/parent-results-indirectly/kv-cache-effect:
+  en: f5e206faf9c18ac7
+  zh: 8cbdd6e15cef24a3
+/quyet-experimental-subagent-oar/known-limitations-and-deferred-work:
+  en: 298d590dd4362bfb
+  zh: e0f1f3d974ef3ba4
+/quyet-experimental-subagent-oar/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 8ec3e73528ddb1a6

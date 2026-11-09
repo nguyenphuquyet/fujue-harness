@@ -1,9 +1,9 @@
 ---
-description: "Models settings and product-onboarding plugin for the dsh web client: provider rows, API-key management, model lists, and the DeepSeek first-run dialogs."
+description: "Models settings and product-onboarding plugin for the quyet web client: provider rows, API-key management, model lists, and the DeepSeek first-run dialogs."
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-client-ui-settings-models
+# @quyet/client-ui-settings-models
 
 English | [中文](README.zh.md)
 
@@ -11,7 +11,7 @@ Desktop product events use the optional [product analytics service](../product-a
 
 ## Summary
 
-`dsh-client-ui-settings-models` is the Models settings page of the dsh web client: users configure API keys (stored write-only under the profile's credential reference), edit each provider's model list, and hand-declare custom pi-ai routes, with provider rows and one editor card at a time. The page joins the provider directory, the settings document, and the credential descriptions into one shared snapshot, so a row's state stays consistent across all three. It also walks first-run users through two ordered dialogs — a versioned preview notice and the conditional official-DeepSeek credential step.
+`quyet-client-ui-settings-models` is the Models settings page of the quyet web client: users configure API keys (stored write-only under the profile's credential reference), edit each provider's model list, and hand-declare custom pi-ai routes, with provider rows and one editor card at a time. The page joins the provider directory, the settings document, and the credential descriptions into one shared snapshot, so a row's state stays consistent across all three. It also walks first-run users through the conditional official-DeepSeek credential step.
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ A provider with a stored catalog error remains visible with its diagnostic and e
 
 After Apply closes an editor, its saved status appears when the current provider, settings, and credential snapshot is ready. Opening any row's editor, adding a provider, and opening a removal confirmation wait for that refresh. A newly opened Models section, or one retrying after a page-load failure, waits for a ready snapshot before mounting editors. A background refresh preserves an open draft while its editor remains mounted; a failed page load or provider removal can close it.
 
-Host configuration `credentialOnboarding` defaults to `true`. The Electron preload marker suppresses automatic credential onboarding and the Web welcome notice; Models settings and explicit API-key editing remain available. The [account plugin](../ui-settings-account/README.md#desktop-onboarding) owns the Desktop introduction. Other native shells can disable only the credential step with `credentialOnboarding: false`. Host publishes this public boolean through `webserver/index-inject`, and Client validates it before registering dialogs. It is page initialization data, not a durable completion marker.
+Host configuration `credentialOnboarding` defaults to `true`. The Electron preload marker suppresses automatic credential onboarding; Models settings and explicit API-key editing remain available. The [account plugin](../ui-settings-account/README.md#desktop-onboarding) owns the Desktop introduction. Other native shells can disable only the credential step with `credentialOnboarding: false`. Host publishes this public boolean through `webserver/index-inject`, and Client validates it before registering dialogs. It is page initialization data, not a durable completion marker.
 
 ### API keys
 
@@ -69,9 +69,9 @@ Empty pi-ai capacity fields display `1M` for the context window and `128K` for m
 
 **Add model provider** is the one entry to the add card, offered while any editor-backed settings namespace is mounted and enabled while either mode below can proceed. The card opens on a segmented mode switch with a one-line purpose beneath it: **Third-party model provider** carries the dormant-directory provider select over the provider editor — a bare-mounted `llm-pi-ai` offers its whole installed catalog before any route exists — and **Custom model API** carries the create form for a route pi-ai does not ship: a relay, a self-hosted server, or any other OpenAI- or Anthropic-compatible endpoint. A mode is offered only while its namespace is mounted; with one mode the card shows that form alone under the mode's name, and a mode whose namespace has nothing left to adopt or no protocol to declare is disabled with the reason as its hover text. A panel mounts the first time its mode is shown and stays mounted, hidden, while the card is open and its mode stays offered, so switching modes discards neither draft; the switch locks while either panel has a write or an endpoint interrogation in flight, since a switch underneath one would orphan its answer. Each tab controls its panel through ids, and closing either panel forgets the catalog draft's target. The custom form asks for a unique **Provider ID**, an endpoint, a protocol, and at least one uniquely-identified model, because nothing can default those. The protocol picker names each protocol by its product name — OpenAI Chat Completions, OpenAI Responses, Anthropic Messages — while the stored value stays the schema identifier; a protocol the adapter adds before this page names it shows that identifier. The endpoint placeholder follows the selected protocol: OpenAI Chat Completions and Responses show `https://gateway.example/v1`, while Anthropic Messages shows `https://gateway.example` because its SDK appends `/v1/messages`. Changing the protocol preserves any address already entered. The endpoint must be a parseable HTTP or HTTPS URL; localhost, IPv4 and IPv6 literals, and custom ports remain valid. A syntax error blocks both discovery and creation at the field, while a request failure remains a separate provider error. **Fetch available models** asks the `llm/discoverModels` Remote about the endpoint the form shows, so adding a provider is one pass instead of save-then-return; the reply opens a searchable picker rather than being written, and nothing changes until **Update list**. The picker opens with the configured models checked, or every candidate when the list is empty and the route serves its whole catalog; **Update list** appends newly checked candidates and removes unchecked configured models from the draft, while configured models the reply does not list stay. Rows without an id do not count as configured, a repeated candidate id is listed once, and **Update list** is disabled when it would empty a non-empty list, since an empty list serves the whole catalog. Each candidate displays its original model id in a monospace font to distinguish models with the same name. Rows stay on one line; hovering reveals the model name, falling back to the full id when no name is supplied. Selection and configuration retain the original model id. Each selected candidate copies its id, display name, context window, output-token cap, and disclosed input types into the editable row when disclosed, while an existing row retains its user-tuned values. Search matches model ids and optional display names without clearing hidden selections. **Select all** and **Deselect all** change only the visible results, so a hidden configured model is not removed unseen. A row is deletable only when the user layer alone carries it (removal restores the composition base), and its confirmation dialog names the provider.
 
-### First-run dialogs
+### First-run dialog
 
-After the versioned notice step completes, the DeepSeek step projects first-run readiness from the same joined snapshot. ANY provider the user can already reach ends it without rendering; only a user with none is asked for the official DeepSeek key. Configure later completes only this coordinator pass, and an absent adapter, inactive route, failed join, read-only deployment, or unusable capability completes the step without rendering — Models remains the diagnostic surface.
+The DeepSeek step projects first-run readiness from the joined snapshot. ANY provider the user can already reach ends it without rendering; only a user with none is asked for the official DeepSeek key. Configure later completes only this coordinator pass, and an absent adapter, inactive route, failed join, read-only deployment, or unusable capability completes the step without rendering — Models remains the diagnostic surface.
 
 ### Extension slots
 
@@ -91,7 +91,7 @@ The page never holds a full settings section: it holds only the REDACTED descrip
 
 ### Validation
 
-A typed API key is judged on its own field: after trimming, it must be non-empty and every character must be printable ASCII (`[\x21-\x7E]`), which is exactly what an HTTP header value can carry — the twin of `normalizeApiKey` in `@deepseek-ai/dsh-llm`, mirrored here because the source-plane split forbids importing it. A value matching a pasted `NAME=value` environment line or wrapped in matching quotes is refused as the same format failure. Empty ids, duplicate ids, empty explicit names, and unreadable, non-positive, or fractional capacities fail before any write. DeepSeek's `models` is one replace-by-value array: the editor shows inherited effective rows until the first model edit materializes the complete array in the user layer, while reset unsets that override.
+A typed API key is judged on its own field: after trimming, it must be non-empty and every character must be printable ASCII (`[\x21-\x7E]`), which is exactly what an HTTP header value can carry — the twin of `normalizeApiKey` in `@quyet/llm`, mirrored here because the source-plane split forbids importing it. A value matching a pasted `NAME=value` environment line or wrapped in matching quotes is refused as the same format failure. Empty ids, duplicate ids, empty explicit names, and unreadable, non-positive, or fractional capacities fail before any write. DeepSeek's `models` is one replace-by-value array: the editor shows inherited effective rows until the first model edit materializes the complete array in the user layer, while reset unsets that override.
 
 ### Concurrency and credentials
 
@@ -101,7 +101,7 @@ Concurrent `ModelsSettingsStore.load()` callers resolve after the current refres
 
 ### Onboarding coordinator
 
-The notice step owns its exact copy in `src/client/locales.ts` and its acknowledgement version in `src/onboarding-copy.ts`. Authenticated browsers compare and write `ui-settings-general.welcomeNoticeVersion` through the shared configuration form; only an explicit Continue records the current version, and an unavailable namespace or a refused write leaves the notice unacknowledged. Users who acknowledged an earlier version see the current notice again. The DeepSeek step targets `deepseek-official` in `llm-deepseek` and renders the existing `ProviderEditor` in credential-only mode inside the shared onboarding modal; `credentials.set` stays the only secret write, and no provider settings are changed.
+The DeepSeek step targets `deepseek-official` in `llm-deepseek` and renders the existing `ProviderEditor` in credential-only mode inside the shared onboarding modal; `credentials.set` stays the only secret write, and no provider settings are changed.
 
 </details>
 

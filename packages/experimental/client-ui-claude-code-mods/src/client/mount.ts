@@ -1,19 +1,19 @@
 /** Source-safe browser registration of the mods band: the Remote stream behind a store, the dock entry, the press. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-experimental-claude-code-mods/remote'
-import type { SurfaceSnapshot } from '@deepseek-ai/dsh-experimental-claude-code-mods/types'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@quyet/cordis'
+import type {} from '@quyet/api-remotes/client'
+import type {} from '@quyet/api-session-controller/client'
+import type {} from '@quyet/client-locale/client'
+import type {} from '@quyet/client-ui-conversation/client'
+import type {} from '@quyet/client-ui-renderer/client'
+import type {} from '@quyet/experimental-claude-code-mods/remote'
+import type { SurfaceSnapshot } from '@quyet/experimental-claude-code-mods/types'
+import type { SessionId } from '@quyet/session/types'
+import type { TypertRemoteContribution } from '@quyet/typert-protocol'
 import { Band, type BandInjected } from './Band.tsx'
 import { en, ja, es, fr, de, ru, pt, vi, NS, zh, type ModsBandKey } from './locales.ts'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@quyet/client-ui-slots' {
   interface LocaleNamespaceMap {
     /** Chrome copy around a mod's band. */
     'claude-code-mods': ModsBandKey

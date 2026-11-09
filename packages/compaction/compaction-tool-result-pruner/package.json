@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-compaction-tool-result-pruner",
+  "name": "@quyet/compaction-tool-result-pruner",
   "description": "Replay-safe model-free head/middle/tail pruning for tool-result surface nodes",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/compaction/compaction-tool-result-pruner"
   },
   "type": "module",
@@ -29,25 +29,25 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-token-meter": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/compaction": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/token-meter": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@quyet/util-values": "workspace:*",
+    "@quyet/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-token-meter": "workspace:*",
-    "@deepseek-ai/dsh-compaction-image-offload": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-include": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/compaction": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/token-meter": "workspace:*",
+    "@quyet/compaction-image-offload": "workspace:*"
   }
 }

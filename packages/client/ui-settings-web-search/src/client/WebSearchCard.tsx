@@ -7,11 +7,11 @@
  */
 
 import { useRef, useState, type ReactNode } from 'react'
-import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
+import type {} from '@quyet/client-ui-plugin-manager/client'
 import {
   Button, IconChevronDownOutlineRegular, Menu, SettingsForm, SettingsSecretField, SettingsValueField,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
+} from '@quyet/client-ui-primitives'
+import type { InjectFace, PropsLocale, PropsRuntime } from '@quyet/client-ui-slots'
 import { formLabels, type WebSearchSettingsLocaleKey } from './locales.ts'
 import styles from './WebSearchCard.module.css'
 import {

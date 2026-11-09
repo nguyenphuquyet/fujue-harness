@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-07-21-follow-instruction-symlinks.md
-2026-07-21-follow-instruction-symlinks.md: ffc80d4e55fcdb1dd27325e816614f00ad08bd54
-2026-07-21-follow-instruction-symlinks.zh.md: 2d4b5711ca2f022daedacd5c1fbdf375bea66adb
+2026-07-21-follow-instruction-symlinks.md: e60d62fab54481bd5d014b5bba0eefd42b7d768b
+2026-07-21-follow-instruction-symlinks.zh.md: 1f7687b22e3563c8f91dbe4cbd888f1e77287246

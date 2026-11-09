@@ -1,20 +1,7 @@
-/** Welcome acknowledgement stored in the plugin configuration. */
-import type {} from '@deepseek-ai/dsh-settings'
+/** Settings shell host entry: keeps its own instance off the generated Settings pages. */
 
-import type { Volatile, Context } from '@deepseek-ai/cordis'
-
-import z from '@deepseek-ai/schemastery'
-
-/** Runtime preferences projected to the browser. */
-export interface Config {
-  /** Last acknowledged welcome notice version. */
-  welcomeNoticeVersion: Volatile<string | undefined>
-}
-
-/** Live welcome preference. */
-export const Config = z.object({
-  welcomeNoticeVersion: z.string().volatile(),
-})
+import type {} from '@quyet/settings'
+import type { Context } from '@quyet/cordis'
 
 /** The browser consumes the configuration form projection.
  * @param ctx Plugin context used for optional settings presentation.

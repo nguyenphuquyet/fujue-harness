@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-08-18-conversation-adaptive-content-width.md
-2026-08-18-conversation-adaptive-content-width.md: 17964f7c79496f451adfa5822def3a2dc1f2e941
-2026-08-18-conversation-adaptive-content-width.zh.md: d2f89cb18db04be75a1d1ae21df69a898e1fe1c0
+2026-08-18-conversation-adaptive-content-width.md: 472b679e75f1b91a11ae5a106150705b9390b83b
+2026-08-18-conversation-adaptive-content-width.zh.md: d9bc75693962b9d5e174a6e4b2538068fe5e3b36

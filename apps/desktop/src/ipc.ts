@@ -1,49 +1,49 @@
-import type { DesktopFileActions } from '@deepseek-ai/dsh-client-ui-file-actions/types'
+import type { DesktopFileActions } from '@quyet/client-ui-file-actions/types'
 /** Typed preload operations exposed only by the Electron shell. */
 
-export type { DesktopChannelState, DesktopChannelChangeResult } from '@deepseek-ai/dsh-client-ui-settings-general/types'
-import type { DesktopChannelBridge, DesktopChannelState } from '@deepseek-ai/dsh-client-ui-settings-general/types'
-import type { DesktopKeyboardApi, DesktopShortcutsApi } from '@deepseek-ai/dsh-client-shortcuts/protocol'
+export type { DesktopChannelState, DesktopChannelChangeResult } from '@quyet/client-ui-settings-general/types'
+import type { DesktopChannelBridge, DesktopChannelState } from '@quyet/client-ui-settings-general/types'
+import type { DesktopKeyboardApi, DesktopShortcutsApi } from '@quyet/client-shortcuts/protocol'
 import type { IpcMainInvokeEvent } from 'electron'
-import type { DesktopBrowserBridge } from '@deepseek-ai/dsh-client-ui-sidebar-browser/types'
-import type { DesktopFileDrag } from '@deepseek-ai/dsh-util-file-drag'
+import type { DesktopBrowserBridge } from '@quyet/client-ui-sidebar-browser/types'
+import type { DesktopFileDrag } from '@quyet/util-file-drag'
 
 /** IPC channel names kept private to the desktop application bundle. */
 export const DESKTOP_IPC = {
-  fileSave: 'dsh-desktop:file-save',
-  clipboardImageRead: 'dsh-desktop:clipboard-image-read',
-  shortcutsInput: 'dsh-desktop:shortcuts-input',
-  shortcutsCloseWindow: 'dsh-desktop:shortcuts-close-window',
-  shortcutsGet: 'dsh-desktop:shortcuts-get',
-  shortcutsEdit: 'dsh-desktop:shortcuts-edit',
-  shortcutsChanged: 'dsh-desktop:shortcuts-changed',
-  shortcutsRecording: 'dsh-desktop:shortcuts-recording',
-  boot: 'dsh-desktop:boot',
-  enterWorkspace: 'dsh-desktop:enter-workspace',
-  onboardingActive: 'dsh-desktop:onboarding-active',
-  onboardingApiKey: 'dsh-desktop:onboarding-api-key',
-  bootFailed: 'dsh-desktop:boot-failed',
-  browserAcquire: 'dsh-desktop:browser-acquire',
-  browserRelease: 'dsh-desktop:browser-release',
-  browserOpenRequested: 'dsh-desktop:browser-open-requested',
-  directoryPick: 'dsh-desktop:directory-pick',
-  fileDragPrepare: 'dsh-desktop:file-drag-prepare',
-  fileDragCancel: 'dsh-desktop:file-drag-cancel',
-  fileDragStart: 'dsh-desktop:file-drag-start',
-  fileDragRelease: 'dsh-desktop:file-drag-release',
-  deviceInfo: 'dsh-desktop:device-info',
-  localeBootstrap: 'dsh-desktop:locale-bootstrap',
-  localeChanged: 'dsh-desktop:locale-changed',
-  updatesChannelGet: 'dsh-desktop:updates-channel-get',
-  updatesChannelSet: 'dsh-desktop:updates-channel-set',
-  updatesChannelChanged: 'dsh-desktop:updates-channel-changed',
-  updatesStatus: 'dsh-desktop:updates-status',
-  updatesOpen: 'dsh-desktop:updates-open',
-  updatesPresentation: 'dsh-desktop:updates-presentation',
-  nativeThemeSet: 'dsh-desktop:native-theme-set',
-  windowFullscreen: 'dsh-desktop:window-fullscreen',
-  windowsAppearance: 'dsh-desktop:windows-appearance',
-  windowsMenu: 'dsh-desktop:windows-menu',
+  fileSave: 'quyet-desktop:file-save',
+  clipboardImageRead: 'quyet-desktop:clipboard-image-read',
+  shortcutsInput: 'quyet-desktop:shortcuts-input',
+  shortcutsCloseWindow: 'quyet-desktop:shortcuts-close-window',
+  shortcutsGet: 'quyet-desktop:shortcuts-get',
+  shortcutsEdit: 'quyet-desktop:shortcuts-edit',
+  shortcutsChanged: 'quyet-desktop:shortcuts-changed',
+  shortcutsRecording: 'quyet-desktop:shortcuts-recording',
+  boot: 'quyet-desktop:boot',
+  enterWorkspace: 'quyet-desktop:enter-workspace',
+  onboardingActive: 'quyet-desktop:onboarding-active',
+  onboardingApiKey: 'quyet-desktop:onboarding-api-key',
+  bootFailed: 'quyet-desktop:boot-failed',
+  browserAcquire: 'quyet-desktop:browser-acquire',
+  browserRelease: 'quyet-desktop:browser-release',
+  browserOpenRequested: 'quyet-desktop:browser-open-requested',
+  directoryPick: 'quyet-desktop:directory-pick',
+  fileDragPrepare: 'quyet-desktop:file-drag-prepare',
+  fileDragCancel: 'quyet-desktop:file-drag-cancel',
+  fileDragStart: 'quyet-desktop:file-drag-start',
+  fileDragRelease: 'quyet-desktop:file-drag-release',
+  deviceInfo: 'quyet-desktop:device-info',
+  localeBootstrap: 'quyet-desktop:locale-bootstrap',
+  localeChanged: 'quyet-desktop:locale-changed',
+  updatesChannelGet: 'quyet-desktop:updates-channel-get',
+  updatesChannelSet: 'quyet-desktop:updates-channel-set',
+  updatesChannelChanged: 'quyet-desktop:updates-channel-changed',
+  updatesStatus: 'quyet-desktop:updates-status',
+  updatesOpen: 'quyet-desktop:updates-open',
+  updatesPresentation: 'quyet-desktop:updates-presentation',
+  nativeThemeSet: 'quyet-desktop:native-theme-set',
+  windowFullscreen: 'quyet-desktop:window-fullscreen',
+  windowsAppearance: 'quyet-desktop:windows-appearance',
+  windowsMenu: 'quyet-desktop:windows-menu',
 } as const
 
 /** Desktop release update state rendered by desktop-owned UI. */
@@ -90,7 +90,7 @@ export interface DesktopUpdatePresentation {
 }
 
 /** Product documents cannot supply update versions, package URLs, or installation authorization. */
-export interface DshDesktopProductApi {
+export interface QuyetDesktopProductApi {
   readonly fileActions: DesktopFileActions
   readonly protocolVersion: 1
   readonly browser: DesktopBrowserBridge
@@ -111,7 +111,7 @@ export interface DshDesktopProductApi {
 }
 
 /** Scheme of Desktop-owned application documents. */
-export const SCHEME = 'dsh-app'
+export const SCHEME = 'quyet-app'
 
 /**
  * Reject IPC outside the allowed Desktop document origins.
@@ -120,9 +120,9 @@ export const SCHEME = 'dsh-app'
  */
 export function assertDesktopSender(event: IpcMainInvokeEvent, hostnames: readonly string[]): void {
   const senderFrame = event.senderFrame
-  if (senderFrame === null) throw new Error('dsh desktop: rejected IPC without a sender frame')
+  if (senderFrame === null) throw new Error('quyet desktop: rejected IPC without a sender frame')
   const url = new URL(senderFrame.url)
   if (url.protocol !== `${SCHEME}:` || !hostnames.includes(url.hostname)) {
-    throw new Error('dsh desktop: rejected IPC from an unowned renderer')
+    throw new Error('quyet desktop: rejected IPC from an unowned renderer')
   }
 }

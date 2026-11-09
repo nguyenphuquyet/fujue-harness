@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-09-21-persistent-pwsh-keeps-controlled-prompt.md
-2026-09-21-persistent-pwsh-keeps-controlled-prompt.md: 163ad258a9cbf55a61d2a69ad7f03b8f0bb8f97a
-2026-09-21-persistent-pwsh-keeps-controlled-prompt.zh.md: 4ba383718926e0b1e4a2d092631f3122883e0f46
+2026-09-21-persistent-pwsh-keeps-controlled-prompt.md: 0398ee6e41d4d8dc125283cbcaa122126f5ad20b
+2026-09-21-persistent-pwsh-keeps-controlled-prompt.zh.md: 9ce01c37624ddcce3aea2d186fe5dcfa786abbb9

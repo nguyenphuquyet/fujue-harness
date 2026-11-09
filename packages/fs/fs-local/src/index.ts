@@ -1,19 +1,19 @@
 /**
  * Host-filesystem implementation of `ctx.fs`. Realpath-derived target identity makes aliases
  * share stale guards, and writes through a symlink update its target without replacing the link.
- * @module @deepseek-ai/dsh-fs-local
+ * @module @quyet/fs-local
  */
 
-import { applyHunks } from '@deepseek-ai/dsh-fs-patch'
-import type { PatchHunk } from '@deepseek-ai/dsh-fs-patch'
-import { Context } from '@deepseek-ai/cordis'
+import { applyHunks } from '@quyet/fs-patch'
+import type { PatchHunk } from '@quyet/fs-patch'
+import { Context } from '@quyet/cordis'
 import { constants as bufferConstants } from 'node:buffer'
 import { once } from 'node:events'
 import { watch } from 'chokidar'
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path'
 import { pathToFileURL } from 'node:url'
-import z from '@deepseek-ai/schemastery'
-import { FileSystem, FsError, FsVersion } from '@deepseek-ai/dsh-fs'
+import z from '@quyet/schemastery'
+import { FileSystem, FsError, FsVersion } from '@quyet/fs'
 import type {
   FsDeleteOutcome,
   FsMoveOutcome,
@@ -25,7 +25,7 @@ import type {
   FsTarget,
   FsWriteIntent,
   FsWriteOutcome,
-} from '@deepseek-ai/dsh-fs'
+} from '@quyet/fs'
 import {
   applyLiteralEdit,
   expandHomePrefix,

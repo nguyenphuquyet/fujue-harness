@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/testing/2026-09-27-web-lane-assertions-name-their-input-state.md
-2026-09-27-web-lane-assertions-name-their-input-state.md: 29c15d688ca18c7b0b05f934fd70b9984213d854
-2026-09-27-web-lane-assertions-name-their-input-state.zh.md: 9b95e99c8e5e023e5caeda7395c087a38f4a8a41
+2026-09-27-web-lane-assertions-name-their-input-state.md: d92b6794138269a030ccc73a3df4f6061a47f255
+2026-09-27-web-lane-assertions-name-their-input-state.zh.md: 6a97d3280dbede53d1ced9b176fa6fdcc5365bfe

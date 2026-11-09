@@ -1,0 +1,66 @@
+{
+  "name": "@quyet/subagent-quyet-sdk",
+  "description": "Out-of-process SDK subagent backend: drives a child JueTech Harness runtime subprocess over stdio JSON-RPC through the TypeScript SDK client",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
+    "directory": "packages/subagent/subagent-quyet-sdk"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@quyet/cordis": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/sdk-client": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/subagent": "workspace:*",
+    "@quyet/subprocess": "workspace:*"
+  },
+  "dependencies": {
+    "@quyet/brand": "workspace:*",
+    "@quyet/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-instructions": "workspace:*",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/llm-deepseek": "workspace:*",
+    "@quyet/llm-deepseek-api-key": "workspace:*",
+    "@quyet/loader-smoke": "workspace:*",
+    "@quyet/sdk-client": "workspace:*",
+    "@quyet/sdk-protocol": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-checkpoint-policy": "workspace:*",
+    "@quyet/session-persistence-jsonl": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/skill-filesystem": "workspace:*",
+    "@quyet/subagent": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/tool-subagent": "workspace:*"
+  }
+}

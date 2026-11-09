@@ -1,5 +1,5 @@
-import { Context, Fiber, FiberState, Inject } from '@deepseek-ai/cordis'
-import { deepEqual, isNullable, updateVolatile, volatileEntries, type Volatile } from '@deepseek-ai/cosmokit'
+import { Context, Fiber, FiberState, Inject } from '@quyet/cordis'
+import { deepEqual, isNullable, updateVolatile, volatileEntries, type Volatile } from '@quyet/cosmokit'
 import { Loader } from '../index.ts'
 import { EntryGroup } from './group.ts'
 import { EntryTree } from './tree.ts'

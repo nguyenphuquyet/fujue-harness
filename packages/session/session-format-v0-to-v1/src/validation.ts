@@ -4,14 +4,14 @@ import {
   SessionFormatUnsupportedMigrationError,
   sessionFormatCount,
   sessionFormatSafeInteger,
-} from '@deepseek-ai/dsh-session-format'
-import { isJsonValue } from '@deepseek-ai/dsh-util-values'
+} from '@quyet/session-format'
+import { isJsonValue } from '@quyet/util-values'
 import type {
   SessionFormatArtifact,
   SessionFormatEvent,
   SessionFormatHeader,
   SessionFormatJsonValue,
-} from '@deepseek-ai/dsh-session-format'
+} from '@quyet/session-format'
 import { RELEASED_V0_EVENT_DISPOSITIONS } from './dispositions.ts'
 import { assertReleasedPayloadSemantics, SUBAGENT_DESCRIPTOR_VERSIONS } from './payload-validation.ts'
 import { assertReleasedV0Keys, releasedV0Record } from './validation-helpers.ts'

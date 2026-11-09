@@ -1,4 +1,4 @@
-import * as Protocol from '@deepseek-ai/dsh-llm-deepseek'
+import * as Protocol from '@quyet/llm-deepseek'
 /**
  * Real Messages round trips require credentials; tool replacement also accepts DEEPSEEK_BASE_URL.
  * System-update checks additionally require DEEPSEEK_IN_HISTORY_MODEL.
@@ -10,18 +10,18 @@ import { join } from 'node:path'
 import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context, LoggerLevel } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import LocalAttachments from '@deepseek-ai/dsh-attachment-local'
-import DeepSeekLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import LlmRuntime, { BlockAssembler, createAssistantMessage, createDeveloperMessage, createSystemMessage, createToolResultMessage, ReasoningEffortId, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { Message } from '@deepseek-ai/dsh-llm'
-import * as PluginPackageInventoryDeepSeek from '@deepseek-ai/dsh-plugin-package-inventory-deepseek'
-import SessionStore, { SessionId } from '@deepseek-ai/dsh-session'
-import * as SessionLogDeepSeek from '@deepseek-ai/dsh-session-log-deepseek'
-import * as Messages from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import { Context, LoggerLevel } from '@quyet/cordis'
+import Loader from '@quyet/cordis-plugin-loader'
+import AgentRegistry from '@quyet/agent'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import LocalAttachments from '@quyet/attachment-local'
+import DeepSeekLlmApiExtensionRegistry from '@quyet/deepseek-llm-api-extensions'
+import LlmRuntime, { BlockAssembler, createAssistantMessage, createDeveloperMessage, createSystemMessage, createToolResultMessage, ReasoningEffortId, ToolCallId } from '@quyet/llm'
+import type { Message } from '@quyet/llm'
+import * as PluginPackageInventoryDeepSeek from '@quyet/plugin-package-inventory-deepseek'
+import SessionStore, { SessionId } from '@quyet/session'
+import * as SessionLogDeepSeek from '@quyet/session-log-deepseek'
+import * as Messages from '@quyet/llm-deepseek-api-key'
 import { DeepSeekFilesClient } from '../src/files-api.ts'
 import { MESSAGES_FILES_BETA } from '../src/messages-api.ts'
 import { assemble, options, user, sourceModuleLoader } from './helpers.ts'
@@ -34,9 +34,9 @@ afterEach(async () => {
   vi.unstubAllGlobals()
 })
 async function boot(models?: Messages.Options['models'], baseURL = Protocol.PUBLIC_BASE_URL) {
-  const home = await mkdtemp(join(tmpdir(), 'dsh-messages-e2e-'))
+  const home = await mkdtemp(join(tmpdir(), 'quyet-messages-e2e-'))
   cleanups.push(() => rm(home, { recursive: true, force: true }))
-  vi.stubEnv('DSH_HOME', home)
+  vi.stubEnv('QUYET_HOME', home)
   const ctx = new Context()
   cleanups.push(() => ctx.fiber.dispose())
   await ctx.plugin(LlmRuntime)
@@ -163,7 +163,7 @@ describe.skipIf(!process.env.DEEPSEEK_API_KEY)('DeepSeek Messages real API', () 
   })
 
   it.each([false, true])('submits Loader package inventory and records HTTP acceptance with session-log enabled=%s', async (enabled) => {
-    const pluginRoot = await mkdtemp(join(tmpdir(), 'dsh-unversioned-plugin-e2e-'))
+    const pluginRoot = await mkdtemp(join(tmpdir(), 'quyet-unversioned-plugin-e2e-'))
     cleanups.push(() => rm(pluginRoot, { recursive: true, force: true }))
     const unversionedName = 'unversioned-e2e-plugin'
     await writeFile(join(pluginRoot, 'package.json'), JSON.stringify({ name: unversionedName, type: 'module' }))
@@ -180,13 +180,13 @@ describe.skipIf(!process.env.DEEPSEEK_API_KEY)('DeepSeek Messages real API', () 
     // Select the source module while Loader owns its active package entry.
     ctx.loader.internal = sourceModuleLoader(async (specifier) => {
       if (specifier === unversionedModule) return import(specifier)
-      if (specifier !== '@deepseek-ai/dsh-plugin-package-inventory-deepseek') throw new Error(`unexpected Loader import: ${specifier}`)
+      if (specifier !== '@quyet/plugin-package-inventory-deepseek') throw new Error(`unexpected Loader import: ${specifier}`)
       return PluginPackageInventoryDeepSeek
     })
-    await ctx.loader.create({ name: '@deepseek-ai/dsh-plugin-package-inventory-deepseek' })
+    await ctx.loader.create({ name: '@quyet/plugin-package-inventory-deepseek' })
     await ctx.loader.create({ name: unversionedModule })
     await ctx.loader.await()
-    const packagePath = createRequire(import.meta.url).resolve('@deepseek-ai/dsh-plugin-package-inventory-deepseek/package.json')
+    const packagePath = createRequire(import.meta.url).resolve('@quyet/plugin-package-inventory-deepseek/package.json')
     const packageIdentity = JSON.parse(await readFile(packagePath, 'utf8')) as { name: string; version: string }
     const session = ctx.sessions.create(SessionId(`real-messages-extensions-${randomUUID()}`))
     session.append('turn/start', { turn: 1 })
@@ -199,19 +199,19 @@ describe.skipIf(!process.env.DEEPSEEK_API_KEY)('DeepSeek Messages real API', () 
       if (url !== `${Protocol.PUBLIC_BASE_URL}/v1/messages`) return fetchImpl(input, init)
       if (typeof init?.body !== 'string') throw new Error('expected a JSON Messages request')
       const body = JSON.parse(init.body) as Record<string, unknown>
-      expect(body.dsh_plugin_packages).toStrictEqual({
+      expect(body.quyet_plugin_packages).toStrictEqual({
         version: 1, packages: [
           { name: packageIdentity.name, version: packageIdentity.version },
           { name: unversionedName },
         ],
       })
       if (enabled) {
-        expect(body).toMatchObject({ dsh_session_log: {
+        expect(body).toMatchObject({ quyet_session_log: {
           version: 1, sessionFormatVersion: session.header.version, session: { id: session.id },
           afterSeq, throughSeq,
           events: Array.from({ length: throughSeq - afterSeq }, (_, index) => ({ seq: afterSeq + index + 1 })),
         } })
-      } else expect(body).not.toHaveProperty('dsh_session_log')
+      } else expect(body).not.toHaveProperty('quyet_session_log')
       expect(SessionLogDeepSeek.acceptedThrough(session)).toBe(afterSeq)
       const response = await fetchImpl(input, init)
       expect(response.ok).toBe(true)

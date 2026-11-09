@@ -1,15 +1,15 @@
 /**
  * Public package manifest and plugin display types, with no runtime exports.
- * @module @deepseek-ai/dsh-package-manifest
+ * @module @quyet/package-manifest
  */
 
 export type {
-  DshBundleManifest,
-  DshClientManifest,
-  DshEnginesManifest,
-  DshManifest,
-  DshPackageManifest,
-  DshProfileManifest,
+  QuyetBundleManifest,
+  QuyetClientManifest,
+  QuyetEnginesManifest,
+  QuyetManifest,
+  QuyetPackageManifest,
+  QuyetProfileManifest,
   LocalizedText,
   PluginLocalizedMeta,
 } from './types.ts'

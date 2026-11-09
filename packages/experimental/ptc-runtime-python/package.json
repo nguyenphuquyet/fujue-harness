@@ -1,10 +1,10 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-ptc-runtime-python",
-  "description": "CPython subprocess implementation of the DeepSeek Harness PTC execution seam",
+  "name": "@quyet/experimental-ptc-runtime-python",
+  "description": "CPython subprocess implementation of the JueTech Harness PTC execution seam",
   "version": "0.2.2-rc.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/ptc-runtime-python"
   },
   "type": "module",
@@ -26,26 +26,26 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-ptc-runtime": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*"
+    "@quyet/ptc-runtime": "workspace:*",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/util-values": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-ptc-runtime": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@quyet/ptc-runtime": "workspace:*",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/util-values": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/sandbox-local": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/session": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@quyet/schemastery": "workspace:~"
   },
   "publishConfig": {
     "access": "public"

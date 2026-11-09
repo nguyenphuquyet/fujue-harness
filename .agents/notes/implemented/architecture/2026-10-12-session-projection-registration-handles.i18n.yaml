@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-10-12-session-projection-registration-handles.md
 /agent-note-asynchronous-projection-registration-and-retained-readers:
-  en: 693349255afbaec8
-  zh: 13bcbf3f40b93b2b
+  en: 6f57cb95f8cbbd30
+  zh: 11a61e4f1e2b4254
 /agent-note-asynchronous-projection-registration-and-retained-readers/problem:
   en: 47ba548b869be190
   zh: c2e5038a56fe741c
 /agent-note-asynchronous-projection-registration-and-retained-readers/decision:
-  en: a6f9ae8a53af5e4b
-  zh: 0aece791574ef060
+  en: 6381e09e1591d9db
+  zh: c01a60685cdc5ccf
 /agent-note-asynchronous-projection-registration-and-retained-readers/alternatives-considered:
   en: 12e0f5fc9638acc6
   zh: 24213550da27b70b

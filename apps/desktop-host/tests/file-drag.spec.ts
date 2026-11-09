@@ -2,16 +2,16 @@ import { createHash } from 'node:crypto'
 import { mkdtemp, realpath, rm, symlink, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import { LocalFileSystem } from '@deepseek-ai/dsh-fs-local'
-import SessionStore from '@deepseek-ai/dsh-session'
-import { SessionId } from '@deepseek-ai/dsh-session/types'
-import { sessionFileAddress } from '@deepseek-ai/dsh-util-workspace-path'
+import { Context } from '@quyet/cordis'
+import { LocalFileSystem } from '@quyet/fs-local'
+import SessionStore from '@quyet/session'
+import { SessionId } from '@quyet/session/types'
+import { sessionFileAddress } from '@quyet/util-workspace-path'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { localDragResource } from '../src/file-drag.ts'
 
 async function fixture() {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-host-drag-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-host-drag-'))
   const ctx = new Context()
   onTestFinished(async () => { await ctx.fiber.dispose(); await rm(root, { recursive: true, force: true }) })
   await ctx.plugin(LocalFileSystem, { cwd: root })

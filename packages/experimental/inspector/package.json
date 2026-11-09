@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-inspector",
+  "name": "@quyet/experimental-inspector",
   "description": "Experimental cross-realm CDP hub for Host debugging and Client Runtime inspection",
   "version": "0.2.2-rc.1",
   "icon": "./icon.svg",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/inspector"
   },
   "type": "module",
@@ -27,7 +27,7 @@
     "./src/*": "./src/*",
     "./package.json": "./package.json"
   },
-  "dsh": {
+  "quyet": {
     "client": {
       "inject": [],
       "platform": "web",
@@ -46,39 +46,39 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-util-crypto": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/util-crypto": "workspace:*",
+    "@quyet/schemastery": "workspace:~",
     "open": "^11.0.2",
     "serve-static": "^2.2.1",
     "ws": "^8.21.3"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
     "chrome-devtools-frontend": "1.0.1638082",
     "@types/serve-static": "^2.2.0",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
+    "@quyet/client-test-runtime": "workspace:*",
     "@testing-library/react": "^16.3.3",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-layout": "workspace:*",
-    "@deepseek-ai/dsh-client-shortcuts": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
+    "@quyet/client-ui-renderer": "workspace:*",
+    "@quyet/client-ui-layout": "workspace:*",
+    "@quyet/client-shortcuts": "workspace:*",
+    "@quyet/client-store": "workspace:*",
+    "@quyet/client-ui-slots": "workspace:*",
+    "@quyet/client-ui-primitives": "workspace:*",
+    "@quyet/client-locale": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-cmdline": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-include": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/host-webserver": "workspace:*",
+    "@quyet/cmdline": "workspace:*",
+    "@quyet/client-connection": "workspace:*",
     "@types/ws": "^8.18.1",
     "playwright": "^1.49.0",
     "tsx": "^4.23.13",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-client-modules": "workspace:*"
+    "@quyet/brand": "workspace:*",
+    "@quyet/client-modules": "workspace:*"
   }
 }

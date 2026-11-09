@@ -1,31 +1,31 @@
 /** Session commands whose activation policy is explicit at each Remote method. */
 
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
+import type { ProjectionHandle } from '@quyet/session-projection'
 import { continuationProjectionDefinition, type ContinuationState } from './continuation.ts'
 
 import { modelAvailable } from './catalog.ts'
 import { randomUUID } from 'node:crypto'
-import type { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { Agent, ModelSelection as AgentModelSelection } from '@deepseek-ai/dsh-agent'
-import { AttachmentError } from '@deepseek-ai/dsh-attachment'
+import type { Context } from '@quyet/cordis'
+import { brandString } from '@quyet/brand'
+import type { Agent, ModelSelection as AgentModelSelection } from '@quyet/agent'
+import { AttachmentError } from '@quyet/attachment'
 import type {
   AttachmentAdmissionPart,
-} from '@deepseek-ai/dsh-attachment'
-import type { FileUploadReceiptId, StagedAttachment } from '@deepseek-ai/dsh-client-file-upload/types'
-import type {} from '@deepseek-ai/dsh-client-file-upload'
+} from '@quyet/attachment'
+import type { FileUploadReceiptId, StagedAttachment } from '@quyet/client-file-upload/types'
+import type {} from '@quyet/client-file-upload'
 import {
   ReasoningEffortId, createUserMessage, freezeMessage,
-} from '@deepseek-ai/dsh-llm'
-import type { MessageId, MessageSource } from '@deepseek-ai/dsh-llm'
-import { buildForkSeed } from '@deepseek-ai/dsh-session/fork'
-import { SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionHeader, SessionId, UserMessage } from '@deepseek-ai/dsh-session'
-import { SessionQueryError, type SessionObservation } from '@deepseek-ai/dsh-session-query'
-import { SessionTitleInvalidError } from '@deepseek-ai/dsh-session-title'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import { RemoteError, remoteErrorOf } from '@deepseek-ai/dsh-typert-protocol'
-import type { Workspace } from '@deepseek-ai/dsh-workspace'
+} from '@quyet/llm'
+import type { MessageId, MessageSource } from '@quyet/llm'
+import { buildForkSeed } from '@quyet/session/fork'
+import { SessionLogOffset, SessionSeq } from '@quyet/session'
+import type { Session, SessionEvent, SessionHeader, SessionId, UserMessage } from '@quyet/session'
+import { SessionQueryError, type SessionObservation } from '@quyet/session-query'
+import { SessionTitleInvalidError } from '@quyet/session-title'
+import { assertNever } from '@quyet/util-values'
+import { RemoteError, remoteErrorOf } from '@quyet/typert-protocol'
+import type { Workspace } from '@quyet/workspace'
 import {
   ApiSessionAgentController,
   ApiSessionCwdConflict,

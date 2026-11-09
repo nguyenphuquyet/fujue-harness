@@ -5,64 +5,64 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as yaml from 'js-yaml'
 import { describe, expect, it } from 'vitest'
-import { entryListSchema } from '@deepseek-ai/cordis-plugin-include'
+import { entryListSchema } from '@quyet/cordis-plugin-include'
 
 function packageName(specifier: string): string {
   return specifier.startsWith('@') ? specifier.split('/').slice(0, 2).join('/') : specifier.split('/')[0]!
 }
 
-describe('dsh-sdk-minimal bundle', () => {
+describe('quyet-sdk-minimal bundle', () => {
   it('declares one standalone allowlisted tree with every row dependency', () => {
     const root = fileURLToPath(new URL('..', import.meta.url))
     const manifest = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8')) as {
       dependencies?: Record<string, string>
-      dsh?: { bundle?: { patch?: string } }
+      quyet?: { bundle?: { patch?: string } }
     }
-    expect(manifest.dsh?.bundle?.patch).toBe('./cordis.patch.yml')
+    expect(manifest.quyet?.bundle?.patch).toBe('./cordis.patch.yml')
     const patches = yaml.load(
-      readFileSync(resolve(root, manifest.dsh!.bundle!.patch!), 'utf8'),
+      readFileSync(resolve(root, manifest.quyet!.bundle!.patch!), 'utf8'),
       { schema: entryListSchema },
     ) as Array<{ insert?: Array<{ id?: string; inject?: string[]; name?: string; config?: Record<string, unknown>; disabled?: unknown }> }>
     expect(patches).toHaveLength(1)
     const rows = patches[0]?.insert ?? []
     expect(rows.map(row => [row.id, row.name])).toEqual([
-      ['sdk-app-startup', '@deepseek-ai/dsh-sdk-app'],
-      ['sdk-jsonrpc-server', '@deepseek-ai/dsh-sdk-jsonrpc-server'],
-      ['deepseek-llm-api-extensions', '@deepseek-ai/dsh-deepseek-llm-api-extensions'],
-      ['session-log-deepseek', '@deepseek-ai/dsh-session-log-deepseek'],
-      ['plugin-package-inventory-deepseek', '@deepseek-ai/dsh-plugin-package-inventory-deepseek'],
-      ['llm-deepseek', '@deepseek-ai/dsh-llm-deepseek-api-key'],
-      ['sandbox', '@deepseek-ai/dsh-sandbox-local'],
-      ['filesystem', '@deepseek-ai/dsh-fs-local'],
-      ['attachment-local', '@deepseek-ai/dsh-attachment-local'],
-      ['tool-fs', '@deepseek-ai/dsh-tool-fs'],
-      ['working-directory', '@deepseek-ai/dsh-working-directory'],
-      ['tool-working-directory', '@deepseek-ai/dsh-tool-working-directory'],
-      ['session-projection', '@deepseek-ai/dsh-session-projection'],
-      ['token-meter', '@deepseek-ai/dsh-token-meter'],
-      ['compaction-basic', '@deepseek-ai/dsh-compaction-basic'],
-      ['image-offload', '@deepseek-ai/dsh-compaction-image-offload'],
-      ['sandbox-policy', '@deepseek-ai/dsh-sandbox-policy'],
-      ['subprocess', '@deepseek-ai/dsh-subprocess-local'],
-      ['pty', '@deepseek-ai/dsh-terminal'],
-      ['terminal-bash', '@deepseek-ai/dsh-terminal-bash'],
-      ['terminal-pwsh', '@deepseek-ai/dsh-terminal-bash'],
-      ['timer', '@deepseek-ai/cordis-plugin-timer'],
-      ['llm', '@deepseek-ai/dsh-llm'],
-      ['session', '@deepseek-ai/dsh-session'],
-      ['session-title', '@deepseek-ai/dsh-session-title'],
-      ['system-prompt', '@deepseek-ai/dsh-system-prompt'],
-      ['tools', '@deepseek-ai/dsh-tools'],
-      ['tool-executor-native', '@deepseek-ai/dsh-tool-executor-native'],
-      ['mcp-resources', '@deepseek-ai/dsh-mcp-resources'],
-      ['agent', '@deepseek-ai/dsh-agent'],
-      ['llm-retry', '@deepseek-ai/dsh-llm-retry'],
-      ['jobs', '@deepseek-ai/dsh-jobs-local'],
-      ['agent-loop', '@deepseek-ai/dsh-agent-loop'],
-      ['persistent-bash', '@deepseek-ai/dsh-tool-bash-persistent'],
-      ['persistent-pwsh', '@deepseek-ai/dsh-tool-pwsh-persistent'],
-      ['sessions', '@deepseek-ai/dsh-session-persistence-jsonl'],
-      ['session-checkpoint-policy', '@deepseek-ai/dsh-session-checkpoint-policy'],
+      ['sdk-app-startup', '@quyet/sdk-app'],
+      ['sdk-jsonrpc-server', '@quyet/sdk-jsonrpc-server'],
+      ['deepseek-llm-api-extensions', '@quyet/deepseek-llm-api-extensions'],
+      ['session-log-deepseek', '@quyet/session-log-deepseek'],
+      ['plugin-package-inventory-deepseek', '@quyet/plugin-package-inventory-deepseek'],
+      ['llm-deepseek', '@quyet/llm-deepseek-api-key'],
+      ['sandbox', '@quyet/sandbox-local'],
+      ['filesystem', '@quyet/fs-local'],
+      ['attachment-local', '@quyet/attachment-local'],
+      ['tool-fs', '@quyet/tool-fs'],
+      ['working-directory', '@quyet/working-directory'],
+      ['tool-working-directory', '@quyet/tool-working-directory'],
+      ['session-projection', '@quyet/session-projection'],
+      ['token-meter', '@quyet/token-meter'],
+      ['compaction-basic', '@quyet/compaction-basic'],
+      ['image-offload', '@quyet/compaction-image-offload'],
+      ['sandbox-policy', '@quyet/sandbox-policy'],
+      ['subprocess', '@quyet/subprocess-local'],
+      ['pty', '@quyet/terminal'],
+      ['terminal-bash', '@quyet/terminal-bash'],
+      ['terminal-pwsh', '@quyet/terminal-bash'],
+      ['timer', '@quyet/cordis-plugin-timer'],
+      ['llm', '@quyet/llm'],
+      ['session', '@quyet/session'],
+      ['session-title', '@quyet/session-title'],
+      ['system-prompt', '@quyet/system-prompt'],
+      ['tools', '@quyet/tools'],
+      ['tool-executor-native', '@quyet/tool-executor-native'],
+      ['mcp-resources', '@quyet/mcp-resources'],
+      ['agent', '@quyet/agent'],
+      ['llm-retry', '@quyet/llm-retry'],
+      ['jobs', '@quyet/jobs-local'],
+      ['agent-loop', '@quyet/agent-loop'],
+      ['persistent-bash', '@quyet/tool-bash-persistent'],
+      ['persistent-pwsh', '@quyet/tool-pwsh-persistent'],
+      ['sessions', '@quyet/session-persistence-jsonl'],
+      ['session-checkpoint-policy', '@quyet/session-checkpoint-policy'],
     ])
     expect(rows.find(row => row.id === 'sdk-app-startup')?.config).toEqual({ profile: 'sdk-minimal' })
     expect(rows.find(row => row.id === 'sdk-jsonrpc-server')).toMatchObject({
@@ -71,13 +71,13 @@ describe('dsh-sdk-minimal bundle', () => {
     })
     expect(rows.find(row => row.id === 'llm-deepseek')?.config).toEqual({
       apiKeyEnv: 'DEEPSEEK_API_KEY',
-      defaultContextWindow: { __jsExpr: 'Number(process.env.DSH_CONTEXT_WINDOW ?? 1000000)' },
+      defaultContextWindow: { __jsExpr: 'Number(process.env.QUYET_CONTEXT_WINDOW ?? 1000000)' },
       streamIdleTimeoutMs: 172800000,
     })
     expect(rows.find(row => row.id === 'system-prompt')?.config).toEqual({
       includeHarnessIdentity: false,
       includeRuntimeContext: false,
-      personaPrefix: { __jsExpr: "process.env.DSH_SYSTEM_PROMPT ?? 'You are a helpful software engineer assistant.'" },
+      personaPrefix: { __jsExpr: "process.env.QUYET_SYSTEM_PROMPT ?? 'You are a helpful software engineer assistant.'" },
     })
     expect(rows.find(row => row.id === 'agent-loop')?.config).toEqual({ agents: [] })
     expect(rows.find(row => row.id === 'tool-fs')?.config).toEqual({ read: false, readImage: true, write: false, edit: false })

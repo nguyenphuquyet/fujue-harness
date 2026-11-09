@@ -1,10 +1,10 @@
 /** Select program syntax and own temporary or retained Node processes. */
 import { stripTypeScriptTypes } from 'node:module'
 import { isAbsolute } from 'node:path'
-import type { Context } from '@deepseek-ai/cordis'
-import type { PtcProgramFormat, PtcRunRequest, PtcRunResult, PtcRunSpec } from '@deepseek-ai/dsh-ptc-runtime'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import { clampTimeout } from '@deepseek-ai/dsh-timeout'
+import type { Context } from '@quyet/cordis'
+import type { PtcProgramFormat, PtcRunRequest, PtcRunResult, PtcRunSpec } from '@quyet/ptc-runtime'
+import { assertNever } from '@quyet/util-values'
+import { clampTimeout } from '@quyet/timeout'
 import type { ResolvedConfig } from './config.ts'
 import { validateBindings } from './bindings.ts'
 import type { PolicyProcesses } from './policy-processes.ts'
@@ -140,7 +140,7 @@ function sameAdditionalRoots(left: readonly string[] | undefined, right: readonl
   return a.length === b.length && a.every((root, index) => root === b[index])
 }
 
-const STRIP_PREFIX = 'async function __dsh_program__() {\n'
+const STRIP_PREFIX = 'async function __quyet_program__() {\n'
 const STRIP_SUFFIX = '\n}'
 const RETAINED_STATE_INSTRUCTIONS = 'Timeout and cancellation results say whether retained variables were preserved or cleared. Restart, sandbox changes, output overflow, or process failure clears them. Recreate missing variables and resources; conversation history does not restore state. Earlier mutations and tool effects are not rolled back. Approved sandbox escalations use a fresh environment and discard its variables afterward. Do not redeclare existing let, const, or class names; reuse mutable bindings or choose new names. Await tools and cleanup before returning; unfinished tools reject. After completion, timeout, or cancellation, new tool calls are rejected and captured output is discarded; background work may still change state. Await child-process completion before returning; raw output belongs to the active evaluation.'
 

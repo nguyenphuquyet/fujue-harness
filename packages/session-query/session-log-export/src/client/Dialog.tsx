@@ -1,9 +1,9 @@
 /** Root overlay showing one Session export at a time in initiation order. */
-import type { ObservableSnapshot } from '@deepseek-ai/dsh-client-store'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { Button, Modal } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import type {} from '@deepseek-ai/dsh-client-ui-layout/client'
+import type { ObservableSnapshot } from '@quyet/client-store'
+import type { SessionId } from '@quyet/session/types'
+import { Button, Modal } from '@quyet/client-ui-primitives'
+import type { InjectFace, PropsLocale, PropsRuntime } from '@quyet/client-ui-slots'
+import type {} from '@quyet/client-ui-layout/client'
 import type { SessionLogDownloadState } from './controller.ts'
 import { NS } from './locales.ts'
 

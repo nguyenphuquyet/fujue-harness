@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-08-12-product-subagent-one-shot-background-tasks.md
-2026-08-12-product-subagent-one-shot-background-tasks.md: 4138d50ccd8760373e79221f1d122e40f432f4ca
-2026-08-12-product-subagent-one-shot-background-tasks.zh.md: 4984be826a1048f519cde048f25f038a067d58f6
+2026-08-12-product-subagent-one-shot-background-tasks.md: b17371504ed8d6bb3be597c7ef8897b2a7eb3209
+2026-08-12-product-subagent-one-shot-background-tasks.zh.md: f88ee7571ac8fc3b47c2879fb6cd78016499ca29

@@ -1,4 +1,4 @@
-# Agent Note: 由 dsh-llm 拥有的提供方无关内容块词汇
+# Agent Note: 由 quyet-llm 拥有的提供方无关内容块词汇
 
 Status: implemented
 Archived: 2026-09-30

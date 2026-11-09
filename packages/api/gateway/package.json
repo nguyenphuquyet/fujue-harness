@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-api-gateway",
+  "name": "@quyet/api-gateway",
   "description": "Typert Remote Host dispatcher and Client API endpoint",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/api/gateway"
   },
   "type": "module",
@@ -36,11 +36,11 @@
     },
     "./locale/*.json": "./locale/*.json"
   },
-  "dsh": {
+  "quyet": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-typert-registry",
-        "@deepseek-ai/dsh-client-connection"
+        "@quyet/typert-registry",
+        "@quyet/client-connection"
       ],
       "platform": "web",
       "immediately": true
@@ -60,26 +60,26 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-deque": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/deque": "workspace:*",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/schemastery": "workspace:~",
     "ws": "^8.21.3",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@quyet/typert-protocol": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-cmdline": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-remote-mock": "workspace:*",
-    "@deepseek-ai/dsh-typert-registry": "workspace:*",
-    "@deepseek-ai/dsh-util-crypto": "workspace:*",
+    "@quyet/api-remote-access": "workspace:*",
+    "@quyet/brand": "workspace:*",
+    "@quyet/cmdline": "workspace:*",
+    "@quyet/client-connection": "workspace:*",
+    "@quyet/host-webserver": "workspace:*",
+    "@quyet/remote-mock": "workspace:*",
+    "@quyet/typert-registry": "workspace:*",
+    "@quyet/util-crypto": "workspace:*",
     "@types/ws": "^8.18.1",
-    "@deepseek-ai/cordis": "workspace:~",
+    "@quyet/cordis": "workspace:~",
     "zod": "4.4.3"
   }
 }

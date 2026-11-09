@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-10-15-agent-teams-as-subagents.md
 /agent-note-agent-teams-teammates-are-subagents:
-  en: f49f9e7ef588e612
-  zh: 7da804056221af51
+  en: 4d20f941a9ee4e5e
+  zh: bede0b783d091c59
 /agent-note-agent-teams-teammates-are-subagents/problem:
   en: ca2848e3bbc3a009
   zh: 0551e32ff6d187d0
 /agent-note-agent-teams-teammates-are-subagents/decision:
-  en: 2c29c42cc02a9a05
-  zh: bc542e3a27cfd03d
+  en: 929e23574807c519
+  zh: b4846d9ad8034b29
 /agent-note-agent-teams-teammates-are-subagents/alternatives-considered:
   en: ef0cf648ff54784f
   zh: 2a0b3745a54e7072

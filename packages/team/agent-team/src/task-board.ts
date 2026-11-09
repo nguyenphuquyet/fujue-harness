@@ -1,9 +1,9 @@
 /** Shared Team task DAG commands and runtime-enriched views. */
 
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-subagent'
+import type { Agent } from '@quyet/agent'
+import type { Context } from '@quyet/cordis'
+import type { SessionId } from '@quyet/session'
+import type {} from '@quyet/subagent'
 import { TeamError } from './error.ts'
 import type { TeamJournal } from './journal.ts'
 import type { TeamState } from './projection.ts'

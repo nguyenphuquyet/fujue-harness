@@ -4,17 +4,17 @@
  * surface events; a separate replacement `user/message` carries the summary.
  * Backend packages own configuration and retention policy; see the
  * [compaction reference](../README.md#understand-the-implementation).
- * @module @deepseek-ai/dsh-compaction/types
+ * @module @quyet/compaction/types
  */
 
-import type { ContentBlock, TokenUsage } from '@deepseek-ai/dsh-llm'
-import type { CommandId } from '@deepseek-ai/dsh-commands/brand'
-import type { SessionSeq } from '@deepseek-ai/dsh-session/types'
+import type { ContentBlock, TokenUsage } from '@quyet/llm'
+import type { CommandId } from '@quyet/commands/brand'
+import type { SessionSeq } from '@quyet/session/types'
 import type { CompactionId } from './brand.ts'
 
 export type { CompactionId }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@quyet/session/types' {
   interface SessionEventMap {
     /**
      * Marks the start of a compaction — log-only, holds the lock until

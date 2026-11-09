@@ -1,6 +1,6 @@
 /** Script only the external reviewer; the shipped tool pipeline executes or refuses each body. */
-import type { Context } from '@deepseek-ai/cordis'
-import type { StreamChunk } from '@deepseek-ai/dsh-llm'
+import type { Context } from '@quyet/cordis'
+import type { StreamChunk } from '@quyet/llm'
 
 /** Test-only review result selection; omission selects by the pending write target. */
 export interface Config {

@@ -1,8 +1,8 @@
-# Repeating Task Scheduler triggers recover an exited launcher without relying on action exit-code retries.
+﻿# Repeating Task Scheduler triggers recover an exited launcher without relying on action exit-code retries.
 $ErrorActionPreference = 'Stop'
 $runnerRoot = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot)).TrimEnd('\','/')
 $digest = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData([Text.Encoding]::UTF8.GetBytes($runnerRoot.ToUpperInvariant())))
-$taskName = 'DSH-Packaging-' + $digest.Substring(0,16)
+$taskName = 'QUYET-Packaging-' + $digest.Substring(0,16)
 $log = Join-Path $PSScriptRoot ('run-' + [DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ') + '-' + $PID + '.log')
 try {
     $config = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'config.json') -Raw | ConvertFrom-Json

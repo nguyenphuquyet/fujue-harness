@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-session-telemetry-otel",
+  "name": "@quyet/session-telemetry-otel",
   "description": "Feedback-authorized Session logs over byte-bounded OpenTelemetry HTTP requests",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/session/session-telemetry-otel"
   },
   "type": "module",
@@ -30,35 +30,35 @@
   "license": "MIT",
   "dependencies": {
     "@opentelemetry/api-logs": "0.222.0",
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@quyet/schemastery": "workspace:~"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-command-feedback": "workspace:*",
-    "@deepseek-ai/dsh-message-feedback": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-telemetry": "workspace:*",
-    "@deepseek-ai/dsh-anonymous-user-id": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-otel": "workspace:*"
+    "@quyet/command-feedback": "workspace:*",
+    "@quyet/message-feedback": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-telemetry": "workspace:*",
+    "@quyet/anonymous-user-id": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/otel": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis-plugin-logger-console": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-bash-local": "workspace:*",
-    "@deepseek-ai/dsh-command-feedback": "workspace:*",
-    "@deepseek-ai/dsh-message-feedback": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-checkpoint-policy": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-telemetry": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-anonymous-user-id": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-http-proxy": "workspace:*",
-    "@deepseek-ai/dsh-otel": "workspace:*"
+    "@quyet/cordis-plugin-logger-console": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/bash-local": "workspace:*",
+    "@quyet/command-feedback": "workspace:*",
+    "@quyet/message-feedback": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/loader-smoke": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-checkpoint-policy": "workspace:*",
+    "@quyet/session-persistence-jsonl": "workspace:*",
+    "@quyet/session-telemetry": "workspace:*",
+    "@quyet/subprocess-local": "workspace:*",
+    "@quyet/anonymous-user-id": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/http-proxy": "workspace:*",
+    "@quyet/otel": "workspace:*"
   }
 }

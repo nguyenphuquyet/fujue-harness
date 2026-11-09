@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write
-2026-07-20-tui-startup-slogans.md: aa847f96ebe13c4b1833531074577561faa2afb9
-2026-07-20-tui-startup-slogans.zh.md: bd667dfe9f54bbe923c48d0adf2889735b1255c5
+2026-07-20-tui-startup-slogans.md: a066205f6150683c69382c9ecc7b7d7ee24fe05a
+2026-07-20-tui-startup-slogans.zh.md: 1f4df1167917ec6546da277fd3d8a3e8e26d886f

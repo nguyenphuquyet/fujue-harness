@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-worktree",
+  "name": "@quyet/experimental-worktree",
   "description": "Creates a named Git worktree and changes the calling Session working directory",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -25,36 +25,36 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/worktree"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*"
+    "@quyet/schemastery": "workspace:~",
+    "@quyet/timeout": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-working-directory": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/fs": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/working-directory": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-working-directory": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-loop-testkit": "workspace:*",
+    "@quyet/fs": "workspace:*",
+    "@quyet/fs-local": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-local": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/subprocess-local": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/working-directory": "workspace:*"
   }
 }

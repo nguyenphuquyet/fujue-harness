@@ -5,60 +5,60 @@
 /:
   en: 66cfe944c731a54f
   zh: 30b9e7f852723301
-/deepseek-ai-dsh-ptc-runtime-node:
-  en: 7e1a8657a212c70b
-  zh: afb7a8c6a3afd718
-/deepseek-ai-dsh-ptc-runtime-node/summary:
+/quyet-ptc-runtime-node:
+  en: c81d8a3a5788370c
+  zh: 21b861a64e51b83b
+/quyet-ptc-runtime-node/summary:
   en: fd81f3e969a3d8cc
   zh: a8211ce7c308dfd2
-/deepseek-ai-dsh-ptc-runtime-node/table-of-contents:
+/quyet-ptc-runtime-node/table-of-contents:
   en: d152484eb41ac6b4
   zh: 725b47765ee8f30b
-/deepseek-ai-dsh-ptc-runtime-node/use-this-package:
-  en: 9c742ab3175c4f80
-  zh: 5fa7d1ce9c3920d2
-/deepseek-ai-dsh-ptc-runtime-node/use-this-package/configuration:
-  en: 8d42f921a1fa8e5c
-  zh: 27b79ec4ec52b3fd
-/deepseek-ai-dsh-ptc-runtime-node/use-this-package/execution-and-results:
+/quyet-ptc-runtime-node/use-this-package:
+  en: af546345f92bfc90
+  zh: b5daeace7616012f
+/quyet-ptc-runtime-node/use-this-package/configuration:
+  en: cfc859534c34e5c9
+  zh: 68f1d82f8f6e3006
+/quyet-ptc-runtime-node/use-this-package/execution-and-results:
   en: 2a9fa3292bf07355
   zh: db0b5684820915eb
-/deepseek-ai-dsh-ptc-runtime-node/use-this-package/in-memory-modes:
-  en: 0204fbdcb55c9c0d
-  zh: 8e6b6f3974993ca0
-/deepseek-ai-dsh-ptc-runtime-node/use-this-package/deadlines-and-cancellation:
-  en: d383ec7aeab8afec
-  zh: 7c9c49e205fbbcd8
-/deepseek-ai-dsh-ptc-runtime-node/use-this-package/failures:
+/quyet-ptc-runtime-node/use-this-package/in-memory-modes:
+  en: 8e261b343910b957
+  zh: 3dfac392047978e7
+/quyet-ptc-runtime-node/use-this-package/deadlines-and-cancellation:
+  en: c97a489d24c08144
+  zh: 167d59121b684950
+/quyet-ptc-runtime-node/use-this-package/failures:
   en: 34a221d0f26b8e47
   zh: 2fd20ac9c9953c7f
-/deepseek-ai-dsh-ptc-runtime-node/understand-the-implementation:
+/quyet-ptc-runtime-node/understand-the-implementation:
   en: 50e6cd38e298da31
   zh: c8b252b3acf59147
-/deepseek-ai-dsh-ptc-runtime-node/understand-the-implementation/launch-and-control:
+/quyet-ptc-runtime-node/understand-the-implementation/launch-and-control:
   en: f27d477e3ccb10de
   zh: 0f14a4899bae6c39
-/deepseek-ai-dsh-ptc-runtime-node/understand-the-implementation/source-and-built-bootstraps:
+/quyet-ptc-runtime-node/understand-the-implementation/source-and-built-bootstraps:
   en: 93c117a1e404ddca
   zh: 6902de0d96efb03b
-/deepseek-ai-dsh-ptc-runtime-node/understand-the-implementation/runner-import-handling:
+/quyet-ptc-runtime-node/understand-the-implementation/runner-import-handling:
   en: e2458b4653a620bb
   zh: 4ae26bd1e6a69430
-/deepseek-ai-dsh-ptc-runtime-node/understand-the-implementation/source-map:
+/quyet-ptc-runtime-node/understand-the-implementation/source-map:
   en: 2821d695aec82044
   zh: 59e365efb152b047
-/deepseek-ai-dsh-ptc-runtime-node/further-exploration:
-  en: ac2e2ae13d3f1394
-  zh: 5d08b9c658fcf83a
-/deepseek-ai-dsh-ptc-runtime-node/model-experience:
-  en: 4e89db2b3ccd585a
-  zh: 461b5e1e9caaf959
-/deepseek-ai-dsh-ptc-runtime-node/model-experience/kv-cache-effect:
+/quyet-ptc-runtime-node/further-exploration:
+  en: 4593f2d141725e7f
+  zh: 60525754da6aa2d4
+/quyet-ptc-runtime-node/model-experience:
+  en: 10de723a9624a175
+  zh: b54456b62aef2c1d
+/quyet-ptc-runtime-node/model-experience/kv-cache-effect:
   en: 40294c1c31b74824
   zh: d91e7b78c0619c7e
-/deepseek-ai-dsh-ptc-runtime-node/known-limitations-and-deferred-work:
+/quyet-ptc-runtime-node/known-limitations-and-deferred-work:
   en: 7f688098214c7c72
   zh: de06cbba4da172c5
-/deepseek-ai-dsh-ptc-runtime-node/known-limitations-and-deferred-work/dev-note:
-  en: 6373aba4e08f7205
-  zh: 2a8c33d1f2839df4
+/quyet-ptc-runtime-node/known-limitations-and-deferred-work/dev-note:
+  en: e42fd829ecda033f
+  zh: 1ebc17bcf15471b8

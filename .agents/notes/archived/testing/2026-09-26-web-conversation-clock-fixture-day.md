@@ -27,13 +27,13 @@ The steering mid capture waits for that settled question title before it capture
 
 ## Alternatives considered
 
-**Collapse the rendered date prefix in the aria normalizer.** Collapsing `9/25 23:58` to `{{clock}}` in `normalizeAria` fixes the four scenarios with a two-line change, and it was measured: it passed the four files and then failed `cordis-tool-round`, `stats-paged-history`, and `navigation-panes` in one `DSH_WEB_SNAPSHOT_WORKERS=16` lane run, because their goldens deliberately record the dated form (`9/1 {{clock}}` and the year form in the Timing pane), and `skill-tool-row` already tokenizes that form as `{{date}} {{clock}}`. The two renderings state different facts — this row is from another day, this row is from today — so collapsing them deletes assertions instead of stabilizing them.
+**Collapse the rendered date prefix in the aria normalizer.** Collapsing `9/25 23:58` to `{{clock}}` in `normalizeAria` fixes the four scenarios with a two-line change, and it was measured: it passed the four files and then failed `cordis-tool-round`, `stats-paged-history`, and `navigation-panes` in one `QUYET_WEB_SNAPSHOT_WORKERS=16` lane run, because their goldens deliberately record the dated form (`9/1 {{clock}}` and the year form in the Timing pane), and `skill-tool-row` already tokenizes that form as `{{date}} {{clock}}`. The two renderings state different facts — this row is from another day, this row is from today — so collapsing them deletes assertions instead of stabilizing them.
 
 **Leave the browser clock frozen.** Pinning one instant for the whole scenario is simpler and passed the four files, but it removes elapsed time from every two-reading hold in the page, which is how the `Preparing questions` capture above happened. Re-applying the anchor keeps the calendar pinned without changing how long a held value is held.
 
 **Pin the clocks for the whole lane.** Pinning inside `launchWebScaffold` and `newEnglishPage` would cover every scenario at once, including the ones that fail this way in future. It loses on blast radius: 83 goldens carry a clock and session-tree goldens assert literal relative ages, so a lane-wide now moves every scenario away from its own session and fixture times simultaneously, and each would still need its own anchor to read the buckets it was recorded with.
 
-**Keep scenarios clear of local midnight.** Scheduling or refusing runs near the boundary leaves the dependency in place and fails the run instead of the code under test. The [CI test reliability workflow](../../../skills/dsh-ci-test-reliability/SKILL.md#reject-flake-masking-fixes) rejects budgets and retries as substitutes for a controlled observation.
+**Keep scenarios clear of local midnight.** Scheduling or refusing runs near the boundary leaves the dependency in place and fails the run instead of the code under test. The [CI test reliability workflow](../../../skills/quyet-ci-test-reliability/SKILL.md#reject-flake-masking-fixes) rejects budgets and retries as substitutes for a controlled observation.
 
 ## Verification
 

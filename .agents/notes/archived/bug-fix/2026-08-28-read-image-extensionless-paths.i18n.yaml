@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-08-28-read-image-extensionless-paths.md
-2026-08-28-read-image-extensionless-paths.md: 81d412be3e548e36039b967ca3efb52b632c6fcd
-2026-08-28-read-image-extensionless-paths.zh.md: f2bc39ced125eb8dbdde081def3114e72d431c51
+2026-08-28-read-image-extensionless-paths.md: f3cdaa839c8aa15afe6e70ff0dd5c12587979a40
+2026-08-28-read-image-extensionless-paths.zh.md: 83e8816f10b0b0f5c32a0a0a4666cc8cd9300403

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Công cụ dành cho nhà phát triển",
-    "description": "Dùng để khắc phục sự cố: xem những gì DSH ghi lại cho một phiên trong Nhật ký phiên, kiểm tra thống kê theo từng lượt và từng bước trong thẻ Thống kê, và gỡ lỗi phần phụ trợ DSH trong Chrome DevTools.",
+    "description": "Dùng để khắc phục sự cố: xem những gì Quyết ghi lại cho một phiên trong Nhật ký phiên, kiểm tra thống kê theo từng lượt và từng bước trong thẻ Thống kê, và gỡ lỗi phần phụ trợ Quyết trong Chrome DevTools.",
     "detail": "docs/DETAIL.md"
   }
 }

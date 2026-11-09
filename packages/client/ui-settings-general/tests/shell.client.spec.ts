@@ -6,15 +6,15 @@
  * roster's Connection, and it survives a Loader rebuild of the declarer.
  */
 import { describe, expect, onTestFinished, vi } from 'vitest'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import { createClientTest, type TestClient, webApp } from '@deepseek-ai/dsh-client-test-runtime/src/assembly/index.ts'
+import type {} from '@quyet/client-ui-renderer/client'
+import { createClientTest, type TestClient, webApp } from '@quyet/client-test-runtime/src/assembly/index.ts'
 import { inject } from '../src/client/index.ts'
 import type { SettingsRootInjected } from '../src/client/shell-contract.ts'
 import { SettingsRoot } from '../src/client/SettingsRoot.tsx'
 import type { DesktopUpdatePresentation } from '../src/types.ts'
 
-const SELF = '@deepseek-ai/dsh-client-ui-settings-general'
-const SIDEBAR = '@deepseek-ai/dsh-client-ui-sidebar'
+const SELF = '@quyet/client-ui-settings-general'
+const SIDEBAR = '@quyet/client-ui-sidebar'
 const it = createClientTest({ roster: webApp })
 const withoutSettingsAccess = createClientTest({ roster: webApp }, { access: action => action !== 'settings/describe' })
 /** The whole roster's first boot pays the cold module transform of every plugin package. */
@@ -44,9 +44,8 @@ const CHILD_NAMES = Object.keys(CHILD_SPECS) as Array<keyof typeof CHILD_SPECS>
  * adding a section changes this list.
  */
 const PRODUCT_SECTIONS: readonly string[] = ['general', 'models', 'plugins', 'agent-presets']
-/** Onboarding steps the web-app roster registers, in coordinator order; both come from ui-settings-models. */
+/** Onboarding steps the web-app roster registers, in coordinator order; the step comes from ui-settings-models. */
 const PRODUCT_ONBOARDING: readonly { id: string; order: number }[] = [
-  { id: 'welcome-notice', order: -100 },
   { id: 'deepseek-official', order: 0 },
 ]
 
@@ -57,7 +56,7 @@ describe('ui-settings-general shell', () => {
     const off = vi.fn()
     const subscribe = vi.fn((listener: typeof publish) => { publish = listener; return off })
     const open = vi.fn(async () => {})
-    vi.stubGlobal('dshDesktop', { protocolVersion: 1, updates: { status: () => initial.promise, subscribe, open } })
+    vi.stubGlobal('quyetDesktop', { protocolVersion: 1, updates: { status: () => initial.promise, subscribe, open } })
     onTestFinished(() => { vi.unstubAllGlobals(); initial.resolve({ phase: 'idle' }) })
     const c = await start()
     const row = injectedOf(c)

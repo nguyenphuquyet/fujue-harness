@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-subagent-oar",
+  "name": "@quyet/experimental-subagent-oar",
   "description": "Experimental one-shot subagents through OAR runtimes",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/subagent-oar"
   },
   "type": "module",
@@ -32,18 +32,18 @@
   "license": "MIT",
   "icon": "./icon.svg",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/llm": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/subagent": "workspace:*",
+    "@quyet/subprocess": "workspace:*"
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "^1.4.0",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/brand": "workspace:*",
+    "@quyet/timeout": "workspace:*",
+    "@quyet/util-values": "workspace:*",
+    "@quyet/schemastery": "workspace:~",
     "@earendil-works/pi-ai": "^1.3.0",
     "@earendil-works/pi-coding-agent": "^1.3.0",
     "cross-spawn": "^7.0.6",
@@ -52,21 +52,21 @@
   },
   "devDependencies": {
     "@botiverse/oar": "0.67.0",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-checkpoint-policy": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-tool-jobs": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-experimental-tool-subagent-oar": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/cordis-plugin-loader": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/loader-smoke": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-checkpoint-policy": "workspace:*",
+    "@quyet/session-persistence-jsonl": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/subagent": "workspace:*",
+    "@quyet/subprocess": "workspace:*",
+    "@quyet/tool-jobs": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/agent-loop-testkit": "workspace:*",
+    "@quyet/experimental-tool-subagent-oar": "workspace:*"
   }
 }

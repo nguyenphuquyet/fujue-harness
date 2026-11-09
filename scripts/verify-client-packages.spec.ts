@@ -21,7 +21,7 @@ import {
   type ClientPackageFacts,
 } from './verify-client-packages.ts'
 
-const CORDIS = '@deepseek-ai/cordis'
+const CORDIS = '@quyet/cordis'
 const roots: string[] = []
 
 afterEach(() => {
@@ -33,7 +33,7 @@ function declaration(
   fields: Partial<Omit<ClientDeclaration, 'name' | 'manifest'>> = {},
 ): ClientDeclaration {
   return {
-    name: short.startsWith('@') ? short : '@deepseek-ai/dsh-client-' + short,
+    name: short.startsWith('@') ? short : '@quyet/client-' + short,
     manifest: 'packages/client/' + short.replace(/^.*\//, '') + '/package.json',
     dynamic: true,
     platform: 'web',
@@ -102,34 +102,34 @@ describe('source package uses', () => {
 
   it('counts type imports, module augmentations, dynamic imports, and JSX', () => {
     const uses = collectSourcePackageUses('feature.tsx', [
-      "import type { A } from '@deepseek-ai/dsh-a/subpath'",
-      "declare module '@deepseek-ai/dsh-client-ui-slots' {}",
-      "const load = () => import('@deepseek-ai/dsh-b/remote')",
+      "import type { A } from '@quyet/a/subpath'",
+      "declare module '@quyet/client-ui-slots' {}",
+      "const load = () => import('@quyet/b/remote')",
       'export const view = <div />',
       "export type { Local } from './local.ts'",
     ].join('\n'))
 
     expect([...uses].sort()).toEqual([
-      '@deepseek-ai/dsh-a',
-      '@deepseek-ai/dsh-b',
-      '@deepseek-ai/dsh-client-ui-slots',
+      '@quyet/a',
+      '@quyet/b',
+      '@quyet/client-ui-slots',
       'react',
     ])
     expect([...collectRuntimeSourcePackageUses('feature.tsx', [
-      "import type { A } from '@deepseek-ai/dsh-a/subpath'",
-      "declare module '@deepseek-ai/dsh-client-ui-slots' {}",
-      "const load = () => import('@deepseek-ai/dsh-b')",
+      "import type { A } from '@quyet/a/subpath'",
+      "declare module '@quyet/client-ui-slots' {}",
+      "const load = () => import('@quyet/b')",
       'export const view = <div />',
     ].join('\n'))].sort()).toEqual([
-      '@deepseek-ai/dsh-b',
+      '@quyet/b',
       'react',
     ])
     expect([...collectRuntimeSourceSpecifiers('feature.tsx', [
-      "import type { A } from '@deepseek-ai/dsh-a/subpath'",
-      "const load = () => import('@deepseek-ai/dsh-b/remote')",
+      "import type { A } from '@quyet/a/subpath'",
+      "const load = () => import('@quyet/b/remote')",
       'export const view = <div />',
     ].join('\n'))].sort()).toEqual([
-      '@deepseek-ai/dsh-b/remote',
+      '@quyet/b/remote',
       'react',
     ])
     expect([...collectLocalSourceSpecifiers('feature.ts', [
@@ -138,7 +138,7 @@ describe('source package uses', () => {
       "const load = () => import('./lazy.ts')",
       "const legacy = require('./legacy.ts')",
       "declare module './augmentation.ts' {}",
-      "import '@deepseek-ai/dsh-a'",
+      "import '@quyet/a'",
     ].join('\n'))].sort()).toEqual([
       './lazy.ts',
       './legacy.ts',
@@ -174,7 +174,7 @@ describe('package modes', () => {
     }))
     expect(found).toHaveLength(2)
     expect(found.join('\n')).toContain('does not use the staticLinked preset')
-    expect(found.join('\n')).toContain('has no dynamic dsh.client row')
+    expect(found.join('\n')).toContain('has no dynamic quyet.client row')
   })
 
   it('requires every preloaded external to have a parser preload row', () => {
@@ -185,7 +185,7 @@ describe('package modes', () => {
       parserPreloadIds: [],
     }))).toEqual([
       'packages/client/web/src/platform.ts: parser-preloaded external '
-      + '"@deepseek-ai/dsh-client-bootstrap/client" has no matching PARSER_PRELOAD_IDS row in '
+      + '"@quyet/client-bootstrap/client" has no matching PARSER_PRELOAD_IDS row in '
       + 'packages/client/modules/src/index.ts',
     ])
   })
@@ -194,57 +194,57 @@ describe('package modes', () => {
 describe('module requests', () => {
   it('rejects runtime requests from one client feature package to another dynamic row', () => {
     const ui = declaration('ui', {
-      external: ['@deepseek-ai/dsh-client-slots/client'],
+      external: ['@quyet/client-slots/client'],
       runtimeSourceUses: {
-        '@deepseek-ai/dsh-client-slots': ['packages/client/ui/src/client/index.ts'],
+        '@quyet/client-slots': ['packages/client/ui/src/client/index.ts'],
       },
     })
     const slots = declaration('slots')
     expect(collectClientPackageViolations(facts([], { declarations: [ui, slots] }))).toEqual([
       ui.manifest + ': client feature package requests runtime external '
-      + '"@deepseek-ai/dsh-client-slots/client"; import shared types only or call an injected Cordis service',
+      + '"@quyet/client-slots/client"; import shared types only or call an injected Cordis service',
     ])
   })
 
   it('rejects stale externals and accepts a runtime import outside client feature packages', () => {
     const gateway = {
-      ...declaration('@deepseek-ai/dsh-api-gateway'), manifest: 'packages/api/gateway/package.json',
+      ...declaration('@quyet/api-gateway'), manifest: 'packages/api/gateway/package.json',
     }
-    const stale = { ...declaration('@deepseek-ai/dsh-api-stale', {
-      external: ['@deepseek-ai/dsh-api-gateway/client'],
+    const stale = { ...declaration('@quyet/api-stale', {
+      external: ['@quyet/api-gateway/client'],
     }), manifest: 'packages/api/stale/package.json' }
-    const live = { ...declaration('@deepseek-ai/dsh-api-live', {
-      external: ['@deepseek-ai/dsh-api-gateway/client'],
+    const live = { ...declaration('@quyet/api-live', {
+      external: ['@quyet/api-gateway/client'],
       runtimeSourceUses: {
-        '@deepseek-ai/dsh-api-gateway': ['packages/api/live/src/client/index.ts'],
+        '@quyet/api-gateway': ['packages/api/live/src/client/index.ts'],
       },
       runtimeSourceSpecifiers: {
-        '@deepseek-ai/dsh-api-gateway/client': ['packages/api/live/src/client/index.ts'],
+        '@quyet/api-gateway/client': ['packages/api/live/src/client/index.ts'],
       },
     }), manifest: 'packages/api/live/package.json' }
     expect(collectClientPackageViolations(facts([], {
       declarations: [gateway, stale, live],
     }))).toEqual([
-      stale.manifest + ': dsh.client.external "@deepseek-ai/dsh-api-gateway/client"'
+      stale.manifest + ': quyet.client.external "@quyet/api-gateway/client"'
       + ' has no runtime import or re-export in production source; remove the stale declaration',
     ])
   })
 
   it('requires the exact external subpath to be imported at runtime', () => {
     const gateway = {
-      ...declaration('@deepseek-ai/dsh-api-gateway'), manifest: 'packages/api/gateway/package.json',
+      ...declaration('@quyet/api-gateway'), manifest: 'packages/api/gateway/package.json',
     }
-    const subject = { ...declaration('@deepseek-ai/dsh-api-session-controller', {
-      external: ['@deepseek-ai/dsh-api-gateway/client'],
+    const subject = { ...declaration('@quyet/api-session-controller', {
+      external: ['@quyet/api-gateway/client'],
       runtimeSourceUses: {
-        '@deepseek-ai/dsh-api-gateway': ['packages/api/session-controller/src/client/index.ts'],
+        '@quyet/api-gateway': ['packages/api/session-controller/src/client/index.ts'],
       },
       runtimeSourceSpecifiers: {
-        '@deepseek-ai/dsh-api-gateway/remote': ['packages/api/session-controller/src/client/index.ts'],
+        '@quyet/api-gateway/remote': ['packages/api/session-controller/src/client/index.ts'],
       },
     }), manifest: 'packages/api/session-controller/package.json' }
     expect(collectClientPackageViolations(facts([], { declarations: [gateway, subject] }))).toEqual([
-      subject.manifest + ': dsh.client.external "@deepseek-ai/dsh-api-gateway/client"'
+      subject.manifest + ': quyet.client.external "@quyet/api-gateway/client"'
       + ' has no runtime import or re-export in production source; remove the stale declaration',
     ])
   })
@@ -255,39 +255,39 @@ describe('module requests', () => {
       declarations: [ui],
       platformModules: ['react'],
     }))).toEqual([
-      ui.manifest + ': dsh.client.external repeats baseline module "react"; remove the explicit declaration',
+      ui.manifest + ': quyet.client.external repeats baseline module "react"; remove the explicit declaration',
     ])
   })
 
   it('rejects duplicates, empty values, self-requests, and missing suppliers', () => {
     const ui = declaration('ui', {
-      external: ['', '@deepseek-ai/dsh-client-ui', '@deepseek-ai/dsh-missing', '@deepseek-ai/dsh-missing'],
-      inject: ['', '@deepseek-ai/dsh-a', '@deepseek-ai/dsh-a'],
+      external: ['', '@quyet/client-ui', '@quyet/missing', '@quyet/missing'],
+      inject: ['', '@quyet/a', '@quyet/a'],
     })
     const found = collectClientPackageViolations(facts([], { declarations: [ui] }))
     expect(found).toHaveLength(6)
-    expect(found.join('\n')).toContain('dsh.client.external contains an empty value')
-    expect(found.join('\n')).toContain('dsh.client.inject contains an empty value')
+    expect(found.join('\n')).toContain('quyet.client.external contains an empty value')
+    expect(found.join('\n')).toContain('quyet.client.inject contains an empty value')
     expect(found.join('\n')).toContain('names its own row')
     expect(found.join('\n')).toContain('has no supplier')
   })
 
   it('rejects synchronous module-request cycles but ignores inject cycles', () => {
-    const a = { ...declaration('@deepseek-ai/dsh-api-a', {
-      external: ['@deepseek-ai/dsh-api-b'],
-      inject: ['@deepseek-ai/dsh-api-b'],
-      runtimeSourceUses: { '@deepseek-ai/dsh-api-b': ['packages/api/a/src/client.ts'] },
-      runtimeSourceSpecifiers: { '@deepseek-ai/dsh-api-b': ['packages/api/a/src/client.ts'] },
+    const a = { ...declaration('@quyet/api-a', {
+      external: ['@quyet/api-b'],
+      inject: ['@quyet/api-b'],
+      runtimeSourceUses: { '@quyet/api-b': ['packages/api/a/src/client.ts'] },
+      runtimeSourceSpecifiers: { '@quyet/api-b': ['packages/api/a/src/client.ts'] },
     }), manifest: 'packages/api/a/package.json' }
-    const b = { ...declaration('@deepseek-ai/dsh-api-b', {
-      external: ['@deepseek-ai/dsh-api-a'],
-      inject: ['@deepseek-ai/dsh-api-a'],
-      runtimeSourceUses: { '@deepseek-ai/dsh-api-a': ['packages/client/b/src/client.ts'] },
-      runtimeSourceSpecifiers: { '@deepseek-ai/dsh-api-a': ['packages/client/b/src/client.ts'] },
+    const b = { ...declaration('@quyet/api-b', {
+      external: ['@quyet/api-a'],
+      inject: ['@quyet/api-a'],
+      runtimeSourceUses: { '@quyet/api-a': ['packages/client/b/src/client.ts'] },
+      runtimeSourceSpecifiers: { '@quyet/api-a': ['packages/client/b/src/client.ts'] },
     }), manifest: 'packages/api/b/package.json' }
     const found = collectClientPackageViolations(facts([], { declarations: [a, b] }))
     expect(found).toHaveLength(1)
-    expect(found[0]).toContain('synchronous dsh.client.external cycle')
+    expect(found[0]).toContain('synchronous quyet.client.external cycle')
   })
 })
 
@@ -307,7 +307,7 @@ describe('package assets', () => {
       "import styles from './View.module.css'",
       "import font from './assets/font.woff2'",
       "import raw from './assets/raw.svg?raw'",
-      "import shared from '@deepseek-ai/dsh-client-other/assets/shared.svg'",
+      "import shared from '@quyet/client-other/assets/shared.svg'",
       "import rooted from '/assets/rooted.svg'",
     ].join('\n'))]).toEqual([
       './assets/art.webp',
@@ -378,12 +378,12 @@ describe('package assets', () => {
     roots.push(root)
     const files: Record<string, unknown> = {
       'packages/g/web/package.json': {
-        name: '@f/web', dsh: { client: { platform: 'web' } }, exports: { './assets/*': './lib/assets/*' },
+        name: '@f/web', quyet: { client: { platform: 'web' } }, exports: { './assets/*': './lib/assets/*' },
       },
       'packages/g/conditional/package.json': {
         name: '@f/conditional', exports: { './assets/*': { default: './lib/assets/*' } },
       },
-      'packages/g/none/package.json': { name: '@f/none', dsh: { client: { platform: 1 } }, exports: './lib/index.js' },
+      'packages/g/none/package.json': { name: '@f/none', quyet: { client: { platform: 1 } }, exports: './lib/index.js' },
     }
     for (const [path, value] of Object.entries(files)) {
       mkdirSync(dirname(join(root, path)), { recursive: true })
@@ -426,7 +426,7 @@ describe('package assets', () => {
   ] as const)('rejects the asset export on %s', (_label, fields) => {
     const ui = declaration('ui', { ...fields, assetExport: './lib/assets/*', assetReferences: [art] })
     expect(collectClientPackageViolations(facts([], { declarations: [ui] }))).toEqual([
-      ui.manifest + ': ' + ui.name + ' declares exports["./assets/*"] without a dsh.client row for platform "web";'
+      ui.manifest + ': ' + ui.name + ' declares exports["./assets/*"] without a quyet.client row for platform "web";'
       + ' only dynamic Web Client packages publish package assets',
     ])
   })
@@ -455,9 +455,9 @@ describe('manifest declarations', () => {
     roots.push(root)
     const files: Record<string, unknown> = {
       'packages/g/a/package.json': {
-        name: '@f/a', dsh: { client: { external: 'react', inject: ['@f/b', 1] } },
+        name: '@f/a', quyet: { client: { external: 'react', inject: ['@f/b', 1] } },
       },
-      'packages/g/b/package.json': { name: '@f/b', dsh: { client: {} } },
+      'packages/g/b/package.json': { name: '@f/b', quyet: { client: {} } },
     }
     for (const [path, value] of Object.entries(files)) {
       mkdirSync(dirname(join(root, path)), { recursive: true })
@@ -467,8 +467,8 @@ describe('manifest declarations', () => {
     const result = readClientDeclarations(root)
     expect(result.declarations).toHaveLength(2)
     expect(result.malformed).toEqual([
-      'packages/g/a/package.json: @f/a dsh.client.external must be a string array',
-      'packages/g/a/package.json: @f/a dsh.client.inject must be a string array',
+      'packages/g/a/package.json: @f/a quyet.client.external must be a string array',
+      'packages/g/a/package.json: @f/a quyet.client.inject must be a string array',
     ])
   })
 
@@ -476,26 +476,26 @@ describe('manifest declarations', () => {
     const root = mkdtempSync(join(tmpdir(), 'client-packages-fix-'))
     roots.push(root)
     const subject = pkg('feature', {
-      external: ['', 'react', '@deepseek-ai/dsh-client-feature', '@deepseek-ai/dsh-missing'],
-      inject: ['', '@deepseek-ai/dsh-agent', '@deepseek-ai/dsh-agent'],
+      external: ['', 'react', '@quyet/client-feature', '@quyet/missing'],
+      inject: ['', '@quyet/agent', '@quyet/agent'],
       sourceUses: {
-        '@deepseek-ai/dsh-agent': ['packages/client/feature/src/index.ts'],
-        '@deepseek-ai/dsh-client-ui-slots': ['packages/client/feature/src/view.tsx'],
+        '@quyet/agent': ['packages/client/feature/src/index.ts'],
+        '@quyet/client-ui-slots': ['packages/client/feature/src/view.tsx'],
       },
       dependencies: {
         [CORDIS]: 'workspace:^',
-        '@deepseek-ai/dsh-agent': 'workspace:*',
+        '@quyet/agent': 'workspace:*',
       },
       peerDependencies: {
-        '@deepseek-ai/dsh-client-ui-slots': 'workspace:^',
-        '@deepseek-ai/cordis-plugin-loader': 'workspace:^',
+        '@quyet/client-ui-slots': 'workspace:^',
+        '@quyet/cordis-plugin-loader': 'workspace:^',
       },
       devDependencies: {},
     })
     const slots = declaration('ui-slots', { dynamic: false })
     const manifest = {
       name: subject.name,
-      dsh: { client: { external: subject.external, inject: subject.inject, platform: 'web' } },
+      quyet: { client: { external: subject.external, inject: subject.inject, platform: 'web' } },
       dependencies: subject.dependencies,
       peerDependencies: subject.peerDependencies,
       devDependencies: subject.devDependencies,
@@ -511,14 +511,14 @@ describe('manifest declarations', () => {
     }))).toEqual([subject.manifest])
 
     const fixed = JSON.parse(readFileSync(join(root, subject.manifest), 'utf8')) as {
-      dsh: { client: { external: string[]; inject: string[] } }
+      quyet: { client: { external: string[]; inject: string[] } }
       dependencies?: Record<string, string>
       peerDependencies: Record<string, string>
       devDependencies: Record<string, string>
     }
-    expect(fixed.dsh.client).toMatchObject({
-      external: ['@deepseek-ai/dsh-missing'],
-      inject: ['@deepseek-ai/dsh-agent'],
+    expect(fixed.quyet.client).toMatchObject({
+      external: ['@quyet/missing'],
+      inject: ['@quyet/agent'],
     })
     expect(fixed.dependencies).toEqual(subject.dependencies)
     expect(fixed.peerDependencies).toEqual(subject.peerDependencies)

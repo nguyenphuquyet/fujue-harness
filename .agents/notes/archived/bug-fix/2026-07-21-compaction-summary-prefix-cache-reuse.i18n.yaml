@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-07-21-compaction-summary-prefix-cache-reuse.md
-2026-07-21-compaction-summary-prefix-cache-reuse.md: 7a433324f93bca0447d1b775a40742b234df8df3
-2026-07-21-compaction-summary-prefix-cache-reuse.zh.md: db5b2d0507fe107b57def2365d4c82add2fb5c37
+2026-07-21-compaction-summary-prefix-cache-reuse.md: d4ca6675c71cd7c3a011d5a0cf8a54e917084a35
+2026-07-21-compaction-summary-prefix-cache-reuse.zh.md: 4372b6d4136f5afea64b6fbc001e5c13f364b8f4

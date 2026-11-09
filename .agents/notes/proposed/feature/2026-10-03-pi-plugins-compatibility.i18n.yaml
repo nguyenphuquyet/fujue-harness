@@ -3,41 +3,41 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/proposed/feature/2026-10-03-pi-plugins-compatibility.md
 /agent-note-pi-plugins-compatibility-levels-of-support:
-  en: 68e63fd54584ecbc
-  zh: e1cedbf64975bc53
+  en: 6bf208f1ee551818
+  zh: a963f558c417e1d4
 /agent-note-pi-plugins-compatibility-levels-of-support/problem:
-  en: f98ddabdc0ea831b
-  zh: e695439507286576
+  en: 338f8e5798999fd6
+  zh: 59782b4a82ce43d8
 /agent-note-pi-plugins-compatibility-levels-of-support/proposal:
-  en: 37a27883d679bb6a
-  zh: 62c60e0cd06bf8fb
+  en: efe8ddb0cf6ea1da
+  zh: 670bdcc7d9651baf
 /agent-note-pi-plugins-compatibility-levels-of-support/what-a-pi-plugin-is:
   en: fd37c3aa5d6c092b
   zh: e39a84ef9aabaa48
 /agent-note-pi-plugins-compatibility-levels-of-support/level-1-session-facets:
-  en: 5e08e808af0a741a
-  zh: eae79e9c8f1fc301
+  en: e8da3ba9443d8e71
+  zh: 26ef891451987b90
 /agent-note-pi-plugins-compatibility-levels-of-support/level-2-presentation-facets-on-the-host:
-  en: 6a4b96426808d653
-  zh: c341dd2ba594ed45
+  en: 69d2eed810218ee6
+  zh: 3d8ddcc14c22f589
 /agent-note-pi-plugins-compatibility-levels-of-support/level-3-transcript-and-stored-selection:
-  en: defc273e0759bb9f
-  zh: 59a4cf0dd0b46faa
+  en: 847dad18e1dbbd44
+  zh: aa3240b85d5c54a0
 /agent-note-pi-plugins-compatibility-levels-of-support/level-4-presentation-facets-in-the-browser:
-  en: 5b2fcfdb38eb6121
-  zh: 1d583d9a6486d2dd
+  en: 461bdca1f8721bb8
+  zh: 944aab13fce4d186
 /agent-note-pi-plugins-compatibility-levels-of-support/level-5-parity:
-  en: 657aa240a06f663f
-  zh: 74ca5260a5a3d215
+  en: a5cd9b2da2b9207a
+  zh: e6faa34bb8103c28
 /agent-note-pi-plugins-compatibility-levels-of-support/runtime-differences-the-plugin-model-exposes:
-  en: 114b54fae1ff94cd
-  zh: 0d0dde9f0563b27b
-/agent-note-pi-plugins-compatibility-levels-of-support/chord-mechanisms-to-evaluate-for-dsh:
-  en: e44ed4dcd7fc9eb9
-  zh: 825a41daa69931f9
+  en: e95c54e56419e544
+  zh: 1afb5a9819273ba1
+/agent-note-pi-plugins-compatibility-levels-of-support/chord-mechanisms-to-evaluate-for-quy-t:
+  en: 1c7d517670e95109
+  zh: 0d773dc1aced3632
 /agent-note-pi-plugins-compatibility-levels-of-support/alternatives-considered:
-  en: 390883362b220cfb
-  zh: 1c072dd19744a92e
+  en: 497a6263a2f9a0d8
+  zh: 2459dae9c51f3302
 /agent-note-pi-plugins-compatibility-levels-of-support/acceptance-criteria:
   en: 386ae81c30ec7cfc
   zh: 6f8bc4257fa8898c

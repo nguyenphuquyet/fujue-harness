@@ -5,45 +5,45 @@
 /:
   en: 6bd544ce4e92a4e1
   zh: cb05ca5ce08f4bd4
-/deepseek-ai-dsh-launch-environment:
-  en: 5f0bd56ca8f1fb22
-  zh: 92b4c6684ca29352
-/deepseek-ai-dsh-launch-environment/summary:
-  en: 45f36a3eceabaab0
-  zh: 2ec9ea17a592aa7a
-/deepseek-ai-dsh-launch-environment/table-of-contents:
+/quyet-launch-environment:
+  en: 8c45cc633552dce3
+  zh: cba3ecdc35cd85c2
+/quyet-launch-environment/summary:
+  en: ac44257f59bc93cb
+  zh: 472d97890043c7d5
+/quyet-launch-environment/table-of-contents:
   en: 80b31a934611cb4a
   zh: 05f3f7f9cb2fd881
-/deepseek-ai-dsh-launch-environment/use-this-package:
+/quyet-launch-environment/use-this-package:
   en: c9df1b8cf300ab4f
   zh: 6f80e2e72fc5b1d4
-/deepseek-ai-dsh-launch-environment/use-this-package/resolving-a-value:
+/quyet-launch-environment/use-this-package/resolving-a-value:
   en: 5aed2d5fa0b116c0
   zh: 9ad018c5cb09791d
-/deepseek-ai-dsh-launch-environment/use-this-package/how-layers-rank:
-  en: ed6c00ea45dbd45d
-  zh: a8655d8c5663c9cc
-/deepseek-ai-dsh-launch-environment/use-this-package/when-no-launcher-booted-the-tree:
+/quyet-launch-environment/use-this-package/how-layers-rank:
+  en: ff694104c6eb43a0
+  zh: 8e993459b77e65bc
+/quyet-launch-environment/use-this-package/when-no-launcher-booted-the-tree:
   en: 3c368938c6960588
   zh: c704bee90390f259
-/deepseek-ai-dsh-launch-environment/understand-the-implementation:
+/quyet-launch-environment/understand-the-implementation:
   en: c2cdb9ea66c61cc5
   zh: 5ccf1802da65483d
-/deepseek-ai-dsh-launch-environment/understand-the-implementation/source-map:
+/quyet-launch-environment/understand-the-implementation/source-map:
   en: c693fdeed31fab31
   zh: 5d25a3c90cfa8f80
-/deepseek-ai-dsh-launch-environment/understand-the-implementation/how-the-snapshot-stays-frozen:
+/quyet-launch-environment/understand-the-implementation/how-the-snapshot-stays-frozen:
   en: f933fc349e258d27
   zh: 717166c9a80a4821
-/deepseek-ai-dsh-launch-environment/understand-the-implementation/what-omission-means:
+/quyet-launch-environment/understand-the-implementation/what-omission-means:
   en: 03782c3e48792227
   zh: c83116ba53b3ab12
-/deepseek-ai-dsh-launch-environment/further-exploration:
-  en: 1ea92e9c40187327
-  zh: 1620765915d0ddf3
-/deepseek-ai-dsh-launch-environment/known-limitations-and-deferred-work:
-  en: 47164f90c43f59a1
-  zh: a6856705b4467898
-/deepseek-ai-dsh-launch-environment/known-limitations-and-deferred-work/dev-note:
+/quyet-launch-environment/further-exploration:
+  en: cd22a9754d444af6
+  zh: f5be833eb7f53534
+/quyet-launch-environment/known-limitations-and-deferred-work:
+  en: 12bb753a13f3b87e
+  zh: 634792fefe1745f7
+/quyet-launch-environment/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

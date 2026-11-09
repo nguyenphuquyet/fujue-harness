@@ -2,17 +2,17 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context, Service } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { SessionLogOffset, SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import Commands from '@deepseek-ai/dsh-commands'
-import SubagentService, { type SubagentActivation } from '@deepseek-ai/dsh-subagent'
-import * as SubagentFork from '@deepseek-ai/dsh-subagent-fork-in-process'
-import * as SubagentSpawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
+import { Context, Service } from '@quyet/cordis'
+import type { Agent } from '@quyet/agent'
+import AgentLoop from '@quyet/agent-loop'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
+import { createUserMessage } from '@quyet/llm'
+import { SessionLogOffset, SessionId } from '@quyet/session'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
+import Commands from '@quyet/commands'
+import SubagentService, { type SubagentActivation } from '@quyet/subagent'
+import * as SubagentFork from '@quyet/subagent-fork-in-process'
+import * as SubagentSpawn from '@quyet/subagent-spawn-in-process'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { mountWorkingDirectoryFixture } from '../../../subagent/subagent/tests/working-directory-fixture.ts'
 import { bindSubagentActivation } from '../../../subagent/subagent/tests/manager-internals.ts'
@@ -58,7 +58,7 @@ async function setup(
   contexts.push(ctx)
   await mountAgentLoopTestDependencies(ctx)
   await mountWorkingDirectoryFixture(ctx)
-  const storageRoot = mkdtempSync(join(tmpdir(), 'dsh-team-'))
+  const storageRoot = mkdtempSync(join(tmpdir(), 'quyet-team-'))
   roots.push(storageRoot)
   await ctx.plugin(JsonlSessionPersistence, { root: storageRoot })
   await ctx.plugin(TestSessionQuery)

@@ -2,10 +2,10 @@
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import type { Context } from '@deepseek-ai/cordis'
-import type { DomainFacility } from '@deepseek-ai/dsh-storage-domain'
-import { JsonStorageBackend } from '@deepseek-ai/dsh-storage-json'
-import { SessionId } from '@deepseek-ai/dsh-session'
+import type { Context } from '@quyet/cordis'
+import type { DomainFacility } from '@quyet/storage-domain'
+import { JsonStorageBackend } from '@quyet/storage-json'
+import { SessionId } from '@quyet/session'
 import { afterEach, beforeEach, expect, it, vi, type MockInstance } from 'vitest'
 import ScheduleService from '../src/index.ts'
 import { scheduleDomain, type ScheduleTask } from '../src/storage.ts'
@@ -31,7 +31,7 @@ afterEach(async () => {
 })
 /** Create a root whose earlier Host store, one whole-unit file, holds the given tasks or bytes. */
 async function rootWith(tasks: Record<string, unknown>, bytes?: string) {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-schedule-recovery-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-schedule-recovery-'))
   roots.push(root)
   const path = join(root, 'schedule.json')
   if (bytes !== undefined || Object.keys(tasks).length > 0) {

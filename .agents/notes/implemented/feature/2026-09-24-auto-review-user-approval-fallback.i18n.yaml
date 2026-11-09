@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-09-24-auto-review-user-approval-fallback.md
 /agent-note-auto-review-asks-the-user-after-a-denial:
-  en: 5591f8e34bda222a
-  zh: 7d433ca541e6988f
+  en: 8fce6b512ad68ddd
+  zh: da8550c97fc4f7dc
 /agent-note-auto-review-asks-the-user-after-a-denial/problem:
-  en: ed725dff16cd2339
-  zh: 555d4ba70af96790
+  en: 615345d9e37c29d8
+  zh: 84b68043940d7702
 /agent-note-auto-review-asks-the-user-after-a-denial/decision:
-  en: 6bd32636c775b690
-  zh: 5579111a3dbb6bf9
+  en: 83f1ec8bfd92a9ef
+  zh: c70b8802baf6e839
 /agent-note-auto-review-asks-the-user-after-a-denial/alternatives-considered:
   en: 01f71dd10849f925
   zh: 8b79a7e149a9a60c

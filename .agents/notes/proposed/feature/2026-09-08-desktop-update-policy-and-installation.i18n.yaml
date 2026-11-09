@@ -3,23 +3,23 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/proposed/feature/2026-09-08-desktop-update-policy-and-installation.md
 /agent-note-desktop-update-policy-and-installation:
-  en: 250865822f42a08a
-  zh: f7fab178a4835c04
+  en: ecc81872fd64e8b5
+  zh: 3c904909f367717e
 /agent-note-desktop-update-policy-and-installation/problem:
-  en: 96e7c7a206e06f15
-  zh: 189133653543a98c
+  en: c70f3ed3f97bc562
+  zh: 87c36daf2bc44eca
 /agent-note-desktop-update-policy-and-installation/proposal:
-  en: 68c7ebc3e29eb4d8
-  zh: c98d151b6ca44ecb
+  en: 414d6245bbdf9bb2
+  zh: a1fb19f9b869b802
 /agent-note-desktop-update-policy-and-installation/proposal/release-and-backend-qualification:
-  en: 03612a65e4a65939
-  zh: 4d45467930e9f364
+  en: 9852f591339b136d
+  zh: 43ddee414d6adb66
 /agent-note-desktop-update-policy-and-installation/proposal/open-product-choices:
-  en: 1ced7c2ababf429f
-  zh: 9879fba6f288236c
+  en: aa3b406b5fecb9a9
+  zh: 9319bf8fec845069
 /agent-note-desktop-update-policy-and-installation/proposal/cdn-and-capacity-qualification:
-  en: a857e8c566e0cbd2
-  zh: 6b4fd99b7482c2b1
+  en: 8dbb2102ea4b2fd5
+  zh: c1ff7e38d58387c0
 /agent-note-desktop-update-policy-and-installation/alternatives-considered:
   en: ff419f29cfc6702b
   zh: dc79b9d3d9bef98f

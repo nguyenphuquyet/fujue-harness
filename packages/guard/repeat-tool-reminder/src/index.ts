@@ -3,23 +3,23 @@
  * with logged model context without vetoing or rewriting calls. Configuration
  * and chain semantics live in the package README; rationale lives in the
  * repeat-tool-reminder Agent Note.
- * @module @deepseek-ai/dsh-repeat-tool-reminder
+ * @module @quyet/repeat-tool-reminder
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import type { Context } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import type { Agent, PreStepDecision } from '@quyet/agent'
+import { createUserMessage } from '@quyet/llm'
+import type { ContextFormed } from '@quyet/llm'
+declare module '@quyet/llm' {
   interface MessageSourceMap {
     'repeat-tool-reminder': { kind: 'repeat-tool-reminder' } & ContextFormed
   }
 }
 
-import type { MessageSource } from '@deepseek-ai/dsh-llm'
-import type { UserMessage } from '@deepseek-ai/dsh-session'
-import type { PostToolDecision, ToolExecution } from '@deepseek-ai/dsh-tools'
+import type { MessageSource } from '@quyet/llm'
+import type { UserMessage } from '@quyet/session'
+import type { PostToolDecision, ToolExecution } from '@quyet/tools'
 
 export const name = 'repeat-tool-reminder'
 

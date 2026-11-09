@@ -3,35 +3,35 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-09-02-system-prompt-as-surface-node.md
 /agent-note-the-system-prompt-is-surface-node-0:
-  en: 449b745953058cff
-  zh: 4db99c7d1f06e6b9
+  en: bc9882ad02bf2bb3
+  zh: 5a80fb89ba29d2c7
 /agent-note-the-system-prompt-is-surface-node-0/problem:
-  en: 9ff2541082426e31
-  zh: d8f0ca49d3548f9b
+  en: d3c2b9602e30ca4e
+  zh: 42ae7a2be0c5ccd6
 /agent-note-the-system-prompt-is-surface-node-0/decision:
   en: 3911ea80c5466d5e
   zh: a0d6844e6f8af462
 /agent-note-the-system-prompt-is-surface-node-0/decision/the-event:
-  en: 35302b956efc4999
-  zh: e45ee0d001b63269
+  en: d9cf940d222b3e29
+  zh: cb2d2710dbe095e3
 /agent-note-the-system-prompt-is-surface-node-0/decision/the-operations:
   en: a217a08932938062
   zh: 4924d99d55d9c973
 /agent-note-the-system-prompt-is-surface-node-0/decision/ownership-in-the-loop:
-  en: a7d0d3a61d2fef04
-  zh: 29a3d5dbed2f987a
+  en: f09e5275064859c6
+  zh: dfd71afce7a41eda
 /agent-note-the-system-prompt-is-surface-node-0/decision/consumers:
-  en: 39f9f4acffcccdc6
-  zh: 36b23a57e7d28950
+  en: 1aaf22a9e8c9baac
+  zh: 79d8a3c1cc9f86fa
 /agent-note-the-system-prompt-is-surface-node-0/decision/v2-to-v3-structural-conversion:
-  en: 131ae882d0a28735
-  zh: ea4bc81f0ba5ddec
+  en: 4b937a543efd1dd6
+  zh: 26f49301856d29db
 /agent-note-the-system-prompt-is-surface-node-0/alternatives-considered:
   en: 067e96734ebbce89
   zh: 9f79bc0f4942675d
 /agent-note-the-system-prompt-is-surface-node-0/consequences:
-  en: bccea8236b4c32b3
-  zh: a1150784718a6639
+  en: cba6393b71cd374e
+  zh: 271961ee55c1f6ff
 /agent-note-the-system-prompt-is-surface-node-0/testing:
   en: 9a5a241ae3d0c676
   zh: 8f3e83cc54604bcc

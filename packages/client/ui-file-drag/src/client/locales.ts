@@ -25,7 +25,7 @@ export const pt = { failed: 'Falha ao arrastar. Tente novamente.' } satisfies Re
 /** Vietnamese dictionary, checked against the English keys. */
 export const vi = { failed: 'Kéo thả thất bại. Hãy thử lại.' } satisfies Record<keyof typeof en, string>
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@quyet/client-ui-slots' {
   interface LocaleNamespaceMap {
     /** File transfer failure feedback. */
     fileDrag: keyof typeof zh

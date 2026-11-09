@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-10-16-tree-wide-agent-communication.md
 /agent-note-communication-follows-the-subagent-tree:
-  en: 849d806b901e9f04
-  zh: 649b2984f844d510
+  en: f1f32f7a9c5aa20a
+  zh: eab069f7b16af824
 /agent-note-communication-follows-the-subagent-tree/problem:
   en: c583c3cdb894e417
   zh: 6edc0354b79f4f26
 /agent-note-communication-follows-the-subagent-tree/decision:
-  en: 767b4b4dfd84f72e
-  zh: 36617ec0dab777ee
+  en: 3c5cdf2cc1eb921d
+  zh: f7d02f54eab6f327
 /agent-note-communication-follows-the-subagent-tree/alternatives-considered:
   en: 470f9cf8c3e32af9
   zh: 73bbe29767c5d02a

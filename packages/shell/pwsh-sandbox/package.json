@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-pwsh-sandbox",
-  "description": "Sandbox-consuming implementation of the DeepSeek Harness PowerShell executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)",
+  "name": "@quyet/pwsh-sandbox",
+  "description": "Sandbox-consuming implementation of the JueTech Harness PowerShell executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/shell/pwsh-sandbox"
   },
   "type": "module",
@@ -29,20 +29,20 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-pwsh-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/shell": "workspace:*",
+    "@quyet/pwsh-local": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-pwsh-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/shell": "workspace:*",
+    "@quyet/pwsh-local": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-local": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/subprocess-local": "workspace:*",
+    "@quyet/cordis": "workspace:~"
   }
 }

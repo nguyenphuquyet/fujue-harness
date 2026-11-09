@@ -1,11 +1,11 @@
 // @vitest-environment jsdom
 /** Dynamic ui-theme entry owns the global styles in dependency order. */
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@quyet/cordis'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { installThemeStyles } from '../src/client/styles.ts'
 
-const PLUGIN_ID = '@deepseek-ai/dsh-client-ui-theme'
-const HAIRLINE_WIDTH = '--dsh-hairline-width'
+const PLUGIN_ID = '@quyet/client-ui-theme'
+const HAIRLINE_WIDTH = '--quyet-hairline-width'
 const contexts = new Set<Context>()
 let previousWidth: string
 let previousPriority: string

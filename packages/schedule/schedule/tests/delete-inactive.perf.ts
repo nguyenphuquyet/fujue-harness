@@ -10,16 +10,16 @@ import { mkdtemp, rm, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { performance } from 'node:perf_hooks'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import Storage from '@deepseek-ai/dsh-storage'
-import type { StorageBackend } from '@deepseek-ai/dsh-storage'
-import { DomainFacility } from '@deepseek-ai/dsh-storage-domain'
-import { JsonStorageBackend } from '@deepseek-ai/dsh-storage-json'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import SessionStore from '@deepseek-ai/dsh-session'
+import { Context } from '@quyet/cordis'
+import AgentRegistry from '@quyet/agent'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import Storage from '@quyet/storage'
+import type { StorageBackend } from '@quyet/storage'
+import { DomainFacility } from '@quyet/storage-domain'
+import { JsonStorageBackend } from '@quyet/storage-json'
+import SystemPrompt from '@quyet/system-prompt'
+import ToolRuntime from '@quyet/tools'
+import SessionStore from '@quyet/session'
 import ScheduleService from '../src/index.ts'
 import { createAfterScheduleRecord, createEveryScheduleRecord, ScheduleId } from '../src/domain.ts'
 
@@ -106,7 +106,7 @@ function counted(inner: StorageBackend): {
 }
 
 async function measure(args: Args) {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-schedule-clear-perf-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-schedule-clear-perf-'))
   try {
     const path = join(root, 'schedule.json')
     const seedStart = performance.now()

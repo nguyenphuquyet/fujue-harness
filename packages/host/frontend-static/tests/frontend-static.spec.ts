@@ -11,12 +11,12 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import * as Connection from '@deepseek-ai/dsh-client-connection'
-import LocalCredentials from '@deepseek-ai/dsh-credentials-local'
-import HttpServer from '@deepseek-ai/dsh-host-webserver'
+import { Context } from '@quyet/cordis'
+import Loader from '@quyet/cordis-plugin-loader'
+import Include from '@quyet/cordis-plugin-include'
+import * as Connection from '@quyet/client-connection'
+import LocalCredentials from '@quyet/credentials-local'
+import HttpServer from '@quyet/host-webserver'
 import * as FrontendStatic from '../src/index.ts'
 
 let root: string | undefined
@@ -31,7 +31,7 @@ afterEach(async () => {
 
 /** Write a dist fixture and the authenticated Web rows, then boot them through the real Loader. */
 async function loadComposition(): Promise<Context> {
-  root = await mkdtemp(join(tmpdir(), 'dsh-frontend-static-'))
+  root = await mkdtemp(join(tmpdir(), 'quyet-frontend-static-'))
   const dist = join(root, 'dist')
   await mkdir(dist)
   const distIndex = join(dist, 'index.html')
@@ -44,17 +44,17 @@ async function loadComposition(): Promise<Context> {
   await mkdir(join(dist, 'empty'))
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [
-    "- name: '@deepseek-ai/dsh-credentials-local'",
+    "- name: '@quyet/credentials-local'",
     '  config:',
     `    path: '${join(root, '.credentials.yaml')}'`,
     '    watch: false',
-    "- name: '@deepseek-ai/dsh-host-webserver'",
+    "- name: '@quyet/host-webserver'",
     '  config:',
     "    host: '127.0.0.1'",
     '    port: 0',
-    "- name: '@deepseek-ai/dsh-client-connection'",
+    "- name: '@quyet/client-connection'",
     '- id: frontend',
-    "  name: '@deepseek-ai/dsh-host-frontend-static'",
+    "  name: '@quyet/host-frontend-static'",
     '  config:',
     `    distIndex: '${distIndex}'`,
     '',
@@ -65,10 +65,10 @@ async function loadComposition(): Promise<Context> {
   await context.plugin(Loader)
   context.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-credentials-local', LocalCredentials],
-    ['@deepseek-ai/dsh-host-webserver', HttpServer],
-    ['@deepseek-ai/dsh-client-connection', Connection],
-    ['@deepseek-ai/dsh-host-frontend-static', FrontendStatic],
+    ['@quyet/credentials-local', LocalCredentials],
+    ['@quyet/host-webserver', HttpServer],
+    ['@quyet/client-connection', Connection],
+    ['@quyet/host-frontend-static', FrontendStatic],
   ])
   context.loader.internal = {
     version: 'v2',
@@ -125,7 +125,7 @@ describe('real Loader composition', () => {
     expect(await request(port, '/')).toMatchObject({
       status: 401,
       type: 'text/plain; charset=utf-8',
-      body: 'dsh web authentication required; reopen the URL printed by dsh web.\n',
+      body: 'quyet web authentication required; reopen the URL printed by quyet web.\n',
     })
 
     // Real assets with their MIME types; a live rebuild is served on the next read.

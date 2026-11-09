@@ -1,13 +1,13 @@
 - insert:
     - id: action-cards
-      name: '@deepseek-ai/dsh-action-cards'
+      name: '@quyet/action-cards'
     - id: client-ui-action-cards
-      name: '@deepseek-ai/dsh-client-ui-action-cards'
+      name: '@quyet/client-ui-action-cards'
     - id: creation-recommendations
-      name: '@deepseek-ai/dsh-creation-recommendations'
+      name: '@quyet/creation-recommendations'
     - id: client-ui-creation-recommendations
-      name: '@deepseek-ai/dsh-client-ui-creation-recommendations'
+      name: '@quyet/client-ui-creation-recommendations'
     - id: plugin-recommendations
-      name: '@deepseek-ai/dsh-plugin-recommendations'
+      name: '@quyet/plugin-recommendations'
     - id: client-ui-plugin-recommendations
-      name: '@deepseek-ai/dsh-client-ui-plugin-recommendations'
+      name: '@quyet/client-ui-plugin-recommendations'

@@ -1,0 +1,31 @@
+# Bilingual-pair consistency record for quyet-v0.1.5-alpha.1.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write docs/persistence-changes/releases/quyet-v0.1.5-alpha.1.md
+/:
+  en: 52f661b154e42dd0
+  zh: 03e3f5b6fb5d3063
+/persistence-release-quyet-v0-1-5-alpha-1:
+  en: e0c091b134222285
+  zh: 03e0f1aed0dff062
+/persistence-release-quyet-v0-1-5-alpha-1/summary:
+  en: dba208d5975c7186
+  zh: 00ecfa3426c98c44
+/persistence-release-quyet-v0-1-5-alpha-1/table-of-contents:
+  en: 0ff4a6f3c6af323f
+  zh: f5c7bd70cc1585c7
+/persistence-release-quyet-v0-1-5-alpha-1/release-evidence:
+  en: e7e3dcfef1e22272
+  zh: 3c2feb568e394d27
+/persistence-release-quyet-v0-1-5-alpha-1/declaration:
+  en: af9cea43334ee692
+  zh: c6c8bd0d6a17718a
+/persistence-release-quyet-v0-1-5-alpha-1/structural-changes:
+  en: b5f68991a076ac50
+  zh: 4593e46ada9541e9
+/persistence-release-quyet-v0-1-5-alpha-1/verification:
+  en: 8ccca317964523b1
+  zh: 2c8b3e70a3320778
+/persistence-release-quyet-v0-1-5-alpha-1/dev-note:
+  en: b75c8458928b72b9
+  zh: 003ba4e17b4b5269

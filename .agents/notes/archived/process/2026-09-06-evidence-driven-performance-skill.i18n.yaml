@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/process/2026-09-06-evidence-driven-performance-skill.md
-2026-09-06-evidence-driven-performance-skill.md: 33725da5c3fa6b48f14728305d15b0e994af54f8
-2026-09-06-evidence-driven-performance-skill.zh.md: 7df77c104133f9fddeb7478b728603a56479835c
+2026-09-06-evidence-driven-performance-skill.md: 48b3b0140ac33c6270274f939edccaafd099ebea
+2026-09-06-evidence-driven-performance-skill.zh.md: e215c3ebd0a56e0d4c3412d03ed13ae3b2d535f9

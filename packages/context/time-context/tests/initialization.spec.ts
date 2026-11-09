@@ -1,10 +1,10 @@
 /** Real Agent requests overlapping time-context projection registration. */
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import * as timeContext from '@deepseek-ai/dsh-time-context'
+import { Context } from '@quyet/cordis'
+import AgentLoop from '@quyet/agent-loop'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
+import { createUserMessage } from '@quyet/llm'
+import { SessionId } from '@quyet/session'
+import * as timeContext from '@quyet/time-context'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 

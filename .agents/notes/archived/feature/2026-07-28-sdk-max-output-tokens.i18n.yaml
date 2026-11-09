@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-07-28-sdk-max-output-tokens.md
-2026-07-28-sdk-max-output-tokens.md: 8038081f1e93c5f2a31ca63b1faa75b78b40c801
-2026-07-28-sdk-max-output-tokens.zh.md: ffbac3d32eb62e7d3b38e6ac4ef4ebe9bb807788
+2026-07-28-sdk-max-output-tokens.md: 9102ebacfcf9eabb4fd3dbfb8ed08514d7c7ef35
+2026-07-28-sdk-max-output-tokens.zh.md: 6cc8c3815c8f1a2f081d92ca487c952ea3e69adf

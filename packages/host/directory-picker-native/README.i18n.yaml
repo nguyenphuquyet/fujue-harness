@@ -5,51 +5,51 @@
 /:
   en: caa1e08492610d5a
   zh: ea5b4fca758305d4
-/deepseek-ai-dsh-host-directory-picker-native:
-  en: f8f2ccf11332c1c1
-  zh: 58075651e5dd36d9
-/deepseek-ai-dsh-host-directory-picker-native/summary:
-  en: 45ee8141495e7107
-  zh: 576ca76dfbf7534d
-/deepseek-ai-dsh-host-directory-picker-native/table-of-contents:
+/quyet-host-directory-picker-native:
+  en: d8541aa63aca3597
+  zh: 8737817e74f4c188
+/quyet-host-directory-picker-native/summary:
+  en: a1487cf55ebb623c
+  zh: 00641ed24e614b21
+/quyet-host-directory-picker-native/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-host-directory-picker-native/use-this-package:
+/quyet-host-directory-picker-native/use-this-package:
   en: ae1b7eabeea5047d
   zh: 192d3f3bdb96b5eb
-/deepseek-ai-dsh-host-directory-picker-native/use-this-package/when-to-choose-it:
-  en: b515ea015fb8a7e8
-  zh: faedbf0a30b28062
-/deepseek-ai-dsh-host-directory-picker-native/use-this-package/what-an-operator-experiences:
+/quyet-host-directory-picker-native/use-this-package/when-to-choose-it:
+  en: 2da0876d562eefe6
+  zh: fe9f0f04258a86e3
+/quyet-host-directory-picker-native/use-this-package/what-an-operator-experiences:
   en: 6ea5dc02d78653c1
   zh: 5d247656f3650d6f
-/deepseek-ai-dsh-host-directory-picker-native/use-this-package/observable-failures:
-  en: 43926a0387f0ce2b
-  zh: 43c2051a64f48d4c
-/deepseek-ai-dsh-host-directory-picker-native/understand-the-implementation:
+/quyet-host-directory-picker-native/use-this-package/observable-failures:
+  en: afdcf911f77f0a48
+  zh: f0204d9a497f02e3
+/quyet-host-directory-picker-native/understand-the-implementation:
   en: 42b15ac6321706aa
   zh: 4ed0861911abaf5d
-/deepseek-ai-dsh-host-directory-picker-native/understand-the-implementation/design-concept:
-  en: 98afddc74b2d7010
-  zh: 39ed0d1a2508f78e
-/deepseek-ai-dsh-host-directory-picker-native/understand-the-implementation/platform-mechanics:
+/quyet-host-directory-picker-native/understand-the-implementation/design-concept:
+  en: ede26f4115dcef6d
+  zh: 62e1ce64e50a890a
+/quyet-host-directory-picker-native/understand-the-implementation/platform-mechanics:
   en: 7c637e3e9d30a1bd
   zh: 488841dc6e737b43
-/deepseek-ai-dsh-host-directory-picker-native/understand-the-implementation/source-map:
+/quyet-host-directory-picker-native/understand-the-implementation/source-map:
   en: 22ecabd6b74d6ecb
   zh: af59381cf2957b68
-/deepseek-ai-dsh-host-directory-picker-native/further-exploration:
-  en: 4ffff44b86ad443d
-  zh: 5ce3409c011c391d
-/deepseek-ai-dsh-host-directory-picker-native/model-experience:
+/quyet-host-directory-picker-native/further-exploration:
+  en: 7664ef06446b87a4
+  zh: 35b113e909995188
+/quyet-host-directory-picker-native/model-experience:
   en: cdbb9c75fbb91bb5
   zh: 35047dda1956f0ac
-/deepseek-ai-dsh-host-directory-picker-native/model-experience/kv-cache-effect:
+/quyet-host-directory-picker-native/model-experience/kv-cache-effect:
   en: ca75c51c89c2c9b0
   zh: de54f3467ef3b9be
-/deepseek-ai-dsh-host-directory-picker-native/known-limitations-and-deferred-work:
+/quyet-host-directory-picker-native/known-limitations-and-deferred-work:
   en: fc511afb34a48243
   zh: 86874eb5a723c748
-/deepseek-ai-dsh-host-directory-picker-native/known-limitations-and-deferred-work/dev-note:
+/quyet-host-directory-picker-native/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

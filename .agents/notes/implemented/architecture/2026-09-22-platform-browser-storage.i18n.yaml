@@ -3,8 +3,8 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-09-22-platform-browser-storage.md
 /agent-note-account-scoped-platform-browser-storage:
-  en: ade088e230a39dd2
-  zh: 437a9be5fe2ef704
+  en: 126ec469a2d64af5
+  zh: 176f8aa0840f7797
 /agent-note-account-scoped-platform-browser-storage/problem:
   en: 84cfcf61f58fab58
   zh: 14844d5e3d3638fe

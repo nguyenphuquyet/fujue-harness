@@ -1,10 +1,10 @@
 /** Managed Node process shared by temporary and owner-retained evaluations. */
 import { AsyncLocalStorage } from 'node:async_hooks'
-import { Context } from '@deepseek-ai/cordis'
-import type { PtcRunSpec, PtcRunResult, PtcRunSandbox, PtcRunFailure, PtcBindingNamespace, PtcJsonValue } from '@deepseek-ai/dsh-ptc-runtime'
-import { SandboxUnavailableError, classifyRunnerFailure, isRunnerSpawnFailure } from '@deepseek-ai/dsh-sandbox'
-import type { ConfinedArgv, SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
-import type { SubprocessHandle, SubprocessOutcome } from '@deepseek-ai/dsh-subprocess'
+import { Context } from '@quyet/cordis'
+import type { PtcRunSpec, PtcRunResult, PtcRunSandbox, PtcRunFailure, PtcBindingNamespace, PtcJsonValue } from '@quyet/ptc-runtime'
+import { SandboxUnavailableError, classifyRunnerFailure, isRunnerSpawnFailure } from '@quyet/sandbox'
+import type { ConfinedArgv, SandboxExecutionPolicy } from '@quyet/sandbox'
+import type { SubprocessHandle, SubprocessOutcome } from '@quyet/subprocess'
 import type { PolicyProcesses } from './policy-processes.ts'
 import type { ResolvedConfig } from './config.ts'
 import type { ExecutionMode } from './execution.ts'
@@ -290,7 +290,7 @@ export class ProgramWorker {
       .filter(key => !STARTUP_ENVIRONMENT_NAMES.has(key.toUpperCase()) && key.toUpperCase() !== 'ELECTRON_RUN_AS_NODE')
       .map(key => [key, undefined]))
     if (packaged) {
-      env.DSH_PTC_RUNTIME_NODE = '1'
+      env.QUYET_PTC_RUNTIME_NODE = '1'
       env.NODE_OPTIONS = `${heapFlag} --experimental-vm-modules`
     }
     const handle = this.ctx.subprocess.spawn({ argv: this.confined?.argv ?? argv, cwd, env, stdio: { stdin: 'ignore', stdout: 'pipe', stderr: 'pipe', control: 'pipe' }, graceMs: this.config.graceMs })

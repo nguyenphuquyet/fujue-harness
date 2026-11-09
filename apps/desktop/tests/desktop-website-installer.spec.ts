@@ -17,8 +17,8 @@ async function fixture(target: DesktopPublishRoute['target'] = 'mac-arm64') {
   roots.push(directory)
   const bytes = Buffer.from('final installer bytes')
   const route: DesktopPublishRoute = { runId: '12', attempt: '1', commit: 'a'.repeat(40), sourceRef: 'master',
-    channel: 'nightly', runnerName: 'mini', runnerLabel: 'dsh-mini', target, preset: 'production' }
-  const filename = `deepseek-harness-0.2.1-rc.5-${target}.${target === 'win-x64' ? 'exe' : 'dmg'}`
+    channel: 'nightly', runnerName: 'mini', runnerLabel: 'quyet-mini', target, preset: 'production' }
+  const filename = `quyet-harness-0.2.1-rc.5-${target}.${target === 'win-x64' ? 'exe' : 'dmg'}`
   await writeFile(join(directory, filename), bytes)
   const manifest: DesktopRetainedManifest = { schemaVersion: 1, source: {
     runId: route.runId, attempt: route.attempt, commit: route.commit, sourceRef: route.sourceRef,
@@ -57,7 +57,7 @@ it.each(['preset', 'qualification', 'attempt', 'commit', 'target', 'repository',
   if (field === 'repository') source.repository = 'other/repo'
   if (field === 'runId') source.runId = '13'
   if (field === 'runnerName') source.runnerName = 'other'
-  if (field === 'sourceRef') source.sourceRef = 'dsh-v0.2.1'
+  if (field === 'sourceRef') source.sourceRef = 'quyet-v0.2.1'
   if (field === 'channel') source.channel = 'stable'
   await expect(prepareWebsiteInstaller(f.directory, { ...f.manifest, source }, f.route, 'owner/repo', 'production-123')).rejects.toThrow('identity or production qualification mismatch')
 })

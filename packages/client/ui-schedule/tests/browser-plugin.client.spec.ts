@@ -1,22 +1,22 @@
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { Context, Service } from '@deepseek-ai/cordis'
+import { createSnapshotStore } from '@quyet/client-store'
+import { Context, Service } from '@quyet/cordis'
 import { describe, expect, it, vi, type Mock } from 'vitest'
-import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
-import { UiConversation } from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { resolveSlotLabel, type HostObservable, type StoredEntry } from '@deepseek-ai/dsh-client-ui-slots'
-import { StaticRemoteAccess, stubConfigForm } from '@deepseek-ai/dsh-client-test-runtime'
-import { apply as applyLocale, inject as localeInject } from '@deepseek-ai/dsh-client-locale/client'
+import { SlotRegistry } from '@quyet/client-ui-renderer/client'
+import { UiConversation } from '@quyet/client-ui-conversation/client'
+import { resolveSlotLabel, type HostObservable, type StoredEntry } from '@quyet/client-ui-slots'
+import { StaticRemoteAccess, stubConfigForm } from '@quyet/client-test-runtime'
+import { apply as applyLocale, inject as localeInject } from '@quyet/client-locale/client'
 import { apply, inject } from '../src/client/index.ts'
 import { apply as applyNode } from '../src/index.ts'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { SessionListState } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { WorkspaceSnapshot } from '@deepseek-ai/dsh-api-workspace-controller/client'
+import type { SessionId } from '@quyet/session/types'
+import type { SessionListState } from '@quyet/api-session-controller/client'
+import type { WorkspaceSnapshot } from '@quyet/api-workspace-controller/client'
 import type {
   ScheduleEditRequest, ScheduleEditResult, ScheduleId, ScheduleInputErrorCode, ScheduleRunRequest, ScheduleRunResult,
   ScheduleCatalogEntry, ScheduleCreateRequest, ScheduleDeleteInactiveResult,
-} from '@deepseek-ai/dsh-schedule/client'
-import type { RemoteResult } from '@deepseek-ai/dsh-api-remotes/client'
-import { RemoteError } from '@deepseek-ai/dsh-client-test-runtime'
+} from '@quyet/schedule/client'
+import type { RemoteResult } from '@quyet/api-remotes/client'
+import { RemoteError } from '@quyet/client-test-runtime'
 import type { CatalogInjected } from '../src/client/catalog-source.ts'
 import { ScheduleDeleteToast, type DeleteToastSource } from '../src/client/DeleteToast.tsx'
 import { SCHEDULE_TASK_ID, SCHEDULE_TASK_KIND } from '../src/client/definition.ts'
@@ -435,7 +435,7 @@ describe('ui-schedule browser half', () => {
           prompt: dictionary['host.createPrompt'], whenDraftExists: 'append',
         })
       }
-      expect(startSession).toHaveBeenCalledTimes(8)
+      expect(startSession).toHaveBeenCalledTimes(9)
     } finally {
       await fiber.dispose()
       owner()

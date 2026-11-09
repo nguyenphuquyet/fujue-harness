@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from deepseek_harness import DeepSeekHarness
+from quyet_harness import QuyetHarness
 
 
 EXPECTED_ROOT = Path(__file__).parent / "expected"
@@ -59,7 +59,7 @@ for line in sys.stdin:
     print(json.dumps({"jsonrpc": "2.0", "id": message["id"], "result": result}), flush=True)
 """.strip(), encoding="utf-8",
     )
-    with DeepSeekHarness(
+    with QuyetHarness(
         _launch_args=(sys.executable, str(script)), cwd=str(tmp_path),
         env={"MAIN_RESPONSE": expected["finalResponse"], "AUDIT_EVENTS": json.dumps(expected["auditEvents"])},
     ) as harness:

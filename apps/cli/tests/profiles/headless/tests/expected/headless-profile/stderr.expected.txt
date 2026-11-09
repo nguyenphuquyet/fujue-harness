@@ -1,1 +1,1 @@
-dsh: SERVER: CLI mock provider failed
+quyet: SERVER: CLI mock provider failed

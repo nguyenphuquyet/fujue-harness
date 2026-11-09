@@ -1,11 +1,11 @@
 /** Background browser upload implementation for Blob and byte-stream bodies. */
 
-import { Service, type Context } from '@deepseek-ai/cordis'
-import type { ImageMediaType } from '@deepseek-ai/dsh-attachment/types'
-import { bytesToBase64 } from '@deepseek-ai/dsh-util-crypto'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { Service, type Context } from '@quyet/cordis'
+import type { ImageMediaType } from '@quyet/attachment/types'
+import { bytesToBase64 } from '@quyet/util-crypto'
+import { RemoteError } from '@quyet/typert-protocol'
+import type { RemoteResult } from '@quyet/typert-protocol'
+import type { SessionId } from '@quyet/session/types'
 import { FILE_UPLOAD_ROUTE } from '../protocol.ts'
 import type {
   ClientFileUploadHooks, EncodedFileUploadRequest, FileUploadFetch, FileUploadValue, ImageUploadValue,
@@ -153,7 +153,7 @@ export function fileUploadWorker(
 }
 
 interface ClientFileUploadGlobal {
-  __DSH_FILE_UPLOAD__?: ClientFileUploadHooks
+  __QUYET_FILE_UPLOAD__?: ClientFileUploadHooks
 }
 
 interface FileUploadTransport {
@@ -167,7 +167,7 @@ export class FileUploadRuntime extends Service implements FileUploadService {
   /** @param ctx - providing Client context. */
   constructor(ctx: Context) {
     super(ctx, 'fileUpload')
-    const hook = (globalThis as ClientFileUploadGlobal).__DSH_FILE_UPLOAD__
+    const hook = (globalThis as ClientFileUploadGlobal).__QUYET_FILE_UPLOAD__
     this.transport = hook === undefined ? workerTransport() : customTransport(hook.fetch)
   }
 
@@ -280,7 +280,7 @@ function workerTransport(): FileUploadTransport {
       const workerUrl = URL.createObjectURL(new Blob([
         `(${fileUploadWorker.toString()})()`,
       ], { type: 'text/javascript' }))
-      const worker = new Worker(workerUrl, { name: 'dsh-file-upload' })
+      const worker = new Worker(workerUrl, { name: 'quyet-file-upload' })
       URL.revokeObjectURL(workerUrl)
       return new Promise((resolve, reject) => {
         let settled = false

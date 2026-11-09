@@ -1,0 +1,8 @@
+version: 1
+scenario: subagent-quyet-sdk-diagnostic
+profile: sdk
+composition: sdk-quyet-sdk-diagnostic
+recording: live
+header:
+  class: sdk-quyet-sdk-diagnostic
+  pin: true

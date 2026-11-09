@@ -1,16 +1,16 @@
 /** Real Loader/native adapters with fixture-owned credentials and a bounded loopback wire. */
-import type { ModuleLoaderV2 } from '@deepseek-ai/cordis-plugin-loader'
-import { boot } from '@deepseek-ai/dsh-app-boot'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import SessionStore, { SESSION_FORMAT_VERSION, SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@deepseek-ai/dsh-session'
-import * as JsonlPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SqliteSessionQuery from '@deepseek-ai/dsh-session-query-sqlite'
-import * as Official from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import * as Account from '@deepseek-ai/dsh-llm-deepseek-account'
-import type { DeepSeekAccount } from '@deepseek-ai/dsh-deepseek-account'
-import DeepSeekLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import * as SessionLogDeepSeek from '@deepseek-ai/dsh-session-log-deepseek'
-import { createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
+import type { ModuleLoaderV2 } from '@quyet/cordis-plugin-loader'
+import { boot } from '@quyet/app-boot'
+import LlmRuntime from '@quyet/llm'
+import SessionStore, { SESSION_FORMAT_VERSION, SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@quyet/session'
+import * as JsonlPersistence from '@quyet/session-persistence-jsonl'
+import SqliteSessionQuery from '@quyet/session-query-sqlite'
+import * as Official from '@quyet/llm-deepseek-api-key'
+import * as Account from '@quyet/llm-deepseek-account'
+import type { DeepSeekAccount } from '@quyet/deepseek-account'
+import DeepSeekLlmApiExtensionRegistry from '@quyet/deepseek-llm-api-extensions'
+import * as SessionLogDeepSeek from '@quyet/session-log-deepseek'
+import { createLaunchEnvironmentSnapshot } from '@quyet/launch-environment'
 import { once } from 'node:events'
 import { createServer, type ServerResponse } from 'node:http'
 import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
@@ -71,13 +71,13 @@ export interface RestartOptions {
 
 /** Boot actual native provider rows; cleanup is registered as soon as resources exist. */
 export async function paidFixture(cleanups: Array<() => Promise<void>>, options: FixtureOptions = {}) {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-paid-translator-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-paid-translator-'))
   cleanups.push(async () => { await rm(root, { recursive: true, force: true }) })
-  const previousHome = process.env.DSH_HOME
-  process.env.DSH_HOME = root
+  const previousHome = process.env.QUYET_HOME
+  process.env.QUYET_HOME = root
   cleanups.push(async () => {
-    if (previousHome === undefined) Reflect.deleteProperty(process.env, 'DSH_HOME')
-    else process.env.DSH_HOME = previousHome
+    if (previousHome === undefined) Reflect.deleteProperty(process.env, 'QUYET_HOME')
+    else process.env.QUYET_HOME = previousHome
   })
   const requests: NativeRequest[] = [], errors: unknown[] = [], handlers = new Set<Promise<void>>()
   let auditId = SessionId('paid-translation')
@@ -97,8 +97,8 @@ export async function paidFixture(cleanups: Array<() => Promise<void>>, options:
       const payload: unknown = JSON.parse(Buffer.concat(chunks).toString('utf8'))
       if (typeof payload !== 'object' || payload === null || Array.isArray(payload)) throw new Error('Expected native Messages request object')
       const input: NativeRequest = { path: request.url ?? '', body: payload as Record<string, unknown>,
-        accountAuth: request.headers['x-dsh-auth-token'] !== undefined, officialAuth: request.headers['x-api-key'] !== undefined,
-        sessionHeader: request.headers['x-deepseek-harness-session-id'] !== undefined,
+        accountAuth: request.headers['x-quyet-auth-token'] !== undefined, officialAuth: request.headers['x-api-key'] !== undefined,
+        sessionHeader: request.headers['x-quyet-harness-session-id'] !== undefined,
         audit: await readEvents(auditId) }
       requests.push(input)
       response.writeHead(options.responseStatus ?? 200, { 'content-type': 'text/event-stream' })
@@ -126,30 +126,30 @@ export async function paidFixture(cleanups: Array<() => Promise<void>>, options:
   const configPath = join(root, 'cordis.yml'), storedRoot = join(root, 'sessions')
   let translator = options.translator ?? {}, withNativeOwners = true
   const rows = () => [
-    { id: 'llm', name: '@deepseek-ai/dsh-llm' },
-    { id: 'session', name: '@deepseek-ai/dsh-session' },
-    { id: 'storage', name: '@deepseek-ai/dsh-session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
-    { id: 'official-custom-id', name: options.officialName ?? '@deepseek-ai/dsh-llm-deepseek-api-key', disabled: !withNativeOwners, config: {
+    { id: 'llm', name: '@quyet/llm' },
+    { id: 'session', name: '@quyet/session' },
+    { id: 'storage', name: '@quyet/session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
+    { id: 'official-custom-id', name: options.officialName ?? '@quyet/llm-deepseek-api-key', disabled: !withNativeOwners, config: {
       baseURL, apiKeyEnv: 'PAID_TRANSLATION_FIXTURE_KEY', models: options.officialModels ?? [{ id: 'deepseek-flash', name: 'Flash version-independent name' }],
     } },
-    { id: 'account-custom-id', name: '@deepseek-ai/dsh-llm-deepseek-account', disabled: !withNativeOwners, config: { baseURL } },
-    { id: 'translator', name: '@deepseek-ai/dsh-experimental-translator', config: translator },
+    { id: 'account-custom-id', name: '@quyet/llm-deepseek-account', disabled: !withNativeOwners, config: { baseURL } },
+    { id: 'translator', name: '@quyet/experimental-translator', config: translator },
     ...options.withSessionQuery === true ? [
-      { id: 'query', name: '@deepseek-ai/dsh-session-query-sqlite', config: { path: join(root, 'query.sqlite'), openAt: 'never' } },
+      { id: 'query', name: '@quyet/session-query-sqlite', config: { path: join(root, 'query.sqlite'), openAt: 'never' } },
     ] : [],
     ...options.withSessionLog === true ? [
-      { id: 'deepseek-llm-api-extensions', name: '@deepseek-ai/dsh-deepseek-llm-api-extensions' },
-      { id: 'session-log-deepseek', name: '@deepseek-ai/dsh-session-log-deepseek' },
+      { id: 'deepseek-llm-api-extensions', name: '@quyet/deepseek-llm-api-extensions' },
+      { id: 'session-log-deepseek', name: '@quyet/session-log-deepseek' },
     ] : [],
   ]
   await writeFile(configPath, JSON.stringify(rows()))
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-llm', LlmRuntime], ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlPersistence], ['@deepseek-ai/dsh-session-query-sqlite', SqliteSessionQuery],
-    [options.officialName ?? '@deepseek-ai/dsh-llm-deepseek-api-key', Official],
-    ['@deepseek-ai/dsh-llm-deepseek-account', Account], ['@deepseek-ai/dsh-experimental-translator', Translator],
-    ['@deepseek-ai/dsh-deepseek-llm-api-extensions', DeepSeekLlmApiExtensionRegistry],
-    ['@deepseek-ai/dsh-session-log-deepseek', SessionLogDeepSeek],
+    ['@quyet/llm', LlmRuntime], ['@quyet/session', SessionStore],
+    ['@quyet/session-persistence-jsonl', JsonlPersistence], ['@quyet/session-query-sqlite', SqliteSessionQuery],
+    [options.officialName ?? '@quyet/llm-deepseek-api-key', Official],
+    ['@quyet/llm-deepseek-account', Account], ['@quyet/experimental-translator', Translator],
+    ['@quyet/deepseek-llm-api-extensions', DeepSeekLlmApiExtensionRegistry],
+    ['@quyet/session-log-deepseek', SessionLogDeepSeek],
   ])
   const start = () => boot('paid-translator-composition', configPath, [], (host) => {
     const sourceModules: ModuleLoaderV2 = {

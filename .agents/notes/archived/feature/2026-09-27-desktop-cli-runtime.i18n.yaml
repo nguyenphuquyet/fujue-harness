@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-09-27-desktop-cli-runtime.md
-2026-09-27-desktop-cli-runtime.md: a11612c4b013ba123b6950ec0b3affd225c42c2b
-2026-09-27-desktop-cli-runtime.zh.md: c56a1e32984f25ac12cda56751c24df917ba61bf
+2026-09-27-desktop-cli-runtime.md: b40dfc316f9e8526dd26034a8962cdd1359143d3
+2026-09-27-desktop-cli-runtime.zh.md: 82e25101dbb6faf407c59cb97b4cebc91286ece9

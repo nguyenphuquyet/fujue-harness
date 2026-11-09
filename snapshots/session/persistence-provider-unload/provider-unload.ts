@@ -1,8 +1,8 @@
 /** Persist an injected consumer's final event during provider-only unload. */
-import type { Context } from '@deepseek-ai/cordis'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/cordis-plugin-loader'
-import type {} from '@deepseek-ai/dsh-tool-todo'
+import type { Context } from '@quyet/cordis'
+import type { Session } from '@quyet/session'
+import type {} from '@quyet/cordis-plugin-loader'
+import type {} from '@quyet/tool-todo'
 import { scheduler } from 'node:timers/promises'
 
 export const name = 'snapshot-persistence-provider-unload'

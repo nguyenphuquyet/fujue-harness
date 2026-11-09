@@ -2,27 +2,27 @@
 # section, a hash of its English and Chinese blocks outside code blocks and generated regions.
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write python/sdk/README.md
-/deepseek-harness-python-sdk:
-  en: 43f7de064985e731
-  zh: 9ad59629660b1f13
-/deepseek-harness-python-sdk/optional-office-operations:
-  en: ddf4dabea526cef1
-  zh: 6e31cab10d2f3ed8
-/deepseek-harness-python-sdk/start-a-runtime:
-  en: ac793c588b13ce87
-  zh: 502015cda46de3ac
-/deepseek-harness-python-sdk/run-text-and-commands:
-  en: b2c847c1452e137d
-  zh: c595c5e82151d0cb
-/deepseek-harness-python-sdk/client-approvals:
-  en: 1d18c09832dd4a42
-  zh: 6e7260b650a1f987
-/deepseek-harness-python-sdk/customize-plugins:
-  en: 0cfa22d329a704db
-  zh: ff04b5e01e2c5936
-/deepseek-harness-python-sdk/native-user-questions:
-  en: 979ad00fe498b2be
-  zh: 4b656bd268292a13
-/deepseek-harness-python-sdk/results-and-notifications:
-  en: 6b81899ea865ffd2
-  zh: d9e326a3fb04e696
+/juetech-harness-python-sdk:
+  en: 8653439591f114a2
+  zh: 222514351bc070d0
+/juetech-harness-python-sdk/optional-office-operations:
+  en: ae1f8c0478a42210
+  zh: 4bb995f6720d250a
+/juetech-harness-python-sdk/start-a-runtime:
+  en: ba9599831eb266df
+  zh: 7053924ef5d41baf
+/juetech-harness-python-sdk/run-text-and-commands:
+  en: 10b9e2b1461cdd8d
+  zh: 064fbcfa3856a336
+/juetech-harness-python-sdk/client-approvals:
+  en: b173666e81082e5b
+  zh: d0883a96e1379535
+/juetech-harness-python-sdk/customize-plugins:
+  en: 2496a82d2ff8bf1f
+  zh: 78132d922f995c78
+/juetech-harness-python-sdk/native-user-questions:
+  en: ab22b9cefa0f3f96
+  zh: 86bd9ef6027cd788
+/juetech-harness-python-sdk/results-and-notifications:
+  en: c1aa588ec99ed1f0
+  zh: 302efe29972329c5

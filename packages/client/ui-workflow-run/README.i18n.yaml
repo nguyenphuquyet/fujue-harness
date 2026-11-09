@@ -3,47 +3,47 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/client/ui-workflow-run/README.md
 /:
-  en: 1310faa1582887b5
-  zh: 16b77855de7f9292
-/deepseek-ai-dsh-client-ui-workflow-run:
-  en: d606bcab47f1b3f3
-  zh: 31fd19010234cbd4
-/deepseek-ai-dsh-client-ui-workflow-run/summary:
-  en: bbb41a09daa0ed51
-  zh: db65a976a21b1972
-/deepseek-ai-dsh-client-ui-workflow-run/table-of-contents:
+  en: 511865ebe29b5fbc
+  zh: 9fcc199dea20198b
+/quyet-client-ui-workflow-run:
+  en: 23efa2f4fd2f253c
+  zh: 5bbe6028f1f14a24
+/quyet-client-ui-workflow-run/summary:
+  en: a759de5b1d308bf4
+  zh: 840fe5629e33af68
+/quyet-client-ui-workflow-run/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-client-ui-workflow-run/use-this-package:
-  en: 9712b1ed5f00f24f
-  zh: c8f72b2ef448d9af
-/deepseek-ai-dsh-client-ui-workflow-run/use-this-package/navigating-the-node:
+/quyet-client-ui-workflow-run/use-this-package:
+  en: c362280f395bfaba
+  zh: d2666c388a734e48
+/quyet-client-ui-workflow-run/use-this-package/navigating-the-node:
   en: 9f223e9f1e5f84d6
   zh: f9416f079efc7c83
-/deepseek-ai-dsh-client-ui-workflow-run/use-this-package/state-and-completion:
+/quyet-client-ui-workflow-run/use-this-package/state-and-completion:
   en: de2dbff7df2294ed
   zh: 97a03787caf02e2b
-/deepseek-ai-dsh-client-ui-workflow-run/understand-the-implementation:
+/quyet-client-ui-workflow-run/understand-the-implementation:
   en: d41b996f3fb6727b
   zh: 6b40fdf1db894fff
-/deepseek-ai-dsh-client-ui-workflow-run/understand-the-implementation/disclosure-choices:
+/quyet-client-ui-workflow-run/understand-the-implementation/disclosure-choices:
   en: adf86d983c51865e
   zh: 014a4644d55be111
-/deepseek-ai-dsh-client-ui-workflow-run/understand-the-implementation/composition:
+/quyet-client-ui-workflow-run/understand-the-implementation/composition:
   en: 364d3c38e5f02149
   zh: ca5dbee6ac27e141
-/deepseek-ai-dsh-client-ui-workflow-run/further-exploration:
-  en: e95928b8d16b4043
-  zh: 15f74b81c7c7b6df
-/deepseek-ai-dsh-client-ui-workflow-run/model-experience:
+/quyet-client-ui-workflow-run/further-exploration:
+  en: 54843ca4cffa7e0b
+  zh: 4b1149fd3c9f2d7d
+/quyet-client-ui-workflow-run/model-experience:
   en: 62a75f801964a0bb
   zh: a247663753a52ae9
-/deepseek-ai-dsh-client-ui-workflow-run/model-experience/kv-cache-effect:
+/quyet-client-ui-workflow-run/model-experience/kv-cache-effect:
   en: ca75c51c89c2c9b0
   zh: de54f3467ef3b9be
-/deepseek-ai-dsh-client-ui-workflow-run/known-limitations-and-deferred-work:
-  en: d89a3727cfdc9db9
-  zh: 42ad9b22bb0c356e
-/deepseek-ai-dsh-client-ui-workflow-run/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-workflow-run/known-limitations-and-deferred-work:
+  en: a6efe52e1c883c75
+  zh: 3ad4f6312d41769c
+/quyet-client-ui-workflow-run/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

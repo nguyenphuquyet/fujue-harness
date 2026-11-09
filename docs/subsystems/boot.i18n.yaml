@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/subsystems/boot.md
 /profile-management:
-  en: 962b4398c9052959
-  zh: 14471c340a9f6e60
+  en: 1c08c11d5be39b55
+  zh: 168033506f62acda
 /profile-management/management-records:
-  en: 2cf6a1f62dcc1de6
-  zh: b6d519b60f6f5c79
+  en: 6c2adc728a510b2f
+  zh: d84332e258152877
 /profile-management/market-records:
-  en: 3dfc62d837d61b9b
-  zh: ec223be315f3dc62
+  en: c060b25ec650d1fc
+  zh: 4263ab38c6286509
 /profile-management/profile-reconciliation:
   en: 42a093314af774d4
   zh: 7c1784a3af02b31c

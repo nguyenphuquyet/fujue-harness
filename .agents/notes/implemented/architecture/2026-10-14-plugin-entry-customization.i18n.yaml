@@ -3,11 +3,11 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-10-14-plugin-entry-customization.md
 /agent-note-plugin-entry-customization-region-owned-pins-and-more-menus:
-  en: 2fdf5b95d5603955
-  zh: bfdc61e7db5f5f5b
+  en: db3e70c3442d3e5b
+  zh: 8c3309cf989f17df
 /agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/problem:
-  en: 896876f139383cba
-  zh: 42a4aae7e5885780
+  en: 42e2ff6b867eba60
+  zh: d339cc967580fac0
 /agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/decision:
   en: a6cfc29cb9caa83c
   zh: 21bbeb6a7ab20018
@@ -17,15 +17,15 @@
 /agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/decision/structure-and-ownership:
   en: d6a2816ca55b1c38
   zh: 53217016f1595755
-/agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/decision/package-changes-relative-to-release-dsh-0-2-1:
-  en: 18ed81fee1ca7d41
-  zh: fc298457e54b6488
+/agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/decision/package-changes-relative-to-release-quyet-0-2-1:
+  en: f870757853caf385
+  zh: 3f2d496b46c6ee52
 /agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/decision/actions-slots-and-menu-content:
   en: c87e2fdd911714b5
   zh: 074426fdc7abafa9
 /agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/decision/the-three-regions:
-  en: 770c6150e84742ba
-  zh: 1d619388c8f38646
+  en: 95bac5de75dc029a
+  zh: 2f8a0149823d79ce
 /agent-note-plugin-entry-customization-region-owned-pins-and-more-menus/alternatives-considered:
   en: 79355028387c4094
   zh: 5b518166e4803ebe

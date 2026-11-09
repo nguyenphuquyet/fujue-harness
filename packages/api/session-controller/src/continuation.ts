@@ -1,8 +1,8 @@
 /** Constant-size continuation eligibility over the complete durable Session. */
 import type {} from './types.ts'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
-import type { SessionSeq } from '@deepseek-ai/dsh-session/types'
-import { brandNumber } from '@deepseek-ai/dsh-brand'
+import type { ProjectionDefinition } from '@quyet/session-projection'
+import type { SessionSeq } from '@quyet/session/types'
+import { brandNumber } from '@quyet/brand'
 import { z } from 'zod'
 
 // Explicit manual requests use a fixed product policy, independent of automatic retry configuration.

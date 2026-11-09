@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-sdk-minimal",
+  "name": "@quyet/sdk-minimal",
   "description": "The standalone minimal SDK profile bundle: JSON-RPC, one DeepSeek adapter, persistent shell, and JSONL sessions",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/bundle/sdk-minimal"
   },
   "type": "module",
@@ -28,53 +28,53 @@
     "lib/types/**/*.d.ts"
   ],
   "license": "MIT",
-  "dsh": {
+  "quyet": {
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
   },
   "dependencies": {
-    "@deepseek-ai/cordis-plugin-timer": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-attachment-local": "workspace:*",
-    "@deepseek-ai/dsh-compaction-basic": "workspace:*",
-    "@deepseek-ai/dsh-compaction-image-offload": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": "workspace:*",
-    "@deepseek-ai/dsh-jobs-local": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-api-key": "workspace:*",
-    "@deepseek-ai/dsh-llm-retry": "workspace:*",
-    "@deepseek-ai/dsh-mcp-resources": "workspace:*",
-    "@deepseek-ai/dsh-plugin-package-inventory-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-sdk-app": "workspace:*",
-    "@deepseek-ai/dsh-sdk-jsonrpc-server": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-checkpoint-policy": "workspace:*",
-    "@deepseek-ai/dsh-session-log-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-terminal": "workspace:*",
-    "@deepseek-ai/dsh-terminal-bash": "workspace:*",
-    "@deepseek-ai/dsh-token-meter": "workspace:*",
-    "@deepseek-ai/dsh-tool-bash-persistent": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-fs": "workspace:*",
-    "@deepseek-ai/dsh-tool-pwsh-persistent": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-tool-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*"
+    "@quyet/cordis-plugin-timer": "workspace:~",
+    "@quyet/agent": "workspace:*",
+    "@quyet/agent-loop": "workspace:*",
+    "@quyet/attachment-local": "workspace:*",
+    "@quyet/compaction-basic": "workspace:*",
+    "@quyet/compaction-image-offload": "workspace:*",
+    "@quyet/deepseek-llm-api-extensions": "workspace:*",
+    "@quyet/jobs-local": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/llm-deepseek-api-key": "workspace:*",
+    "@quyet/llm-retry": "workspace:*",
+    "@quyet/mcp-resources": "workspace:*",
+    "@quyet/plugin-package-inventory-deepseek": "workspace:*",
+    "@quyet/sandbox-local": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/sdk-app": "workspace:*",
+    "@quyet/sdk-jsonrpc-server": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/session-checkpoint-policy": "workspace:*",
+    "@quyet/session-log-deepseek": "workspace:*",
+    "@quyet/session-persistence-jsonl": "workspace:*",
+    "@quyet/session-projection": "workspace:*",
+    "@quyet/session-title": "workspace:*",
+    "@quyet/subprocess-local": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/terminal": "workspace:*",
+    "@quyet/terminal-bash": "workspace:*",
+    "@quyet/token-meter": "workspace:*",
+    "@quyet/tool-bash-persistent": "workspace:*",
+    "@quyet/tool-executor-native": "workspace:*",
+    "@quyet/tool-fs": "workspace:*",
+    "@quyet/tool-pwsh-persistent": "workspace:*",
+    "@quyet/tools": "workspace:*",
+    "@quyet/working-directory": "workspace:*",
+    "@quyet/tool-working-directory": "workspace:*",
+    "@quyet/fs-local": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   }
 }

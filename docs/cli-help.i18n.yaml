@@ -5,30 +5,30 @@
 /:
   en: d11ca88bdc409249
   zh: d11ca88bdc409249
-/dsh-cli-help:
-  en: b7174eab3476579d
-  zh: 5ddab967320e3cff
-/dsh-cli-help/contents:
-  en: 00308bcc6dc90afd
-  zh: 16f7442b76686a02
-/dsh-cli-help/dsh:
-  en: e0695abcf7d8b521
-  zh: 712c23b3c8a115ca
-/dsh-cli-help/dsh-plugin:
-  en: adad99c125d0ac51
-  zh: f11024971184f737
-/dsh-cli-help/dsh-acp:
-  en: bcb0f84577ce5f03
-  zh: 4382e617006849db
-/dsh-cli-help/dsh-headless:
-  en: 878a1dd78017964d
-  zh: bb43d91b4beb9bda
-/dsh-cli-help/dsh-sdk:
-  en: 701f239c5157dedb
-  zh: ee11be2932b05ce4
-/dsh-cli-help/dsh-sdk-minimal:
-  en: 8f0d7548d299ffd3
-  zh: fa2262e70d6819a0
-/dsh-cli-help/dsh-web:
-  en: 5d073104e8954cc8
-  zh: 91cd28f7c6ac96ac
+/quyet-cli-help:
+  en: a48db55d4dbb4715
+  zh: d4a0433b37d918d5
+/quyet-cli-help/contents:
+  en: 18a9112db629424a
+  zh: 454e67fece2f1f3b
+/quyet-cli-help/quyet:
+  en: 0ac3eb6f2c34ff85
+  zh: f37fba35726061c2
+/quyet-cli-help/quyet-plugin:
+  en: d69f2b08bfbfbff1
+  zh: eb6dc04e337c8b3e
+/quyet-cli-help/quyet-acp:
+  en: 9bd1a57758d2b15c
+  zh: 10d11e3d5b65626e
+/quyet-cli-help/quyet-headless:
+  en: 5502bd030d2c9f9c
+  zh: e68d8adaac160ec7
+/quyet-cli-help/quyet-sdk:
+  en: acd5cc7fc29a7e1c
+  zh: 946aee67d3a8db8e
+/quyet-cli-help/quyet-sdk-minimal:
+  en: f9c46f32adebe916
+  zh: 2185f4553836841e
+/quyet-cli-help/quyet-web:
+  en: 7b64843d7e4513be
+  zh: 1044679102ce99e6

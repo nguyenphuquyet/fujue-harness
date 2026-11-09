@@ -6,10 +6,10 @@
  * `ctx.fs`, both within `maxDiffBytes`.
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import { FsError } from '@deepseek-ai/dsh-fs'
-import type { Session } from '@deepseek-ai/dsh-session'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+import type { Context } from '@quyet/cordis'
+import { FsError } from '@quyet/fs'
+import type { Session } from '@quyet/session'
+import { assertNever } from '@quyet/util-values'
 import { decodeText, parseDiff, parseNumstat, untrackedFile } from './diff.ts'
 import { gitIn, GitOutputTooLarge } from './git.ts'
 import type { Git, GitConfig, GitOutput, Inspection } from './git.ts'

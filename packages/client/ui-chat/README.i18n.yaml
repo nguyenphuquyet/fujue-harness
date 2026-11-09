@@ -5,48 +5,48 @@
 /:
   en: d88f75fc0178ba53
   zh: 52bc7ae9551ab1cf
-/deepseek-ai-dsh-client-ui-chat:
-  en: 02bd72c12ada3218
-  zh: 331b3a38b3ddfc6e
-/deepseek-ai-dsh-client-ui-chat/summary:
+/quyet-client-ui-chat:
+  en: 1c5f4390eb3bd88a
+  zh: 16ca0fc33c401e44
+/quyet-client-ui-chat/summary:
   en: 4f2d50107db6c4f8
   zh: ea7ccfcce8f1849e
-/deepseek-ai-dsh-client-ui-chat/table-of-contents:
+/quyet-client-ui-chat/table-of-contents:
   en: 41cd21266011d571
   zh: 3172d1a2acbb27b7
-/deepseek-ai-dsh-client-ui-chat/reference-previews:
-  en: 9386791a9e5efa00
-  zh: 7cb9f3bbc42319d6
-/deepseek-ai-dsh-client-ui-chat/hidden-chat-rows:
+/quyet-client-ui-chat/reference-previews:
+  en: fcc72b731d1de551
+  zh: 6757b593e66fd853
+/quyet-client-ui-chat/hidden-chat-rows:
   en: 8ca277dc7fed699f
   zh: 167478dba50f3904
-/deepseek-ai-dsh-client-ui-chat/command-and-failure-rows:
-  en: c5b23d0ed29a0425
-  zh: 689bab2c8253294a
-/deepseek-ai-dsh-client-ui-chat/turn-token-usage:
-  en: d363057b5c0b2571
-  zh: 0f6fe864d9673576
-/deepseek-ai-dsh-client-ui-chat/completed-turn-footer:
+/quyet-client-ui-chat/command-and-failure-rows:
+  en: c0e9c1e1cc4b08f6
+  zh: 879ce07d1dd4ea68
+/quyet-client-ui-chat/turn-token-usage:
+  en: d70bcd9c9ca80ba7
+  zh: 490a5042155da04a
+/quyet-client-ui-chat/completed-turn-footer:
   en: 382821ca3ffa60dd
   zh: 9840ffa07c13082a
-/deepseek-ai-dsh-client-ui-chat/turn-process-folding:
-  en: 7cc6692b879aa500
-  zh: e924733c88b526c9
-/deepseek-ai-dsh-client-ui-chat/grouped-rendering:
-  en: b1630d93a52f483e
-  zh: 59cb81ca50ecffc4
-/deepseek-ai-dsh-client-ui-chat/scroll-ownership:
-  en: dd4e69828096c3a0
-  zh: 2a9bc370f44efcd7
-/deepseek-ai-dsh-client-ui-chat/model-experience:
+/quyet-client-ui-chat/turn-process-folding:
+  en: 0a45835befc50d58
+  zh: d165358fd65a6bfd
+/quyet-client-ui-chat/grouped-rendering:
+  en: c98da57f0b60f336
+  zh: 11b9e19d1f28c344
+/quyet-client-ui-chat/scroll-ownership:
+  en: 7ba1a333c60e8ab5
+  zh: ea50e447f500a6f4
+/quyet-client-ui-chat/model-experience:
   en: c17b4dd43a61c569
   zh: f7414309810c3a08
-/deepseek-ai-dsh-client-ui-chat/model-experience/kv-cache-effect:
+/quyet-client-ui-chat/model-experience/kv-cache-effect:
   en: 15a7151ff9268f15
   zh: 6eae68c718be579b
-/deepseek-ai-dsh-client-ui-chat/known-limitations-and-deferred-work:
-  en: 811787a5d2feaa90
-  zh: 3f1697bbc1fc7691
-/deepseek-ai-dsh-client-ui-chat/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-chat/known-limitations-and-deferred-work:
+  en: c33693640e183baa
+  zh: 6bb5c0e7d4a655b7
+/quyet-client-ui-chat/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: e88aeb617ffb74ea

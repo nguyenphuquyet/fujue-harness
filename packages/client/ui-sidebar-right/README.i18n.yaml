@@ -3,53 +3,53 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/client/ui-sidebar-right/README.md
 /:
-  en: 0960aa113255a3a8
-  zh: 48e5173172a55a91
-/deepseek-ai-dsh-client-ui-sidebar-right:
-  en: 0b446bc3fbd57fad
-  zh: e0b6491a6c43bee1
-/deepseek-ai-dsh-client-ui-sidebar-right/summary:
+  en: 0daf7b4e115a1aa4
+  zh: d9e214600aa9e973
+/quyet-client-ui-sidebar-right:
+  en: f0ce165ddebddeac
+  zh: 878a35d33a5370fc
+/quyet-client-ui-sidebar-right/summary:
   en: 8aafe5400014fdac
   zh: b2d7d0e8dc4f1291
-/deepseek-ai-dsh-client-ui-sidebar-right/table-of-contents:
+/quyet-client-ui-sidebar-right/table-of-contents:
   en: ff17f27d8c5557d1
   zh: 6efe4b3d4902a441
-/deepseek-ai-dsh-client-ui-sidebar-right/what-lives-here-and-what-does-not:
-  en: 3b007cc4d2d89c60
-  zh: 74d9795c6392ad74
-/deepseek-ai-dsh-client-ui-sidebar-right/presentations:
-  en: 5024c4e5fe5dfd2e
-  zh: 535a7f585e1bcd97
-/deepseek-ai-dsh-client-ui-sidebar-right/the-expand-button:
+/quyet-client-ui-sidebar-right/what-lives-here-and-what-does-not:
+  en: 6cc643988b08e46f
+  zh: 903728582ae64e29
+/quyet-client-ui-sidebar-right/presentations:
+  en: 84a515ed872dd322
+  zh: d67539e40587506d
+/quyet-client-ui-sidebar-right/the-expand-button:
   en: ca7a1966ad9cef31
   zh: b9a7a967a14f067e
-/deepseek-ai-dsh-client-ui-sidebar-right/state:
-  en: 98597ce087c48075
-  zh: c5466bf7955ea7b0
-/deepseek-ai-dsh-client-ui-sidebar-right/extension-seats:
-  en: 9533f5af50898daf
-  zh: 78d3b77c25962145
-/deepseek-ai-dsh-client-ui-sidebar-right/ctx-sidebarright:
-  en: ce5622d6d18ed8d1
-  zh: 292932d8edb6e1c3
-/deepseek-ai-dsh-client-ui-sidebar-right/the-tab-domain:
-  en: 717b86e05b44ebdd
-  zh: 0f4f694d0ea1d7f8
-/deepseek-ai-dsh-client-ui-sidebar-right/the-guide:
+/quyet-client-ui-sidebar-right/state:
+  en: cb68c404ea5bb24b
+  zh: 5231b17595e58de4
+/quyet-client-ui-sidebar-right/extension-seats:
+  en: 7e12b27c02000446
+  zh: d56f32f9990e41ae
+/quyet-client-ui-sidebar-right/ctx-sidebarright:
+  en: e1a8a7ed6b1ba27e
+  zh: b3674d3fdb0918fd
+/quyet-client-ui-sidebar-right/the-tab-domain:
+  en: 6c6a07c3017c6ced
+  zh: 4db2eb8c5b713c3d
+/quyet-client-ui-sidebar-right/the-guide:
   en: 68fd575ef382223e
   zh: 1ab1653ee20c64e9
-/deepseek-ai-dsh-client-ui-sidebar-right/copy:
-  en: 67386560b71672a4
-  zh: 35cf8cb7ddf618ce
-/deepseek-ai-dsh-client-ui-sidebar-right/model-experience:
+/quyet-client-ui-sidebar-right/copy:
+  en: dcbbfb0e4664b1e3
+  zh: 7df34962845b99a4
+/quyet-client-ui-sidebar-right/model-experience:
   en: 3120df665299c634
   zh: 242f3d68e8267e55
-/deepseek-ai-dsh-client-ui-sidebar-right/model-experience/kv-cache-effect:
+/quyet-client-ui-sidebar-right/model-experience/kv-cache-effect:
   en: ca75c51c89c2c9b0
   zh: f57cc48a1b5cbfa9
-/deepseek-ai-dsh-client-ui-sidebar-right/known-limitations-and-deferred-work:
+/quyet-client-ui-sidebar-right/known-limitations-and-deferred-work:
   en: 76a763b4dd71babd
   zh: fdc966dd427a82fb
-/deepseek-ai-dsh-client-ui-sidebar-right/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-sidebar-right/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: e88aeb617ffb74ea

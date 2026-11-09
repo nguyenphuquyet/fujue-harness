@@ -5,75 +5,75 @@
 /:
   en: 3d90ab1819787962
   zh: d5279e899341168a
-/deepseek-ai-dsh-terminal:
-  en: 51faab4a45b4d0a3
-  zh: c026cbe279584a55
-/deepseek-ai-dsh-terminal/summary:
-  en: b275cca5aa0ccbd6
-  zh: 0452420c4b45c7db
-/deepseek-ai-dsh-terminal/table-of-contents:
+/quyet-terminal:
+  en: 711858c62e398103
+  zh: 4af84047fd16b62f
+/quyet-terminal/summary:
+  en: 1353a83fa10ec5fb
+  zh: 450012893444af07
+/quyet-terminal/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-terminal/use-this-package:
-  en: 51bfe428d2b44ee2
-  zh: 557154468269985e
-/deepseek-ai-dsh-terminal/use-this-package/when-to-choose-it:
+/quyet-terminal/use-this-package:
+  en: 21093f943901d756
+  zh: 7a3c49a0594b6e5e
+/quyet-terminal/use-this-package/when-to-choose-it:
   en: c4244a1757ca3584
   zh: b6fb10e30146b347
-/deepseek-ai-dsh-terminal/use-this-package/composition:
-  en: c6562461d8c66517
-  zh: 8bab392367901144
-/deepseek-ai-dsh-terminal/use-this-package/what-sessions-give-you:
+/quyet-terminal/use-this-package/composition:
+  en: a6a164bb88c7422e
+  zh: fc64b78ee4f49e04
+/quyet-terminal/use-this-package/what-sessions-give-you:
   en: 6527302f4ad84cbb
   zh: 8edc988f1d0a3cee
-/deepseek-ai-dsh-terminal/use-this-package/ownership-and-isolation:
+/quyet-terminal/use-this-package/ownership-and-isolation:
   en: 47820d85ea37cb36
   zh: 857686d08af67fcb
-/deepseek-ai-dsh-terminal/use-this-package/observable-outcomes-and-failures:
+/quyet-terminal/use-this-package/observable-outcomes-and-failures:
   en: 4fcedb18b5e8d5f2
   zh: d72bb1a45e45cfff
-/deepseek-ai-dsh-terminal/understand-the-implementation:
+/quyet-terminal/understand-the-implementation:
   en: 0d0669b98b14a3dd
   zh: 57416c205270e4e1
-/deepseek-ai-dsh-terminal/understand-the-implementation/design-concept:
+/quyet-terminal/understand-the-implementation/design-concept:
   en: 6bae42fb7275816f
   zh: 5f75e1b26074108c
-/deepseek-ai-dsh-terminal/understand-the-implementation/source-map:
+/quyet-terminal/understand-the-implementation/source-map:
   en: 48dab6fe2f770ced
   zh: 9bbfd23bcc5ac2b3
-/deepseek-ai-dsh-terminal/understand-the-implementation/data-model-and-lifecycle:
+/quyet-terminal/understand-the-implementation/data-model-and-lifecycle:
   en: a2adfa2708882e19
   zh: 002f257fd8c4addb
-/deepseek-ai-dsh-terminal/understand-the-implementation/ownership-and-cleanup-rules:
+/quyet-terminal/understand-the-implementation/ownership-and-cleanup-rules:
   en: 7af36e58919e41d5
   zh: 4fe7b4db1099bcbf
-/deepseek-ai-dsh-terminal/understand-the-implementation/send-reservation:
+/quyet-terminal/understand-the-implementation/send-reservation:
   en: 5815723cd0c6089c
   zh: 0c612ffa4b8c466c
-/deepseek-ai-dsh-terminal/further-exploration:
-  en: 8459a3b70a9f8bad
-  zh: 21372aa8939d2182
-/deepseek-ai-dsh-terminal/model-experience:
+/quyet-terminal/further-exploration:
+  en: ed39935270c151f2
+  zh: 668d4d4556b79d6e
+/quyet-terminal/model-experience:
   en: 215e7ba838619b7b
   zh: a311da3843709f90
-/deepseek-ai-dsh-terminal/model-experience/indirect-consumer:
+/quyet-terminal/model-experience/indirect-consumer:
   en: a601a3c4f5b848cd
   zh: ec617f79f706aaa1
-/deepseek-ai-dsh-terminal/model-experience/indirect-consumer/what-the-model-sees:
-  en: be5049f4851a1b2a
-  zh: 056ddf9f9f1fc112
-/deepseek-ai-dsh-terminal/model-experience/indirect-consumer/token-effect:
+/quyet-terminal/model-experience/indirect-consumer/what-the-model-sees:
+  en: 45a958c4efefe955
+  zh: 50800a4dc68e9441
+/quyet-terminal/model-experience/indirect-consumer/token-effect:
   en: 477da21b0a5be3a6
   zh: 3ae1d37fe671ef96
-/deepseek-ai-dsh-terminal/model-experience/indirect-consumer/kv-cache-effect:
-  en: 2d1f12c1eb4164e5
-  zh: 7d22b2cd3f9649ff
-/deepseek-ai-dsh-terminal/known-limitations-and-deferred-work:
+/quyet-terminal/model-experience/indirect-consumer/kv-cache-effect:
+  en: 07221f3792313ddf
+  zh: 7c0a8286d9db90a4
+/quyet-terminal/known-limitations-and-deferred-work:
   en: a133ebc47a4df34f
   zh: 9bb949487ee566d5
-/deepseek-ai-dsh-terminal/known-limitations-and-deferred-work/dev-note:
+/quyet-terminal/known-limitations-and-deferred-work/dev-note:
   en: 112f870e68bd1ff3
   zh: 693f37bbd32497a0
-/deepseek-ai-dsh-terminal/known-limitations-and-deferred-work/dev-note/undecided-directions:
+/quyet-terminal/known-limitations-and-deferred-work/dev-note/undecided-directions:
   en: 3c5203a9c40a38ef
   zh: a7660ca08bd0d279

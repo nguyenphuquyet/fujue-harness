@@ -1,39 +1,39 @@
-import * as PtcToolExecutor from '@deepseek-ai/dsh-tool-executor-ptc'
+import * as PtcToolExecutor from '@quyet/tool-executor-ptc'
 import { randomUUID } from 'node:crypto'
-import { provideWorkingDirectoryFixture, mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { provideWorkingDirectoryFixture, mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
 import { chmod, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { SandboxBashExecutor } from '@deepseek-ai/dsh-bash-sandbox'
-import { NodePtcRuntime } from '@deepseek-ai/dsh-ptc-runtime-node'
-import * as FsObservationPolicy from '@deepseek-ai/dsh-fs-observation-policy'
-import { SandboxedFileSystem } from '@deepseek-ai/dsh-fs-sandbox'
+import { Context } from '@quyet/cordis'
+import type { Agent } from '@quyet/agent'
+import AgentLoop from '@quyet/agent-loop'
+import { SandboxBashExecutor } from '@quyet/bash-sandbox'
+import { NodePtcRuntime } from '@quyet/ptc-runtime-node'
+import * as FsObservationPolicy from '@quyet/fs-observation-policy'
+import { SandboxedFileSystem } from '@quyet/fs-sandbox'
 import {
   createUserMessage, isAgentLoopRequest, ToolCallId,
   type StreamChunk,
-} from '@deepseek-ai/dsh-llm'
-import * as LlmDeepSeek from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import PermissionPresetService, { AUTO_PRESET } from '@deepseek-ai/dsh-permission-presets'
-import SandboxProvider, { type ConfinedArgv, type SandboxPolicy } from '@deepseek-ai/dsh-sandbox'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import { SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'
-import * as ShellEnv from '@deepseek-ai/dsh-shell-env'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import * as ToolBash from '@deepseek-ai/dsh-tool-bash'
-import * as ToolFs from '@deepseek-ai/dsh-tool-fs'
-import { RUN_CODE_NAME } from '@deepseek-ai/dsh-tools'
-import ApprovalService, { setApprovalPolicy } from '@deepseek-ai/dsh-user-approval'
+} from '@quyet/llm'
+import * as LlmDeepSeek from '@quyet/llm-deepseek-api-key'
+import PermissionPresetService, { AUTO_PRESET } from '@quyet/permission-presets'
+import SandboxProvider, { type ConfinedArgv, type SandboxPolicy } from '@quyet/sandbox'
+import SandboxPolicyService from '@quyet/sandbox-policy'
+import { SessionId, type SessionEvent } from '@quyet/session'
+import * as ShellEnv from '@quyet/shell-env'
+import LocalSubprocessRuntime from '@quyet/subprocess-local'
+import * as ToolBash from '@quyet/tool-bash'
+import * as ToolFs from '@quyet/tool-fs'
+import { RUN_CODE_NAME } from '@quyet/tools'
+import ApprovalService, { setApprovalPolicy } from '@quyet/user-approval'
 import { expect, it, vi } from 'vitest'
-import * as AutoReview from '@deepseek-ai/dsh-experimental-auto-review'
+import * as AutoReview from '@quyet/experimental-auto-review'
 
 const PROVIDER = 'deepseek-official'
 const FLASH = 'deepseek-v4-flash'
 const PRO = 'deepseek-v4-pro'
 const VISION = 'deepseek-v4-flash-vision-exp'
-const REAL = process.env.DSH_AUTO_REVIEW_CERTIFICATION === '1'
+const REAL = process.env.QUYET_AUTO_REVIEW_CERTIFICATION === '1'
 const DENIED = 'AUTO_REVIEW_DENIED'
 type Risk = 'low' | 'medium' | 'high'
 type Decision = 'allow' | 'deny'
@@ -129,7 +129,7 @@ async function* observe(
   observations.push(observation)
 }
 
-async function mount(ctx: Context, workspace: string, dshHome: string): Promise<void> {
+async function mount(ctx: Context, workspace: string, quyetHome: string): Promise<void> {
   await mountAgentLoopTestDependencies(ctx, {
     systemPrompt: {}, tools: { mode: 'native' },
   })
@@ -140,7 +140,7 @@ async function mount(ctx: Context, workspace: string, dshHome: string): Promise<
   await ctx.plugin(SandboxedFileSystem, { cwd: workspace })
   await ctx.plugin(FsObservationPolicy)
   await ctx.plugin(LocalSubprocessRuntime)
-  await ctx.plugin(ShellEnv, { dshHome })
+  await ctx.plugin(ShellEnv, { quyetHome })
   await ctx.plugin(SandboxBashExecutor, { cwd: workspace, timeoutMs: 30_000 })
   await ctx.plugin(ApprovalService, { policy: 'ask' })
   await ctx.plugin(PermissionPresetService, {
@@ -252,17 +252,17 @@ it('certifies eight Auto risk/authorization cases with zero retries and zero ski
   retry: 0, timeout: 1_800_000,
 }, async () => {
   if (REAL && !process.env.DEEPSEEK_API_KEY) throw new Error('Real Auto certification requires DEEPSEEK_API_KEY')
-  const root = await mkdtemp(join(tmpdir(), 'dsh-auto-review-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-auto-review-'))
   const ctx = new Context()
   provideWorkingDirectoryFixture(ctx)
   try {
     await chmod(root, 0o700)
     const workspace = join(root, 'workspace')
-    const dshHome = join(root, 'dsh-home')
+    const quyetHome = join(root, 'quyet-home')
     await mkdir(workspace)
-    await mkdir(dshHome, { mode: 0o700 })
-    vi.stubEnv('DSH_HOME', dshHome)
-    await mount(ctx, workspace, dshHome)
+    await mkdir(quyetHome, { mode: 0o700 })
+    vi.stubEnv('QUYET_HOME', quyetHome)
+    await mount(ctx, workspace, quyetHome)
     const runner = orchestrate(ctx, REAL)
     const cases: CaseResult[] = []
     const runCase = async (
@@ -361,14 +361,14 @@ it('certifies eight Auto risk/authorization cases with zero retries and zero ski
 it.each(['native', 'ptc-inner'] as const)('feeds denial back, re-reviews a new call and accepts narrowed work through %s', {
   retry: 0,
 }, async (path) => {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-auto-review-recovery-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-auto-review-recovery-'))
   const ctx = new Context()
   provideWorkingDirectoryFixture(ctx)
   try {
-    const dshHome = join(root, 'home')
-    await mkdir(dshHome)
-    vi.stubEnv('DSH_HOME', dshHome)
-    await mount(ctx, root, dshHome)
+    const quyetHome = join(root, 'home')
+    await mkdir(quyetHome)
+    vi.stubEnv('QUYET_HOME', quyetHome)
+    await mount(ctx, root, quyetHome)
     const runner = orchestrate(ctx, false)
     const target = join(root, 'existing.txt')
     await writeFile(target, 'keep\n')

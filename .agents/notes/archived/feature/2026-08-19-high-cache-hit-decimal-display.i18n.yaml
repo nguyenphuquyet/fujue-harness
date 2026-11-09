@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write
-2026-08-19-high-cache-hit-decimal-display.md: 83c031bd1049ec26029d2e9ba0dc5cd623c3f867
-2026-08-19-high-cache-hit-decimal-display.zh.md: 62f27e39d37cf2445ac6796030092e892d82b581
+2026-08-19-high-cache-hit-decimal-display.md: ec0d72fa1b092798d739efeddd12eb71ea7917d2
+2026-08-19-high-cache-hit-decimal-display.zh.md: de47751513d1eee35032e1fb4962ad5fa7f3f806

@@ -19,17 +19,17 @@ import {
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { Context } from '@deepseek-ai/cordis'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { SESSION_FORMAT_VERSION, Session, SessionId } from '@deepseek-ai/dsh-session'
-import { ToolCallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { type ToolExecutionToken, type ToolRunContext } from '@deepseek-ai/dsh-tools'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import * as FsPolicy from '@deepseek-ai/dsh-fs-observation-policy'
-import * as ToolFs from '@deepseek-ai/dsh-tool-fs'
+import { provideWorkingDirectoryFixture } from '@quyet/agent-loop-testkit'
+import { Context } from '@quyet/cordis'
+import { createScope, type Scope } from '@quyet/scope'
+import type { Agent } from '@quyet/agent'
+import { SESSION_FORMAT_VERSION, Session, SessionId } from '@quyet/session'
+import { ToolCallId } from '@quyet/llm'
+import SystemPrompt from '@quyet/system-prompt'
+import ToolRuntime, { type ToolExecutionToken, type ToolRunContext } from '@quyet/tools'
+import LocalFileSystem from '@quyet/fs-local'
+import * as FsPolicy from '@quyet/fs-observation-policy'
+import * as ToolFs from '@quyet/tool-fs'
 import {
   installSourceSessionAccess,
   type ForkEnforcementFs,
@@ -37,7 +37,7 @@ import {
 } from '../src/host/fork-enforcement.ts'
 import type { ForkToolExecution } from '../src/host/fork-tool-guard.ts'
 import { executeOneTool } from './tool-call.ts'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
 
 const testToolSignal = new AbortController().signal
 const session = 'session-shared'

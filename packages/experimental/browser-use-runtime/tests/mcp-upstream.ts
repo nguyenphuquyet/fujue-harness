@@ -1,6 +1,6 @@
 /** Real upstream MCP browser checks against private loopback pages and disposable Chromium. */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeToolFixture } from '@quyet/tool-testkit'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
 import { spawn } from 'node:child_process'
 import { once } from 'node:events'
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
@@ -8,21 +8,21 @@ import { createServer } from 'node:http'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
-import { Context } from '@deepseek-ai/cordis'
-import type { Plugin } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import BrowserUse from '@deepseek-ai/dsh-browser-use'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import Tools from '@deepseek-ai/dsh-tools'
-import Llm from '@deepseek-ai/dsh-llm'
-import { ToolCallId } from '@deepseek-ai/dsh-llm'
-import Sessions, { SessionId } from '@deepseek-ai/dsh-session'
-import Agents from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import Projections from '@deepseek-ai/dsh-session-projection'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import WorkingDirectory from '@deepseek-ai/dsh-working-directory'
+import { Context } from '@quyet/cordis'
+import type { Plugin } from '@quyet/cordis'
+import Loader from '@quyet/cordis-plugin-loader'
+import Include from '@quyet/cordis-plugin-include'
+import BrowserUse from '@quyet/browser-use'
+import SystemPrompt from '@quyet/system-prompt'
+import Tools from '@quyet/tools'
+import Llm from '@quyet/llm'
+import { ToolCallId } from '@quyet/llm'
+import Sessions, { SessionId } from '@quyet/session'
+import Agents from '@quyet/agent'
+import AgentLoop from '@quyet/agent-loop'
+import Projections from '@quyet/session-projection'
+import LocalFileSystem from '@quyet/fs-local'
+import WorkingDirectory from '@quyet/working-directory'
 import { expect, vi } from 'vitest'
 import type { BrowserMcpConfig } from '../src/mcp.ts'
 
@@ -32,13 +32,13 @@ export async function verifyMcpBrowser(
   navigate: { name: string; arguments(url: string): Record<string, unknown> },
   mode: 'launch' | 'attach',
 ): Promise<void> {
-  const executable = process.env.DSH_BROWSER_EXECUTABLE!
-  const root = await mkdtemp(join(tmpdir(), 'dsh-browser-upstream-'))
+  const executable = process.env.QUYET_BROWSER_EXECUTABLE!
+  const root = await mkdtemp(join(tmpdir(), 'quyet-browser-upstream-'))
   const observed = new Set<string>()
   const server = createServer((request, response) => {
     observed.add(request.url!)
     response.writeHead(200, { 'Content-Type': 'text/html' })
-    response.end('<!doctype html><title>DSH browser fixture</title><h1>Browser integration works</h1>')
+    response.end('<!doctype html><title>Quyết browser fixture</title><h1>Browser integration works</h1>')
   })
   const ctx = new Context()
   let external: ReturnType<typeof spawn> | undefined

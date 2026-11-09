@@ -7,15 +7,15 @@
  * lifetimes are stated on `attach` and `hold`. Beside the face live its
  * inputs: the Remote listing and watch bindings and `canOpenOf`.
  */
-import type { ClientRemote, RemoteResult } from '@deepseek-ai/dsh-api-remotes/client'
-import { createSnapshotStore, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { PaneId, TabId } from '@deepseek-ai/dsh-client-ui-dockkit'
-import type { SidebarRightTabDefinition, SidebarRightTabNavigation } from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
-import type { HostObservable } from '@deepseek-ai/dsh-client-ui-slots'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { ClientRemote, RemoteResult } from '@quyet/api-remotes/client'
+import { createSnapshotStore, type SnapshotStore } from '@quyet/client-store'
+import type { PaneId, TabId } from '@quyet/client-ui-dockkit'
+import type { SidebarRightTabDefinition, SidebarRightTabNavigation } from '@quyet/client-ui-sidebar-right/client'
+import type { HostObservable } from '@quyet/client-ui-slots'
+import type { SessionId } from '@quyet/session/types'
 import { childPath, locateFile, relativeFileOf, type DirLevel, type FilesStoreInstance } from './store.ts'
-import type { WorkspaceFileWatchFrame } from '@deepseek-ai/dsh-api-workspace-files/types'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
+import type { WorkspaceFileWatchFrame } from '@quyet/api-workspace-files/types'
+import { RemoteError } from '@quyet/typert-protocol'
 import { DirectoryNode } from './directory-node.ts'
 import { FILL_BELOW, FULLSCREEN_QUERY } from './navigator-layout.ts'
 

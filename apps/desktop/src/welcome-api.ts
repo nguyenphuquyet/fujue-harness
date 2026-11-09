@@ -1,20 +1,20 @@
 /** Operations available to the isolated native welcome renderer. */
 
-import type { AccountView, SignInAttemptId } from '@deepseek-ai/dsh-deepseek-account/types'
-import type { ProductEventMap } from '@deepseek-ai/dsh-client-product-analytics/types'
+import type { AccountView, SignInAttemptId } from '@quyet/deepseek-account/types'
+import type { ProductEventMap } from '@quyet/client-product-analytics/types'
 import type { DesktopLocale } from './locale.ts'
 
 /** Private native welcome channels, installed only while its window exists. */
 export const WELCOME_IPC = {
-  saveApiKey: 'dsh-welcome:save-api-key',
-  analytics: 'dsh-welcome:analytics',
-  analyticsEnabled: 'dsh-welcome:analytics-enabled',
-  skip: 'dsh-welcome:skip',
-  start: 'dsh-welcome:start',
-  cancel: 'dsh-welcome:cancel',
-  copyLink: 'dsh-welcome:copy-link',
-  state: 'dsh-welcome:state',
-  takeNotice: 'dsh-welcome:take-notice',
+  saveApiKey: 'quyet-welcome:save-api-key',
+  analytics: 'quyet-welcome:analytics',
+  analyticsEnabled: 'quyet-welcome:analytics-enabled',
+  skip: 'quyet-welcome:skip',
+  start: 'quyet-welcome:start',
+  cancel: 'quyet-welcome:cancel',
+  copyLink: 'quyet-welcome:copy-link',
+  state: 'quyet-welcome:state',
+  takeNotice: 'quyet-welcome:take-notice',
 } as const
 
 /** Credential writes return a safe outcome without exposing Host diagnostics. */

@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-09-24-exited-holder-lock-takeover.md
-2026-09-24-exited-holder-lock-takeover.md: 61712db971e238de9d820cdac5b5ce3c4ca0827e
-2026-09-24-exited-holder-lock-takeover.zh.md: 651dc2df66b0d200631f613966de1a464be422b2
+2026-09-24-exited-holder-lock-takeover.md: 0114a005d3c009828ed97d0cc7466b8a1f0ea951
+2026-09-24-exited-holder-lock-takeover.zh.md: 1a1b859c42918dfe92f0def2eb44000e67778ec3

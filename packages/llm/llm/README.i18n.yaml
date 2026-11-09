@@ -5,60 +5,60 @@
 /:
   en: 860509fb08c860f4
   zh: b2c4448e8afc1f12
-/deepseek-ai-dsh-llm:
-  en: 919467ab4b4ef583
-  zh: cb5752f140e58813
-/deepseek-ai-dsh-llm/summary:
-  en: 9b9ea6fea3088244
-  zh: 09f2eb6606a030da
-/deepseek-ai-dsh-llm/table-of-contents:
+/quyet-llm:
+  en: c1ebacaf1a35efe3
+  zh: f2547966fe9df2c3
+/quyet-llm/summary:
+  en: bc4c10759ca87c18
+  zh: f7ccc52b9fdcf61e
+/quyet-llm/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-llm/use-this-package:
+/quyet-llm/use-this-package:
   en: b8fbcecd62f6cad0
   zh: d6eb81611ef0f3c5
-/deepseek-ai-dsh-llm/use-this-package/when-to-choose-it:
-  en: c3ecb5a1421f27db
-  zh: 4bbd3c0e513845e1
-/deepseek-ai-dsh-llm/use-this-package/minimal-composition:
-  en: cf221d60fb42a278
-  zh: 0ea17503495d386b
-/deepseek-ai-dsh-llm/use-this-package/what-you-can-do:
+/quyet-llm/use-this-package/when-to-choose-it:
+  en: 348fe39994ab47f4
+  zh: f5168299a2093bb0
+/quyet-llm/use-this-package/minimal-composition:
+  en: 48fe4937045d3930
+  zh: d82cb5d06de66477
+/quyet-llm/use-this-package/what-you-can-do:
   en: dc61eb86585f6e0d
   zh: 9c0d6b240dfd2cda
-/deepseek-ai-dsh-llm/use-this-package/failures-and-recovery:
-  en: 311d8c92447b7094
-  zh: 68cf5cb1c3853cc1
-/deepseek-ai-dsh-llm/understand-the-implementation:
+/quyet-llm/use-this-package/failures-and-recovery:
+  en: accc659640201d46
+  zh: 382e94d5b54ddc95
+/quyet-llm/understand-the-implementation:
   en: 9630d7e26193a512
   zh: 94222c2a487c4b8c
-/deepseek-ai-dsh-llm/understand-the-implementation/design-philosophy:
+/quyet-llm/understand-the-implementation/design-philosophy:
   en: 12d0444c18a397c7
   zh: 9d4a5468b4bb7fcd
-/deepseek-ai-dsh-llm/understand-the-implementation/source-map:
+/quyet-llm/understand-the-implementation/source-map:
   en: ae1618577f4e8364
   zh: a6e8ab1563c08dfb
-/deepseek-ai-dsh-llm/understand-the-implementation/main-flow:
-  en: c95d4947745e39bb
-  zh: ec37b969f27629e2
-/deepseek-ai-dsh-llm/understand-the-implementation/invariants:
+/quyet-llm/understand-the-implementation/main-flow:
+  en: d7ecdf0709393963
+  zh: e0279f47e36251e9
+/quyet-llm/understand-the-implementation/invariants:
   en: 0163a050239248e5
   zh: 885c95bedcbe2ff4
-/deepseek-ai-dsh-llm/further-exploration:
-  en: 37e1d696afef8a88
-  zh: 81f99c4507663cad
-/deepseek-ai-dsh-llm/model-experience:
+/quyet-llm/further-exploration:
+  en: e01664363b5d309d
+  zh: 917013447a2bff21
+/quyet-llm/model-experience:
   en: fa5677003ad6bc0a
   zh: ba33cfc860d9c37c
-/deepseek-ai-dsh-llm/model-experience/kv-cache-effect:
+/quyet-llm/model-experience/kv-cache-effect:
   en: a81634136baef72f
   zh: b92dda883986b0e1
-/deepseek-ai-dsh-llm/known-limitations-and-deferred-work:
-  en: ed57783be0df3110
-  zh: c0c433dd6a807b89
-/deepseek-ai-dsh-llm/known-limitations-and-deferred-work/dev-note:
+/quyet-llm/known-limitations-and-deferred-work:
+  en: fd79fc74853a2f37
+  zh: 32d16b03901224dd
+/quyet-llm/known-limitations-and-deferred-work/dev-note:
   en: ecbc333b88e14d88
   zh: 77c725d92efd8646
-/deepseek-ai-dsh-llm/known-limitations-and-deferred-work/dev-note/open-items:
-  en: 6b1a7e903e13ee21
-  zh: bb62f2b1cc484bd5
+/quyet-llm/known-limitations-and-deferred-work/dev-note/open-items:
+  en: e2c74a4cc4a4399c
+  zh: 78297b751268038c

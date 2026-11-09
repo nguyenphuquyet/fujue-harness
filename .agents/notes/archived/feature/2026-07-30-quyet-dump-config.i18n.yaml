@@ -1,0 +1,6 @@
+# Bilingual-pair consistency record (docs/i18n/README.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-07-30-quyet-dump-config.md
+2026-07-30-quyet-dump-config.md: 21c5e8c4918ee38a63bbe41b7ec08e8da58e85a0
+2026-07-30-quyet-dump-config.zh.md: 1da23515d6a4e9d6c73e73a9fa82d67de1ea169f

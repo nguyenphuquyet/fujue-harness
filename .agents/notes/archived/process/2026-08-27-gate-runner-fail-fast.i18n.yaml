@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/process/2026-08-27-gate-runner-fail-fast.md
-2026-08-27-gate-runner-fail-fast.md: 504929b256567f4cc71765c33eca55b925bd8f6f
-2026-08-27-gate-runner-fail-fast.zh.md: 1d9f49ad8b35502a4e8cb8f9eb071106d99ca122
+2026-08-27-gate-runner-fail-fast.md: 4159ce047125e8d88fe9320695d12ddf4c1bf599
+2026-08-27-gate-runner-fail-fast.zh.md: 956920faa3a9aff7318d340c4c2af444f45b1a47

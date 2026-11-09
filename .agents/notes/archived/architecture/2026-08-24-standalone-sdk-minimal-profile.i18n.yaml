@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/architecture/2026-08-24-standalone-sdk-minimal-profile.md
-2026-08-24-standalone-sdk-minimal-profile.md: 32bc47fc498b47ba3e8e9cd738c52a4bf1a31b87
-2026-08-24-standalone-sdk-minimal-profile.zh.md: bca63ba2d327234e26827351ccd7a165fd126a3b
+2026-08-24-standalone-sdk-minimal-profile.md: 367504e8be8e24f543e88162576734eb404534de
+2026-08-24-standalone-sdk-minimal-profile.zh.md: b6d078b1535deb540600a94f18aebb4a37e0f5b4

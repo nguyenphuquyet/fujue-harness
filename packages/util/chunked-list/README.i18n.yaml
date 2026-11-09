@@ -5,33 +5,33 @@
 /:
   en: e29affc07acbcf4f
   zh: 10e2da625e145a68
-/deepseek-ai-dsh-chunked-list:
-  en: 5a07c629854f4bd6
-  zh: bc82f5005c4f447e
-/deepseek-ai-dsh-chunked-list/summary:
-  en: 15a30013f54b2076
-  zh: b287f44dfd029f20
-/deepseek-ai-dsh-chunked-list/table-of-contents:
+/quyet-chunked-list:
+  en: 94db9a518f2cdcfe
+  zh: 4119dc6afc5c68c5
+/quyet-chunked-list/summary:
+  en: 94e133450cde12bf
+  zh: c4a163f776e5796e
+/quyet-chunked-list/table-of-contents:
   en: d152484eb41ac6b4
   zh: 75f067b4c4218355
-/deepseek-ai-dsh-chunked-list/use-this-package:
+/quyet-chunked-list/use-this-package:
   en: 6808bfba89c5ffbf
   zh: f80761fdcd3db317
-/deepseek-ai-dsh-chunked-list/understand-the-implementation:
+/quyet-chunked-list/understand-the-implementation:
   en: 7cd6e9d9367246f3
   zh: 127a64392a7dd976
-/deepseek-ai-dsh-chunked-list/further-exploration:
-  en: dc2a6afae1585ff7
-  zh: 133604f9e6f08072
-/deepseek-ai-dsh-chunked-list/model-experience:
+/quyet-chunked-list/further-exploration:
+  en: 40c7cac21673fe75
+  zh: 319847a078dbdb86
+/quyet-chunked-list/model-experience:
   en: bc7e4d8a0c8b8ebb
   zh: e11fe3bd45d4354a
-/deepseek-ai-dsh-chunked-list/model-experience/kv-cache-effect:
+/quyet-chunked-list/model-experience/kv-cache-effect:
   en: e7ba08477bf22c4e
   zh: c38c528fe563bb51
-/deepseek-ai-dsh-chunked-list/known-limitations-and-deferred-work:
+/quyet-chunked-list/known-limitations-and-deferred-work:
   en: fdc87d52574748eb
   zh: e1e7cbd86cd2bde0
-/deepseek-ai-dsh-chunked-list/known-limitations-and-deferred-work/dev-note:
+/quyet-chunked-list/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

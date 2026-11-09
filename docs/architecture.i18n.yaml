@@ -2,36 +2,36 @@
 # section, a hash of its English and Chinese blocks outside code blocks and generated regions.
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/architecture.md
-/deepseek-harness-architecture:
-  en: 20678ed3f962afba
-  zh: 87a2b81675d93346
-/deepseek-harness-architecture/cordis:
-  en: da5060e577578ea7
-  zh: 2e77d570e32d8938
-/deepseek-harness-architecture/profiles-and-bundles:
-  en: 21423f481b18b0be
-  zh: 5343bd7ea0fae5bc
-/deepseek-harness-architecture/application-launch:
-  en: 334b4f390b6e376b
-  zh: ce094f24c6162be3
-/deepseek-harness-architecture/desktop-application:
-  en: b9eeb18645121a8b
-  zh: 70d87a12c43e042a
-/deepseek-harness-architecture/core-packages:
-  en: 20ef882e44b06a10
-  zh: c10c3934ed5570e9
-/deepseek-harness-architecture/events:
-  en: ddebac7cfd41ec73
-  zh: 51e6d0866a9e7839
-/deepseek-harness-architecture/turn-flow:
-  en: 1a79a70b62c04cdb
-  zh: c86d765e21430405
-/deepseek-harness-architecture/session-log:
-  en: b3b63d8fe7cab9fe
-  zh: 3703fcf30b1639d0
-/deepseek-harness-architecture/capability-seams:
-  en: 1d425c445bfcc931
-  zh: 834d486f88e68edf
-/deepseek-harness-architecture/where-new-behavior-goes:
-  en: ee73b1861378b099
-  zh: 9a182be609485f67
+/juetech-harness-architecture:
+  en: 258acdbf943a8801
+  zh: b875f9cd40d8f599
+/juetech-harness-architecture/cordis:
+  en: b75cd0ae70bbb999
+  zh: cb772eab54aa3c73
+/juetech-harness-architecture/profiles-and-bundles:
+  en: b8bc790829a7704b
+  zh: 52613e5e87cc1d88
+/juetech-harness-architecture/application-launch:
+  en: fb1cccdedc48067f
+  zh: 0b31e2cab3d70c12
+/juetech-harness-architecture/desktop-application:
+  en: 374c26819143598b
+  zh: 7f6f16913e36be18
+/juetech-harness-architecture/core-packages:
+  en: 62d5d87e14394b2a
+  zh: 29c3665d9136237f
+/juetech-harness-architecture/events:
+  en: ac769a111b7adec7
+  zh: d3ffe8e5332224c0
+/juetech-harness-architecture/turn-flow:
+  en: a999e42b5b379844
+  zh: 18efc346ef4fe4cd
+/juetech-harness-architecture/session-log:
+  en: f35e765c5087e963
+  zh: c6d292d88b0e493a
+/juetech-harness-architecture/capability-seams:
+  en: 5152da0edabf17cc
+  zh: ddcd077b37dd2d1a
+/juetech-harness-architecture/where-new-behavior-goes:
+  en: b41658712f5cb598
+  zh: 582340b3b41e2ea4

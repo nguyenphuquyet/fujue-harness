@@ -4,15 +4,15 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
+import { Context } from '@quyet/cordis'
+import type { Agent } from '@quyet/agent'
+import AgentLoop from '@quyet/agent-loop'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
+import { SessionId } from '@quyet/session'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
+import Storage from '@quyet/storage'
+import * as StorageDomain from '@quyet/storage-domain'
+import * as StorageJson from '@quyet/storage-json'
 import { createAfterScheduleRecord, ScheduleId } from '../src/domain.ts'
 import ScheduleService from '../src/index.ts'
 import { boundTask, seedTasks } from './harness.ts'
@@ -35,7 +35,7 @@ async function core(persistenceRoot: string) {
 
 describe('due delivery during Agent creation', () => {
   it('enqueues the reminder without starting a turn before every creation listener finishes', async () => {
-    const root = await mkdtemp(join(tmpdir(), 'dsh-schedule-serial-'))
+    const root = await mkdtemp(join(tmpdir(), 'quyet-schedule-serial-'))
     roots.push(root)
     const ctx = await core(join(root, 'sessions'))
     const warnings = vi.spyOn(ctx.logger, 'warn')

@@ -1,29 +1,29 @@
 /**
  * Single replay-aware token-meter service for request and surface pressure.
  *
- * @module @deepseek-ai/dsh-token-meter
+ * @module @quyet/token-meter
  */
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-compaction-image-offload/projection'
-import z from '@deepseek-ai/schemastery'
-import type { LlmImageRequestPricing, LlmRuntime, Message, TokenUsage } from '@deepseek-ai/dsh-llm'
-import { deepFreeze } from '@deepseek-ai/dsh-util-values'
+import { Context, Service } from '@quyet/cordis'
+import type {} from '@quyet/compaction-image-offload/projection'
+import z from '@quyet/schemastery'
+import type { LlmImageRequestPricing, LlmRuntime, Message, TokenUsage } from '@quyet/llm'
+import { deepFreeze } from '@quyet/util-values'
 import type {
   EpochHeader,
   Session,
   SessionEvent,
   SessionSeq as SessionSeqType,
   SessionLogOffset as SessionLogOffsetType,
-} from '@deepseek-ai/dsh-session'
+} from '@quyet/session'
 import {
   canonicalHeader,
   headerEquals,
   isSurfaceEvent,
   SessionLogOffset,
   SessionSeq,
-} from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
+} from '@quyet/session'
+import type { ProjectionHandle } from '@quyet/session-projection'
 import type {
   ContextPressureProjection,
   TokenMeasurement,
@@ -77,7 +77,7 @@ function validateConfigKeys(config: TokenMeterConfig): void {
   }
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     tokenMeter: TokenMeter
   }

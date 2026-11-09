@@ -3,26 +3,26 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/proposed/feature/2026-09-08-desktop-update-extensions.md
 /agent-note-deferred-desktop-update-extensions:
-  en: 01b20c9e8c51f739
-  zh: 2b2ef6d0d38d3d19
+  en: c8acb0e12322c9a7
+  zh: 08a7329e0a4ffb41
 /agent-note-deferred-desktop-update-extensions/problem:
   en: da98b267b01e4829
   zh: 0ae373bd57094e74
 /agent-note-deferred-desktop-update-extensions/proposal:
-  en: eb4ae06bfef53a90
-  zh: f40702aa6a557792
+  en: ef71a4c644affcb0
+  zh: 3aedd7f57200706d
 /agent-note-deferred-desktop-update-extensions/proposal/independent-revisions:
-  en: 403bd786a8411349
-  zh: c44584e8a7e5b74a
+  en: b22fcff4a0c41477
+  zh: e2d8cbcad0e6b2ac
 /agent-note-deferred-desktop-update-extensions/proposal/stable-subscription-and-channel-switching:
-  en: 33663c160d5e280b
-  zh: 96689283c31ed820
+  en: f6e6109da5d4a759
+  zh: 398f471862583912
 /agent-note-deferred-desktop-update-extensions/proposal/automatic-installation-setting:
   en: 758d49f0a7dc6707
   zh: ddb0bfe616eb93bc
 /agent-note-deferred-desktop-update-extensions/proposal/next-launch-installation:
-  en: 606f1eea66d829f7
-  zh: d72108d762a58957
+  en: 4064ba1d39fec299
+  zh: f0719a4ee0b0ef28
 /agent-note-deferred-desktop-update-extensions/proposal/updater-dependency-qualification:
   en: c1a508d15bbc37e8
   zh: 63e7648130377fbb

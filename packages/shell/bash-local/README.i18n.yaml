@@ -5,57 +5,57 @@
 /:
   en: f70a1e0bb1e0d56d
   zh: 927e75bc75573410
-/deepseek-ai-dsh-bash-local:
-  en: 49a2f5ded22f098e
-  zh: 5d75eea29ac486a0
-/deepseek-ai-dsh-bash-local/summary:
-  en: 518e199306e5cc7d
-  zh: ccfb150038dc4afa
-/deepseek-ai-dsh-bash-local/table-of-contents:
+/quyet-bash-local:
+  en: 07978108455a826c
+  zh: 02ef5dbfc1f43a35
+/quyet-bash-local/summary:
+  en: 4e41a0c0c32848e8
+  zh: 3bfa558c1b39b760
+/quyet-bash-local/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-bash-local/use-this-package:
+/quyet-bash-local/use-this-package:
   en: 95ae7843275778ca
   zh: 43b5069075a99625
-/deepseek-ai-dsh-bash-local/use-this-package/minimal-configuration:
-  en: eaf71726aaf5333d
-  zh: b658e8d0b77db826
-/deepseek-ai-dsh-bash-local/use-this-package/running-commands:
+/quyet-bash-local/use-this-package/minimal-configuration:
+  en: ab553228c67a5ac6
+  zh: 7fe941ce23192b39
+/quyet-bash-local/use-this-package/running-commands:
   en: a27f24e1c9908612
   zh: 4183e0c89aebb96c
-/deepseek-ai-dsh-bash-local/use-this-package/background-processes:
+/quyet-bash-local/use-this-package/background-processes:
   en: 3c580842cc8452af
   zh: 5a156670a7cacc2a
-/deepseek-ai-dsh-bash-local/use-this-package/adjusting-budgets-at-runtime:
+/quyet-bash-local/use-this-package/adjusting-budgets-at-runtime:
   en: 1098db4c932a48f8
   zh: 33f78ab65dbfeb1d
-/deepseek-ai-dsh-bash-local/understand-the-implementation:
+/quyet-bash-local/understand-the-implementation:
   en: 05e2abe4a25886fd
   zh: 3f7f1326dc3c1d3f
-/deepseek-ai-dsh-bash-local/understand-the-implementation/design-concept:
+/quyet-bash-local/understand-the-implementation/design-concept:
   en: ec84e5746de85fe0
   zh: 1c353325eeae87c6
-/deepseek-ai-dsh-bash-local/understand-the-implementation/source-map:
+/quyet-bash-local/understand-the-implementation/source-map:
   en: 762bafaf8fb721c2
   zh: cd5dd95212f7c270
-/deepseek-ai-dsh-bash-local/understand-the-implementation/main-flow:
+/quyet-bash-local/understand-the-implementation/main-flow:
   en: 723bbaedc34e58f3
   zh: d0239dcfdd8a53c6
-/deepseek-ai-dsh-bash-local/understand-the-implementation/invariants-and-ownership:
-  en: dd0e8349896efbff
-  zh: 15cd675f9806468e
-/deepseek-ai-dsh-bash-local/further-exploration:
-  en: 02adacff32fe6aaa
-  zh: 985d507298f0d113
-/deepseek-ai-dsh-bash-local/model-experience:
-  en: 6f1b2f8c867cac58
-  zh: 36ce16f256972e88
-/deepseek-ai-dsh-bash-local/model-experience/kv-cache-effect:
+/quyet-bash-local/understand-the-implementation/invariants-and-ownership:
+  en: bed8b58fc4b37d1f
+  zh: d2be8d298229cc80
+/quyet-bash-local/further-exploration:
+  en: b8e5ec39322f8497
+  zh: 6810f30642ef5587
+/quyet-bash-local/model-experience:
+  en: 067b9f2f831cbed8
+  zh: 72b2dac99f87a1e6
+/quyet-bash-local/model-experience/kv-cache-effect:
   en: 40294c1c31b74824
   zh: 788a4799b1d65a8b
-/deepseek-ai-dsh-bash-local/known-limitations-and-deferred-work:
-  en: f1f98b9ebab7e6d2
-  zh: 803cc5e021de530f
-/deepseek-ai-dsh-bash-local/known-limitations-and-deferred-work/dev-note:
+/quyet-bash-local/known-limitations-and-deferred-work:
+  en: 070e370c78a323ae
+  zh: d62208789cfc0b86
+/quyet-bash-local/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

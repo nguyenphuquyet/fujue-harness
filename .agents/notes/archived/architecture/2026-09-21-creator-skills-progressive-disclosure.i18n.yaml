@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/architecture/2026-09-21-creator-skills-progressive-disclosure.md
-2026-09-21-creator-skills-progressive-disclosure.md: 8b0de4a3de6d43e5529f35ad7803df5c582d2417
-2026-09-21-creator-skills-progressive-disclosure.zh.md: c91164dd822008e06ff619526b902b9fb7df5231
+2026-09-21-creator-skills-progressive-disclosure.md: fa047e61ffdf76fb775268d8b06e77244dbbbf75
+2026-09-21-creator-skills-progressive-disclosure.zh.md: e6a969cd90477e3f6183644669f6110c062b8e10

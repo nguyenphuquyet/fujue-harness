@@ -1,19 +1,19 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import { createUserMessage, ToolCallId } from '@deepseek-ai/dsh-llm'
-import { provideWorkingDirectoryFixture, mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { executeToolFixture } from '@quyet/tool-testkit'
+import { createUserMessage, ToolCallId } from '@quyet/llm'
+import { provideWorkingDirectoryFixture, mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { chmodSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { LocalBashExecutor } from '@deepseek-ai/dsh-bash-local'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import * as HooksCodex from '@deepseek-ai/dsh-hooks-codex'
+import { Context } from '@quyet/cordis'
+import Loader from '@quyet/cordis-plugin-loader'
+import { SessionId, type SessionEvent } from '@quyet/session'
+import { defineContentToolFixture } from '@quyet/tool-testkit'
+import type { Agent } from '@quyet/agent'
+import AgentLoop from '@quyet/agent-loop'
+import { LocalBashExecutor } from '@quyet/bash-local'
+import LocalSubprocessRuntime from '@quyet/subprocess-local'
+import * as HooksCodex from '@quyet/hooks-codex'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 
 /**
@@ -30,7 +30,7 @@ afterEach(async () => {
 })
 
 function configDir(): string {
-  const dir = mkdtempSync(join(tmpdir(), 'dsh-hooks-codex-'))
+  const dir = mkdtempSync(join(tmpdir(), 'quyet-hooks-codex-'))
   dirs.push(dir)
   return dir
 }

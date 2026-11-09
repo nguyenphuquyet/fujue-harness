@@ -3,17 +3,17 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/simplification/2026-09-17-unified-subagent-activations.md
 /agent-note-unified-subagent-activations:
-  en: bf9959f51e79029c
-  zh: 9526781af4b72f6a
+  en: b615042cfb42d769
+  zh: 94e55b1320d2a408
 /agent-note-unified-subagent-activations/problem:
   en: c97919745873e705
   zh: b531e60b626c4304
 /agent-note-unified-subagent-activations/decision:
-  en: 86c924e5eedb919d
-  zh: 36dd301bdba6325d
+  en: 71e2cc1aac5fe791
+  zh: e98d5dbf108b6273
 /agent-note-unified-subagent-activations/decision/retained-decisions:
-  en: 670043a18f9cd32c
-  zh: d925485386bab362
+  en: 6c9b6c2236c84d39
+  zh: f62eb2f6046d6985
 /agent-note-unified-subagent-activations/alternatives-considered:
   en: f1fe44375cd78882
   zh: 9abe43a7aa63c1b0

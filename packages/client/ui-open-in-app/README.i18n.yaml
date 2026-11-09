@@ -5,36 +5,36 @@
 /:
   en: 8caca7252f2cf5c7
   zh: 47a157352d33265e
-/deepseek-ai-dsh-client-ui-open-in-app:
-  en: 004b805ac638e884
-  zh: 6ac98df58affefcf
-/deepseek-ai-dsh-client-ui-open-in-app/summary:
-  en: 1e68d4eb8f246ed2
-  zh: d8bf9abe0c1cccee
-/deepseek-ai-dsh-client-ui-open-in-app/table-of-contents:
+/quyet-client-ui-open-in-app:
+  en: d9275f14a36db864
+  zh: 5f999a8b21c9d5db
+/quyet-client-ui-open-in-app/summary:
+  en: 401716847a60f86c
+  zh: 5d02c8e72673197c
+/quyet-client-ui-open-in-app/table-of-contents:
   en: d152484eb41ac6b4
   zh: 725b47765ee8f30b
-/deepseek-ai-dsh-client-ui-open-in-app/use-this-package:
-  en: b149da9963eb9837
-  zh: 2426ea37fbd0f8b7
-/deepseek-ai-dsh-client-ui-open-in-app/use-this-package/what-to-expect:
-  en: e07d3a607d54cb47
-  zh: 9a7342f05b64db38
-/deepseek-ai-dsh-client-ui-open-in-app/understand-the-implementation:
-  en: 22da59203ca974e6
-  zh: f288bd6a193bccef
-/deepseek-ai-dsh-client-ui-open-in-app/further-exploration:
-  en: 720527877e452a97
-  zh: b2241c7a336a3eeb
-/deepseek-ai-dsh-client-ui-open-in-app/model-experience:
+/quyet-client-ui-open-in-app/use-this-package:
+  en: 34e208b5a23db5de
+  zh: 601ac9c26c2c0ba4
+/quyet-client-ui-open-in-app/use-this-package/what-to-expect:
+  en: e0fef63638b2ae25
+  zh: 4f7312cc1b57dc4f
+/quyet-client-ui-open-in-app/understand-the-implementation:
+  en: 8a8d8820e952fe18
+  zh: b88abc2425602ec7
+/quyet-client-ui-open-in-app/further-exploration:
+  en: 2e44731671362468
+  zh: 21722ad7ccf68d10
+/quyet-client-ui-open-in-app/model-experience:
   en: aad141aa922e23f7
   zh: 18432b4f70971fa7
-/deepseek-ai-dsh-client-ui-open-in-app/model-experience/kv-cache-effect:
+/quyet-client-ui-open-in-app/model-experience/kv-cache-effect:
   en: ca75c51c89c2c9b0
   zh: c2241315dc0c89c9
-/deepseek-ai-dsh-client-ui-open-in-app/known-limitations-and-deferred-work:
-  en: 59c434b70679fc16
-  zh: 7fe9e52b0bb82df1
-/deepseek-ai-dsh-client-ui-open-in-app/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-open-in-app/known-limitations-and-deferred-work:
+  en: 9819f5f74d33c405
+  zh: 6c1c388eadddf336
+/quyet-client-ui-open-in-app/known-limitations-and-deferred-work/dev-note:
   en: 84f92568fc74adf1
   zh: 286b47e6b5b1a556

@@ -1,17 +1,17 @@
 // @vitest-environment jsdom
-import * as uiPrimitives from '@deepseek-ai/dsh-client-ui-primitives'
+import * as uiPrimitives from '@quyet/client-ui-primitives'
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 'vitest'
-import { RemoteError, SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
-import { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { ModelSelection } from '@deepseek-ai/dsh-api-remotes/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
+import { RemoteError, SlotTestRuntime } from '@quyet/client-test-runtime'
+import { SessionId } from '@quyet/session/types'
+import type { ModelSelection } from '@quyet/api-remotes/client'
+import { createSnapshotStore } from '@quyet/client-store'
 import type { ComponentProps } from 'react'
-import type { OwnerOf } from '@deepseek-ai/dsh-client-ui-slots'
+import type { OwnerOf } from '@quyet/client-ui-slots'
 import type { ModelDirectoryState } from '../src/client/directory.ts'
 import { ModelSelect } from '../src/client/ModelSelect.tsx'
 import { en, zh } from '../src/client/locales.ts'
-import { zh as commonZh } from '@deepseek-ai/dsh-client-locale/src/locales/zh.ts'
+import { zh as commonZh } from '@quyet/client-locale/src/locales/zh.ts'
 
 // The seat's key domain is model ∪ common; the stub mirrors the real lookup
 // chain: package dictionary, then common vocabulary, then the key.
@@ -467,9 +467,9 @@ describe('ModelSelect reasoning effort', () => {
     // Outside the composer subtree — column overflow clips cannot crop it.
     expect(container.contains(menu)).toBe(false)
     expect(menu.parentElement).toBe(document.body)
-    const anchor = trigger.style.getPropertyValue('--dsh-model-anchor')
-    expect(anchor).toMatch(/^--dsh-model-/)
-    expect(menu.style.getPropertyValue('--dsh-model-anchor')).toBe(anchor)
+    const anchor = trigger.style.getPropertyValue('--quyet-model-anchor')
+    expect(anchor).toMatch(/^--quyet-model-/)
+    expect(menu.style.getPropertyValue('--quyet-model-anchor')).toBe(anchor)
     expect(menu.style.left).toBe('')
     expect(menu.style.top).toBe('')
     expect(measure).not.toHaveBeenCalled()
@@ -528,7 +528,7 @@ describe('ModelSelect keyboard walk', () => {
         })
       }
       vi.resetModules()
-      const detection = await import('@deepseek-ai/dsh-client-ui-primitives/src/focus.ts')
+      const detection = await import('@quyet/client-ui-primitives/src/focus.ts')
       const device = vi.spyOn(uiPrimitives, 'isMobileDevice').mockImplementation(detection.isMobileDevice)
       onTestFinished(() => { device.mockRestore() })
       const select = vi.fn()

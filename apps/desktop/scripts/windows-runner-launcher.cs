@@ -1,4 +1,4 @@
-// Compiled as a Windows GUI executable so Task Scheduler never allocates a console.
+﻿// Compiled as a Windows GUI executable so Task Scheduler never allocates a console.
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -67,7 +67,7 @@ internal static class WindowsRunnerLauncher
         string runner = Directory.GetParent(root.TrimEnd(Path.DirectorySeparatorChar)).FullName.TrimEnd('\\', '/');
         string taskName;
         using (var hash = SHA256.Create())
-            taskName = "DSH-Packaging-" + BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(runner.ToUpperInvariant()))).Replace("-", "").Substring(0, 16);
+            taskName = "QUYET-Packaging-" + BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(runner.ToUpperInvariant()))).Replace("-", "").Substring(0, 16);
         dynamic scheduler = Activator.CreateInstance(Type.GetTypeFromProgID("Schedule.Service"));
         scheduler.Connect();
         scheduler.GetFolder("\\").GetTask(taskName).Enabled = false;

@@ -1,6 +1,0 @@
-{
-  "meta": {
-    "title": "Backend agent con DSH SDK",
-    "description": "Chạy Harness trong tiến trình con thông qua SDK TypeScript và JSON-RPC qua đầu vào và đầu ra chuẩn."
-  }
-}

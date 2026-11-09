@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-webworker-packer",
+  "name": "@quyet/experimental-webworker-packer",
   "description": "Build-time packer for the browser runtime's base VFS image and ordered data-overlay archives",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/webworker-packer"
   },
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "bin": {
-    "dsh-pack-vfs-image": "./bin.js"
+    "quyet-pack-vfs-image": "./bin.js"
   },
   "exports": {
     ".": {
@@ -33,22 +33,22 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-experimental-webworker-runtime": "workspace:*",
-    "@deepseek-ai/dsh-official-bundles": "workspace:*",
-    "@deepseek-ai/dsh-session-format": "workspace:*",
-    "@deepseek-ai/dsh-session-format-catalog": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v3-to-v4": "workspace:*",
+    "@quyet/cordis-plugin-include": "workspace:~",
+    "@quyet/app-boot": "workspace:*",
+    "@quyet/experimental-webworker-runtime": "workspace:*",
+    "@quyet/official-bundles": "workspace:*",
+    "@quyet/session-format": "workspace:*",
+    "@quyet/session-format-catalog": "workspace:*",
+    "@quyet/session-format-v3-to-v4": "workspace:*",
     "js-yaml": "^4.3.2",
     "picomatch": "^4.0.7"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
+    "@quyet/cordis": "workspace:~",
     "@types/js-yaml": "^4.0.9",
     "@types/picomatch": "^4.0.3"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   }
 }

@@ -2,14 +2,14 @@
 
 import { delimiter, join } from 'node:path'
 import { randomUUID } from 'node:crypto'
-import type { PluginOperationRunId } from '@deepseek-ai/dsh-plugin-manager/diagnostic'
+import type { PluginOperationRunId } from '@quyet/plugin-manager/diagnostic'
 import { formatFatalDiagnostic } from './fatal-diagnostic.ts'
-import { loadLayeredEnv, loadProfileDirectory, reportSkippedBundles } from '@deepseek-ai/dsh-app-boot'
-import { runProfile } from '@deepseek-ai/dsh/profile-boot'
-import type {} from '@deepseek-ai/dsh-client-connection'
-import type {} from '@deepseek-ai/dsh-host-webserver'
-import type {} from '@deepseek-ai/dsh-deepseek-account'
-import { resolveDshHome } from '@deepseek-ai/dsh-home-paths'
+import { loadLayeredEnv, loadProfileDirectory, reportSkippedBundles } from '@quyet/app-boot'
+import { runProfile } from '@quyet/harness/profile-boot'
+import type {} from '@quyet/client-connection'
+import type {} from '@quyet/host-webserver'
+import type {} from '@quyet/deepseek-account'
+import { resolveQuyetHome } from '@quyet/home-paths'
 import * as desktopOffice from './office.ts'
 import { localDragResource } from './file-drag.ts'
 
@@ -25,11 +25,11 @@ async function main(): Promise<void> {
   const runtimeDir = process.argv[2] as string
   const projectDir = process.argv[3] as string
   installOfficeEngineResolution(runtimeDir)
-  const installAnchor = join(runtimeDir, 'node_modules', '@deepseek-ai', 'dsh', 'package.json')
-  const profile = loadProfileDirectory('dsh', projectDir, installAnchor)
-  reportSkippedBundles('dsh', profile)
+  const installAnchor = join(runtimeDir, 'node_modules', '@quyet', 'harness', 'package.json')
+  const profile = loadProfileDirectory('quyet', projectDir, installAnchor)
+  reportSkippedBundles('quyet', profile)
   const application = runProfile({
-    environment: loadLayeredEnv('dsh'),
+    environment: loadLayeredEnv('quyet'),
     profile: 'desktop',
     resolvedProfile: { profile, installAnchor },
     patchFiles: [],
@@ -40,7 +40,7 @@ async function main(): Promise<void> {
         args: ['--expose-internals', process.argv[5]],
         env: {
           ELECTRON_RUN_AS_NODE: '1',
-          DSH_DESKTOP_NODE_EXECUTABLE: process.execPath,
+          QUYET_DESKTOP_NODE_EXECUTABLE: process.execPath,
           PATH: `${process.argv[6] ?? ''}${delimiter}${process.env.PATH ?? ''}`,
         },
       },
@@ -134,7 +134,7 @@ async function main(): Promise<void> {
   await ctx.plugin(desktopOffice, {
     runtimeDir,
     source: process.argv[4] ?? join(runtimeDir, '..', 'runtime', 'primary-runtime'),
-    root: join(resolveDshHome(), 'dsh-runtimes', 'dsh-primary-runtime'),
+    root: join(resolveQuyetHome(), 'quyet-runtimes', 'quyet-primary-runtime'),
   })
   installPlatformSessionPublisher(ctx, (session) => {
     if (process.connected) process.send?.({ type: 'platform-session', session })

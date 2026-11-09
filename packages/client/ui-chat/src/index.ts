@@ -1,9 +1,9 @@
 /** Host registration for browser Chat preferences. */
-import type {} from '@deepseek-ai/dsh-settings'
+import type {} from '@quyet/settings'
 
-import type { Volatile, Context } from '@deepseek-ai/cordis'
+import type { Volatile, Context } from '@quyet/cordis'
 import type { ChatSettings, CollapseTiming, FoldedReplies, LinkOpening, PerformanceUsageMode } from './chat-settings.ts'
-import z from '@deepseek-ai/schemastery'
+import z from '@quyet/schemastery'
 import { TRANSCRIPT_VIEW_FIELD } from './chat-settings.ts'
 
 import { ChatSettingsFields } from './chat-settings.ts'

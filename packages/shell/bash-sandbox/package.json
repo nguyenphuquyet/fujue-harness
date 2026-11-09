@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-bash-sandbox",
-  "description": "Sandbox-consuming implementation of the DeepSeek Harness bash executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)",
+  "name": "@quyet/bash-sandbox",
+  "description": "Sandbox-consuming implementation of the JueTech Harness bash executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/shell/bash-sandbox"
   },
   "type": "module",
@@ -29,21 +29,21 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-bash-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/shell": "workspace:*",
+    "@quyet/bash-local": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-bash-local": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/node-addon-system": "workspace:~",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@quyet/shell": "workspace:*",
+    "@quyet/bash-local": "workspace:*",
+    "@quyet/subprocess-local": "workspace:*",
+    "@quyet/sandbox": "workspace:*",
+    "@quyet/sandbox-local": "workspace:*",
+    "@quyet/sandbox-policy": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/node-addon-system": "workspace:~",
+    "@quyet/session-projection": "workspace:*"
   }
 }

@@ -1,0 +1,22 @@
+# Bilingual-pair consistency record for maintaining-quyet-code-review.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write docs/cookbook/maintaining-quyet-code-review.md
+/maintaining-the-quyet-code-review-skill:
+  en: 930171c16e904828
+  zh: 8b38874b78f145e0
+/maintaining-the-quyet-code-review-skill/what-the-maintainer-receives:
+  en: 1180d4d7ea591166
+  zh: 5adaba75fac11add
+/maintaining-the-quyet-code-review-skill/what-the-operator-does-with-a-candidate-diff:
+  en: e12db0821fad19c1
+  zh: ced0142562a0545a
+/maintaining-the-quyet-code-review-skill/when-a-run-produces-no-candidate:
+  en: feb6d261939d6c19
+  zh: 044d8238cd6537d3
+/maintaining-the-quyet-code-review-skill/interruptions-and-handoff:
+  en: d1a2a2bdb2bdb4ad
+  zh: 95e3663877b22230
+/maintaining-the-quyet-code-review-skill/where-the-operator-s-private-setup-lives:
+  en: ae06145764738c16
+  zh: d527b944db8c52be

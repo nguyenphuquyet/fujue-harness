@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/architecture/2026-07-20-todo-event-ownership.md
-2026-07-20-todo-event-ownership.md: 3dfcd604393d05265eb895fa50647338830bd38f
-2026-07-20-todo-event-ownership.zh.md: 8dabf8f0cde4ad8af325b00eb1be9d7b7011233f
+2026-07-20-todo-event-ownership.md: 3b80152ad4b4376623c08f5e66f6adf875bff9e2
+2026-07-20-todo-event-ownership.zh.md: df666e3f4bb9acf3026acdb8f0345fa870a2c6f7

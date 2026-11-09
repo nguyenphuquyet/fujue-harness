@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/architecture/2026-09-15-narrow-pi-ai-runtime-imports.md
-2026-09-15-narrow-pi-ai-runtime-imports.md: d042b3099c2955d7239192bb72ae5a5b58cb7f05
-2026-09-15-narrow-pi-ai-runtime-imports.zh.md: ed4f51d326a07107f0e1d49172f07aabb868f016
+2026-09-15-narrow-pi-ai-runtime-imports.md: 2f5003477e6378c1a72542293e3ac579e0081418
+2026-09-15-narrow-pi-ai-runtime-imports.zh.md: abce87ad3fa38034def6b01154ed3d7a9d558c83

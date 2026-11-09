@@ -3,8 +3,8 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-11-03-hoc-slot-kind.md
 /agent-note-add-the-hoc-slot-kind-so-plugins-can-wrap-owner-content-in-layers:
-  en: 8292b8f9884b8802
-  zh: 3a4f34ca79313c9d
+  en: 8b3463bb41adc54a
+  zh: 4aad09dda515c9db
 /agent-note-add-the-hoc-slot-kind-so-plugins-can-wrap-owner-content-in-layers/problem:
   en: d16c3bfef49e16be
   zh: 6714da1c9c984fe9
@@ -21,5 +21,5 @@
   en: b4824619c502b422
   zh: 610364f2dc8cb2b7
 /agent-note-add-the-hoc-slot-kind-so-plugins-can-wrap-owner-content-in-layers/consequences:
-  en: 7542ee2bc2c70258
-  zh: bc0dd1dc6e50de66
+  en: dddeb207ba827020
+  zh: 719943d387d8ab54

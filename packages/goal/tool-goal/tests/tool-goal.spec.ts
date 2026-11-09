@@ -1,30 +1,30 @@
-import { ToolExecutionPipeline } from '@deepseek-ai/dsh-tools/pipeline'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { ToolExecutionPipeline } from '@quyet/tools/pipeline'
+import { executeToolFixture } from '@quyet/tool-testkit'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
 import { afterAll, afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import AgentRegistry, { agentEvents } from '@deepseek-ai/dsh-agent'
-import type { Agent, AgentStatus, Inbox } from '@deepseek-ai/dsh-agent'
-import GoalService, { GoalId } from '@deepseek-ai/dsh-goal'
-import type { GoalRef } from '@deepseek-ai/dsh-goal'
-import { createUserMessage, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { MessageSource } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import { Context } from '@quyet/cordis'
+import Loader from '@quyet/cordis-plugin-loader'
+import AgentRegistry, { agentEvents } from '@quyet/agent'
+import type { Agent, AgentStatus, Inbox } from '@quyet/agent'
+import GoalService, { GoalId } from '@quyet/goal'
+import type { GoalRef } from '@quyet/goal'
+import { createUserMessage, ToolCallId } from '@quyet/llm'
+import type { MessageSource } from '@quyet/llm'
+import type { ContextFormed } from '@quyet/llm'
 import SessionStore, {
   SESSION_FORMAT_VERSION,
   Session,
   SessionId,
   SessionLogOffset,
-} from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import type { ToolExecutionResult } from '@deepseek-ai/dsh-tools'
-import * as toolGoal from '@deepseek-ai/dsh-tool-goal'
-import { unsupportedModel, createInboxStub } from '@deepseek-ai/dsh-agent-loop-testkit'
+} from '@quyet/session'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import SystemPrompt from '@quyet/system-prompt'
+import ToolRuntime from '@quyet/tools'
+import type { ToolExecutionResult } from '@quyet/tools'
+import * as toolGoal from '@quyet/tool-goal'
+import { unsupportedModel, createInboxStub } from '@quyet/agent-loop-testkit'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@quyet/llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

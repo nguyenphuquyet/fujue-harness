@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-07-30-web-composer-stats-and-input-polish.md
-2026-07-30-web-composer-stats-and-input-polish.md: 3c80b74c564a1779c69ef525f8d1f194e8915f6b
-2026-07-30-web-composer-stats-and-input-polish.zh.md: eabb174e78f3171997b9103650c7fe326793ce1b
+2026-07-30-web-composer-stats-and-input-polish.md: e47975d55f80d4647aca7841a56cb410e6937981
+2026-07-30-web-composer-stats-and-input-polish.zh.md: b4eac82a22a826ddca77ab8ef05b7b376bb210cc

@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-09-22-unbounded-completion-wakes-by-default.md
-2026-09-22-unbounded-completion-wakes-by-default.md: 31397aecd7b38b4b8bdfc82e23c957547adfa813
-2026-09-22-unbounded-completion-wakes-by-default.zh.md: 813c84d4dc03f64741d98eab6549bbba9468415b
+2026-09-22-unbounded-completion-wakes-by-default.md: fee00bbb7248aed8ca1605214451e8864e812fe4
+2026-09-22-unbounded-completion-wakes-by-default.zh.md: 56537ff703458293d4600c6f567e28f54f7583eb

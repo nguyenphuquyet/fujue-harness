@@ -1,4 +1,4 @@
-import type { Fiber } from '@deepseek-ai/cordis'
+import type { Fiber } from '@quyet/cordis'
 import type { McpCloseResult, McpConnectionStatus } from './types.ts'
 
 /**

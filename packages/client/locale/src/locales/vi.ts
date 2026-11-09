@@ -35,7 +35,7 @@ export const vi = {
   'subtitle.expand': 'Mở rộng mô tả cho {name}',
   'subtitle.collapse': 'Thu gọn mô tả cho {name}',
   'back': 'Quay lại',
-  'brand.localBuild': 'Bản dựng cục bộ DSH',
+  'brand.localBuild': 'JueTech Harness',
   'workspace.defaultName': 'Không gian làm việc mặc định',
   'unknown': 'Không rõ',
   'none': 'Không có',

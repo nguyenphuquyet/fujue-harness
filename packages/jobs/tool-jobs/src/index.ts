@@ -7,23 +7,23 @@
  * unless `maxConsecutiveWakes` caps it per owner. A notice carries the job's
  * output and result when it fits `inlineOutputBytes`, and `job_output`
  * withdraws a notice still pending.
- * @module @deepseek-ai/dsh-tool-jobs
+ * @module @quyet/tool-jobs
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { boundContextSummary, createUserMessage, type ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed, MessageId } from '@deepseek-ai/dsh-llm'
-import { TextRetainer } from '@deepseek-ai/dsh-output-retention'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type { GenericCallView, ToolDefinition, ToolExecution } from '@deepseek-ai/dsh-tools'
-import { JobId } from '@deepseek-ai/dsh-jobs'
-import type { JobEvent, JobView, JobRead } from '@deepseek-ai/dsh-jobs'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-agent'
+import type { Context } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import { boundContextSummary, createUserMessage, type ContentBlock } from '@quyet/llm'
+import type { ContextFormed, MessageId } from '@quyet/llm'
+import { TextRetainer } from '@quyet/output-retention'
+import { defineTool } from '@quyet/tools'
+import type { GenericCallView, ToolDefinition, ToolExecution } from '@quyet/tools'
+import { JobId } from '@quyet/jobs'
+import type { JobEvent, JobView, JobRead } from '@quyet/jobs'
+import type { Agent } from '@quyet/agent'
+import type {} from '@quyet/agent'
 import { publicJob, renderModelDelta, statusLine } from './render.ts'
 import type { PublicJobSnapshot } from './render.ts'
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@quyet/llm' {
   interface MessageSourceMap {
     'tool-jobs': { kind: 'tool-jobs' } & ContextFormed
   }

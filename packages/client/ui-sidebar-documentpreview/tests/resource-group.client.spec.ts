@@ -1,8 +1,8 @@
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { RemoteError } from '@deepseek-ai/dsh-client-test-runtime'
-import type { Resources, ResourceSnapshot } from '@deepseek-ai/dsh-client-resources/client'
-import type { WorkspaceFileStat } from '@deepseek-ai/dsh-api-workspace-files/types'
+import { createSnapshotStore } from '@quyet/client-store'
+import { RemoteError } from '@quyet/client-test-runtime'
+import type { Resources, ResourceSnapshot } from '@quyet/client-resources/client'
+import type { WorkspaceFileStat } from '@quyet/api-workspace-files/types'
 import { ResourceGroup } from '../src/client/document/resource-group.ts'
 
 function harness() {

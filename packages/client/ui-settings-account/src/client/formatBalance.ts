@@ -17,5 +17,5 @@ export function formatBalance(amount: string, symbol: '¥' | '$'): string {
 
 function addCommas(value: string): string {
   const [integer, fraction] = value.split('.')
-  return `${Number(integer).toLocaleString()}.${fraction}`
+  return `${Number(integer).toLocaleString('en-US')}.${fraction}`
 }

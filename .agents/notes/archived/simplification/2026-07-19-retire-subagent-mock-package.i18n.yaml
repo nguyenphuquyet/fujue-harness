@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write
-2026-07-19-retire-subagent-mock-package.md: 9fce0d2f8ea20b4f31e2042acba4df34152e3201
-2026-07-19-retire-subagent-mock-package.zh.md: d82650c9e74f8fff1386185f0930762d21a7243f
+2026-07-19-retire-subagent-mock-package.md: 998572bc1939837d80c5825f2dd28c57dcf1eb91
+2026-07-19-retire-subagent-mock-package.zh.md: 2127bc29bbbc289aff4edacfc5ee9fbe18e0d616

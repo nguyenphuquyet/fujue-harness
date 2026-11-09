@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/process/2026-08-08-browser-gif-evidence-chain.md
-2026-08-08-browser-gif-evidence-chain.md: e85c05ef214cbf03409be1512da4b127231ac4f3
-2026-08-08-browser-gif-evidence-chain.zh.md: bc2d11f007adc4645aa6402736007f1d16ecf56e
+2026-08-08-browser-gif-evidence-chain.md: 784c67f4d2a5d00d382fc2223680838b4c14c741
+2026-08-08-browser-gif-evidence-chain.zh.md: 97279239c6b56d65e811d088ad5a8534e7fe4c9a

@@ -5,7 +5,7 @@
  * choices; the bucket ends with the tab record's signal.
  */
 
-import { defineStore, type EngineStoreHandle } from '@deepseek-ai/dsh-client-store'
+import { defineStore, type EngineStoreHandle } from '@quyet/client-store'
 import type { ForgeBaseBranch, ForgeLocalScope } from '../types.ts'
 
 /** One changes tab's choices. */

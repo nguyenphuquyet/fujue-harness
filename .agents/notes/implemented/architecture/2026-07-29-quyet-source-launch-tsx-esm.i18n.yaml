@@ -1,0 +1,19 @@
+# Bilingual-pair consistency record for 2026-07-29-quyet-source-launch-tsx-esm.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-07-29-quyet-source-launch-tsx-esm.md
+/agent-note-quyet-source-launch-through-the-tsx-esm-hook:
+  en: ff0e3732e238733c
+  zh: 40f1d682050f9211
+/agent-note-quyet-source-launch-through-the-tsx-esm-hook/problem:
+  en: 32c41919621d380d
+  zh: 78ee1f67b6b21050
+/agent-note-quyet-source-launch-through-the-tsx-esm-hook/decision:
+  en: 595e516b92f1ba77
+  zh: 62345a45e69d2238
+/agent-note-quyet-source-launch-through-the-tsx-esm-hook/alternatives-considered:
+  en: c6eec3d899a61df1
+  zh: 128edd753d49c0da
+/agent-note-quyet-source-launch-through-the-tsx-esm-hook/consequences:
+  en: 7c8eb105520ccae3
+  zh: 9dc85ecda408de5a

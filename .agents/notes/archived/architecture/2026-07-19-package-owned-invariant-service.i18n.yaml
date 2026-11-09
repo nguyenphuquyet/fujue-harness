@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/architecture/2026-07-19-package-owned-invariant-service.md
-2026-07-19-package-owned-invariant-service.md: 6ebdd0edbe04766280fb9aae7067ba861b2ce010
-2026-07-19-package-owned-invariant-service.zh.md: dde72faed7249d64b939aaca1bc5d452eeed7bde
+2026-07-19-package-owned-invariant-service.md: 3820e2c4227912d813fe4012638454b29e9fe9ef
+2026-07-19-package-owned-invariant-service.zh.md: fefe567bd91015fe8b30ad8fced203f224847b41

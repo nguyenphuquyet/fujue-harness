@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-connection",
+  "name": "@quyet/client-connection",
   "description": "Authenticated RPC transport and generation lifecycle",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/client/connection"
   },
   "type": "module",
@@ -28,7 +28,7 @@
     "./package.json": "./package.json",
     "./locale/*.json": "./locale/*.json"
   },
-  "dsh": {
+  "quyet": {
     "client": {
       "inject": [],
       "platform": "web",
@@ -37,8 +37,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@quyet/credentials": "workspace:*",
+    "@quyet/schemastery": "workspace:~",
     "zod": "4.4.3"
   },
   "files": [
@@ -49,17 +49,17 @@
     "lib/types/**/*.d.ts"
   ],
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-scope": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/scope": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@quyet/cordis": "workspace:~",
+    "@quyet/attachment": "workspace:*",
+    "@quyet/brand": "workspace:*",
+    "@quyet/host-webserver": "workspace:*",
+    "@quyet/llm": "workspace:*",
+    "@quyet/scope": "workspace:*",
+    "@quyet/session": "workspace:*",
+    "@quyet/typert-protocol": "workspace:*"
   }
 }

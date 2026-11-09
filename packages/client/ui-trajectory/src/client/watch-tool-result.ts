@@ -1,8 +1,8 @@
 /** Selected-result subscriptions retain no history-sized Client cache. */
-import type { ClientRemote } from '@deepseek-ai/dsh-api-gateway/client'
+import type { ClientRemote } from '@quyet/api-gateway/client'
 import type { SessionToolResultValue } from '../types.ts'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { SessionId } from '@quyet/session/types'
+import type { JsonValue } from '@quyet/util-values'
 
 /** Observe one result until the inspector releases it; undefined denotes unavailable. */
 export type WatchToolResult = (seq: number, publish: (value: JsonValue | undefined) => void) => () => void

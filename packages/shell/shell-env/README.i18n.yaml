@@ -3,56 +3,56 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/shell/shell-env/README.md
 /:
-  en: c54342d0151b089c
-  zh: 9ad6284f24c5e3f6
-/deepseek-ai-dsh-shell-env:
-  en: d26b77029fa722ab
-  zh: 8e6bed763372b561
-/deepseek-ai-dsh-shell-env/summary:
-  en: 021be213f32988e1
-  zh: f3ce1ef82377b4f4
-/deepseek-ai-dsh-shell-env/table-of-contents:
+  en: 35af523b1214da44
+  zh: af3162f0a5b65a14
+/quyet-shell-env:
+  en: b512966a6502b929
+  zh: 0f522ba0e7546264
+/quyet-shell-env/summary:
+  en: a8bac565f1e8c8e0
+  zh: 512900e3b255d228
+/quyet-shell-env/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-shell-env/use-this-package:
-  en: 34d2f05183df200f
-  zh: 7753b97c91743901
-/deepseek-ai-dsh-shell-env/use-this-package/what-every-shell-call-receives:
-  en: eae86664fefc6690
-  zh: 05a4e5946c8d2b87
-/deepseek-ai-dsh-shell-env/use-this-package/adding-your-own-environment-facts:
-  en: 21ef223626e35905
-  zh: 5c468055099b0135
-/deepseek-ai-dsh-shell-env/use-this-package/choosing-the-harness-home:
-  en: 0041438f2b7f7e4f
-  zh: 93fa165b07adcdf4
-/deepseek-ai-dsh-shell-env/use-this-package/what-can-go-wrong:
-  en: 42c75945b581b7e6
-  zh: 6b5c487cfa28b206
-/deepseek-ai-dsh-shell-env/understand-the-implementation:
+/quyet-shell-env/use-this-package:
+  en: 55690af48c6fc61b
+  zh: 6cc8006cbc12f04e
+/quyet-shell-env/use-this-package/what-every-shell-call-receives:
+  en: 37819b54224f9e43
+  zh: 763525d654e316e7
+/quyet-shell-env/use-this-package/adding-your-own-environment-facts:
+  en: cf778bfa4d0301b8
+  zh: eccdb91a5b3033f0
+/quyet-shell-env/use-this-package/choosing-the-harness-home:
+  en: 4bb546a91f46725e
+  zh: 4fa91cdc7e15ee4a
+/quyet-shell-env/use-this-package/what-can-go-wrong:
+  en: 60e591d9430777fa
+  zh: f3555ea5845470e3
+/quyet-shell-env/understand-the-implementation:
   en: f782557ca8da3138
   zh: e8f0082b9692cacc
-/deepseek-ai-dsh-shell-env/understand-the-implementation/design-philosophy:
-  en: 311b66ea29b5702f
-  zh: 3a98c2fb1fcaa519
-/deepseek-ai-dsh-shell-env/understand-the-implementation/source-map:
+/quyet-shell-env/understand-the-implementation/design-philosophy:
+  en: 61d7487ad8bfd30b
+  zh: 81a402f3671122bf
+/quyet-shell-env/understand-the-implementation/source-map:
   en: 72eba3bfadcfa581
   zh: dcd83e02a1910f27
-/deepseek-ai-dsh-shell-env/understand-the-implementation/collection:
-  en: 0c2d7d5b2131630f
-  zh: b44d4f0ddf89421b
-/deepseek-ai-dsh-shell-env/further-exploration:
-  en: 6a4175df7b7341c7
-  zh: 7885831274008502
-/deepseek-ai-dsh-shell-env/model-experience:
-  en: 8acf3cd9aeef5f55
-  zh: 69725e78f73c2f16
-/deepseek-ai-dsh-shell-env/model-experience/kv-cache-effect:
+/quyet-shell-env/understand-the-implementation/collection:
+  en: 75296217c94aa800
+  zh: c5d4b7c1d2bfe619
+/quyet-shell-env/further-exploration:
+  en: 490fa7d8439e0e2e
+  zh: 33fea4ea69d7d9f0
+/quyet-shell-env/model-experience:
+  en: 3ffa9e6eebcd5b41
+  zh: ff5da408e47fb254
+/quyet-shell-env/model-experience/kv-cache-effect:
   en: e95e649f0410fa75
   zh: b3d64877420b4c0d
-/deepseek-ai-dsh-shell-env/known-limitations-and-deferred-work:
-  en: be9888161315f026
-  zh: 97d1d05c1c322596
-/deepseek-ai-dsh-shell-env/known-limitations-and-deferred-work/dev-note:
+/quyet-shell-env/known-limitations-and-deferred-work:
+  en: bcdb6b320987d917
+  zh: ad8873388c4499f7
+/quyet-shell-env/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

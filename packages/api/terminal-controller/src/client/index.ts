@@ -1,12 +1,12 @@
 /** Client terminal model service; views are keyed independently from Host terminal identities. */
-import { Service, type Context } from '@deepseek-ai/cordis'
-import { remoteErrorOf } from '@deepseek-ai/dsh-typert-protocol'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type {} from '@deepseek-ai/dsh-api-gateway/client'
-import type { ConnectionHandle } from '@deepseek-ai/dsh-client-connection/client'
+import { Service, type Context } from '@quyet/cordis'
+import { remoteErrorOf } from '@quyet/typert-protocol'
+import type { SessionId } from '@quyet/session/types'
+import type {} from '@quyet/api-gateway/client'
+import type { ConnectionHandle } from '@quyet/client-connection/client'
 import { TerminalView, type TerminalRemote } from './model.ts'
-import { createSnapshotStore, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
+import { createSnapshotStore, type SnapshotStore } from '@quyet/client-store'
+import { randomUUID } from '@quyet/util-crypto'
 import type { TerminalShell, WebTerminalId, WebTerminalInfo } from '../types.ts'
 import { preferredShell, rememberShell } from './shell-preference.ts'
 import { TerminalCloseRequests, type TerminalCloseRequest } from './close-requests.ts'
@@ -16,7 +16,7 @@ import { TerminalInventory } from './inventory.ts'
 
 export type { TerminalView, TerminalViewState, TerminalViewIssue, TerminalRenderFrame, TerminalRemote } from './model.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     /** React-free browser terminal views and explicit process cleanup. */
     webTerminals: ClientTerminals

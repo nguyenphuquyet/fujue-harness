@@ -1,0 +1,65 @@
+# TypeScript SDK snapshot patch for automatic Quyết SDK failure notices.
+
+- id: skill-filesystem
+  name: '@quyet/skill-filesystem'
+  config:
+    includeDefaultRoots: false
+
+- id: llm-deepseek
+  name: '@quyet/llm-deepseek-api-key'
+  config:
+    thinking: enabled
+    reasoningEffort: max
+
+- id: session-persistence-jsonl
+  name: '@quyet/session-persistence-jsonl'
+  config:
+    root: !!js quyetHomePath('sessions')
+    compression: !!js "process.env.QUYET_SNAPSHOT === undefined ? 'zstd' : 'none'"
+
+- id: session-log-deepseek
+  name: '@quyet/session-log-deepseek'
+  config:
+    enabled: true
+
+- insert:
+    - id: subagent-quyet-sdk-diagnostic
+      name: '@quyet/subagent-quyet-sdk'
+      config:
+        providerName: quyet-sdk-diagnostic
+        profile: sdk
+        patches:
+          - !!js process.env.QUYET_TEST_CHILD_PATCH
+        quyetHome: !!js quyetHomePath('children/first')
+        provider: mock
+        model: mock-echo
+        env:
+          QUYET_TELEMETRY_DISABLED: '1'
+          QUYET_TEST_CHILD_FAILURE: '1'
+    - id: tool-subagent-quyet-sdk-diagnostic
+      name: '@quyet/tool-subagent'
+      config:
+        provider: quyet-sdk-diagnostic
+        toolName: subagent_quyet_sdk
+        maxDepth: provider-managed
+    - id: subagent-quyet-sdk-diagnostic-second
+      name: '@quyet/subagent-quyet-sdk'
+      config:
+        providerName: quyet-sdk-diagnostic-second
+        profile: sdk
+        patches:
+          - !!js process.env.QUYET_TEST_CHILD_PATCH
+        quyetHome: !!js quyetHomePath('children/second')
+        provider: mock
+        model: mock-echo
+        env:
+          QUYET_TELEMETRY_DISABLED: '1'
+          QUYET_TEST_CHILD_FAILURE: '1'
+    - id: tool-subagent-quyet-sdk-diagnostic-second
+      name: '@quyet/tool-subagent'
+      config:
+        provider: quyet-sdk-diagnostic-second
+        toolName: subagent_quyet_sdk_second
+        maxDepth: provider-managed
+    - id: await-external-subagents
+      name: '../../../packages/test-support/session-snapshot/tests/fixtures/subagent-settlement-barrier.ts'

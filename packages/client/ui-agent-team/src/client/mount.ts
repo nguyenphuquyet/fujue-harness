@@ -1,22 +1,22 @@
 /** Source-safe task-board browser registration. */
 
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-client-ui-subagent/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-client-ui-model-selection/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { Context as ClientContext } from '@quyet/cordis'
+import type {} from '@quyet/api-session-controller/client'
+import type {} from '@quyet/client-ui-subagent/client'
+import type {} from '@quyet/client-ui-conversation/client'
+import type {} from '@quyet/client-locale/client'
+import type {} from '@quyet/client-ui-renderer/client'
+import type {} from '@quyet/api-remotes/client'
+import type {} from '@quyet/client-ui-model-selection/client'
+import { createSnapshotStore } from '@quyet/client-store'
+import type { SessionId } from '@quyet/session/types'
 import { TeamDisableConfirmation, type TeamDisableConfirmationInjected, type TeamDisableRequest } from './TeamDisableConfirmation.tsx'
 import { TeamModeToggle, type TeamModeToggleInjected } from './TeamModeToggle.tsx'
 import { TeamBoard } from './TeamBoard.tsx'
 import { TeamCommandRow } from './TeamCommandRow.tsx'
 import { en, ja, es, fr, de, ru, pt, vi, NS, zh, type TeamKey } from './locales.ts'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@quyet/client-ui-slots' {
   interface LocaleNamespaceMap {
     /** Shared task-board copy. */
     'agent-team': TeamKey

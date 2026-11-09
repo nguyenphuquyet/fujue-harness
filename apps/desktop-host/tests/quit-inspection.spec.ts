@@ -1,8 +1,8 @@
-import { Context } from '@deepseek-ai/cordis'
-import { JobId, JobRegistry } from '@deepseek-ai/dsh-jobs'
-import type { JobStatus, JobView } from '@deepseek-ai/dsh-jobs'
-import { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { SessionActivity } from '@deepseek-ai/dsh-workspace'
+import { Context } from '@quyet/cordis'
+import { JobId, JobRegistry } from '@quyet/jobs'
+import type { JobStatus, JobView } from '@quyet/jobs'
+import { SessionId } from '@quyet/session/types'
+import type { SessionActivity } from '@quyet/workspace'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { installDesktopQuitInspection } from '../src/quit-inspection.ts'
 

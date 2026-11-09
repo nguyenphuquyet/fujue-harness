@@ -1,8 +1,8 @@
 /** Pure terminal-card derivation from raw Tool call and result fields. @module */
-import type { TerminalBlockLabels, TerminalBlockProps } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { TranslateNS } from '@deepseek-ai/dsh-client-ui-slots'
-import { isAbsoluteWorkspacePath, resolveWorkspacePath } from '@deepseek-ai/dsh-util-workspace-path'
-import { hasSpillNotice } from '@deepseek-ai/dsh-spill-policy/notice'
+import type { TerminalBlockLabels, TerminalBlockProps } from '@quyet/client-ui-primitives'
+import type { TranslateNS } from '@quyet/client-ui-slots'
+import { isAbsoluteWorkspacePath, resolveWorkspacePath } from '@quyet/util-workspace-path'
+import { hasSpillNotice } from '@quyet/spill-policy/notice'
 import type { ToolCallBlock } from './tool-call-model.ts'
 import { parsedToolCall, singleResultText } from './raw-tool-call.ts'
 import { recordedAbsolutePath } from './recorded-path.ts'
@@ -208,7 +208,7 @@ function shellCall(name: string, args: Record<string, unknown>): ShellCall | nul
   // sandbox mode, which only the Host knows, and a rejected call settles as an
   // error result on the generic body.
   if (description === undefined) {
-    // Standard dsh-tool-bash and dsh-tool-pwsh schemas require `description`;
+    // Standard quyet-tool-bash and quyet-tool-pwsh schemas require `description`;
     // persistent shell providers omit it. Their parameter roots stay open, so
     // unrelated fields do not change their running-card behavior.
     return { kind: 'shell', command, description: undefined, workdir: undefined, persistent: true, background: false }
@@ -285,7 +285,7 @@ function terminalSendCall(name: string, args: Record<string, unknown>): Terminal
 }
 
 /**
- * Parse the marker literals owned by `@deepseek-ai/dsh-shell/render` without
+ * Parse the marker literals owned by `@quyet/shell/render` without
  * importing that Host-only package into the Client dependency graph.
  * @param text - rendered shell result text.
  * @returns output with a trailing exit-code or signal marker extracted.

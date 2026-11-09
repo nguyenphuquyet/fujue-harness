@@ -1,19 +1,19 @@
 /**
- * OpenTelemetry Service Provider for the DeepSeek Harness telemetry capability.
+ * OpenTelemetry Service Provider for the JueTech Harness telemetry capability.
  *
  * Authorizes feedback-bounded capture and hands complete event strings to the
  * Session-log reporter. This plugin owns resource identity and an outer
  * shutdown deadline; the reporter owns byte-bounded SDK delivery.
  *
- * @module @deepseek-ai/dsh-session-telemetry-otel
+ * @module @quyet/session-telemetry-otel
  */
 
 import { createRequire } from 'node:module'
-import z from '@deepseek-ai/schemastery'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-command-feedback'
-import type {} from '@deepseek-ai/dsh-message-feedback'
-import { Session, type SessionEvent } from '@deepseek-ai/dsh-session'
+import z from '@quyet/schemastery'
+import type { Context } from '@quyet/cordis'
+import type {} from '@quyet/command-feedback'
+import type {} from '@quyet/message-feedback'
+import { Session, type SessionEvent } from '@quyet/session'
 import {
   SessionTelemetryBackend,
   SessionTelemetryCoordinator,
@@ -21,10 +21,10 @@ import {
   type SessionTelemetryRecord,
   type SessionTelemetrySeverity,
   type SessionTelemetrySharingStatus,
-} from '@deepseek-ai/dsh-session-telemetry'
-import { APP_IDENTITY } from '@deepseek-ai/dsh-llm'
-import { getOrCreateAnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
-import type { LogExporterOptions, SessionLogProcessorOptions, SessionLogReporter } from '@deepseek-ai/dsh-otel'
+} from '@quyet/session-telemetry'
+import { APP_IDENTITY } from '@quyet/llm'
+import { getOrCreateAnonymousUserId } from '@quyet/anonymous-user-id'
+import type { LogExporterOptions, SessionLogProcessorOptions, SessionLogReporter } from '@quyet/otel'
 import { SeverityNumber } from '@opentelemetry/api-logs'
 
 /** Session-sharing policy selected by {@link Config.mode}. */
@@ -188,7 +188,7 @@ export class OpenTelemetrySessionBackend extends SessionTelemetryBackend {
     this.shutdownTimeoutMillis = shutdownTimeoutMillis
     const { version } = createRequire(import.meta.url)('../package.json') as { version: string }
     const reporter = ctx.otel.createSessionLogReporter({
-      scope: { name: '@deepseek-ai/dsh-session-telemetry-otel', version },
+      scope: { name: '@quyet/session-telemetry-otel', version },
       exporter: { ...config.exporter, url },
       ...(config.processor === undefined ? {} : { processor: config.processor }),
       ...(config.maxRequestBytes === undefined ? {} : { maxRequestBytes: config.maxRequestBytes }),

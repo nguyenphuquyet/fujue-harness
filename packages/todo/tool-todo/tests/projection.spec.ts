@@ -7,20 +7,20 @@
  * removes it (HMR safety). The carrier and framework are exercised unmodified.
  */
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
 import { describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { TodoItem } from '@deepseek-ai/dsh-tool-todo'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import UserQuestionService from '@deepseek-ai/dsh-user-questions'
-import * as ToolTodo from '@deepseek-ai/dsh-tool-todo'
+import { Context } from '@quyet/cordis'
+import AgentRegistry from '@quyet/agent'
+import type { Agent } from '@quyet/agent'
+import { createUserMessage } from '@quyet/llm'
+import SessionStore from '@quyet/session'
+import type { Session } from '@quyet/session'
+import type { TodoItem } from '@quyet/tool-todo'
+import SystemPrompt from '@quyet/system-prompt'
+import ToolRuntime from '@quyet/tools'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import UserQuestionService from '@quyet/user-questions'
+import * as ToolTodo from '@quyet/tool-todo'
 
 interface Bench {
   ctx: Context

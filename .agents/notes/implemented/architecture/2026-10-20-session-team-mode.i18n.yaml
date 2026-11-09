@@ -3,17 +3,17 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-10-20-session-team-mode.md
 /agent-note-team-availability-is-selected-per-session:
-  en: 5f36d81bd414ea67
-  zh: 71883b0fe2afd1b6
+  en: b37897c201093629
+  zh: 84ab64bdaf365f10
 /agent-note-team-availability-is-selected-per-session/problem:
   en: db7a81ab452fdd0f
   zh: a14fdcdb8ff4cd47
 /agent-note-team-availability-is-selected-per-session/decision:
-  en: d1174db5157b91ee
-  zh: ceb6dc5a89a0a8d6
+  en: c064fa6741d92224
+  zh: 4d1f35b927b52469
 /agent-note-team-availability-is-selected-per-session/alternatives-considered:
   en: d50ed45e8f902281
   zh: c01d9be4b6e5df06
 /agent-note-team-availability-is-selected-per-session/consequences:
-  en: b56a6a1c8ad1aa7a
-  zh: 43bdd8a5bccce8bf
+  en: 83a370cde103d65e
+  zh: 80ed79d2e3cadbd0

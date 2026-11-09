@@ -2,14 +2,14 @@
 
 import { performance } from 'node:perf_hooks'
 import { scheduler } from 'node:timers/promises'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-agent-preset-registry'
-import type { ImageAttachmentLimits } from '@deepseek-ai/dsh-attachment'
-import type { Session, SessionEvent, SessionHeader, SessionId } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle, ProjectionSnapshot } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import { SessionQueryError, type SessionRecord, type SessionSearchCursor } from '@deepseek-ai/dsh-session-query'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@quyet/cordis'
+import type {} from '@quyet/agent-preset-registry'
+import type { ImageAttachmentLimits } from '@quyet/attachment'
+import type { Session, SessionEvent, SessionHeader, SessionId } from '@quyet/session'
+import type { ProjectionHandle, ProjectionSnapshot } from '@quyet/session-projection'
+import type {} from '@quyet/session-projection-cache'
+import { SessionQueryError, type SessionRecord, type SessionSearchCursor } from '@quyet/session-query'
+import { RemoteError } from '@quyet/typert-protocol'
 import { z } from 'zod'
 import {
   SESSION_SEARCH_RESULT_LIMIT,
@@ -206,7 +206,7 @@ export class ApiSessionList {
     if (provider === undefined) {
       throw new RemoteError(
         'gateway/internal',
-        'session search is unavailable: this deployment does not mount @deepseek-ai/dsh-session-query',
+        'session search is unavailable: this deployment does not mount @quyet/session-query',
         {},
       )
     }

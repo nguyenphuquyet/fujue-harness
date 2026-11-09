@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/testing/2026-09-27-oxlint-contract-spawn-case-budgets.md
-2026-09-27-oxlint-contract-spawn-case-budgets.md: ccfaa054a5c201350e0c92ef75c9ae62ebe3013f
-2026-09-27-oxlint-contract-spawn-case-budgets.zh.md: 7170e37ef876b595d57b27e28bf53849116102ef
+2026-09-27-oxlint-contract-spawn-case-budgets.md: 1d7d1992f10896b7fe2daa1ef589fe64386296ae
+2026-09-27-oxlint-contract-spawn-case-budgets.zh.md: f9d2ab9b9fc7b1c135b02e741631ea6dfe064897

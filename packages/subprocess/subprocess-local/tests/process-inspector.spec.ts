@@ -3,9 +3,9 @@ import {
   createProcessInspector,
   linuxProcessGroupHasLiveMembers,
   parseProcStat,
-} from '@deepseek-ai/dsh-subprocess-local/src/process-inspector.ts'
-import type { ProcessInspectorInternals } from '@deepseek-ai/dsh-subprocess-local/src/process-inspector.ts'
-import { WindowsProcessInspector } from '@deepseek-ai/dsh-subprocess-local/src/windows-inspector.ts'
+} from '@quyet/subprocess-local/src/process-inspector.ts'
+import type { ProcessInspectorInternals } from '@quyet/subprocess-local/src/process-inspector.ts'
+import { WindowsProcessInspector } from '@quyet/subprocess-local/src/windows-inspector.ts'
 
 function stat(
   pid: number,

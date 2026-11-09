@@ -1,47 +1,47 @@
 /** Explicit exceptions and Host packages for the published dependency policy. */
 
-/** Packages treated as Client/Host packages without declaring `dsh.client`. */
+/** Packages treated as Client/Host packages without declaring `quyet.client`. */
 const CLIENT_FACE_INCLUDE: readonly string[] = []
 
-/** Packages exempted from automatic Client/Host treatment despite declaring `dsh.client`. */
+/** Packages exempted from automatic Client/Host treatment despite declaring `quyet.client`. */
 const CLIENT_FACE_EXCLUDE: readonly string[] = [
-  '@deepseek-ai/dsh-api-session-controller',
-  '@deepseek-ai/dsh-api-workspace-controller',
+  '@quyet/api-session-controller',
+  '@quyet/api-workspace-controller',
 ]
 
 /** Host-only packages whose peer relays are deliberately flattened. */
 const HOST_DEPENDENCY_PACKAGES: readonly string[] = [
-  '@deepseek-ai/dsh-llm',
-  '@deepseek-ai/dsh-session',
+  '@quyet/llm',
+  '@quyet/session',
 ]
 
 /** Required Cordis services whose Host imports are type-only. */
 const REQUIRED_SERVICE_PEERS = {
-  '@deepseek-ai/dsh-api-terminal-controller': ['@deepseek-ai/dsh-subprocess'],
+  '@quyet/api-terminal-controller': ['@quyet/subprocess'],
 } as const satisfies Readonly<Record<string, readonly string[]>>
 
 /** Development-only package relationships not represented by source imports. */
 const CONFIGURATION_ONLY_DEV_DEPENDENCIES = {
-  '@deepseek-ai/dsh-client-locale': ['@deepseek-ai/dsh-api-remotes'],
-  '@deepseek-ai/dsh-client-ui-conversation': [
-    '@deepseek-ai/dsh-api-remotes',
-    '@deepseek-ai/dsh-client-ui-workspace',
+  '@quyet/client-locale': ['@quyet/api-remotes'],
+  '@quyet/client-ui-conversation': [
+    '@quyet/api-remotes',
+    '@quyet/client-ui-workspace',
   ],
-  '@deepseek-ai/dsh-client-ui-model-selection': ['@deepseek-ai/dsh-client-ui-input-trigger'],
-  '@deepseek-ai/dsh-client-ui-sidebar': ['@deepseek-ai/dsh-client-ui-workspace'],
-  '@deepseek-ai/dsh-client-ui-subagent': ['@deepseek-ai/dsh-client-ui-input-trigger'],
-  '@deepseek-ai/dsh-client-ui-theme': ['@deepseek-ai/dsh-api-remotes'],
-  '@deepseek-ai/dsh-client-ui-tool': ['@deepseek-ai/dsh-api-remotes'],
+  '@quyet/client-ui-model-selection': ['@quyet/client-ui-input-trigger'],
+  '@quyet/client-ui-sidebar': ['@quyet/client-ui-workspace'],
+  '@quyet/client-ui-subagent': ['@quyet/client-ui-input-trigger'],
+  '@quyet/client-ui-theme': ['@quyet/api-remotes'],
+  '@quyet/client-ui-tool': ['@quyet/api-remotes'],
 } as const satisfies Readonly<Record<string, readonly string[]>>
 
 /** Workspace packages whose complete runtime surface is safe across duplicate installations. */
 const DUPLICATE_SAFE_PACKAGES: readonly string[] = [
-  '@deepseek-ai/dsh-brand',
-  '@deepseek-ai/dsh-lazy-require',
-  '@deepseek-ai/dsh-typert-protocol',
-  '@deepseek-ai/dsh-util-code-language',
-  '@deepseek-ai/dsh-util-crypto',
-  '@deepseek-ai/dsh-util-values',
+  '@quyet/brand',
+  '@quyet/lazy-require',
+  '@quyet/typert-protocol',
+  '@quyet/util-code-language',
+  '@quyet/util-crypto',
+  '@quyet/util-values',
 ]
 
 /**
@@ -51,48 +51,48 @@ const DUPLICATE_SAFE_PACKAGES: readonly string[] = [
  * prominent heading in the pull request description.
  */
 const SAFE_HOST_DEPENDENCY_EXPORTS = {
-  '@deepseek-ai/dsh-atomic-write': ['withFileLock', 'writeFileAtomic'],
-  '@deepseek-ai/dsh-computer-use/brand': ['ComputerUseProviderName'],
-  '@deepseek-ai/dsh-credentials': ['credentialKey'],
-  '@deepseek-ai/dsh-deque': ['Deque'],
+  '@quyet/atomic-write': ['withFileLock', 'writeFileAtomic'],
+  '@quyet/computer-use/brand': ['ComputerUseProviderName'],
+  '@quyet/credentials': ['credentialKey'],
+  '@quyet/deque': ['Deque'],
   // Builds a dispatcher from the resolved proxy policy; the caller owns and closes it.
-  '@deepseek-ai/dsh-http-proxy': ['createRouteDispatcher'],
+  '@quyet/http-proxy': ['createRouteDispatcher'],
   // The Liveshare wire codec and identity helpers are stateless functions over caller-owned values.
-  '@deepseek-ai/dsh-experimental-liveshare-protocol': [
+  '@quyet/experimental-liveshare-protocol': [
     'LIVESHARE_CAPABILITIES', 'LIVESHARE_PROTOCOL_VERSION', 'parseRelayFrame', 'parseShareAccessState',
     'parseTunnelWorkerCommand', 'parseTunnelWorkerEvent', 'rawText', 'sendFrame', 'unsupportedFrameRefusal',
     'viewerRequestFields', 'identityFromKey', 'identityKeyOf',
   ],
   // The shipped profile templates are plain data; a consumer reads their bundle names only.
-  '@deepseek-ai/dsh-official-bundles': ['PROFILE_TEMPLATES'],
-  '@deepseek-ai/dsh-llm': ['callConfigEquals'],
-  '@deepseek-ai/dsh-session': ['SessionId'],
-  '@deepseek-ai/dsh-session-format': ['sessionFormatLogFilename'],
-  '@deepseek-ai/dsh-storage-domain': ['defineDomain'],
-  '@deepseek-ai/dsh-timeout': ['MAX_TIMER_DELAY_MS'],
-  '@deepseek-ai/schemastery': ['default'],
+  '@quyet/official-bundles': ['PROFILE_TEMPLATES'],
+  '@quyet/llm': ['callConfigEquals'],
+  '@quyet/session': ['SessionId'],
+  '@quyet/session-format': ['sessionFormatLogFilename'],
+  '@quyet/storage-domain': ['defineDomain'],
+  '@quyet/timeout': ['MAX_TIMER_DELAY_MS'],
+  '@quyet/schemastery': ['default'],
 } as const satisfies HostDependencyExports
 
 /** Runtime exports that require every consumer to resolve the provider's shared peer instance. */
 const PEER_REQUIRED_HOST_EXPORTS = {
   // Profile settings must match the installed Node provider's configuration schema.
-  '@deepseek-ai/dsh-ptc-runtime-node/configuration': ['resolvePersistentExecution'],
+  '@quyet/ptc-runtime-node/configuration': ['resolvePersistentExecution'],
   // CUA checks UserQuestionError and preserves AttachmentError from image admission.
-  '@deepseek-ai/dsh-attachment': ['admitEncodedImages'],
-  '@deepseek-ai/dsh-user-questions': ['UserQuestionError'],
+  '@quyet/attachment': ['admitEncodedImages'],
+  '@quyet/user-questions': ['UserQuestionError'],
   // `instanceof` checks need the translator's own class instance.
-  '@deepseek-ai/dsh-experimental-translator': ['TranslationError'],
+  '@quyet/experimental-translator': ['TranslationError'],
   // Stateless; a safe classification would turn the forge panel's forge and worktree peers into dependencies.
-  '@deepseek-ai/dsh-experimental-forge': ['changeRequestKey'],
-  '@deepseek-ai/dsh-experimental-worktree': ['generatedWorktreeName'],
+  '@quyet/experimental-forge': ['changeRequestKey'],
+  '@quyet/experimental-worktree': ['generatedWorktreeName'],
   // The forge panel matches ctx.fs failures with `instanceof FsError`.
-  '@deepseek-ai/dsh-fs': ['FsError'],
-  '@deepseek-ai/dsh-scope': ['carrierKeyOf', 'createScope', 'scopeOf', 'scopeTarget'],
+  '@quyet/fs': ['FsError'],
+  '@quyet/scope': ['carrierKeyOf', 'createScope', 'scopeOf', 'scopeTarget'],
   // appendPluginRecord writes through the Session class's private log; pluginRecordOf is stateless.
-  '@deepseek-ai/dsh-session': ['SESSION_FORMAT_VERSION', 'appendPluginRecord', 'pluginRecordOf'],
-  '@deepseek-ai/dsh-session-persistence': ['SessionPersistenceNotFoundError'],
+  '@quyet/session': ['SESSION_FORMAT_VERSION', 'appendPluginRecord', 'pluginRecordOf'],
+  '@quyet/session-persistence': ['SessionPersistenceNotFoundError'],
   // Readers recognize a deadline's TimeoutReason only by `instanceof` against their own copy.
-  '@deepseek-ai/dsh-timeout': ['deadline'],
+  '@quyet/timeout': ['deadline'],
 } as const satisfies HostDependencyExports
 
 /** Exact import specifier to reviewed runtime exports. */
@@ -127,6 +127,6 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 
 /** Whether a package manifest declares a dynamically loaded Client entry. */
-export function hasClientDeclaration(dshField: unknown): boolean {
-  return isRecord(dshField) && Object.hasOwn(dshField, 'client')
+export function hasClientDeclaration(quyetField: unknown): boolean {
+  return isRecord(quyetField) && Object.hasOwn(quyetField, 'client')
 }

@@ -1,29 +1,29 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
+import { executeToolFixture } from '@quyet/tool-testkit'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
+import AgentRegistry from '@quyet/agent'
 import { mountWorkingDirectoryFixture } from '../../subagent/tests/working-directory-fixture.ts'
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@quyet/cordis'
 import {
   ToolCallId,
   LlmAdapter,
   ReasoningEffortId,
-} from '@deepseek-ai/dsh-llm'
+} from '@quyet/llm'
 import type {
   GenerateOptions,
   LlmModelInfo,
   LlmResolvedModelInfo,
   StreamChunk,
-} from '@deepseek-ai/dsh-llm'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { SessionId } from '@deepseek-ai/dsh-session'
+} from '@quyet/llm'
+import ToolRuntime from '@quyet/tools'
+import SystemPrompt from '@quyet/system-prompt'
+import SubagentRuntime from '@quyet/subagent'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import { SessionId } from '@quyet/session'
 import * as tool from '../src/index.ts'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
+import AgentLoop from '@quyet/agent-loop'
+import type { Agent } from '@quyet/agent'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
 import SubagentModelSelectionConfig from '../src/model-selection-settings.ts'
 import { modelSelectionSetupAgent, ownContext, setup, testToolSignal, text } from './harness.ts'
 

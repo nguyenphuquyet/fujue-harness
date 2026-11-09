@@ -8,8 +8,8 @@
  * share-viewer sources and the component renders the Relay-asserted author.
  */
 
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
+import { LocaleRuntime } from '@quyet/client-locale/client'
+import { SlotTestRuntime } from '@quyet/client-test-runtime'
 import { cleanup, render } from '@testing-library/react'
 import { createElement } from 'react'
 import { afterEach, describe, expect, it, onTestFinished } from 'vitest'

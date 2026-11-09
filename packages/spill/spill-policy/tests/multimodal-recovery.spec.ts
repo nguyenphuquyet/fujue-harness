@@ -1,37 +1,37 @@
 /** Real attachments, filesystem recovery, Node PTC, and DeepSeek image request bytes without a desktop or API key. */
-import { executeModelToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import * as PtcToolExecutor from '@deepseek-ai/dsh-tool-executor-ptc'
+import { executeModelToolFixture } from '@quyet/tool-testkit'
+import * as NativeToolExecutor from '@quyet/tool-executor-native'
+import * as PtcToolExecutor from '@quyet/tool-executor-ptc'
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import LocalAttachments from '@deepseek-ai/dsh-attachment-local'
-import FileSystem from '@deepseek-ai/dsh-fs-local'
-import * as ToolFs from '@deepseek-ai/dsh-tool-fs'
+import { Context } from '@quyet/cordis'
+import { provideWorkingDirectoryFixture } from '@quyet/agent-loop-testkit'
+import type { Agent } from '@quyet/agent'
+import type { ImageAttachmentRef } from '@quyet/attachment'
+import LocalAttachments from '@quyet/attachment-local'
+import FileSystem from '@quyet/fs-local'
+import * as ToolFs from '@quyet/tool-fs'
 import {
   createAssistantMessage, createToolResultMessage, createUserMessage, LlmAdapter, LlmRuntime,
   resolveImageAttachmentAccess, ToolCallId,
-} from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, GenerateOptions, ImageBlock, StreamChunk, UserMessage } from '@deepseek-ai/dsh-llm'
-import { deepSeekImageRequestPricing, resolveAdapterOptions } from '@deepseek-ai/dsh-llm-deepseek'
-import { prepareImages } from '@deepseek-ai/dsh-llm-deepseek/src/images.ts'
-import { serialize } from '@deepseek-ai/dsh-llm-deepseek/src/serialize.ts'
-import { createMcpToolDefinition } from '@deepseek-ai/dsh-mcp-client'
-import NodeRuntime from '@deepseek-ai/dsh-ptc-runtime-node'
-import Sandbox from '@deepseek-ai/dsh-sandbox-local'
-import SandboxPolicy from '@deepseek-ai/dsh-sandbox-policy'
-import SessionStore, { SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjections from '@deepseek-ai/dsh-session-projection'
-import LocalSpillStore from '@deepseek-ai/dsh-spill-local'
-import Subprocess from '@deepseek-ai/dsh-subprocess-local'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import { estimateContent } from '@deepseek-ai/dsh-token-meter/estimate'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+} from '@quyet/llm'
+import type { ContentBlock, GenerateOptions, ImageBlock, StreamChunk, UserMessage } from '@quyet/llm'
+import { deepSeekImageRequestPricing, resolveAdapterOptions } from '@quyet/llm-deepseek'
+import { prepareImages } from '@quyet/llm-deepseek/src/images.ts'
+import { serialize } from '@quyet/llm-deepseek/src/serialize.ts'
+import { createMcpToolDefinition } from '@quyet/mcp-client'
+import NodeRuntime from '@quyet/ptc-runtime-node'
+import Sandbox from '@quyet/sandbox-local'
+import SandboxPolicy from '@quyet/sandbox-policy'
+import SessionStore, { SessionId } from '@quyet/session'
+import SessionProjections from '@quyet/session-projection'
+import LocalSpillStore from '@quyet/spill-local'
+import Subprocess from '@quyet/subprocess-local'
+import SystemPrompt from '@quyet/system-prompt'
+import { estimateContent } from '@quyet/token-meter/estimate'
+import ToolRuntime from '@quyet/tools'
+import type { JsonValue } from '@quyet/util-values'
 import sharp from 'sharp'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import * as SpillPolicy from '../src/index.ts'
@@ -46,7 +46,7 @@ const textOf = (content: readonly ContentBlock[]): string => content.filter(bloc
 const imagesOf = (content: readonly ContentBlock[]): ImageBlock[] => content.filter((block): block is ImageBlock => block.type === 'image')
 
 async function setup(mode: 'native' | 'ptc' = 'native') {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-image-recovery-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-image-recovery-'))
   const ctx = new Context()
   provideWorkingDirectoryFixture(ctx, root)
   onTestFinished(async () => {
@@ -56,7 +56,7 @@ async function setup(mode: 'native' | 'ptc' = 'native') {
   await ctx.plugin(ToolRuntime)
   await ctx.plugin(mode === 'ptc' ? PtcToolExecutor : NativeToolExecutor)
   await ctx.plugin(FileSystem, { cwd: root })
-  await ctx.plugin(LocalAttachments, { dshHome: join(root, 'home') })
+  await ctx.plugin(LocalAttachments, { quyetHome: join(root, 'home') })
   await ctx.plugin(ToolFs)
   await ctx.plugin(LocalSpillStore, { root: join(root, 'spill'), cleanupPeriodDays: 0 })
   await ctx.plugin(SessionProjections)

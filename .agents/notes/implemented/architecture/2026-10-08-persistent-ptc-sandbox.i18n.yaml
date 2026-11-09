@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-10-08-persistent-ptc-sandbox.md
 /agent-note-retained-ptc-processes-follow-file-policy:
-  en: ef07a82c85e490e1
-  zh: b1662d1970d2b83b
+  en: 4ef64788baeb34c6
+  zh: 20fcfd60bc60059a
 /agent-note-retained-ptc-processes-follow-file-policy/problem:
   en: b8cb574032d4e6e4
   zh: 6a1a25dec5f96086
 /agent-note-retained-ptc-processes-follow-file-policy/decision:
-  en: 5109a4bb5be39867
-  zh: 2dcc602aba9eae61
+  en: 515631534e2a2d81
+  zh: ebd7695dc1a78cf2
 /agent-note-retained-ptc-processes-follow-file-policy/alternatives-considered:
   en: 10bebc7f982cf7f4
   zh: 9247a2ba57921a11

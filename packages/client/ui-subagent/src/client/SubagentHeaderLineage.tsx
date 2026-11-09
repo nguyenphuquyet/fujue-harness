@@ -3,18 +3,18 @@ import { createPortal } from 'react-dom'
 import {
   type SessionProjectionMap, type SessionSummary,
   type SessionProjectionSnapshot,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SubagentAddress } from '@deepseek-ai/dsh-subagent/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+} from '@quyet/api-session-controller/client'
+import type { SubagentAddress } from '@quyet/subagent/client'
+import type { SessionId } from '@quyet/session/types'
 import {
   IconChevronRightOutlineRegular, IconRefreshOutlineRegular, IconUsersOutlineRegular,
   IconCheckOutlineRegular, MenuSurface, StateDot, Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime, TranslateNS } from '@deepseek-ai/dsh-client-ui-slots'
+} from '@quyet/client-ui-primitives'
+import type { HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime, TranslateNS } from '@quyet/client-ui-slots'
 import { NS } from './locales.ts'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-token-meter/client'
-import type {} from '@deepseek-ai/dsh-agent-team/client'
+import type {} from '@quyet/client-ui-conversation/client'
+import type {} from '@quyet/token-meter/client'
+import type {} from '@quyet/agent-team/client'
 import type {} from './slots.ts'
 import css from './SubagentHeaderLineage.module.css'
 
@@ -528,7 +528,7 @@ function CatalogDropdown(props: CatalogDropdownProps) {
   const countRef = useRef<HTMLSpanElement>(null)
   const activityId = useId()
   const menuRef = useRef<HTMLDivElement>(null)
-  const anchorName = `--dsh-subagents-${activityId.replaceAll(':', '')}`
+  const anchorName = `--quyet-subagents-${activityId.replaceAll(':', '')}`
   const hoverOpenTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
   const hoverCloseTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
   // A click-opened (pinned) menu ignores hover-out; only explicit dismissal closes it.

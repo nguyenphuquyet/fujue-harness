@@ -1,5 +1,5 @@
-import type { SessionEvent } from '@deepseek-ai/dsh-session/types'
-import { PartialArguments } from '@deepseek-ai/dsh-util-values'
+import type { SessionEvent } from '@quyet/session/types'
+import { PartialArguments } from '@quyet/util-values'
 import { describe, expect, it } from 'vitest'
 import type { StartedToolCall, ToolCallBlock } from '../src/client/contract/snapshot.ts'
 import {

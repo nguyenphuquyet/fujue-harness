@@ -3,14 +3,14 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/upgrade-guide/v0.2.1-alpha.2/plugin-manager-view-fields/guide.md
 /:
-  en: ce2254ec04c7e121
-  zh: d41be1b049886b05
+  en: e69d72597f75fd17
+  zh: 641e67b526d12a00
 /viewprofilepackage-takes-the-fields-it-prints:
-  en: 2b42139fb8291351
-  zh: 142078b83eec688c
+  en: 83a82b2c884bfd41
+  zh: 8a56bb0439923e2d
 /viewprofilepackage-takes-the-fields-it-prints/change:
-  en: 72177a0fbf9d18de
-  zh: 0e689154933a6174
+  en: d00cb60d41d9f41f
+  zh: bd2a43e29fa39568
 /viewprofilepackage-takes-the-fields-it-prints/migration:
-  en: 7107ae7573558a60
-  zh: 17c4428c0e83a842
+  en: 3324817a3dc7e4dd
+  zh: 33b447998d6046d3

@@ -3,20 +3,20 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write docs/user/guide/github-review.md
 /create-review-sessions-from-github-webhooks:
-  en: d7326712d79158d8
-  zh: 02102a8b9e749928
+  en: 52d4970bb7197a12
+  zh: 98a5c37102238777
 /create-review-sessions-from-github-webhooks/prerequisites:
-  en: 6784d85f90231608
-  zh: 3e62e9cadfdc2c18
-/create-review-sessions-from-github-webhooks/start-dsh:
-  en: 6c2c8394bfaf5d11
-  zh: a863fa2ad6bc48bb
+  en: 418ae6e1af1132e4
+  zh: b266dc5a65417409
+/create-review-sessions-from-github-webhooks/start-quy-t:
+  en: acd134156092a884
+  zh: 29f1c774e7951f1f
 /create-review-sessions-from-github-webhooks/expose-the-dedicated-endpoint:
   en: f18a2969b3082da9
   zh: 87d3d0e58d25a62f
 /create-review-sessions-from-github-webhooks/rule-behavior:
-  en: 3306087b78170a99
-  zh: 7c7b0baefa1dc303
+  en: 8e10a1ef7f9c7072
+  zh: bcec1a5414c09d3d
 /create-review-sessions-from-github-webhooks/programmatic-extensions:
   en: d448fc3e440a0ec6
   zh: 18568898933ef054

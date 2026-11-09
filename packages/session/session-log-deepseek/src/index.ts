@@ -2,15 +2,15 @@
  * Incremental session-log contribution for official DeepSeek LLM API requests.
  * Accepted sequence watermarks live in the canonical log, so restart recovery
  * can conservatively resend uncertain tails without maintaining another store.
- * @module @deepseek-ai/dsh-session-log-deepseek
+ * @module @quyet/session-log-deepseek
  */
 
 import { Buffer } from 'node:buffer'
-import { Service, type Context, type Volatile } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type {} from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import { KNOWN_SESSION_EVENT_TYPES, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
+import { Service, type Context, type Volatile } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import { brandString } from '@quyet/brand'
+import type {} from '@quyet/deepseek-llm-api-extensions'
+import { KNOWN_SESSION_EVENT_TYPES, SessionLogOffset, SessionSeq } from '@quyet/session'
 import type {
   Session,
   SessionEvent,
@@ -19,8 +19,8 @@ import type {
   SessionSeq as SessionSeqType,
   SessionSeqCursor,
   SurfaceOp,
-} from '@deepseek-ai/dsh-session'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+} from '@quyet/session'
+import type { JsonValue } from '@quyet/util-values'
 import type {
   DeepSeekSessionLogExtension,
   DeepSeekSessionLogWireEvent,
@@ -32,7 +32,7 @@ import type {
 
 export type * from './types.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@quyet/cordis' {
   interface Context {
     sessionLogDeepSeek: SessionLogDeepSeekService
   }
@@ -45,10 +45,10 @@ export const inject = ['deepseekLlmApiExtensions', 'sessions']
 
 /** Session-log request contribution configuration. */
 export interface Config {
-  /** Contribute `dsh_session_log` to official DeepSeek requests. Defaults to `true`. */
+  /** Contribute `quyet_session_log` to official DeepSeek requests. Defaults to `true`. */
   enabled: Volatile<boolean>
   /**
-   * Largest serialized `dsh_session_log` field, in UTF-8 bytes, that one request carries.
+   * Largest serialized `quyet_session_log` field, in UTF-8 bytes, that one request carries.
    * A request uploads the longest pending event prefix that fits; later requests continue
    * after its acceptance. Defaults to 8 MiB.
    */
@@ -193,7 +193,7 @@ export class SessionLogDeepSeekService extends Service {
   constructor(ctx: Context, config: Config) {
     super(ctx, 'sessionLogDeepSeek')
     const { maxBytes } = config
-    ctx.deepseekLlmApiExtensions.register('dsh_session_log', {
+    ctx.deepseekLlmApiExtensions.register('quyet_session_log', {
       prepare: (request) => {
         if (!config.enabled.get()) return undefined
         // TODO: Define an explicit wire result for direct or stale-session calls if they become a supported product path.
@@ -238,9 +238,9 @@ export class SessionLogDeepSeekService extends Service {
             const seq = String(first.seq)
             ctx.logger.warn(Number.isFinite(candidateBytes)
               ? `session-log-deepseek: event ${seq} of session "${session.id}" needs a ${String(candidateBytes)}-byte`
-                + ` dsh_session_log field, above maxBytes ${String(maxBytes)}; this session's upload stays at event ${seq}`
+                + ` quyet_session_log field, above maxBytes ${String(maxBytes)}; this session's upload stays at event ${seq}`
                 + ' until maxBytes admits it'
-              : `session-log-deepseek: event ${seq} of session "${session.id}" is too large to serialize into a dsh_session_log field;`
+              : `session-log-deepseek: event ${seq} of session "${session.id}" is too large to serialize into a quyet_session_log field;`
                 + ` this session's upload stays at event ${seq}`)
           }
           return undefined

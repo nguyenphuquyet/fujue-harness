@@ -1,1 +1,1 @@
-![DSH badge skill feature preview](preview.svg)
+![Quyết badge skill feature preview](preview.svg)

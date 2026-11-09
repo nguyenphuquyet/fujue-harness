@@ -1,13 +1,13 @@
 {
-  "name": "@deepseek-ai/dsh-persona",
-  "description": "Composition-authored deployment persona section for the DeepSeek Harness",
+  "name": "@quyet/persona",
+  "description": "Composition-authored deployment persona section for the JueTech Harness",
   "version": "0.2.2-rc.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/preset/persona"
   },
   "type": "module",
@@ -29,15 +29,15 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@quyet/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/scope": "workspace:*",
+    "@quyet/system-prompt": "workspace:*",
+    "@quyet/cordis": "workspace:~"
   }
 }

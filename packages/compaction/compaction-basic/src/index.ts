@@ -1,21 +1,21 @@
 /**
  * Basic replay-aware compaction backend.
  *
- * @module @deepseek-ai/dsh-compaction-basic
+ * @module @quyet/compaction-basic
  */
 
-import { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { CompactionEngine, ManualCompactionError } from '@deepseek-ai/dsh-compaction'
-import type { CompactionResult, CompactionTrigger } from '@deepseek-ai/dsh-compaction'
-import type { EpochHeader, Session, SessionSeq } from '@deepseek-ai/dsh-session'
-import { CONTEXT_WINDOW_EXCEEDED_CODE, LlmError } from '@deepseek-ai/dsh-llm'
-import type { LlmCallConfig } from '@deepseek-ai/dsh-llm'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import type { CommandId } from '@deepseek-ai/dsh-commands/brand'
+import { Context } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import { CompactionEngine, ManualCompactionError } from '@quyet/compaction'
+import type { CompactionResult, CompactionTrigger } from '@quyet/compaction'
+import type { EpochHeader, Session, SessionSeq } from '@quyet/session'
+import { CONTEXT_WINDOW_EXCEEDED_CODE, LlmError } from '@quyet/llm'
+import type { LlmCallConfig } from '@quyet/llm'
+import { assertNever } from '@quyet/util-values'
+import type { Agent, PreStepDecision } from '@quyet/agent'
+import type { CommandId } from '@quyet/commands/brand'
 // Type-only: makes the optional sibling service available to `ctx.get()`.
-import type {} from '@deepseek-ai/dsh-compaction-tool-result-pruner'
+import type {} from '@quyet/compaction-tool-result-pruner'
 import {
   resolveCompactSpec,
   resolveConfig,

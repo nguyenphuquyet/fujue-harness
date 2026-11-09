@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-08-12-hero-fish-hover-swim-morph.md
-2026-08-12-hero-fish-hover-swim-morph.md: 60bcb082f0d7a251161d7727392eebb63a354711
-2026-08-12-hero-fish-hover-swim-morph.zh.md: d051bae8d156aeee02beb94c8895ffecd328e2fc
+2026-08-12-hero-fish-hover-swim-morph.md: 7a07dcf2d75a0a0a3f05e0f9e182015bfd10fe85
+2026-08-12-hero-fish-hover-swim-morph.zh.md: c6d04d15852a93544c9937beac4107a327034a56

@@ -5,51 +5,51 @@
 /:
   en: 117b4d191f773a9c
   zh: 0b9e150f6cd23b04
-/deepseek-ai-dsh-http-proxy:
-  en: 6c9406455954c0e3
-  zh: 5bcd0337d80a2047
-/deepseek-ai-dsh-http-proxy/summary:
+/quyet-http-proxy:
+  en: 212f673be05e948a
+  zh: c28b40423d82785b
+/quyet-http-proxy/summary:
   en: c3b1b32ab36f5f97
   zh: 143b744ab361f0d4
-/deepseek-ai-dsh-http-proxy/table-of-contents:
+/quyet-http-proxy/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-http-proxy/use-this-package:
-  en: bc67087b571aa603
-  zh: 264ac9bb95c8efe8
-/deepseek-ai-dsh-http-proxy/use-this-package/writing-a-new-outbound-call:
+/quyet-http-proxy/use-this-package:
+  en: c512a3334091a5b0
+  zh: 74ed678204da1627
+/quyet-http-proxy/use-this-package/writing-a-new-outbound-call:
   en: 240e713b0128cc98
   zh: 9519a53790f5d49a
-/deepseek-ai-dsh-http-proxy/use-this-package/what-the-policy-reads:
-  en: a1f74dd3a34ed97e
-  zh: d9440a0666caccb6
-/deepseek-ai-dsh-http-proxy/use-this-package/failures:
+/quyet-http-proxy/use-this-package/what-the-policy-reads:
+  en: 279f82d82ea96105
+  zh: 9e2db3733192a38c
+/quyet-http-proxy/use-this-package/failures:
   en: 4248bc9a662680ed
   zh: 4150ade9f1aa9287
-/deepseek-ai-dsh-http-proxy/understand-the-implementation:
+/quyet-http-proxy/understand-the-implementation:
   en: ee4615a04fa6503d
   zh: ee2c5fb2204a43cf
-/deepseek-ai-dsh-http-proxy/understand-the-implementation/design-philosophy:
-  en: 088869e5506be864
-  zh: e5825c994cd38644
-/deepseek-ai-dsh-http-proxy/understand-the-implementation/source-map:
+/quyet-http-proxy/understand-the-implementation/design-philosophy:
+  en: 0e773f08e16dfef0
+  zh: f70b5a5d1debdd6e
+/quyet-http-proxy/understand-the-implementation/source-map:
   en: 5b4db22bf563515b
   zh: 0d5e116b95387654
-/deepseek-ai-dsh-http-proxy/understand-the-implementation/bypass-matching:
+/quyet-http-proxy/understand-the-implementation/bypass-matching:
   en: e9ad6c2e8ee2fc21
   zh: c10de6995cf594bc
-/deepseek-ai-dsh-http-proxy/further-exploration:
-  en: 0dd5fcdee64f39f1
-  zh: acc3c6b84021f19e
-/deepseek-ai-dsh-http-proxy/model-experience:
+/quyet-http-proxy/further-exploration:
+  en: d075c2afe433cecb
+  zh: 99ced1e6d9fe7319
+/quyet-http-proxy/model-experience:
   en: e0af6a1073934d5a
   zh: d8bf9c77b54ed5ae
-/deepseek-ai-dsh-http-proxy/model-experience/kv-cache-effect:
+/quyet-http-proxy/model-experience/kv-cache-effect:
   en: 7f12ca92e7722f98
   zh: 97fa75de6a3f6a3f
-/deepseek-ai-dsh-http-proxy/known-limitations-and-deferred-work:
-  en: c19acf259afc1b59
-  zh: ae48892bc1a89233
-/deepseek-ai-dsh-http-proxy/known-limitations-and-deferred-work/dev-note:
+/quyet-http-proxy/known-limitations-and-deferred-work:
+  en: 825bf85e1a0726a1
+  zh: 81084ca7e30105c4
+/quyet-http-proxy/known-limitations-and-deferred-work/dev-note:
   en: 8f915ac6f4fc1525
   zh: 29b06e0aae5a30ec

@@ -1,8 +1,8 @@
 /** Agent publication waits for the policy owner while its projection activates. */
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { SessionId } from '@deepseek-ai/dsh-session'
+import { Context } from '@quyet/cordis'
+import AgentLoop from '@quyet/agent-loop'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
+import { SessionId } from '@quyet/session'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import SubagentModelSelectionConfig from '../src/model-selection-settings.ts'
 

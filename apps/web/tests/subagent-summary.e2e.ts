@@ -2,13 +2,13 @@
 import { mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import type { Agent, AssistantStreamFrame } from '@deepseek-ai/dsh-agent'
+import type { Agent, AssistantStreamFrame } from '@quyet/agent'
 import {
   AssistantStreamAccumulator, LlmAttemptId, ToolCallId,
   createAssistantMessage, createToolResultMessage, createUserMessage,
   type StreamChunk,
-} from '@deepseek-ai/dsh-llm'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
+} from '@quyet/llm'
+import type { SessionEvent } from '@quyet/session'
 import type { Browser, Locator, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'

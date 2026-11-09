@@ -3,8 +3,8 @@
  * header button, the worktree option and creation card, and their Remote.
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import remote from '@deepseek-ai/dsh-experimental-client-ui-forge/remote'
+import type { Context } from '@quyet/cordis'
+import remote from '@quyet/experimental-client-ui-forge/remote'
 import { mountForgePanel } from './mount.ts'
 
 export { inject } from './mount.ts'

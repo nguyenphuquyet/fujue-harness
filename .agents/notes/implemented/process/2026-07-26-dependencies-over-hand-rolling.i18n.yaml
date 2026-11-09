@@ -3,17 +3,17 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/process/2026-07-26-dependencies-over-hand-rolling.md
 /agent-note-prefer-maintained-dependencies-over-hand-rolling:
-  en: 5cf63576459c1942
-  zh: c3f2dbc5e4656693
+  en: 596d0269210afabf
+  zh: 6473c8876f9cac32
 /agent-note-prefer-maintained-dependencies-over-hand-rolling/problem:
-  en: 5c13c4dd8707db61
-  zh: b788b35b54bec861
+  en: fb0fba2b49131468
+  zh: 72d222269941fe95
 /agent-note-prefer-maintained-dependencies-over-hand-rolling/decision:
-  en: 2b8c6ea6c61732cd
-  zh: 946b2ef6142eaca3
+  en: 20eb98cc8df65d6b
+  zh: 219b8193d7f30079
 /agent-note-prefer-maintained-dependencies-over-hand-rolling/alternatives-considered:
   en: c3575c5c8b4a6e51
   zh: f20aa07eefed8a3b
 /agent-note-prefer-maintained-dependencies-over-hand-rolling/consequences:
-  en: abac778b1b57b62a
-  zh: 7cd7b253d637726b
+  en: 1f70f6a81302c89f
+  zh: d68201465948f246

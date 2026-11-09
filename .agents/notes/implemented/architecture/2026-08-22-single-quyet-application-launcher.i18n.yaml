@@ -1,0 +1,40 @@
+# Bilingual-pair consistency record for 2026-08-22-single-quyet-application-launcher.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-08-22-single-quyet-application-launcher.md
+/agent-note-one-quyet-launcher-for-application-profiles:
+  en: e342c8a067cf6e03
+  zh: 835717a04bbdb120
+/agent-note-one-quyet-launcher-for-application-profiles/problem:
+  en: 66713ed8cce6caa2
+  zh: f9c2178900b2b59a
+/agent-note-one-quyet-launcher-for-application-profiles/decision:
+  en: a15c7c13f167e5ac
+  zh: a15c7c13f167e5ac
+/agent-note-one-quyet-launcher-for-application-profiles/decision/launch-scope:
+  en: e7e77a2de79f2bc0
+  zh: 25049538218965ea
+/agent-note-one-quyet-launcher-for-application-profiles/decision/profile-applications:
+  en: 0c19817e089f1b72
+  zh: 31e7aaee4dea6bf5
+/agent-note-one-quyet-launcher-for-application-profiles/decision/typescript-sdk-customization:
+  en: 75bdb528b78826c9
+  zh: af47b8a7749b4e08
+/agent-note-one-quyet-launcher-for-application-profiles/decision/python-runtime:
+  en: 13dca43709335caa
+  zh: 7ce27ba467f1ab52
+/agent-note-one-quyet-launcher-for-application-profiles/decision/enforcement:
+  en: a5cdab916462d282
+  zh: c0e3980eddb59540
+/agent-note-one-quyet-launcher-for-application-profiles/existing-decisions-and-supersession:
+  en: f9ccbcb873591be2
+  zh: d8dfdd98712fb3fa
+/agent-note-one-quyet-launcher-for-application-profiles/alternatives-considered:
+  en: ae16b6717935559c
+  zh: 86d790860f23ab6d
+/agent-note-one-quyet-launcher-for-application-profiles/verification:
+  en: 22d725fc2b7ba4f8
+  zh: 1622b9d3dcfd3d7b
+/agent-note-one-quyet-launcher-for-application-profiles/consequences:
+  en: 4c83c02d79393616
+  zh: a7a07a7c94679779

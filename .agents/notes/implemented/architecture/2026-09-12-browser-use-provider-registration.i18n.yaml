@@ -3,17 +3,17 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/implemented/architecture/2026-09-12-browser-use-provider-registration.md
 /agent-note-browser-use-provider-registration-and-session-ownership:
-  en: 68473a007451cf68
-  zh: f7a8281c5a5a2e11
+  en: 5eb05bf672223b58
+  zh: 70727ad81fd83692
 /agent-note-browser-use-provider-registration-and-session-ownership/problem:
   en: b3513236c712132d
   zh: df7701029eae9b31
 /agent-note-browser-use-provider-registration-and-session-ownership/decision:
-  en: ffca30883c040835
-  zh: 3bfc6ebae9a1fe55
+  en: f4b53de54d0f49f7
+  zh: 0ea0267ef6bd5a93
 /agent-note-browser-use-provider-registration-and-session-ownership/alternatives-considered:
-  en: 44408473ef24d8f9
-  zh: 448ca799d905e9a9
+  en: 491a5eee1aef736f
+  zh: 2e4617603b38d6a6
 /agent-note-browser-use-provider-registration-and-session-ownership/consequences:
-  en: 8eb33d4073f96236
-  zh: 42c456f778e36485
+  en: 3a5950dd4a999241
+  zh: 323c641959d13f3b

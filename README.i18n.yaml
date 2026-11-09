@@ -2,33 +2,33 @@
 # section, a hash of its English and Chinese blocks outside code blocks and generated regions.
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write README.md
-/deepseek-harness:
-  en: f68c4f080ce55ff2
-  zh: 88a76d7f7f0b260e
-/deepseek-harness/developer-preview:
-  en: 4ef4d8a71ac143f0
-  zh: 1bfc3149ba8e5543
-/deepseek-harness/run:
+/juetech-harness:
+  en: 105afc000fdde904
+  zh: a50b37c1131764f1
+/juetech-harness/developer-preview:
+  en: 634bad85260386ea
+  zh: 0abe079ee3fee04e
+/juetech-harness/run:
   en: 4e0248e4c6474fc6
   zh: eb2fb8d78c7d6bc0
-/deepseek-harness/run/run-from-npm:
-  en: e22005cd42e6cbad
-  zh: 0f536f4208df1d60
-/deepseek-harness/run/run-from-source:
-  en: 819e3f7c144d0d64
-  zh: de815f040975dba7
-/deepseek-harness/community-and-support:
-  en: 20acf6451fdc869b
-  zh: d06246dd019ecef7
-/deepseek-harness/contributing:
-  en: cabc2d3e9f8898bd
-  zh: 83b6d238bae29ce3
-/deepseek-harness/development:
-  en: 803ca2b11b497bed
-  zh: 8b4071eb0e7783ef
-/deepseek-harness/citation:
+/juetech-harness/run/run-from-npm:
+  en: d5af7ee60863a843
+  zh: 18774ef61a057c32
+/juetech-harness/run/run-from-source:
+  en: ff37bad675153054
+  zh: f58b1ef9cd3137f8
+/juetech-harness/community-and-support:
+  en: 94b8036a9477f6bb
+  zh: 7498e4dc4fece887
+/juetech-harness/contributing:
+  en: cb5d9fb362d60602
+  zh: 1f928e2e99622614
+/juetech-harness/development:
+  en: c80a5c822332e994
+  zh: 7bc317bf478e073d
+/juetech-harness/citation:
   en: 6704e9e5a8d49a91
   zh: 85c9cdd8d56f8e9d
-/deepseek-harness/license:
+/juetech-harness/license:
   en: 926995344fc1c72b
   zh: c92fab5abf85932f

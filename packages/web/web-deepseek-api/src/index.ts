@@ -9,26 +9,26 @@
  * its own `*BaseURL` or `*ApiKeyEnv` uses only that endpoint and key instead
  * ([rationale](../../../../.agents/notes/implemented/architecture/2026-10-29-web-provider-selection.md#credential-resolution)).
  * Both providers report themselves not ready when their next operation would have no credential.
- * @module @deepseek-ai/dsh-web-deepseek-api
+ * @module @quyet/web-deepseek-api
  */
-import { FiberState, type Context, type Volatile } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/cordis-plugin-loader'
-import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-agent'
-import { credentialRef, type CredentialRef } from '@deepseek-ai/dsh-credentials'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
-import type {} from '@deepseek-ai/dsh-llm'
+import { FiberState, type Context, type Volatile } from '@quyet/cordis'
+import type {} from '@quyet/cordis-plugin-loader'
+import z from '@quyet/schemastery'
+import type {} from '@quyet/agent'
+import { credentialRef, type CredentialRef } from '@quyet/credentials'
+import { launchEnvironmentOf } from '@quyet/launch-environment'
+import type {} from '@quyet/llm'
 import {
   deepSeekApiKeyConfigured, rejectDeepSeekAccountToken, resolveDeepSeekAccountToken, resolveDeepSeekApiKey,
-} from '@deepseek-ai/dsh-llm-deepseek'
+} from '@quyet/llm-deepseek'
 import {
   plainAccountOptions, resolveAccountOptions, type Config as AccountRouteConfig,
-} from '@deepseek-ai/dsh-llm-deepseek-account'
+} from '@quyet/llm-deepseek-account'
 import {
   plainOptions as plainOfficialOptions, resolveAdapterOptions as resolveOfficialOptions, type Config as OfficialRouteConfig,
-} from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-web'
+} from '@quyet/llm-deepseek-api-key'
+import type { Session } from '@quyet/session'
+import type {} from '@quyet/web'
 import { DeepSeekFetchApiProvider } from './fetch.ts'
 import {
   DEEPSEEK_DEFAULT_COUNT, DEEPSEEK_SEARCH_REQUESTS_PER_SECOND, DEEPSEEK_WEB_API_BASE_URL, DeepSeekSearchApiProvider,
@@ -129,8 +129,8 @@ const ACCOUNT_PROVIDER = 'deepseek-account'
 
 /** Loader package that registers each model route. */
 const ROUTE_PACKAGES = {
-  'deepseek-official': '@deepseek-ai/dsh-llm-deepseek-api-key',
-  'deepseek-account': '@deepseek-ai/dsh-llm-deepseek-account',
+  'deepseek-official': '@quyet/llm-deepseek-api-key',
+  'deepseek-account': '@quyet/llm-deepseek-account',
 } as const
 
 /** Display and configuration names of each capability. */

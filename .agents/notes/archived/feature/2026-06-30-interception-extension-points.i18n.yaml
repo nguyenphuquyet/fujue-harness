@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-06-30-interception-extension-points.md
-2026-06-30-interception-extension-points.md: d8a2d75333bea36b33c07e50a993d881d668aa15
-2026-06-30-interception-extension-points.zh.md: fa9745d02035c9390cda4f9ffe1c08e5bc6e1e64
+2026-06-30-interception-extension-points.md: b3734659df0cd32d09fe0fb64279e81ca7fb498c
+2026-06-30-interception-extension-points.zh.md: 9d8f7da906361bad7c81215cddbb4614031f569a

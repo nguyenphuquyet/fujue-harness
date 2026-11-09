@@ -11,14 +11,14 @@
 
 - insert:
     - id: mcp-template-error
-      name: '@deepseek-ai/dsh-mcp-client'
+      name: '@quyet/mcp-client'
       inject: [credentials]
       config:
         transport: streamable-http
         serverName: protected
-        url: !!js process.env.DSH_MCP_DEMO_URL
+        url: !!js process.env.QUYET_MCP_DEMO_URL
         headers:
-          Authorization: 'Bearer ${credential:DSH_MCP_TEMPLATE_TOKEN}'
+          Authorization: 'Bearer ${credential:QUYET_MCP_TEMPLATE_TOKEN}'
         expandTemplates: true
         failOnStartupError: true
         reconnect:

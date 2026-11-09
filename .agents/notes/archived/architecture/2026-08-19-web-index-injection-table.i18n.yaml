@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/architecture/2026-08-19-web-index-injection-table.md
-2026-08-19-web-index-injection-table.md: 3d3264dea3e70234f2bab71b5f11c946b719508f
-2026-08-19-web-index-injection-table.zh.md: 2e55bac523a59a5a54a774fcde926c28e8471237
+2026-08-19-web-index-injection-table.md: dafc2b1ddb1f279e1c63893c673e4aa153180fc4
+2026-08-19-web-index-injection-table.zh.md: 090832fdbd11222d592fbf56c8226a5a21942704

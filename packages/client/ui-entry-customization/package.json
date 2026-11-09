@@ -1,11 +1,11 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-entry-customization",
+  "name": "@quyet/client-ui-entry-customization",
   "version": "0.2.2-rc.1",
   "description": "Customize plugin entries in the left sidebar, conversation views, and right sidebar, and quickly create new plugins.",
   "publishConfig": { "access": "public" },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/client/ui-entry-customization"
   },
   "type": "module",
@@ -20,33 +20,33 @@
   },
   "files": ["locale/*.json", "lib/index.js", "lib/client.js", "lib/types/**/*.d.ts"],
   "license": "MIT",
-  "peerDependencies": { "@deepseek-ai/cordis": "workspace:~" },
+  "peerDependencies": { "@quyet/cordis": "workspace:~" },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-product-analytics": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar-right": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-workspace": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/client-locale": "workspace:*",
+    "@quyet/client-product-analytics": "workspace:*",
+    "@quyet/client-store": "workspace:*",
+    "@quyet/client-ui-sidebar": "workspace:*",
+    "@quyet/client-ui-conversation": "workspace:*",
+    "@quyet/client-ui-sidebar-right": "workspace:*",
+    "@quyet/client-ui-plugin-manager": "workspace:*",
+    "@quyet/client-ui-workspace": "workspace:*",
+    "@quyet/client-ui-primitives": "workspace:*",
+    "@quyet/client-ui-renderer": "workspace:*",
+    "@quyet/client-ui-slots": "workspace:*",
+    "@quyet/client-test-runtime": "workspace:*",
     "clsx": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "@testing-library/react": "^16.3.3"
   },
-  "dsh": {
+  "quyet": {
     "client": {
       "platform": "web",
       "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-plugin-manager",
-        "@deepseek-ai/dsh-client-ui-workspace"
+        "@quyet/client-locale",
+        "@quyet/client-ui-plugin-manager",
+        "@quyet/client-ui-workspace"
       ]
     }
   },

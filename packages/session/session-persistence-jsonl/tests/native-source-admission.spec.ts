@@ -1,7 +1,7 @@
-import { Context } from '@deepseek-ai/cordis'
-import { SESSION_FORMAT_VERSION, SessionId } from '@deepseek-ai/dsh-session'
-import { SessionPersistenceCorruptionError } from '@deepseek-ai/dsh-session-persistence'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+import { Context } from '@quyet/cordis'
+import { SESSION_FORMAT_VERSION, SessionId } from '@quyet/session'
+import { SessionPersistenceCorruptionError } from '@quyet/session-persistence'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
 import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
@@ -13,7 +13,7 @@ const id = SessionId('native-source-admission')
 const modes = (['none', 'zstd'] as const).flatMap(compression => (['read', 'write'] as const).map(access => ({ compression, access })))
 let root: string
 const contexts: Context[] = []
-beforeEach(async () => { root = await mkdtemp(join(tmpdir(), 'dsh-native-source-')) })
+beforeEach(async () => { root = await mkdtemp(join(tmpdir(), 'quyet-native-source-')) })
 afterEach(async () => {
   try {
     for (const ctx of contexts.splice(0).reverse()) await ctx.fiber.dispose()

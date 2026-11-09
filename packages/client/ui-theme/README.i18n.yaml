@@ -3,56 +3,56 @@
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write packages/client/ui-theme/README.md
 /:
-  en: e9c14ae3732deb3a
-  zh: fee230def9844d2d
-/deepseek-ai-dsh-client-ui-theme:
-  en: 06c7d7624947a72a
-  zh: ac4ca82984564825
-/deepseek-ai-dsh-client-ui-theme/summary:
-  en: d9832b31c4cb3ca4
-  zh: f2ec42bb5ae66188
-/deepseek-ai-dsh-client-ui-theme/table-of-contents:
+  en: fc16889ced44c058
+  zh: 0b092be7fd77797c
+/quyet-client-ui-theme:
+  en: adbdbe39c1995098
+  zh: f74bf07716e978b6
+/quyet-client-ui-theme/summary:
+  en: 2c742304dcc6b22a
+  zh: eec2cf6ce3bcbd0f
+/quyet-client-ui-theme/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-client-ui-theme/use-this-package:
+/quyet-client-ui-theme/use-this-package:
   en: 5a279269e31713c1
   zh: dcd5c31fbdfd63e2
-/deepseek-ai-dsh-client-ui-theme/use-this-package/appearance-and-font-size:
+/quyet-client-ui-theme/use-this-package/appearance-and-font-size:
   en: 7dff01929847efd1
   zh: ec04b4c4485aba96
-/deepseek-ai-dsh-client-ui-theme/use-this-package/fonts:
+/quyet-client-ui-theme/use-this-package/fonts:
   en: b45d5b48ca799c3a
   zh: af65514b3759204f
-/deepseek-ai-dsh-client-ui-theme/use-this-package/registering-a-theme:
+/quyet-client-ui-theme/use-this-package/registering-a-theme:
   en: 5244fc168d0a03f8
   zh: c7ab12fdf8c6c55b
-/deepseek-ai-dsh-client-ui-theme/use-this-package/pre-plugin-palette:
-  en: 203523ddd7927c34
-  zh: 31dd89da78f9ab4f
-/deepseek-ai-dsh-client-ui-theme/understand-the-implementation:
-  en: 3eb9b0e3365b2db3
-  zh: c73acc55dd897266
-/deepseek-ai-dsh-client-ui-theme/understand-the-implementation/stylesheets:
-  en: 30227476ccabe895
-  zh: 08785d4340d8c797
-/deepseek-ai-dsh-client-ui-theme/understand-the-implementation/scrollbar-rebinding:
-  en: bf76e7c34a331595
-  zh: 5accd0260ef7c61e
-/deepseek-ai-dsh-client-ui-theme/understand-the-implementation/preference-persistence:
-  en: b1f0b0bce5e53bae
-  zh: 26ded298f85834ae
-/deepseek-ai-dsh-client-ui-theme/further-exploration:
-  en: 7d5b953aaeeaf591
-  zh: ff4bccb0f196f2b9
-/deepseek-ai-dsh-client-ui-theme/model-experience:
+/quyet-client-ui-theme/use-this-package/pre-plugin-palette:
+  en: 22827bd9334ad07e
+  zh: 11318ef8b092c138
+/quyet-client-ui-theme/understand-the-implementation:
+  en: 38de4dd135e68c6e
+  zh: c927b8c840be1359
+/quyet-client-ui-theme/understand-the-implementation/stylesheets:
+  en: d4640866f95e2065
+  zh: f108f753857eff5a
+/quyet-client-ui-theme/understand-the-implementation/scrollbar-rebinding:
+  en: bcc6026526914bd5
+  zh: 05be00a709144d03
+/quyet-client-ui-theme/understand-the-implementation/preference-persistence:
+  en: 83c4727e7918c94b
+  zh: 67412a56a27a7ca8
+/quyet-client-ui-theme/further-exploration:
+  en: 996babcc7346f760
+  zh: fe1348fb524de0ce
+/quyet-client-ui-theme/model-experience:
   en: 3120df665299c634
   zh: 1d9f365d091d0d2a
-/deepseek-ai-dsh-client-ui-theme/model-experience/kv-cache-effect:
+/quyet-client-ui-theme/model-experience/kv-cache-effect:
   en: ca75c51c89c2c9b0
   zh: de54f3467ef3b9be
-/deepseek-ai-dsh-client-ui-theme/known-limitations-and-deferred-work:
+/quyet-client-ui-theme/known-limitations-and-deferred-work:
   en: 2388061abb1dd40f
   zh: 1a4ad9a8e12472df
-/deepseek-ai-dsh-client-ui-theme/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-theme/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

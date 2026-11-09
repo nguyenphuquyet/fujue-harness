@@ -2,18 +2,18 @@
 # section, a hash of its English and Chinese blocks outside code blocks and generated regions.
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/rejected/simplification/2026-06-20-fold-session-persistence-interface.md
-/agent-note-fold-the-persistence-interface-into-dsh-session:
-  en: ec1120bc953f18db
-  zh: 905c9fcee9a2ab8c
-/agent-note-fold-the-persistence-interface-into-dsh-session/problem:
-  en: 132b1c96f4d271a0
-  zh: 52f235f23160cb1b
-/agent-note-fold-the-persistence-interface-into-dsh-session/proposal:
-  en: 8eecfc7bd6c83608
-  zh: 658fc8e8eac425b7
-/agent-note-fold-the-persistence-interface-into-dsh-session/acceptance-criteria:
-  en: c6529542fe47d400
-  zh: 06aa68409bad3823
-/agent-note-fold-the-persistence-interface-into-dsh-session/what-we-give-up:
-  en: 595671143eb17f28
-  zh: a6f019fb64ba3a90
+/agent-note-fold-the-persistence-interface-into-quyet-session:
+  en: 30fa2cbc77e7d8bf
+  zh: 93c251950b57c71f
+/agent-note-fold-the-persistence-interface-into-quyet-session/problem:
+  en: 01f22ab72b7f9775
+  zh: a827195362ac76a1
+/agent-note-fold-the-persistence-interface-into-quyet-session/proposal:
+  en: 8358a9e2fc68472c
+  zh: 2531f923489f166a
+/agent-note-fold-the-persistence-interface-into-quyet-session/acceptance-criteria:
+  en: c884855e7b248c34
+  zh: af5bba65fcb88bff
+/agent-note-fold-the-persistence-interface-into-quyet-session/what-we-give-up:
+  en: fdfcc970ecb01513
+  zh: df44bbbb34f80dd3

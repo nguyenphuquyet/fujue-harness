@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-open-in-app",
+  "name": "@quyet/client-ui-open-in-app",
   "description": "Session application submenus and native opening controls for directories and previewed files",
   "version": "0.2.2-rc.1",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/client/ui-open-in-app"
   },
   "type": "module",
@@ -37,58 +37,58 @@
     "watch": "tsdown --watch"
   },
   "license": "MIT",
-  "dsh": {
+  "quyet": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-gateway",
-        "@deepseek-ai/dsh-api-remotes",
-        "@deepseek-ai/dsh-api-session-controller",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-shortcuts",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-layout",
-        "@deepseek-ai/dsh-client-ui-renderer",
-        "@deepseek-ai/dsh-client-ui-session",
-        "@deepseek-ai/dsh-client-ui-sidebar-documentpreview",
-        "@deepseek-ai/dsh-client-ui-context-menu",
-        "@deepseek-ai/dsh-client-ui-sidebar-right",
-        "@deepseek-ai/dsh-api-workspace-files",
-        "@deepseek-ai/dsh-client-ui-workspace"
+        "@quyet/api-gateway",
+        "@quyet/api-remotes",
+        "@quyet/api-session-controller",
+        "@quyet/client-locale",
+        "@quyet/client-shortcuts",
+        "@quyet/client-ui-conversation",
+        "@quyet/client-ui-layout",
+        "@quyet/client-ui-renderer",
+        "@quyet/client-ui-session",
+        "@quyet/client-ui-sidebar-documentpreview",
+        "@quyet/client-ui-context-menu",
+        "@quyet/client-ui-sidebar-right",
+        "@quyet/api-workspace-files",
+        "@quyet/client-ui-workspace"
       ],
       "platform": "web"
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-api-remotes": "workspace:*",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-layout": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-session": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar-documentpreview": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar-files": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-host-open-in-app": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
+    "@quyet/cordis": "workspace:~",
+    "@quyet/api-gateway": "workspace:*",
+    "@quyet/api-remotes": "workspace:*",
+    "@quyet/api-session-controller": "workspace:*",
+    "@quyet/client-locale": "workspace:*",
+    "@quyet/client-store": "workspace:*",
+    "@quyet/client-test-runtime": "workspace:*",
+    "@quyet/client-ui-conversation": "workspace:*",
+    "@quyet/client-ui-layout": "workspace:*",
+    "@quyet/client-ui-primitives": "workspace:*",
+    "@quyet/client-ui-renderer": "workspace:*",
+    "@quyet/client-ui-session": "workspace:*",
+    "@quyet/client-ui-sidebar-documentpreview": "workspace:*",
+    "@quyet/client-ui-sidebar-files": "workspace:*",
+    "@quyet/client-ui-slots": "workspace:*",
+    "@quyet/host-open-in-app": "workspace:*",
+    "@quyet/session": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-client-ui-deliverables": "workspace:*",
-    "@deepseek-ai/dsh-native-command": "workspace:*",
-    "@deepseek-ai/dsh-client-shortcuts": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-context-menu": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-file-actions": "workspace:*",
-    "@deepseek-ai/dsh-util-workspace-path": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar-right": "workspace:*",
-    "@deepseek-ai/dsh-api-workspace-files": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar-browser": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-workspace": "workspace:*"
+    "@quyet/client-ui-deliverables": "workspace:*",
+    "@quyet/native-command": "workspace:*",
+    "@quyet/client-shortcuts": "workspace:*",
+    "@quyet/client-ui-context-menu": "workspace:*",
+    "@quyet/client-ui-file-actions": "workspace:*",
+    "@quyet/util-workspace-path": "workspace:*",
+    "@quyet/client-ui-sidebar-right": "workspace:*",
+    "@quyet/api-workspace-files": "workspace:*",
+    "@quyet/client-ui-sidebar-browser": "workspace:*",
+    "@quyet/client-ui-workspace": "workspace:*"
   }
 }

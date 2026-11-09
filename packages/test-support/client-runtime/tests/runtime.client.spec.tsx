@@ -1,4 +1,4 @@
-import { AttachmentId } from '@deepseek-ai/dsh-attachment'
+import { AttachmentId } from '@quyet/attachment'
 // @vitest-environment jsdom
 /**
  * SlotTestRuntime behavior: root declaration + rendering, session
@@ -8,20 +8,20 @@ import { AttachmentId } from '@deepseek-ai/dsh-attachment'
  * stack — this suite is the fixture the migrated feature specs rely on.
  */
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@quyet/cordis'
 import { stubConfigForm } from '../src/config-form.ts'
 import { act, cleanup } from '@testing-library/react'
 import { useSyncExternalStore } from 'react'
-import { createSnapshotStore, defineStore } from '@deepseek-ai/dsh-client-store'
-import { createScope, type SessionReference } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { WorkspaceId } from '@deepseek-ai/dsh-api-workspace-controller/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { createSnapshotStore, defineStore } from '@quyet/client-store'
+import { createScope, type SessionReference } from '@quyet/api-session-controller/client'
+import type { WorkspaceId } from '@quyet/api-workspace-controller/client'
+import type { SessionId } from '@quyet/session/types'
 import type {
   PropsRenderSlots, SessionStandardProps, SlotRendererHost,
-} from '@deepseek-ai/dsh-client-ui-slots'
-import { SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
+} from '@quyet/client-ui-slots'
+import { SlotTestRuntime } from '@quyet/client-test-runtime'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@quyet/client-ui-slots' {
   interface SlotMap {
     'trt.panel': { kind: 'single'; scope: 'root'; owner: { label?: string } }
     'trt.chat': { kind: 'single'; scope: 'session' }

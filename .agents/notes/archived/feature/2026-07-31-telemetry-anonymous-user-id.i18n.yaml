@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-07-31-telemetry-anonymous-user-id.md
-2026-07-31-telemetry-anonymous-user-id.md: 2621ef77a1eddcfe88c2866a53ddff4ae9560e13
-2026-07-31-telemetry-anonymous-user-id.zh.md: ac64c980370e3f3d40518b408f749bf8605e7b5d
+2026-07-31-telemetry-anonymous-user-id.md: cb0b0f488d88429e83d6501c5ca8e329bc9f2ece
+2026-07-31-telemetry-anonymous-user-id.zh.md: 0f80d3e26be027d2fa606d2beca3e1870f0446e0

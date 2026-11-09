@@ -1,20 +1,20 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture } from '@quyet/tool-testkit'
 import { setImmediate } from 'node:timers/promises'
 import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { expect, it, onTestFinished, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { createUserMessage, ToolCallId } from '@deepseek-ai/dsh-llm'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import LocalJobRegistry from '@deepseek-ai/dsh-jobs-local'
-import * as SubagentSpawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
-import * as ToolSubagent from '@deepseek-ai/dsh-tool-subagent'
+import { Context } from '@quyet/cordis'
+import type { Agent } from '@quyet/agent'
+import AgentLoop from '@quyet/agent-loop'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
+import { SessionId } from '@quyet/session'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
+import { createUserMessage, ToolCallId } from '@quyet/llm'
+import SubagentRuntime from '@quyet/subagent'
+import LocalJobRegistry from '@quyet/jobs-local'
+import * as SubagentSpawn from '@quyet/subagent-spawn-in-process'
+import * as ToolSubagent from '@quyet/tool-subagent'
 import { MockAdapter, textResponse } from './mock-adapter.ts'
 
 it.each([0, 1, 2])('retains Agent resources until all work exits with %i failed teardowns', async (failures) => {
@@ -82,7 +82,7 @@ it.each([0, 1, 2])('retains Agent resources until all work exits with %i failed 
 it.each(['loop', 'root'] as const)('unloads %s while a background child is stopping', async (owner) => {
   const ctx = new Context()
   const release = Promise.withResolvers<undefined>()
-  const root = mkdtempSync(join(tmpdir(), 'dsh-resource-lifecycle-'))
+  const root = mkdtempSync(join(tmpdir(), 'quyet-resource-lifecycle-'))
   onTestFinished(async () => {
     release.resolve(undefined)
     await ctx.fiber.dispose()

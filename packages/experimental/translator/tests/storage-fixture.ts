@@ -1,11 +1,11 @@
 /** Loader-owned anonymous provider, live Sessions, and restartable real JSONL storage. */
-import type { Context, Fiber } from '@deepseek-ai/cordis'
-import type { ModuleLoaderV2 } from '@deepseek-ai/cordis-plugin-loader'
-import { boot } from '@deepseek-ai/dsh-app-boot'
-import { createAssistantMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { SESSION_FORMAT_VERSION, SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@deepseek-ai/dsh-session'
-import type { SessionHandle } from '@deepseek-ai/dsh-session-persistence'
-import * as JsonlPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+import type { Context, Fiber } from '@quyet/cordis'
+import type { ModuleLoaderV2 } from '@quyet/cordis-plugin-loader'
+import { boot } from '@quyet/app-boot'
+import { createAssistantMessage, createUserMessage } from '@quyet/llm'
+import SessionStore, { SESSION_FORMAT_VERSION, SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@quyet/session'
+import type { SessionHandle } from '@quyet/session-persistence'
+import * as JsonlPersistence from '@quyet/session-persistence-jsonl'
 import { once } from 'node:events'
 import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
@@ -51,7 +51,7 @@ function mainEvents(): SessionEvent[] {
  * @returns the real Host composition, restart operation, and Session/storage observations.
  */
 export async function storageFixture(cleanups: Array<() => Promise<void>>, options: StorageFixtureOptions = {}) {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-translator-storage-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-translator-storage-'))
   cleanups.push(async () => { await rm(root, { recursive: true, force: true }) })
   const requests: StorageWireCall[] = [], errors: unknown[] = [], handlers = new Set<Promise<void>>()
   const respond = async (request: IncomingMessage, response: ServerResponse): Promise<void> => {
@@ -95,16 +95,16 @@ export async function storageFixture(cleanups: Array<() => Promise<void>>, optio
   const origin = `http://127.0.0.1:${address.port}`, path = join(root, 'cordis.yml'), storedRoot = join(root, 'sessions')
   const config = { bingEndpoint: `${origin}/bing`, googleEndpoint: `${origin}/google`, timeoutMs: 60_000 }
   await writeFile(path, JSON.stringify([
-    ...options.withSessions === false ? [] : [{ id: 'sessions', name: '@deepseek-ai/dsh-session' }],
+    ...options.withSessions === false ? [] : [{ id: 'sessions', name: '@quyet/session' }],
     ...options.withPersistence === false ? [] : [
-      { id: 'storage', name: '@deepseek-ai/dsh-session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
+      { id: 'storage', name: '@quyet/session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
     ],
-    { id: 'translator', name: '@deepseek-ai/dsh-experimental-translator', config },
+    { id: 'translator', name: '@quyet/experimental-translator', config },
   ]))
   const start = () => boot('translator-storage', path, [], (host) => {
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-session', SessionStore], ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlPersistence],
-      ['@deepseek-ai/dsh-experimental-translator', Translator],
+      ['@quyet/session', SessionStore], ['@quyet/session-persistence-jsonl', JsonlPersistence],
+      ['@quyet/experimental-translator', Translator],
     ])
     const loader: ModuleLoaderV2 = {
       version: 'v2', loadCache: new Map(),

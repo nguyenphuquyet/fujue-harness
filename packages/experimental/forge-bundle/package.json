@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-forge-bundle",
+  "name": "@quyet/experimental-forge-bundle",
   "description": "Experimental change request panel and worktree option for Sessions in Git repositories",
   "version": "0.2.2-rc.1",
   "icon": "./icon.svg",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/nguyenphuquyet/quyet-harness.git",
     "directory": "packages/experimental/forge-bundle"
   },
   "type": "module",
@@ -34,20 +34,20 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-experimental-client-ui-forge": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge-github": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge-session": "workspace:*",
-    "@deepseek-ai/dsh-experimental-tool-worktree": "workspace:*",
-    "@deepseek-ai/dsh-experimental-worktree": "workspace:*"
+    "@quyet/experimental-client-ui-forge": "workspace:*",
+    "@quyet/experimental-forge": "workspace:*",
+    "@quyet/experimental-forge-github": "workspace:*",
+    "@quyet/experimental-forge-session": "workspace:*",
+    "@quyet/experimental-tool-worktree": "workspace:*",
+    "@quyet/experimental-worktree": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@quyet/cordis": "workspace:~"
   },
-  "dsh": {
+  "quyet": {
     "bundle": {
       "patch": "./cordis.patch.yml"
     }

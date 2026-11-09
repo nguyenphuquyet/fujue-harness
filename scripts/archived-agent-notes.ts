@@ -3,6 +3,7 @@
 import { createHash } from 'node:crypto'
 import { basename } from 'node:path'
 import { AGENT_NOTE_CLASSES } from './agent-note-tree.ts'
+import { rebrandSealedChanges, rebrandSealedRemovals } from './archived-note-rebrand-authorizations.ts'
 
 /** Versioned fields in the frozen-content manifest. */
 export interface ArchiveManifest {
@@ -53,8 +54,14 @@ export function renderArchiveManifest(files: Readonly<Record<string, string>>): 
   }, null, 2)}\n`
 }
 
+interface SealedChange {
+  readonly path: string
+  readonly before: string
+  readonly after: string
+}
+
 // Exact seals for the authorized Figma-link removal and its bilingual sidecar.
-const figmaLinkRemovals = [
+const figmaLinkRemovals: readonly SealedChange[] = [
   {
     path: 'feature/2026-08-10-durable-workflow-runs-in-chat.md',
     before: 'sha256:f9f5290cd880908d17b1080ae5776f22e182f5253471f90cf8bead418b33b502',
@@ -72,7 +79,16 @@ const figmaLinkRemovals = [
   },
 ]
 
-/** Reject sealed changes except the exact authorized Figma-link removal hashes. */
+const authorizedSealedChanges: readonly SealedChange[] = [...figmaLinkRemovals, ...rebrandSealedChanges]
+const authorizedSealedRemovals = new Set(rebrandSealedRemovals)
+
+function isAuthorizedChange(path: string, before: string, after: string): boolean {
+  return authorizedSealedChanges.some(change =>
+    change.path === path && change.before === before && change.after === after,
+  )
+}
+
+/** Reject sealed changes except the exact authorized hashes. */
 export function validateArchiveManifestExtension(
   baseline: ArchiveManifest,
   current: ArchiveManifest,
@@ -80,10 +96,11 @@ export function validateArchiveManifestExtension(
   const errors: string[] = []
   for (const [path, expected] of Object.entries(baseline.files)) {
     const actual = current.files[path]
-    if (actual === undefined) errors.push(`${path}: sealed manifest entry is missing`)
-    else if (actual !== expected && !figmaLinkRemovals.some(change =>
-      change.path === path && change.before === expected && change.after === actual,
-    )) errors.push(`${path}: sealed manifest hash changed`)
+    if (actual === undefined) {
+      if (!authorizedSealedRemovals.has(path)) errors.push(`${path}: sealed manifest entry is missing`)
+    } else if (actual !== expected && !isAuthorizedChange(path, expected, actual)) {
+      errors.push(`${path}: sealed manifest hash changed`)
+    }
   }
   return errors
 }
@@ -191,8 +208,16 @@ export function extendArchiveManifest(
   const files: Record<string, string> = { ...existing.files }
   for (const [path, expected] of Object.entries(existing.files)) {
     const content = artifacts.get(path)
-    if (content === undefined) errors.push(`${path}: sealed artifact is missing`)
-    else if (archiveContentHash(content) !== expected) errors.push(`${path}: sealed content hash changed`)
+    if (content === undefined) {
+      if (authorizedSealedRemovals.has(path)) delete files[path]
+      else errors.push(`${path}: sealed artifact is missing`)
+      continue
+    }
+    const actual = archiveContentHash(content)
+    if (actual !== expected) {
+      if (isAuthorizedChange(path, expected, actual)) files[path] = actual
+      else errors.push(`${path}: sealed content hash changed`)
+    }
   }
   const added: string[] = []
   for (const [path, content] of [...artifacts].sort(([left], [right]) => left.localeCompare(right))) {

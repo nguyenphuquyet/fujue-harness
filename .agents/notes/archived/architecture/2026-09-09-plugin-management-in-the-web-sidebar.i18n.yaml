@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/architecture/2026-09-09-plugin-management-in-the-web-sidebar.md
-2026-09-09-plugin-management-in-the-web-sidebar.md: cc501473734b1b99fef33a42e76124fcbeb16bf5
-2026-09-09-plugin-management-in-the-web-sidebar.zh.md: c09a1c762d25a0a07e70a86a1baef0c9333e7087
+2026-09-09-plugin-management-in-the-web-sidebar.md: 5a1ed0156a96617e9a13199a41c5a14598f8c08c
+2026-09-09-plugin-management-in-the-web-sidebar.zh.md: 9764cec638f89109e1281dd5838aff9a9a53af87

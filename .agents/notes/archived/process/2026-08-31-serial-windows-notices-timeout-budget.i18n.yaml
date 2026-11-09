@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/process/2026-08-31-serial-windows-notices-timeout-budget.md
-2026-08-31-serial-windows-notices-timeout-budget.md: 2f1a93d9c7cc703a93ea655d8ff538cb0742bcf3
-2026-08-31-serial-windows-notices-timeout-budget.zh.md: 1658cca2608a737cc85427e342a0fc76a9eaf72f
+2026-08-31-serial-windows-notices-timeout-budget.md: 2bef84101c3821ea1ff3767ba1ea3e6696b38781
+2026-08-31-serial-windows-notices-timeout-budget.zh.md: d762642d098fcfa32ef2904a2575c83a937bc3b5

@@ -2,28 +2,28 @@
  * The model-facing `workflow` tool: run a JavaScript orchestration script that fans out
  * subagents, and return the script's final value. It owns the model-facing schema and run lifecycle; script
  * parsing, execution, caps, and cancellation live behind `ctx.workflowEngine`
- * (`@deepseek-ai/dsh-workflow`), so a hardened engine swaps in without touching what the model
+ * (`@quyet/workflow`), so a hardened engine swaps in without touching what the model
  * sees. Foreground execution awaits `run.result` and always disposes the run; non-completed reasons
  * become tool errors. `run_in_background: true` instead registers the run as an owned `ctx.jobs` job
  * and returns its id immediately — the job's output ring streams live progress, and the run's value
  * arrives with the job's completion notice. Presentation is an args-only generic card
  * titled from `meta.name`. Explicit-ask usage guidance is registered as the tool's own prompt
  * section rather than deployment persona prose.
- * @module @deepseek-ai/dsh-tool-workflow
+ * @module @quyet/tool-workflow
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type { ToolCallView, ToolResultView } from '@deepseek-ai/dsh-tools'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { JobId, JobOutcome, JobToolCall } from '@deepseek-ai/dsh-jobs'
-import type { Session, SessionEventMap } from '@deepseek-ai/dsh-session'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { Context } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import { defineTool } from '@quyet/tools'
+import type { ToolCallView, ToolResultView } from '@quyet/tools'
+import type { Agent } from '@quyet/agent'
+import type { ContentBlock } from '@quyet/llm'
+import type { JobId, JobOutcome, JobToolCall } from '@quyet/jobs'
+import type { Session, SessionEventMap } from '@quyet/session'
+import type { JsonValue } from '@quyet/util-values'
 import type {
   WorkflowResult, WorkflowRun, WorkflowRunId, WorkflowStopReason,
-} from '@deepseek-ai/dsh-workflow'
+} from '@quyet/workflow'
 import { createWorkflowRecordMirror } from './record.ts'
 import type { WorkflowRecordMirror } from './record.ts'
 import type {
@@ -31,7 +31,7 @@ import type {
   ToolWorkflowRunEndData, ToolWorkflowRunStartData,
 } from './types.ts'
 
-declare module '@deepseek-ai/dsh-jobs' {
+declare module '@quyet/jobs' {
   interface JobKindMap {
     workflow: 'workflow'
   }
@@ -49,7 +49,7 @@ export interface Config {
   /**
    * Expose `run_in_background` (default true); disabled calls are also
    * rejected. A background run needs a live `ctx.jobs` registry with a
-   * controller serving the caller (`dsh-jobs-local` plus `dsh-tool-jobs` in
+   * controller serving the caller (`quyet-jobs-local` plus `quyet-tool-jobs` in
    * the shipped composition); without one the call fails with the missing
    * piece named.
    */
@@ -270,7 +270,7 @@ function startBackgroundRun(
 ): { kind: 'background'; jobId: JobId; runId: WorkflowRunId } {
   const jobs = ctx.get('jobs')
   if (jobs === undefined) {
-    throw new Error('background jobs unavailable: load @deepseek-ai/dsh-jobs and @deepseek-ai/dsh-tool-jobs')
+    throw new Error('background jobs unavailable: load @quyet/jobs and @quyet/tool-jobs')
   }
   let run!: WorkflowRun
   const jobId = jobs.start({

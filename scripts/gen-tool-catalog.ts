@@ -8,86 +8,86 @@
 
 import { globSync, readFileSync, writeFileSync } from 'node:fs'
 import { basename, dirname, resolve } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import type { ToolSchema } from '@deepseek-ai/dsh-llm'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import SessionStore, { SessionId } from '@deepseek-ai/dsh-session'
-import SessionPersistence from '@deepseek-ai/dsh-session-persistence'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SqliteSessionQueryEngine from '@deepseek-ai/dsh-session-query-sqlite'
-import GoalService from '@deepseek-ai/dsh-goal'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { NativeToolExecutor } from '@deepseek-ai/dsh-tool-executor-native'
-import { PtcExecutor } from '@deepseek-ai/dsh-tool-executor-ptc'
-import NodePtcRuntime from '@deepseek-ai/dsh-ptc-runtime-node'
-import LocalSandboxProvider from '@deepseek-ai/dsh-sandbox-local'
-import LocalBashExecutor from '@deepseek-ai/dsh-bash-local'
-import * as BashEnvPlugin from '@deepseek-ai/dsh-shell-env'
-import { PwshLocalExecutor } from '@deepseek-ai/dsh-pwsh-local'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import WorkingDirectory from '@deepseek-ai/dsh-working-directory'
-import * as ToolWorkingDirectory from '@deepseek-ai/dsh-tool-working-directory'
-import * as ToolWorktree from '@deepseek-ai/dsh-experimental-tool-worktree'
-import { AttachmentStore } from '@deepseek-ai/dsh-attachment'
-import type { ImageAttachmentLimits, ImageAttachmentRef, SaveImageAttachment, StoredImageAttachment } from '@deepseek-ai/dsh-attachment'
-import UserQuestionService from '@deepseek-ai/dsh-user-questions'
-import PlanModeController from '@deepseek-ai/dsh-plan-mode'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import * as WebDeepSeekApi from '@deepseek-ai/dsh-web-deepseek-api'
-import * as WebFetchLocal from '@deepseek-ai/dsh-web-fetch-http'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import type { SubagentProvider } from '@deepseek-ai/dsh-subagent'
-import * as ToolSubagentControl from '@deepseek-ai/dsh-tool-subagent-control'
-import SkillRegistry from '@deepseek-ai/dsh-skill'
-import ActionCards from '@deepseek-ai/dsh-action-cards'
-import RemoteAccess from '@deepseek-ai/dsh-api-remote-access'
-import * as SkillFileSystem from '@deepseek-ai/dsh-skill-filesystem'
-import LocalJobRegistry from '@deepseek-ai/dsh-jobs-local'
-import * as ToolAskUser from '@deepseek-ai/dsh-tool-ask-user'
-import * as ToolBash from '@deepseek-ai/dsh-tool-bash'
-import * as ToolPwsh from '@deepseek-ai/dsh-tool-pwsh'
-import * as ToolBashPersistent from '@deepseek-ai/dsh-tool-bash-persistent'
-import * as ToolPwshPersistent from '@deepseek-ai/dsh-tool-pwsh-persistent'
-import CordisHostRunner from '@deepseek-ai/dsh-cordis-host-runner'
-import * as ToolCordis from '@deepseek-ai/dsh-tool-cordis'
-import * as ToolPresent from '@deepseek-ai/dsh-tool-present'
-import * as ToolFs from '@deepseek-ai/dsh-tool-fs'
-import * as ToolFsSearch from '@deepseek-ai/dsh-tool-fs-search'
-import * as ToolStrReplaceEditor from '@deepseek-ai/dsh-tool-str-replace-editor'
-import TerminalSessionService from '@deepseek-ai/dsh-terminal'
-import * as ToolPty from '@deepseek-ai/dsh-tool-terminal'
-import * as ToolGoal from '@deepseek-ai/dsh-tool-goal'
-import * as ToolSchedule from '@deepseek-ai/dsh-tool-schedule'
-import ScheduleService from '@deepseek-ai/dsh-schedule'
-import Lsp from '@deepseek-ai/dsh-lsp'
-import * as ToolLsp from '@deepseek-ai/dsh-tool-lsp'
-import * as ToolSkill from '@deepseek-ai/dsh-tool-skill'
-import * as ToolSessionQuery from '@deepseek-ai/dsh-tool-session-query'
-import * as ToolJobs from '@deepseek-ai/dsh-tool-jobs'
-import BrowserUseRegistry from '@deepseek-ai/dsh-browser-use'
-import * as StagehandBrowserTools from '@deepseek-ai/dsh-experimental-browser-use-stagehand-native'
-import TeamService from '@deepseek-ai/dsh-agent-team'
-import * as ToolTeam from '@deepseek-ai/dsh-tool-agent-team'
-import * as ToolTodo from '@deepseek-ai/dsh-tool-todo'
-import type PluginManager from '@deepseek-ai/dsh-plugin-manager'
-import * as PluginManagerTools from '@deepseek-ai/dsh-plugin-manager/tools'
-import type PluginMarket from '@deepseek-ai/dsh-plugin-market'
-import * as PluginMarketTools from '@deepseek-ai/dsh-plugin-market/tools'
-import SandboxPolicy from '@deepseek-ai/dsh-sandbox-policy'
-import McpResources from '@deepseek-ai/dsh-mcp-resources'
-import * as ToolSubagent from '@deepseek-ai/dsh-tool-subagent'
-import * as ToolSubagentOar from '@deepseek-ai/dsh-experimental-tool-subagent-oar'
-import * as ToolWeb from '@deepseek-ai/dsh-tool-web'
-import WorkflowEngine from '@deepseek-ai/dsh-workflow'
-import type { WorkflowRun, WorkflowStartRequest } from '@deepseek-ai/dsh-workflow'
-import * as ToolRalph from '@deepseek-ai/dsh-tool-ralph'
-import * as ToolWorkflow from '@deepseek-ai/dsh-tool-workflow'
-import * as ToolWorkspaceDependencies from '@deepseek-ai/dsh-tool-workspace-dependencies'
+import { Context } from '@quyet/cordis'
+import LlmRuntime from '@quyet/llm'
+import type { ToolSchema } from '@quyet/llm'
+import AgentRegistry from '@quyet/agent'
+import type { Agent } from '@quyet/agent'
+import { createScope } from '@quyet/scope'
+import SessionStore, { SessionId } from '@quyet/session'
+import SessionPersistence from '@quyet/session-persistence'
+import SessionProjectionRegistry from '@quyet/session-projection'
+import SqliteSessionQueryEngine from '@quyet/session-query-sqlite'
+import GoalService from '@quyet/goal'
+import SystemPrompt from '@quyet/system-prompt'
+import ToolRuntime from '@quyet/tools'
+import { NativeToolExecutor } from '@quyet/tool-executor-native'
+import { PtcExecutor } from '@quyet/tool-executor-ptc'
+import NodePtcRuntime from '@quyet/ptc-runtime-node'
+import LocalSandboxProvider from '@quyet/sandbox-local'
+import LocalBashExecutor from '@quyet/bash-local'
+import * as BashEnvPlugin from '@quyet/shell-env'
+import { PwshLocalExecutor } from '@quyet/pwsh-local'
+import LocalSubprocessRuntime from '@quyet/subprocess-local'
+import LocalFileSystem from '@quyet/fs-local'
+import WorkingDirectory from '@quyet/working-directory'
+import * as ToolWorkingDirectory from '@quyet/tool-working-directory'
+import * as ToolWorktree from '@quyet/experimental-tool-worktree'
+import { AttachmentStore } from '@quyet/attachment'
+import type { ImageAttachmentLimits, ImageAttachmentRef, SaveImageAttachment, StoredImageAttachment } from '@quyet/attachment'
+import UserQuestionService from '@quyet/user-questions'
+import PlanModeController from '@quyet/plan-mode'
+import WebRuntime from '@quyet/web'
+import * as WebDeepSeekApi from '@quyet/web-deepseek-api'
+import * as WebFetchLocal from '@quyet/web-fetch-http'
+import SubagentRuntime from '@quyet/subagent'
+import type { SubagentProvider } from '@quyet/subagent'
+import * as ToolSubagentControl from '@quyet/tool-subagent-control'
+import SkillRegistry from '@quyet/skill'
+import ActionCards from '@quyet/action-cards'
+import RemoteAccess from '@quyet/api-remote-access'
+import * as SkillFileSystem from '@quyet/skill-filesystem'
+import LocalJobRegistry from '@quyet/jobs-local'
+import * as ToolAskUser from '@quyet/tool-ask-user'
+import * as ToolBash from '@quyet/tool-bash'
+import * as ToolPwsh from '@quyet/tool-pwsh'
+import * as ToolBashPersistent from '@quyet/tool-bash-persistent'
+import * as ToolPwshPersistent from '@quyet/tool-pwsh-persistent'
+import CordisHostRunner from '@quyet/cordis-host-runner'
+import * as ToolCordis from '@quyet/tool-cordis'
+import * as ToolPresent from '@quyet/tool-present'
+import * as ToolFs from '@quyet/tool-fs'
+import * as ToolFsSearch from '@quyet/tool-fs-search'
+import * as ToolStrReplaceEditor from '@quyet/tool-str-replace-editor'
+import TerminalSessionService from '@quyet/terminal'
+import * as ToolPty from '@quyet/tool-terminal'
+import * as ToolGoal from '@quyet/tool-goal'
+import * as ToolSchedule from '@quyet/tool-schedule'
+import ScheduleService from '@quyet/schedule'
+import Lsp from '@quyet/lsp'
+import * as ToolLsp from '@quyet/tool-lsp'
+import * as ToolSkill from '@quyet/tool-skill'
+import * as ToolSessionQuery from '@quyet/tool-session-query'
+import * as ToolJobs from '@quyet/tool-jobs'
+import BrowserUseRegistry from '@quyet/browser-use'
+import * as StagehandBrowserTools from '@quyet/experimental-browser-use-stagehand-native'
+import TeamService from '@quyet/agent-team'
+import * as ToolTeam from '@quyet/tool-agent-team'
+import * as ToolTodo from '@quyet/tool-todo'
+import type PluginManager from '@quyet/plugin-manager'
+import * as PluginManagerTools from '@quyet/plugin-manager/tools'
+import type PluginMarket from '@quyet/plugin-market'
+import * as PluginMarketTools from '@quyet/plugin-market/tools'
+import SandboxPolicy from '@quyet/sandbox-policy'
+import McpResources from '@quyet/mcp-resources'
+import * as ToolSubagent from '@quyet/tool-subagent'
+import * as ToolSubagentOar from '@quyet/experimental-tool-subagent-oar'
+import * as ToolWeb from '@quyet/tool-web'
+import WorkflowEngine from '@quyet/workflow'
+import type { WorkflowRun, WorkflowStartRequest } from '@quyet/workflow'
+import * as ToolRalph from '@quyet/tool-ralph'
+import * as ToolWorkflow from '@quyet/tool-workflow'
+import * as ToolWorkspaceDependencies from '@quyet/tool-workspace-dependencies'
 import { githubSlug } from './verify-md-links.ts'
 
 /** Attachment seam marker that makes the attachments-conditional `read_image` schema harvestable. */
@@ -205,7 +205,7 @@ export interface ToolPackage {
  */
 const TOOL_PACKAGES: ToolPackage[] = [
   {
-    pkg: '@deepseek-ai/dsh-plugin-manager',
+    pkg: '@quyet/plugin-manager',
     dir: 'plugin-manager',
     source: 'packages/boot/plugin-manager/src/tools.ts',
     requires: ['ctx.tools', 'ctx.pluginManager', 'ctx.sandboxPolicy'],
@@ -218,7 +218,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     },
   },
   {
-    pkg: '@deepseek-ai/dsh-plugin-market',
+    pkg: '@quyet/plugin-market',
     dir: 'plugin-market',
     source: 'packages/boot/plugin-market/src/tools.ts',
     requires: ['ctx.tools', 'ctx.pluginMarket'],
@@ -230,7 +230,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     },
   },
   {
-    pkg: '@deepseek-ai/dsh-mcp-resources',
+    pkg: '@quyet/mcp-resources',
     dir: 'mcp-resources',
     source: 'packages/mcp/mcp-resources/src/tools.ts',
     requires: ['ctx.tools', 'ctx.mcpResources'],
@@ -243,7 +243,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     },
   },
   {
-    pkg: '@deepseek-ai/dsh-experimental-browser-use-stagehand-native',
+    pkg: '@quyet/experimental-browser-use-stagehand-native',
     dir: 'browser-use-stagehand-native',
     source: 'packages/experimental/browser-use-stagehand-native/src/index.ts',
     requires: ['ctx.browserUse', 'ctx.agents', 'ctx.tools', 'ctx.systemPrompt'],
@@ -257,7 +257,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     },
   },
   {
-    pkg: '@deepseek-ai/dsh-action-cards',
+    pkg: '@quyet/action-cards',
     dir: 'action-cards',
     source: 'packages/experimental/action-cards/src/index.ts',
     requires: ['ctx.tools', 'ctx.agents', 'ctx.sessionProjections', 'ctx.remoteAccess'],
@@ -270,7 +270,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     note: 'Declared only to an Agent that loaded the skill of a registered card kind; the kind packages register their actions, and the Personalized recommendations bundle supplies the shipped kinds.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-ask-user',
+    pkg: '@quyet/tool-ask-user',
     dir: 'tool-ask-user',
     source: 'packages/interaction/tool-ask-user/src/index.ts',
     requires: ['ctx.tools', 'ctx.userQuestions'],
@@ -283,7 +283,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'ask_user_question keeps the original blocking behavior by default; set `mode: timed` to opt into a foreground timeout and pending result while the question remains answerable. In timed mode, `timeout: -1` keeps that call blocking indefinitely.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-executor-ptc',
+    pkg: '@quyet/tool-executor-ptc',
     dir: 'tool-executor-ptc',
     source: 'packages/core/tool-executor-ptc/src/ptc.ts',
     requires: ['ctx.workingDirectory (Agent executions)', 'ctx.tools', 'ctx.ptcRuntime', 'ctx.systemPrompt'],
@@ -299,7 +299,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'The PTC executor exposes only run_code to the model and declares other visible capabilities in a generated SDK in the runtime’s language. Program bindings enter the shared guarded tool pipeline in submission order; concurrency-safe bodies overlap up to maxParallelSubCalls, and nested results remain linked to the outer program. The resolved timeout and maxSubCallsPerMinute set the total call allowance; exceeding it terminates the program.',
   },
   {
-    pkg: '@deepseek-ai/dsh-plan-mode',
+    pkg: '@quyet/plan-mode',
     dir: 'plan-mode',
     source: 'packages/plan/plan-mode/src/index.ts',
     requires: ['ctx.tools', 'ctx.systemPrompt', 'ctx.agents', 'ctx.userQuestions (execution time, opportunistic)'],
@@ -312,7 +312,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'exit_plan_mode stays in the model-facing schema while planning is inactive so transitions add no tool-catalog churn on top of the plan-policy change. Its execute path rejects calls outside plan mode; in plan mode it presents the plan over the user-questions seam (approve / keep planning with feedback), and approval logs plan mode inactive at the step boundary.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-bash',
+    pkg: '@quyet/tool-bash',
     dir: 'tool-bash',
     source: 'packages/shell/tool-bash/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.shell', 'ctx.systemPrompt', 'ctx.shellEnv', 'ctx.jobs for run_in_background and the job-backed foreground path'],
@@ -327,10 +327,10 @@ const TOOL_PACKAGES: ToolPackage[] = [
       await ctx.plugin(ToolBash)
     },
     note:
-      'The bash tool is the model-facing consumer of the bash executor seam. With a job registry composed every call registers with the generic `ctx.jobs` runtime as it starts, collected/stopped through the `job_*` tools from `@deepseek-ai/dsh-tool-jobs`; without one, or with `enableRunInBackground: false`, the tool registers a foreground-only schema without the `run_in_background` parameter.',
+      'The bash tool is the model-facing consumer of the bash executor seam. With a job registry composed every call registers with the generic `ctx.jobs` runtime as it starts, collected/stopped through the `job_*` tools from `@quyet/tool-jobs`; without one, or with `enableRunInBackground: false`, the tool registers a foreground-only schema without the `run_in_background` parameter.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-present',
+    pkg: '@quyet/tool-present',
     dir: 'tool-present',
     source: 'packages/deliverables/tool-present/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.fs', 'ctx.agents'],
@@ -342,7 +342,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     note: 'Deliveries belong to the calling Session; Web ui-deliverables supplies source-file opening and cards.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-pwsh',
+    pkg: '@quyet/tool-pwsh',
     dir: 'tool-pwsh',
     source: 'packages/shell/tool-pwsh/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.shell', 'ctx.systemPrompt', 'ctx.shellEnv', 'ctx.jobs for run_in_background and the job-backed foreground path'],
@@ -359,10 +359,10 @@ const TOOL_PACKAGES: ToolPackage[] = [
       await ctx.plugin(ToolPwsh)
     },
     note:
-      'The pwsh tool is the PowerShell-dialect consumer of the bash executor seam for Windows compositions (a PowerShell executor such as `@deepseek-ai/dsh-pwsh-local` backs `ctx.shell`); it mirrors the bash tool call-for-call minus sandbox controls — `run_in_background` runs register with the generic `ctx.jobs` runtime and are collected/stopped through the `job_*` tools, and the managed `DSH_*` environment comes from `@deepseek-ai/dsh-shell-env`. Each call runs in a fresh process (no persistent PTY session), with native `C:\\...` paths and `$env:NAME` variables.',
+      'The pwsh tool is the PowerShell-dialect consumer of the bash executor seam for Windows compositions (a PowerShell executor such as `@quyet/pwsh-local` backs `ctx.shell`); it mirrors the bash tool call-for-call minus sandbox controls — `run_in_background` runs register with the generic `ctx.jobs` runtime and are collected/stopped through the `job_*` tools, and the managed `QUYET_*` environment comes from `@quyet/shell-env`. Each call runs in a fresh process (no persistent PTY session), with native `C:\\...` paths and `$env:NAME` variables.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-cordis',
+    pkg: '@quyet/tool-cordis',
     dir: 'tool-cordis',
     source: 'packages/extensions/tool-cordis/src/index.ts',
     requires: ['ctx.tools', 'ctx.cordisInspect'],
@@ -375,7 +375,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'Creator mode provides two read-only runtime inspection tools. The Cordis host runner supplies the inspection registry; Client queries require a connected page. Author persistent changes as bundles and install them with plugin_manager.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-bash-persistent',
+    pkg: '@quyet/tool-bash-persistent',
     dir: 'tool-bash-persistent',
     source: 'packages/shell/tool-bash-persistent/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.terminals', 'an owning Agent at execution time'],
@@ -388,7 +388,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'One owner-isolated persistent bash tool; deployment composition supplies the PTY backend and may override the model-facing environment description.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-pwsh-persistent',
+    pkg: '@quyet/tool-pwsh-persistent',
     dir: 'tool-pwsh-persistent',
     source: 'packages/shell/tool-pwsh-persistent/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.terminals', 'an owning Agent at execution time'],
@@ -401,7 +401,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'One owner-isolated persistent pwsh tool, the Windows counterpart of the persistent bash tool; deployment composition supplies a pwsh-dialect PTY backend and may override the model-facing environment description.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-str-replace-editor',
+    pkg: '@quyet/tool-str-replace-editor',
     dir: 'tool-str-replace-editor',
     source: 'packages/fs/tool-str-replace-editor/src/index.ts',
     requires: ['ctx.tools', 'ctx.fs'],
@@ -413,7 +413,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'Standalone view/create/unique literal replace/line insert tool over the filesystem seam; it composes with any shell or terminal API.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-fs',
+    pkg: '@quyet/tool-fs',
     dir: 'tool-fs',
     source: 'packages/fs/tool-fs/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.fs', 'ctx.systemPrompt', 'ctx.attachments (image-tool registration)', 'ctx.llm + an image-capable route (image-tool execution)'],
@@ -425,10 +425,10 @@ const TOOL_PACKAGES: ToolPackage[] = [
       await ctx.plugin(ToolFs, { applyPatch: true })
     },
     note:
-      'The read-before-write/edit policy is added by `@deepseek-ai/dsh-fs-observation-policy` (an `fs/*` event-gate plugin, no schema change); the shipped compositions leave its row disabled, so mutations are unconditional unless a deployment enables it. The image tool is not registered without `ctx.attachments`; its schema is route-independent, and execution refuses unless the exact routed model declares image input. `apply_patch` registers only with `applyPatch: true`; the catalog sets it so the schema is documented. `dsh-base` and the Web `standard` preset enable it; the Web `ptc` and `cordis` presets and the PTC overlay state `applyPatch: false`.',
+      'The read-before-write/edit policy is added by `@quyet/fs-observation-policy` (an `fs/*` event-gate plugin, no schema change); the shipped compositions leave its row disabled, so mutations are unconditional unless a deployment enables it. The image tool is not registered without `ctx.attachments`; its schema is route-independent, and execution refuses unless the exact routed model declares image input. `apply_patch` registers only with `applyPatch: true`; the catalog sets it so the schema is documented. `quyet-base` and the Web `standard` preset enable it; the Web `ptc` and `cordis` presets and the PTC overlay state `applyPatch: false`.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-fs-search',
+    pkg: '@quyet/tool-fs-search',
     dir: 'tool-fs-search',
     source: 'packages/fs/tool-fs-search/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.subprocess', 'ctx.systemPrompt'],
@@ -446,7 +446,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'glob and grep are unconditional discovery tools that spawn the packaged ripgrep binary (`@vscode/ripgrep`) through ctx.subprocess as ordinary foreground calls (never background jobs) — no host `rg` install and no shell layer. The catalog uses `sampleOverCapGlobResults: true`; deployments must choose that behavior explicitly. Capped results save the complete formatted list through the optional ctx.spillStore backend; returned locators are follow-up-readable/searchable when the backend exposes local paths in co-located deployments.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-terminal',
+    pkg: '@quyet/tool-terminal',
     dir: 'tool-terminal',
     source: 'packages/experimental/tool-terminal/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.terminals', 'ctx.systemPrompt', 'ctx.jobs at call time for run_in_background'],
@@ -459,7 +459,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'The six terminal tools are opt-in and complement one-shot shell/filesystem tools. `terminal_send(run_in_background: true)` registers with `ctx.jobs`; TUI, named key sequences, BEL, resize, auto-start, and cross-agent sharing are absent from the schema.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-goal',
+    pkg: '@quyet/tool-goal',
     dir: 'tool-goal',
     source: 'packages/goal/tool-goal/src/index.ts',
     requires: ['ctx.tools', 'ctx.agents', 'ctx.goals', 'ctx.systemPrompt', 'a calling Agent in an authorized open turn'],
@@ -473,7 +473,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'create, edit, pause, and resume require direct-human root authority; complete and blocked also accept the exact current goal round. The default blocked lower bound is three admitted rounds.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-schedule',
+    pkg: '@quyet/tool-schedule',
     dir: 'tool-schedule',
     source: 'packages/schedule/tool-schedule/src/index.ts',
     requires: ['ctx.tools', 'ctx.schedule', 'ctx.systemPrompt'],
@@ -493,7 +493,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       + 'Delegated subagents cannot call these tools.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-lsp',
+    pkg: '@quyet/tool-lsp',
     dir: 'tool-lsp',
     source: 'packages/lsp/tool-lsp/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.lsp', 'ctx.systemPrompt'],
@@ -504,10 +504,10 @@ const TOOL_PACKAGES: ToolPackage[] = [
       await ctx.plugin(ToolLsp)
     },
     note:
-      'The lsp tool keeps provider selection and language-server subprocesses behind ctx.lsp, so its model-visible schema stays stable across providers. Requires a registered provider (e.g. `@deepseek-ai/dsh-lsp-stdio`) at runtime; without one, a query returns the structured `LSP_UNAVAILABLE` error rather than changing the schema.',
+      'The lsp tool keeps provider selection and language-server subprocesses behind ctx.lsp, so its model-visible schema stays stable across providers. Requires a registered provider (e.g. `@quyet/lsp-stdio`) at runtime; without one, a query returns the structured `LSP_UNAVAILABLE` error rather than changing the schema.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-ralph',
+    pkg: '@quyet/tool-ralph',
     dir: 'tool-ralph',
     source: 'packages/experimental/tool-ralph/src/index.ts',
     requires: ['ctx.tools', 'ctx.workflowEngine', 'ctx.subagents', 'ctx.systemPrompt', 'a calling Agent (exec.agent parents every fresh round)'],
@@ -522,7 +522,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'A fixed foreground workflow starts one fresh structured child per round; the model selects only the immutable objective and an optional round cap.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-skill',
+    pkg: '@quyet/tool-skill',
     dir: 'tool-skill',
     source: 'packages/skill/tool-skill/src/index.ts',
     requires: ['ctx.workingDirectory', 'ctx.tools', 'ctx.agents', 'ctx.skills'],
@@ -531,14 +531,14 @@ const TOOL_PACKAGES: ToolPackage[] = [
       await ctx.plugin(AgentRegistry)
       await ctx.plugin(SkillRegistry)
       await ctx.plugin(SkillFileSystem, {
-        dshHome: resolve(root, '.tmp/tool-catalog/.dsh'),
+        quyetHome: resolve(root, '.tmp/tool-catalog/.quyet'),
         agentsHome: resolve(root, '.tmp/tool-catalog/.agents'),
       })
       await ctx.plugin(ToolSkill)
     },
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-session-query',
+    pkg: '@quyet/tool-session-query',
     dir: 'tool-session-query',
     source: 'packages/experimental/tool-session-query/src/index.ts',
     requires: ['ctx.tools', 'ctx.systemPrompt', 'ctx.sessionQuery', 'ctx.agents', 'a calling Agent for workspace authority'],
@@ -553,7 +553,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'The five read-only tools hide provider cursors and authorize every result from the immutable calling agent session. The package is opt-in; compositions that need enforced deadlines or bounded inline output also mount the generic timeout or spill policies.',
   },
   {
-    pkg: '@deepseek-ai/dsh-experimental-tool-subagent-oar',
+    pkg: '@quyet/experimental-tool-subagent-oar',
     dir: 'tool-subagent-oar',
     source: 'packages/experimental/tool-subagent-oar/src/index.ts',
     requires: ['ctx.tools', 'ctx.subagents'],
@@ -567,7 +567,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     note: 'The subagent_oar tool selects among configured aliases for external providers. This catalog shows Codex and Claude Code aliases; each deployment chooses its providers. Native model and permission settings belong to the selected provider configuration.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-subagent',
+    pkg: '@quyet/tool-subagent',
     dir: 'tool-subagent',
     source: {
       list_subagent_models: 'packages/subagent/tool-subagent/src/list-models.ts',
@@ -586,7 +586,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'The load-time `toolName` selects the delegation name (default `subagent`); `modelSelection` adds optional route fields. `modelDiscovery` defaults off and registers shared discovery on one instance per scope. Web and Desktop presets enable spawn discovery and route fields and leave `subagent_fork` route fields disabled. The Host settings service records authorization for each new top-level Session; child Sessions inherit it. Without a recorded policy, discovery and explicit selection permit only the current parent route. Every delegation returns the child\'s name promptly; local children accept follow-ups, while external backends report their single execution automatically.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-subagent-control',
+    pkg: '@quyet/tool-subagent-control',
     dir: 'tool-subagent-control',
     source: {
       interrupt_agent: 'packages/subagent/tool-subagent-control/src/index.ts',
@@ -607,7 +607,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'The shared control tools discover and contact agents in the subagent tree, interrupt owned descendants, and wait for input in the caller’s inbox. Provider-bound `tool-subagent` instances supply delegation tools.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-jobs',
+    pkg: '@quyet/tool-jobs',
     dir: 'tool-jobs',
     source: 'packages/jobs/tool-jobs/src/index.ts',
     requires: ['ctx.tools', 'ctx.jobs', 'ctx.systemPrompt'],
@@ -620,7 +620,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'The kind-agnostic background-job controller: background bash commands and PTY sends are read, listed, and killed through the same three tools. Loading the plugin attaches the controller that arms producers\' `ctx.jobs.start()`.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-agent-team',
+    pkg: '@quyet/tool-agent-team',
     dir: 'tool-agent-team',
     source: 'packages/team/tool-agent-team/src/index.ts',
     requires: ['ctx.tools', 'ctx.systemPrompt', 'ctx.agentTeams', 'ctx.subagents', 'an exact live Team member Agent'],
@@ -652,7 +652,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'Four task-board tools share the subagent tree’s root Session. Enabling Team mode on the root Session adds task-board guidance alongside standard subagent delegation and control tools. Standard subagent controls provide required identity independently of Team mode.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-todo',
+    pkg: '@quyet/tool-todo',
     dir: 'tool-todo',
     source: 'packages/todo/tool-todo/src/index.ts',
     requires: ['ctx.tools', 'owning Agent session'],
@@ -664,7 +664,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
       'todo_write is session-owned state; UIs render the latest todo/write event as a checklist. `allowParallelInProgress` is required with no default, so the catalog states its choice: `true`, whose description invites several `in_progress` items. A deployment choosing `false` receives the same tool with a description asking for exactly one active task.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-working-directory',
+    pkg: '@quyet/tool-working-directory',
     dir: 'tool-working-directory',
     source: 'packages/session/tool-working-directory/src/index.ts',
     requires: ['ctx.tools', 'ctx.workingDirectory'],
@@ -675,7 +675,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     note: 'Reads or changes the calling Session directory. Existing shells and processes retain their own directories; origin metadata and permission roots stay fixed.',
   },
   {
-    pkg: '@deepseek-ai/dsh-experimental-tool-worktree',
+    pkg: '@quyet/experimental-tool-worktree',
     dir: 'tool-worktree',
     source: 'packages/experimental/tool-worktree/src/index.ts',
     requires: ['ctx.tools', 'ctx.worktrees', 'a calling Agent'],
@@ -689,7 +689,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     note: 'Enabled through the Change requests & worktrees bundle on Web and Desktop; other profiles can select the standalone bundle. Creates a new branch and checkout from a pinned local commit under existing write permissions, then changes the Session directory. Leaving retains the branch and checkout.',
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-workflow',
+    pkg: '@quyet/tool-workflow',
     dir: 'tool-workflow',
     source: 'packages/workflow/tool-workflow/src/index.ts',
     requires: ['ctx.tools', 'ctx.workflowEngine', 'ctx.systemPrompt', 'a calling Agent (exec.agent parents the script children)'],
@@ -702,7 +702,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     },
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-workspace-dependencies',
+    pkg: '@quyet/tool-workspace-dependencies',
     dir: 'tool-workspace-dependencies',
     source: 'packages/skill/tool-workspace-dependencies/src/index.ts',
     requires: ['ctx.tools'],
@@ -713,7 +713,7 @@ const TOOL_PACKAGES: ToolPackage[] = [
     },
   },
   {
-    pkg: '@deepseek-ai/dsh-tool-web',
+    pkg: '@quyet/tool-web',
     dir: 'tool-web',
     source: 'packages/web/tool-web/src/index.ts',
     requires: ['ctx.tools', 'ctx.web', 'ctx.systemPrompt'],

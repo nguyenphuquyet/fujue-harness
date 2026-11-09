@@ -1,17 +1,17 @@
 /**
  * Durable session skill catalog and model-facing `skill` loader tool.
  *
- * @module @deepseek-ai/dsh-tool-skill
+ * @module @quyet/tool-skill
  */
 
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@quyet/working-directory'
 import { createHash } from 'node:crypto'
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { SessionSeq, type UserMessage } from '@deepseek-ai/dsh-session'
+import type { Context } from '@quyet/cordis'
+import z from '@quyet/schemastery'
+import type { Agent, PreStepDecision } from '@quyet/agent'
+import { defineTool } from '@quyet/tools'
+import { createUserMessage } from '@quyet/llm'
+import { SessionSeq, type UserMessage } from '@quyet/session'
 import {
   escapeText,
   isModelInvocable,
@@ -20,7 +20,7 @@ import {
   renderSkillContent,
   type SkillInvocationSource,
   type SkillSummary,
-} from '@deepseek-ai/dsh-skill'
+} from '@quyet/skill'
 
 export const name = 'tool-skill'
 export const inject = ['agents', 'tools', 'skills', 'workingDirectory']
@@ -43,7 +43,7 @@ export interface SkillCatalogSource {
   readonly entries: readonly { readonly name: string; readonly description: string }[]
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@quyet/llm' {
   interface MessageSourceMap {
     'skill-catalog': SkillCatalogSource
   }

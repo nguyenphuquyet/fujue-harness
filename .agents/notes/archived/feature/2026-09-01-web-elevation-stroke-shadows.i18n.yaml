@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-09-01-web-elevation-stroke-shadows.md
-2026-09-01-web-elevation-stroke-shadows.md: 53c0e5a84d487697f9560d3052a0da790b7d002d
-2026-09-01-web-elevation-stroke-shadows.zh.md: f32fa2a02bac12bcd37974977b1fbcd3e36930f4
+2026-09-01-web-elevation-stroke-shadows.md: 40d6c689045349f8aae22c32add59a14002bc26c
+2026-09-01-web-elevation-stroke-shadows.zh.md: 1f2bdc05402c581ce7cb98d2d0f37decd738d945

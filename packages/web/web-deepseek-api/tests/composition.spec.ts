@@ -7,16 +7,16 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { Context } from '@deepseek-ai/cordis'
-import type { ModuleLoaderV2 } from '@deepseek-ai/cordis-plugin-loader'
-import { boot } from '@deepseek-ai/dsh-app-boot'
-import type { DeepSeekAccount } from '@deepseek-ai/dsh-deepseek-account'
-import { createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import * as Account from '@deepseek-ai/dsh-llm-deepseek-account'
-import * as Official from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import * as webApiPlugin from '@deepseek-ai/dsh-web-deepseek-api'
+import type { Context } from '@quyet/cordis'
+import type { ModuleLoaderV2 } from '@quyet/cordis-plugin-loader'
+import { boot } from '@quyet/app-boot'
+import type { DeepSeekAccount } from '@quyet/deepseek-account'
+import { createLaunchEnvironmentSnapshot } from '@quyet/launch-environment'
+import LlmRuntime from '@quyet/llm'
+import * as Account from '@quyet/llm-deepseek-account'
+import * as Official from '@quyet/llm-deepseek-api-key'
+import WebRuntime from '@quyet/web'
+import * as webApiPlugin from '@quyet/web-deepseek-api'
 
 const cleanups: Array<() => Promise<void>> = []
 
@@ -26,11 +26,11 @@ afterEach(async () => {
 })
 
 const MODULES = new Map<string, unknown>([
-  ['@deepseek-ai/dsh-llm', LlmRuntime],
-  ['@deepseek-ai/dsh-llm-deepseek-api-key', Official],
-  ['@deepseek-ai/dsh-llm-deepseek-account', Account],
-  ['@deepseek-ai/dsh-web', WebRuntime],
-  ['@deepseek-ai/dsh-web-deepseek-api', webApiPlugin],
+  ['@quyet/llm', LlmRuntime],
+  ['@quyet/llm-deepseek-api-key', Official],
+  ['@quyet/llm-deepseek-account', Account],
+  ['@quyet/web', WebRuntime],
+  ['@quyet/web-deepseek-api', webApiPlugin],
 ])
 
 /** One dispatched Search or Fetch API request. */
@@ -53,21 +53,21 @@ async function bootComposition(web: Record<string, unknown>, environment: Record
     return Response.json(url.endsWith('/search') ? { results: [] } : { content: '# Page' })
   })
   vi.stubGlobal('fetch', fetchMock)
-  const root = await mkdtemp(join(tmpdir(), 'dsh-web-deepseek-api-composition-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-web-deepseek-api-composition-'))
   cleanups.push(async () => { await rm(root, { recursive: true, force: true }) })
-  const previousHome = process.env.DSH_HOME
-  process.env.DSH_HOME = root
+  const previousHome = process.env.QUYET_HOME
+  process.env.QUYET_HOME = root
   cleanups.push(async () => {
-    if (previousHome === undefined) Reflect.deleteProperty(process.env, 'DSH_HOME')
-    else process.env.DSH_HOME = previousHome
+    if (previousHome === undefined) Reflect.deleteProperty(process.env, 'QUYET_HOME')
+    else process.env.QUYET_HOME = previousHome
   })
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, JSON.stringify([
-    { id: 'llm', name: '@deepseek-ai/dsh-llm' },
-    { id: 'llm-deepseek', name: '@deepseek-ai/dsh-llm-deepseek-api-key' },
-    { id: 'llm-deepseek-account', name: '@deepseek-ai/dsh-llm-deepseek-account' },
-    { id: 'web', name: '@deepseek-ai/dsh-web', config: { searchProvider: 'deepseek-search-api', fetchProvider: 'deepseek-fetch-api' } },
-    { id: 'web-deepseek-api', name: '@deepseek-ai/dsh-web-deepseek-api', config: web },
+    { id: 'llm', name: '@quyet/llm' },
+    { id: 'llm-deepseek', name: '@quyet/llm-deepseek-api-key' },
+    { id: 'llm-deepseek-account', name: '@quyet/llm-deepseek-account' },
+    { id: 'web', name: '@quyet/web', config: { searchProvider: 'deepseek-search-api', fetchProvider: 'deepseek-fetch-api' } },
+    { id: 'web-deepseek-api', name: '@quyet/web-deepseek-api', config: web },
   ]))
   const ctx: Context = await boot('web-deepseek-api-composition', configPath, [], (host) => {
     const modules: ModuleLoaderV2 = {
@@ -89,7 +89,7 @@ async function bootComposition(web: Record<string, unknown>, environment: Record
   const sent = (): Sent[] => fetchMock.mock.calls.flatMap(([endpoint, init]) => {
     if (!endpoint.includes('/v1/tools/')) return []
     const headers = new Headers(init?.headers)
-    return [{ endpoint, authorization: headers.get('authorization'), token: headers.get('x-dsh-auth-token') }]
+    return [{ endpoint, authorization: headers.get('authorization'), token: headers.get('x-quyet-auth-token') }]
   })
   return { ctx, sent }
 }

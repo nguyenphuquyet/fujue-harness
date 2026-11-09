@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-09-18-schedule-task-tab-restore.md
-2026-09-18-schedule-task-tab-restore.md: 591cd058b394db1d02399127a726f788f3571a71
-2026-09-18-schedule-task-tab-restore.zh.md: 140b25adc79b0adb99d37e1baacbec59afd1705e
+2026-09-18-schedule-task-tab-restore.md: 33ed43580a18c0a6cf196657ee47b192de6552a3
+2026-09-18-schedule-task-tab-restore.zh.md: 47cdfe128135909209bd725e07ca08359824fcf9

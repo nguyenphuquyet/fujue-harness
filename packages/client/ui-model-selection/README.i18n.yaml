@@ -5,45 +5,45 @@
 /:
   en: f39813648aeef5a0
   zh: eea25094e8bfc031
-/deepseek-ai-dsh-client-ui-model-selection:
-  en: 4cb6feb12e46f3a0
-  zh: eea39dd76fe1fa8b
-/deepseek-ai-dsh-client-ui-model-selection/summary:
+/quyet-client-ui-model-selection:
+  en: c1134056d2f3f25e
+  zh: ff6406ea555c0cc2
+/quyet-client-ui-model-selection/summary:
   en: 14a351e14b69ca33
   zh: 2f2686efe4832266
-/deepseek-ai-dsh-client-ui-model-selection/table-of-contents:
+/quyet-client-ui-model-selection/table-of-contents:
   en: d152484eb41ac6b4
   zh: 09388d293f9be9cb
-/deepseek-ai-dsh-client-ui-model-selection/use-this-package:
+/quyet-client-ui-model-selection/use-this-package:
   en: 0e2230da6a2214a1
   zh: 0452e7556c9175f2
-/deepseek-ai-dsh-client-ui-model-selection/use-this-package/model-and-effort:
-  en: cead8d55a9508a8f
-  zh: d1ef63a880cbec55
-/deepseek-ai-dsh-client-ui-model-selection/use-this-package/model-label-extensions:
+/quyet-client-ui-model-selection/use-this-package/model-and-effort:
+  en: fcb051a39e803fbd
+  zh: a27902f66e55f2f5
+/quyet-client-ui-model-selection/use-this-package/model-label-extensions:
   en: 8da3af8ae98adbb3
   zh: b411b32d6b2b9e04
-/deepseek-ai-dsh-client-ui-model-selection/use-this-package/unroutable-sessions:
+/quyet-client-ui-model-selection/use-this-package/unroutable-sessions:
   en: 7f20428c747ff052
   zh: 975e6de728e02fa0
-/deepseek-ai-dsh-client-ui-model-selection/use-this-package/selection-failures:
-  en: 80fc237fa5c829f7
-  zh: ecff5c8526f45996
-/deepseek-ai-dsh-client-ui-model-selection/understand-the-implementation:
-  en: c1d14a925c92950f
-  zh: f80f8169bc283c60
-/deepseek-ai-dsh-client-ui-model-selection/further-exploration:
-  en: 14acd4692e923480
-  zh: ff89aed852aa0da8
-/deepseek-ai-dsh-client-ui-model-selection/model-experience:
+/quyet-client-ui-model-selection/use-this-package/selection-failures:
+  en: 83318d14bd34fb80
+  zh: f644ddc0cda20515
+/quyet-client-ui-model-selection/understand-the-implementation:
+  en: 73e5ac4638d8fb8b
+  zh: 7669c6bfd97c2768
+/quyet-client-ui-model-selection/further-exploration:
+  en: bec18d7988ab400d
+  zh: c6eb5b9e6a205249
+/quyet-client-ui-model-selection/model-experience:
   en: 782f79ed910f426a
   zh: 54a2e3e32a747544
-/deepseek-ai-dsh-client-ui-model-selection/model-experience/kv-cache-effect:
+/quyet-client-ui-model-selection/model-experience/kv-cache-effect:
   en: 68e54c00412a40d1
   zh: 0ac96f57fd194d96
-/deepseek-ai-dsh-client-ui-model-selection/known-limitations-and-deferred-work:
+/quyet-client-ui-model-selection/known-limitations-and-deferred-work:
   en: 7003aff3aa57e40c
   zh: 450d88a5e9332f05
-/deepseek-ai-dsh-client-ui-model-selection/known-limitations-and-deferred-work/dev-note:
+/quyet-client-ui-model-selection/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

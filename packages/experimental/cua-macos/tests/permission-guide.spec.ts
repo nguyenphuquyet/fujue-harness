@@ -1,6 +1,6 @@
 /** Native permission preparation belongs to the macOS provider. */
 import { expect, it } from 'vitest'
-import { CuaConfig } from '@deepseek-ai/dsh-cua'
+import { CuaConfig } from '@quyet/cua'
 import { Config } from '../src/index.ts'
 import { createPermissionParameters, PermissionGuideParameters, PermissionSettingsParameters } from '../src/permission-guide.ts'
 

@@ -2,21 +2,21 @@
 # section, a hash of its English and Chinese blocks outside code blocks and generated regions.
 # After editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/proposed/simplification/2026-09-19-config-only-hmr.md
-/agent-note-limit-dsh-hmr-to-live-profile-configuration:
-  en: c46e2d07a9e6143f
-  zh: f75300d70300c324
-/agent-note-limit-dsh-hmr-to-live-profile-configuration/problem:
-  en: e81dd5edb54b05ad
-  zh: 601b28ef74134ac1
-/agent-note-limit-dsh-hmr-to-live-profile-configuration/proposal:
-  en: 15a88d4c7db728e2
-  zh: 6fb1a28c03930a5e
-/agent-note-limit-dsh-hmr-to-live-profile-configuration/alternatives-considered:
-  en: 9ca293c37f4df4af
-  zh: c8e1a8815e1c9d3f
-/agent-note-limit-dsh-hmr-to-live-profile-configuration/acceptance-criteria:
+/agent-note-limit-quy-t-hmr-to-live-profile-configuration:
+  en: cba455f8b1203ed5
+  zh: 89e0eabc2397c748
+/agent-note-limit-quy-t-hmr-to-live-profile-configuration/problem:
+  en: 5c30ed1b62ae3473
+  zh: c6b55df0ba73b685
+/agent-note-limit-quy-t-hmr-to-live-profile-configuration/proposal:
+  en: 71f3d7c6bd23398a
+  zh: ccad09a2b7796f00
+/agent-note-limit-quy-t-hmr-to-live-profile-configuration/alternatives-considered:
+  en: 735ef7f19affd324
+  zh: 9d218d44c5bdec49
+/agent-note-limit-quy-t-hmr-to-live-profile-configuration/acceptance-criteria:
   en: ea1dbf4681f60fcf
   zh: fa7b9f7888bfc24f
-/agent-note-limit-dsh-hmr-to-live-profile-configuration/risks:
+/agent-note-limit-quy-t-hmr-to-live-profile-configuration/risks:
   en: de00ca4e66cff7d0
   zh: fb82e77bd554c1f6

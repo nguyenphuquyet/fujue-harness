@@ -5,60 +5,60 @@
 /:
   en: 34b851d97ea0313e
   zh: 2fa00063647b6eee
-/deepseek-ai-dsh-mcp-resources:
-  en: 81abc44a56e1c7d3
-  zh: 34bb6d70ea0219a0
-/deepseek-ai-dsh-mcp-resources/summary:
-  en: 03c61c0b7beab085
-  zh: 4c5efe7fa7d8da36
-/deepseek-ai-dsh-mcp-resources/table-of-contents:
+/quyet-mcp-resources:
+  en: b3859911c3b5f33b
+  zh: 0a63eb3566f58cef
+/quyet-mcp-resources/summary:
+  en: 729d5d2fd2339cea
+  zh: a4a9e236706f2b3b
+/quyet-mcp-resources/table-of-contents:
   en: d152484eb41ac6b4
   zh: 725b47765ee8f30b
-/deepseek-ai-dsh-mcp-resources/use-this-package:
-  en: 6df1a242b8679b3d
-  zh: 9dd9363d22d8a660
-/deepseek-ai-dsh-mcp-resources/use-this-package/server-configuration:
-  en: ec0195a4ad06b3ab
-  zh: 0b5c41a4f8ff511e
-/deepseek-ai-dsh-mcp-resources/use-this-package/discover-and-read:
+/quyet-mcp-resources/use-this-package:
+  en: 25cee321b95ae5c4
+  zh: 03ffe7646d617334
+/quyet-mcp-resources/use-this-package/server-configuration:
+  en: 7c60f0efd8aa4939
+  zh: 538bc20c049105da
+/quyet-mcp-resources/use-this-package/discover-and-read:
   en: f7fb6597acd3c5dc
   zh: 9c59219fb4ab00d9
-/deepseek-ai-dsh-mcp-resources/understand-the-implementation:
-  en: ab308dbe70e82838
-  zh: 1eb73edc14c76516
-/deepseek-ai-dsh-mcp-resources/further-exploration:
-  en: 742e63ef8514fa7d
-  zh: cdadb4baa5275eb0
-/deepseek-ai-dsh-mcp-resources/model-experience:
+/quyet-mcp-resources/understand-the-implementation:
+  en: f50e3492dd93e488
+  zh: 9f397338cfa07e59
+/quyet-mcp-resources/further-exploration:
+  en: 16613c7eed41b890
+  zh: ea3fded0f4e4d54b
+/quyet-mcp-resources/model-experience:
   en: 215e7ba838619b7b
   zh: a311da3843709f90
-/deepseek-ai-dsh-mcp-resources/model-experience/shared-resource-tools:
+/quyet-mcp-resources/model-experience/shared-resource-tools:
   en: 520e0b6cb35e4285
   zh: 20a323f87e6d12fc
-/deepseek-ai-dsh-mcp-resources/model-experience/shared-resource-tools/what-the-model-sees:
-  en: a4bcd3734a1fbd07
-  zh: abc25fb23ebaf485
-/deepseek-ai-dsh-mcp-resources/model-experience/shared-resource-tools/token-effect:
+/quyet-mcp-resources/model-experience/shared-resource-tools/what-the-model-sees:
+  en: 0ff929d00d94697e
+  zh: 56a8226db9009406
+/quyet-mcp-resources/model-experience/shared-resource-tools/token-effect:
   en: 92682e15ca9e90a5
   zh: 3487ef2adb89c9e4
-/deepseek-ai-dsh-mcp-resources/model-experience/shared-resource-tools/kv-cache-effect:
+/quyet-mcp-resources/model-experience/shared-resource-tools/kv-cache-effect:
   en: fdb450babcdf877b
   zh: f013ae46ce9e1125
-/deepseek-ai-dsh-mcp-resources/model-experience/resource-results:
+/quyet-mcp-resources/model-experience/resource-results:
   en: f46ae3151a215b4d
   zh: 8d15019792d3fe61
-/deepseek-ai-dsh-mcp-resources/model-experience/resource-results/what-the-model-sees:
+/quyet-mcp-resources/model-experience/resource-results/what-the-model-sees:
   en: 62d0a18c52283474
   zh: 70b2fbea70c98818
-/deepseek-ai-dsh-mcp-resources/model-experience/resource-results/token-effect:
+/quyet-mcp-resources/model-experience/resource-results/token-effect:
   en: e6fb5043a1ccc6ff
   zh: d15d2e7b5986d614
-/deepseek-ai-dsh-mcp-resources/model-experience/resource-results/kv-cache-effect:
+/quyet-mcp-resources/model-experience/resource-results/kv-cache-effect:
   en: ea0dfc069bf175c0
   zh: 3e1465e56ff79764
-/deepseek-ai-dsh-mcp-resources/known-limitations-and-deferred-work:
+/quyet-mcp-resources/known-limitations-and-deferred-work:
   en: 73f1775fd13a7e98
   zh: 8501425c7dd12aee
-/deepseek-ai-dsh-mcp-resources/known-limitations-and-deferred-work/dev-note:
+/quyet-mcp-resources/known-limitations-and-deferred-work/dev-note:
   en: e67f633dc6fe7773
   zh: 3bb0c20c93f16f98

@@ -1,27 +1,27 @@
 /** Test-owned Session Controller faces over declarative fixtures. */
-import type { Context } from '@deepseek-ai/cordis'
-import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
+import type { Context } from '@quyet/cordis'
+import type { ImageAttachmentRef } from '@quyet/attachment'
 import {
   createScope, MutableSessionEventSource, scopeOf, SESSION_SEARCH_RESULT_LIMIT,
-} from '@deepseek-ai/dsh-api-session-controller/client'
+} from '@quyet/api-session-controller/client'
 import type {
   AgentContext, ISessions, ProjectionsFace, SessionBinding, SessionFace, SessionListState,
   SessionEventLikeEntry, SessionLiveEventEntry, SessionSearchResultItem,
   SessionReference, SessionReferenceSource, SessionRetainInfo, SessionRetainOptions,
   SessionSnapshot, SessionSummary, SessionTarget, SubmissionHandle,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import { scopeIdentityOf } from '@deepseek-ai/dsh-api-session-controller/src/client/scope.ts'
-import type { SessionRequestId } from '@deepseek-ai/dsh-api-session-controller/types'
-import type { SubagentAddress } from '@deepseek-ai/dsh-subagent/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { ObservableSnapshot, SnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+} from '@quyet/api-session-controller/client'
+import { scopeIdentityOf } from '@quyet/api-session-controller/src/client/scope.ts'
+import type { SessionRequestId } from '@quyet/api-session-controller/types'
+import type { SubagentAddress } from '@quyet/subagent/client'
+import { createSnapshotStore } from '@quyet/client-store'
+import type { ObservableSnapshot, SnapshotStore } from '@quyet/client-store'
+import type { SessionId } from '@quyet/session/types'
 import { sessionSnapshot } from './fixtures.ts'
 import type {
   SessionFixture, SessionFixtureSnapshot, Stabilizer,
 } from './fixtures.ts'
 
-declare module '@deepseek-ai/dsh-api-session-controller/client' {
+declare module '@quyet/api-session-controller/client' {
   interface SessionReferenceSourceMap {
     testFixture: unknown
     testView: unknown

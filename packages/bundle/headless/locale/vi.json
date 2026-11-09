@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "Cấu hình không giao diện",
-    "description": "Chạy một tác vụ duy nhất trực tiếp bằng trình chạy Agent/Session lõi trên dsh-base, không cần lớp Host, HTTP hay trình duyệt."
+    "description": "Chạy một tác vụ duy nhất trực tiếp bằng trình chạy Agent/Session lõi trên quyet-base, không cần lớp Host, HTTP hay trình duyệt."
   }
 }

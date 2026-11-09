@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write
-2026-07-21-tui-auto-pane-title.md: 5235ffb12807b7e24ef952df594052ed7aa65cdf
-2026-07-21-tui-auto-pane-title.zh.md: 0b93d5a0a9d31e9f4321ca7ae975c1db74d2229e
+2026-07-21-tui-auto-pane-title.md: 9667222356bbbd9a1b888b03825cf1ddf0106d22
+2026-07-21-tui-auto-pane-title.zh.md: 7061dae9b45d406b3ee100d37cf13f61c8c2514c

@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-07-26-ptc-chat-subcall-rows.md
-2026-07-26-ptc-chat-subcall-rows.md: ae536577c5bb6706874618c240f1601eba278738
-2026-07-26-ptc-chat-subcall-rows.zh.md: 9f4206e77f0479433193574a49670df9c0892f8b
+2026-07-26-ptc-chat-subcall-rows.md: 1e3f49968a1c0feaa2cffb396cad44ba8ee86cc1
+2026-07-26-ptc-chat-subcall-rows.zh.md: 0edf1f44e7477fdbf63d3bb59dbd0611b6d87ef7

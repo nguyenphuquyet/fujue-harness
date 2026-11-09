@@ -2,22 +2,22 @@
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import TypertGatewayService from '@deepseek-ai/dsh-api-gateway'
-import type { RemoteAccessBinding } from '@deepseek-ai/dsh-api-remote-access'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import type { PeerId, PeerScope, Principal } from '@deepseek-ai/dsh-typert-protocol'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
+import { Context } from '@quyet/cordis'
+import AgentLoop from '@quyet/agent-loop'
+import { mountAgentLoopTestDependencies } from '@quyet/agent-loop-testkit'
+import TypertGatewayService from '@quyet/api-gateway'
+import type { RemoteAccessBinding } from '@quyet/api-remote-access'
+import { SessionId } from '@quyet/session'
+import * as JsonlSessionPersistence from '@quyet/session-persistence-jsonl'
+import SubagentRuntime from '@quyet/subagent'
+import type { PeerId, PeerScope, Principal } from '@quyet/typert-protocol'
+import TypertRegistry from '@quyet/typert-registry'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { MockAdapter } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { mountWorkingDirectoryFixture } from '../../../subagent/subagent/tests/working-directory-fixture.ts'
 import { createSessionTestController } from './test-remote.ts'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@quyet/typert-protocol' {
   interface PrincipalMap {
     /** Test-only non-owner caller shared by the access specs. */
     'test-guest': { readonly kind: 'test-guest'; readonly guest: string }
@@ -32,7 +32,7 @@ afterEach(async () => {
 })
 
 async function harness() {
-  const root = await mkdtemp(join(tmpdir(), 'dsh-subagent-access-'))
+  const root = await mkdtemp(join(tmpdir(), 'quyet-subagent-access-'))
   const ctx = new Context()
   cleanups.push(async () => {
     try { await ctx.fiber.dispose() } finally { await rm(root, { recursive: true, force: true }) }

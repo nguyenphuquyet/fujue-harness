@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/feature/2026-07-31-ptc-language-dispatch.md
-2026-07-31-ptc-language-dispatch.md: f7a0b64b06b5eeae41af1ecbba71676a1cec18fc
-2026-07-31-ptc-language-dispatch.zh.md: b2c2a16cc16afbc0901159954dcdd748bb1ab724
+2026-07-31-ptc-language-dispatch.md: 7638ca6005feba1ae32f8ffff2e0670882a4bd31
+2026-07-31-ptc-language-dispatch.zh.md: eccc259d4eea2be957325531d2f256b81d8fd0f8

@@ -1,7 +1,7 @@
 /** Internal patch outcomes, failure diagnostics, and operation-local plans. */
-import type { FsErrorCode, FsTarget } from '@deepseek-ai/dsh-fs'
-import type { PatchHunk } from '@deepseek-ai/dsh-fs-patch'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
+import type { FsErrorCode, FsTarget } from '@quyet/fs'
+import type { PatchHunk } from '@quyet/fs-patch'
+import type { SandboxExecutionPolicy } from '@quyet/sandbox'
 
 /** One request after the caller resolves its per-call sandbox policy. */
 export interface PatchExecutionRequest {

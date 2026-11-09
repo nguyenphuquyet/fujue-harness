@@ -2,5 +2,5 @@
 # side as of the last confirmed-consistent state. Both languages carry equal authority;
 # after editing either side, bring the other along and re-record with:
 #   pnpm run verify-translation-pairing --write .agents/notes/archived/bug-fix/2026-09-07-win32-picker-foreground-alt-key.md
-2026-09-07-win32-picker-foreground-alt-key.md: 52c2dacc1ec95f78100734ac155ae8afa369c996
-2026-09-07-win32-picker-foreground-alt-key.zh.md: ba407c41126c21f5e84e89f3488cddc1218300c4
+2026-09-07-win32-picker-foreground-alt-key.md: f52a10dbfe9a5a0bb871170944915fd05842bc5c
+2026-09-07-win32-picker-foreground-alt-key.zh.md: d3539ea8a623fe112fc2eef68a88e6cba13e2adc

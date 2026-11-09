@@ -6,15 +6,15 @@
  * entry, installation-carried bundles, and unaddressable rows stay protected by their own rules.
  */
 export const PROTECTED_PLUGINS: ReadonlySet<string> = new Set([
-  '@deepseek-ai/dsh-plugin-manager', '@deepseek-ai/cordis-plugin-loader',
-  '@deepseek-ai/cordis-plugin-include', '@deepseek-ai/dsh-api-gateway',
-  '@deepseek-ai/dsh-host-webserver', '@deepseek-ai/dsh-client-modules',
-  '@deepseek-ai/dsh-client-ui-settings-plugin-inventory', '@deepseek-ai/dsh-client-ui-plugin-manager',
-  '@deepseek-ai/dsh-host-plugin-inventory', '@deepseek-ai/dsh-typert-registry',
-  '@deepseek-ai/dsh-api-remotes', '@deepseek-ai/dsh-api-remote-access',
-  '@deepseek-ai/cordis-plugin-timer', '@deepseek-ai/dsh-client-connection',
-  '@deepseek-ai/dsh-host-frontend-static', '@deepseek-ai/dsh-tools',
-  '@deepseek-ai/dsh-hmr',
+  '@quyet/plugin-manager', '@quyet/cordis-plugin-loader',
+  '@quyet/cordis-plugin-include', '@quyet/api-gateway',
+  '@quyet/host-webserver', '@quyet/client-modules',
+  '@quyet/client-ui-settings-plugin-inventory', '@quyet/client-ui-plugin-manager',
+  '@quyet/host-plugin-inventory', '@quyet/typert-registry',
+  '@quyet/api-remotes', '@quyet/api-remote-access',
+  '@quyet/cordis-plugin-timer', '@quyet/client-connection',
+  '@quyet/host-frontend-static', '@quyet/tools',
+  '@quyet/hmr',
 ])
 
 /**
@@ -22,14 +22,14 @@ export const PROTECTED_PLUGINS: ReadonlySet<string> = new Set([
  * Their Host availability and activation stay intact.
  */
 export const HIDDEN_BUNDLES: ReadonlySet<string> = new Set([
-  '@deepseek-ai/dsh-base',
-  '@deepseek-ai/dsh-web-app',
-  '@deepseek-ai/dsh-headless',
-  '@deepseek-ai/dsh-sdk-app',
-  '@deepseek-ai/dsh-acp-app',
-  '@deepseek-ai/dsh-sdk-minimal',
-  '@deepseek-ai/dsh-experimental-terminal-bundle',
-  '@deepseek-ai/dsh-experimental-tool-worktree',
+  '@quyet/base',
+  '@quyet/web-app',
+  '@quyet/headless',
+  '@quyet/sdk-app',
+  '@quyet/acp-app',
+  '@quyet/sdk-minimal',
+  '@quyet/experimental-terminal-bundle',
+  '@quyet/experimental-tool-worktree',
 ])
 
 /**
@@ -37,9 +37,9 @@ export const HIDDEN_BUNDLES: ReadonlySet<string> = new Set([
  * this list, decides whether a bundle appears on the main list.
  */
 export const EXTENSION_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-experimental-voice-input-bundle',
-  '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-  '@deepseek-ai/dsh-experimental-auto-review',
+  '@quyet/experimental-voice-input-bundle',
+  '@quyet/experimental-plugin-market-bundle',
+  '@quyet/experimental-auto-review',
 ]
 
 /**
@@ -47,32 +47,32 @@ export const EXTENSION_BUNDLES: readonly string[] = [
  * which includes every eligible bundle, ranks them last in this order.
  */
 export const MORE_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-personalized-recommendations',
-  '@deepseek-ai/dsh-experimental-inspector-profile',
-  '@deepseek-ai/dsh-cua-bundle',
-  '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-  '@deepseek-ai/dsh-experimental-session-search',
-  '@deepseek-ai/dsh-experimental-session-titles-bundle',
-  '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  '@deepseek-ai/dsh-experimental-ralph-bundle',
-  '@deepseek-ai/dsh-subagent-codex',
-  '@deepseek-ai/dsh-subagent-claude-code',
+  '@quyet/personalized-recommendations',
+  '@quyet/experimental-inspector-profile',
+  '@quyet/cua-bundle',
+  '@quyet/experimental-cot-translation-bundle',
+  '@quyet/experimental-session-search',
+  '@quyet/experimental-session-titles-bundle',
+  '@quyet/experimental-badge-skill-bundle',
+  '@quyet/experimental-ralph-bundle',
+  '@quyet/subagent-codex',
+  '@quyet/subagent-claude-code',
 ]
 
 /** Official bundles the plugin manager marks with the Experimental badge. */
 export const EXPERIMENTAL_BUNDLES: ReadonlySet<string> = new Set([
-  '@deepseek-ai/dsh-personalized-recommendations',
-  '@deepseek-ai/dsh-cua-bundle',
-  '@deepseek-ai/dsh-experimental-voice-input-bundle',
-  '@deepseek-ai/dsh-experimental-auto-review',
-  '@deepseek-ai/dsh-experimental-inspector-profile',
-  '@deepseek-ai/dsh-experimental-forge-bundle',
-  '@deepseek-ai/dsh-experimental-tool-worktree',
-  '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-  '@deepseek-ai/dsh-experimental-session-search',
-  '@deepseek-ai/dsh-experimental-session-titles-bundle',
-  '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  '@deepseek-ai/dsh-experimental-ralph-bundle',
-  '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-  '@deepseek-ai/dsh-experimental-liveshare',
+  '@quyet/personalized-recommendations',
+  '@quyet/cua-bundle',
+  '@quyet/experimental-voice-input-bundle',
+  '@quyet/experimental-auto-review',
+  '@quyet/experimental-inspector-profile',
+  '@quyet/experimental-forge-bundle',
+  '@quyet/experimental-tool-worktree',
+  '@quyet/experimental-cot-translation-bundle',
+  '@quyet/experimental-session-search',
+  '@quyet/experimental-session-titles-bundle',
+  '@quyet/experimental-badge-skill-bundle',
+  '@quyet/experimental-ralph-bundle',
+  '@quyet/experimental-plugin-market-bundle',
+  '@quyet/experimental-liveshare',
 ])
