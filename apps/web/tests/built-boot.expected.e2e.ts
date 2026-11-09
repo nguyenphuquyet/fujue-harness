@@ -73,7 +73,8 @@ it('boots the built plugin graph and renders a fixture session end to end', asyn
       + (commit === undefined ? '' : `-${commit}`)
       + (clientBuildValue('DSH_CLIENT_GIT_DIRTY') === 'true' ? '-dirty' : '')
     screen.getByText('DSH Local Build')
-    screen.getByText(buildVersion)
+    // The local-build label keeps its title only; the badge is gone.
+    expect(screen.queryByText(buildVersion)).toBeNull()
   }
   // The compact layout dropped group session counts; the fixture workspace
   // group row renders immediately with its sessions beneath it.
