@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Điểm kiểm tra phiên",
+    "description": "Lưu bản ghi phiên trước khi gửi yêu cầu tới mô hình và trước các thao tác công cụ có thể gây ảnh hưởng bên ngoài."
+  }
+}

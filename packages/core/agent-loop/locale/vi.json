@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Vòng chạy của agent",
+    "description": "Điều phối yêu cầu tới mô hình, lệnh gọi công cụ và các bước tiếp theo để thúc đẩy nhiệm vụ của agent."
+  }
+}

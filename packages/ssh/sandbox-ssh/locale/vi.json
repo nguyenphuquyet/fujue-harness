@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Sandbox tiến trình SSH",
+    "description": "Tạo lệnh sandbox cho các tiến trình POSIX từ xa thông qua tiện ích SSH dùng chung."
+  }
+}

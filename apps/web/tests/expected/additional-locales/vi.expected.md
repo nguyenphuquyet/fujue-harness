@@ -1,0 +1,5 @@
+- listitem:
+  - button "Xem Tự động xem xét ủy quyền": Tự động xem xét ủy quyền
+  - text: "Thử nghiệm Bổ sung chế độ truy cập Tự động xem xét: trước mỗi lệnh gọi công cụ, một mô hình sẽ đối chiếu với yêu cầu của bạn, chạy ngay các lệnh được phép và giữ các lệnh bị từ chối để bạn phê duyệt."
+  - status
+  - switch "Bật Tự động xem xét ủy quyền"

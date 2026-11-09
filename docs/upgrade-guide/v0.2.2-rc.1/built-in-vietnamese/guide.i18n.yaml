@@ -1,0 +1,16 @@
+# Bilingual-pair consistency record for guide.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write docs/upgrade-guide/v0.2.2-rc.1/built-in-vietnamese/guide.md
+/:
+  en: 19b4653a3cc4da7b
+  zh: fa36fd51fada5fa2
+/built-in-vietnamese-replaces-duplicate-vi-language-packs:
+  en: 058130984926bbc9
+  zh: 2d7aee5806866f1a
+/built-in-vietnamese-replaces-duplicate-vi-language-packs/change:
+  en: 744b761977b84e23
+  zh: 29148ac9adc4b12a
+/built-in-vietnamese-replaces-duplicate-vi-language-packs/migration:
+  en: 3a80fa0df212092f
+  zh: 189b242d04bb4888

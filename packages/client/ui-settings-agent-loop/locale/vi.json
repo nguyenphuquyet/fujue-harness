@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ui-settings-agent-loop",
+    "description": "Cấu hình giới hạn số lượng lệnh gọi công cụ thực thi đồng thời."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Backend Shell duy trì trạng thái",
+    "description": "Cung cấp terminal Shell giữ nguyên trạng thái qua nhiều lần gọi."
+  }
+}

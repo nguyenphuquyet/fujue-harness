@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Vòng lặp Ralph",
+    "description": "Khi bạn yêu cầu một Vòng lặp Ralph kèm Mục tiêu, Agent sẽ khởi động một Agent mới cho Mục tiêu đó qua từng vòng cho đến khi đạt Mục tiêu, có báo cáo bị chặn hoặc chạm giới hạn số vòng.",
+    "detail": "docs/DETAIL.md"
+  }
+}

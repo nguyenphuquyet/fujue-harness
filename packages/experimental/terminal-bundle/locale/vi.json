@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Terminal duy trì",
+    "description": "Cung cấp cho Agent các terminal có tiến trình tiếp tục chạy nền giữa các lần gọi Công cụ, để nó có thể khởi động máy chủ phát triển hoặc REPL rồi quay lại đọc đầu ra hoặc nhập dữ liệu.",
+    "detail": "docs/DETAIL.md"
+  }
+}

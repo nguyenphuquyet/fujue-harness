@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Dịch máy suy luận",
+    "description": "Dịch các dòng Think đã mở rộng sang ngôn ngữ bạn chọn ngay khi agent viết, và Xem bản gốc sẽ chuyển lại bản gốc.",
+    "detail": "docs/DETAIL.md"
+  }
+}

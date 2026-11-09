@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "api-session-controller",
+    "description": "Cung cấp cho client khả năng đọc phiên, điều khiển chạy và cập nhật trạng thái."
+  }
+}

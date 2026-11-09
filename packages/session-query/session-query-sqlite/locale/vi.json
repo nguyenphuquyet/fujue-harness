@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Truy vấn và tìm kiếm phiên",
+    "description": "Truy vấn bản ghi phiên và cung cấp tìm kiếm toàn văn SQLite khi được bật trong cấu hình."
+  }
+}

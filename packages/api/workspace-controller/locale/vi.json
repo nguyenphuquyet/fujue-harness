@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "api-workspace-controller",
+    "description": "Cung cấp cho client các thao tác không gian làm việc và trạng thái có thể khôi phục sau khi kết nối lại."
+  }
+}

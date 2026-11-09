@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Lập lịch tác vụ",
+    "description": "Lưu trữ các tác vụ tự động hóa, chạy mỗi tác vụ trong phiên gốc khi đến hạn và cung cấp cho agent các công cụ để quản lý chúng."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ui-renderer",
+    "description": "Lắp ghép các thành phần giao diện do từng plugin cung cấp vào ứng dụng."
+  }
+}

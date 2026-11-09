@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "plugin-manager",
+    "description": "Quản lý plugin và gói plugin trong cấu hình đang chạy, hỗ trợ cài đặt, gỡ bỏ, bật và tắt."
+  }
+}

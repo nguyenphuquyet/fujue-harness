@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "hmr",
+    "description": "Đồng bộ plugin trong trình duyệt và cập nhật giao diện liên quan sau khi mã được dựng lại."
+  }
+}

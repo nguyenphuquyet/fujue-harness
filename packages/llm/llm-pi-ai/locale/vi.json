@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Bộ chuyển đổi Mô hình pi-ai",
+    "description": "Cung cấp bộ chuyển đổi Mô hình DeepSeek cho DeepSeek Harness thông qua pi-ai, như một bản triển khai kiểm chứng thiết kế cho dsh-llm-deepseek."
+  }
+}

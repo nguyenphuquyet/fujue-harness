@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "api-workspace-files",
+    "description": "Cung cấp khả năng đọc tệp, liệt kê thư mục và cập nhật thông tin tệp trong không gian làm việc."
+  }
+}

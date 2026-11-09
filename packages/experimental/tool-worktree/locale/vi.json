@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Worktree Git",
+    "description": "Khi bạn yêu cầu làm việc trên nhánh mới, Agent sẽ tạo một worktree Git riêng và tiếp tục ở đó, giữ nguyên bản checkout hiện tại của bạn.",
+    "detail": "docs/DETAIL.md"
+  }
+}

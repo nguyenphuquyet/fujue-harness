@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Bảng yêu cầu thay đổi",
+    "description": "Hiển thị các yêu cầu thay đổi của một Phiên trong thẻ thanh bên và cho phép Phiên mới bắt đầu trong một worktree."
+  }
+}

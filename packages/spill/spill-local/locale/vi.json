@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Lưu trữ kết quả dài cục bộ",
+    "description": "Lưu các kết quả công cụ quá dài vào tệp cục bộ riêng cho phiên."
+  }
+}

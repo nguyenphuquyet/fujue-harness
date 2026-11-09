@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Công cụ tra cứu API plugin",
+    "description": "Cho phép AI tra cứu các API khả dụng ở phía máy chủ và phía Trình duyệt trước khi phát triển plugin."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "api-gateway",
+    "description": "Tiếp nhận các lệnh gọi API từ client và phân phối đến dịch vụ tương ứng."
+  }
+}

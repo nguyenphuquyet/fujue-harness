@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "connection",
+    "description": "Thiết lập giao tiếp client đã xác thực và quản lý vòng đời kết nối."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "api-terminal-controller",
+    "description": "Cung cấp cho client khả năng tạo, nhập, đọc và khôi phục terminal của phiên."
+  }
+}

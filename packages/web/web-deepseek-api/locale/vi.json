@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "API tìm kiếm và thu thập web DeepSeek",
+    "description": "Tìm kiếm trang web qua DeepSeek Search API và lấy nội dung trang qua Fetch API."
+  }
+}

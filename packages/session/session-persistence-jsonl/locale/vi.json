@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Lưu trữ bền vững nhật ký phiên",
+    "description": "Lưu nhật ký phiên thành tệp JSONL cục bộ để khôi phục và đọc lại sau này."
+  }
+}
