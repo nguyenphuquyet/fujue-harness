@@ -405,6 +405,12 @@ export function readPackedArtifacts(options: {
   readonly release: ReadonlyMap<string, ReleaseEntry>
 }): BundleArtifact[] {
   const { destination, members, release } = options
+  const familyNames = new Map<ReleaseFamily, Set<string>>()
+  for (const entry of release.values()) {
+    const names = familyNames.get(entry.family) ?? new Set<string>()
+    names.add(entry.member.name)
+    familyNames.set(entry.family, names)
+  }
   const packed = members.map((member) => {
     const entry = release.get(member.name)
     if (entry === undefined) {
@@ -416,7 +422,7 @@ export function readPackedArtifacts(options: {
     const contained = tarballFiles(archive)
     entry.family.validatePayload(entry.member, contained)
     const manifest = packedManifest(archive)
-    entry.family.validatePackedManifest(entry.member, manifest)
+    entry.family.validatePackedManifest(entry.member, manifest, familyNames.get(entry.family) ?? new Set([entry.member.name]))
     const main = manifest.main
     if (typeof main === 'string' && main !== '' && !contained.includes(`package/${payloadPath(main)}`)) {
       throw new Error(`${entry.member.name}: packed archive lacks its declared main ${main}; rebuild before serving`)

@@ -300,7 +300,7 @@ describe('release pack CLI', () => {
 
     expect(result.status).not.toBe(0)
     expect(result.stderr).toContain('@quyet/expected produced no tarball')
-    expect(existsSync(join(root, 'packed', 'deepseek-ai-renamed-1.2.3.tgz'))).toBe(true)
+    expect(existsSync(join(root, 'packed', 'quyet-renamed-1.2.3.tgz'))).toBe(true)
     expect(existsSync(join(root, 'packed', PUBLISH_ORDER_FILE))).toBe(false)
   })
 
@@ -323,6 +323,7 @@ describe('release pack CLI', () => {
   it.each(['dependencies', 'optionalDependencies', 'peerDependencies'])(
     'rejects nonexact Quyết %s in the produced tarball before recording publication', async (section) => {
       const root = fixture()
+      packageFixture(root, 'packages/util/library', '@quyet/library')
       packageFixture(root, 'packages/util/probe', '@quyet/probe', { [section]: { '@quyet/library': '^1.2.3' } })
       write(join(root, 'apps/web/dist/index.html'), '<main></main>')
       writeClientBuildRecord(root, officialClientBuildEnvironment(root, { QUYET_CLIENT_COMMIT_HASH: commit }))

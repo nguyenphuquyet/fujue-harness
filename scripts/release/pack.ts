@@ -24,14 +24,20 @@ const DEFAULT_OUTPUT = 'dist/npm'
  * @param family - the release family being packed.
  * @param member - the member to pack.
  * @param destination - absolute output directory.
+ * @param familyNames - names published by the same family.
  * @returns The tarball filename.
  */
-function validatePackedMember(family: ReleaseFamily, member: ReleaseMember, destination: string): string {
+function validatePackedMember(
+  family: ReleaseFamily,
+  member: ReleaseMember,
+  destination: string,
+  familyNames: ReadonlySet<string>,
+): string {
   const filename = tarballName(member)
   const tarball = join(destination, filename)
   if (!existsSync(tarball)) throw new Error(`${member.name} produced no tarball at ${tarball}`)
   family.validatePayload(member, tarballFiles(tarball))
-  family.validatePackedManifest(member, packedManifest(tarball))
+  family.validatePackedManifest(member, packedManifest(tarball), familyNames)
   return filename
 }
 
@@ -46,12 +52,13 @@ function validatePackedMember(family: ReleaseFamily, member: ReleaseMember, dest
 async function packMembers(
   family: ReleaseFamily, members: readonly ReleaseMember[], destination: string, concurrency: number,
 ): Promise<string[]> {
+  const familyNames = new Set(members.map(member => member.name))
   if (concurrency === 1) {
     const order: string[] = []
     for (const member of members) {
       const invocation = pnpmInvocation(['--dir', member.directory, 'pack', '--pack-destination', destination])
       await runConcurrent(invocation.command, invocation.args)
-      order.push(validatePackedMember(family, member, destination))
+      order.push(validatePackedMember(family, member, destination, familyNames))
     }
     return order
   }
@@ -64,7 +71,7 @@ async function packMembers(
     '--pack-destination', destination,
   ])
   await runConcurrent(invocation.command, invocation.args)
-  return members.map(member => validatePackedMember(family, member, destination))
+  return members.map(member => validatePackedMember(family, member, destination, familyNames))
 }
 
 /**

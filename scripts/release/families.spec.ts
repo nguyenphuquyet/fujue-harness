@@ -285,21 +285,34 @@ describe('release families', () => {
       const pkg = member('packages/example/provider', '@quyet/provider')
       const family = releaseFamily('quyet')
       const manifest = { name: pkg.name, version: pkg.version, [section]: { '@quyet/tools': pkg.version, external: '^4.0.0' } }
-      expect(() => { family.validatePackedManifest(pkg, manifest) }).not.toThrow()
+      const familyNames = new Set([pkg.name, '@quyet/tools'])
+      expect(() => { family.validatePackedManifest(pkg, manifest, familyNames) }).not.toThrow()
       for (const range of ['workspace:*', '^0.0.1', '~0.0.1', '0.0.2', '*']) {
-        expect(() => { family.validatePackedManifest(pkg, { ...manifest, [section]: { '@quyet/tools': range } }) })
+        expect(() => { family.validatePackedManifest(pkg, { ...manifest, [section]: { '@quyet/tools': range } }, familyNames) })
           .toThrow(`packed ${section}.@quyet/tools must equal`)
       }
+      // Vendor packages share the `@quyet` scope but release on their own version line.
+      expect(() => {
+        family.validatePackedManifest(pkg, { ...manifest, [section]: { '@quyet/cordis': '~4.1.0' } }, familyNames)
+      }).not.toThrow()
     },
   )
 
   it('checks packed identities and preserves independent vendor versions', () => {
     const pkg = member('vendor/example', '@quyet/example')
     const family = releaseFamily('vendor')
-    expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: pkg.version, dependencies: { '@quyet/tools': '^4.0.0' } }) })
-      .not.toThrow()
-    expect(() => { family.validatePackedManifest(pkg, { name: '@quyet/other', version: pkg.version }) }).toThrow('packed identity')
-    expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: '0.0.2' }) }).toThrow('packed identity')
+    const familyNames = new Set([pkg.name])
+    expect(() => {
+      family.validatePackedManifest(
+        pkg,
+        { name: pkg.name, version: pkg.version, dependencies: { '@quyet/tools': '^4.0.0' } },
+        familyNames,
+      )
+    }).not.toThrow()
+    expect(() => { family.validatePackedManifest(pkg, { name: '@quyet/other', version: pkg.version }, familyNames) })
+      .toThrow('packed identity')
+    expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: '0.0.2' }, familyNames) })
+      .toThrow('packed identity')
   })
 
   it('reports a runtime dependency cycle instead of emitting an arbitrary order', () => {

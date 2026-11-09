@@ -330,8 +330,13 @@ export abstract class ReleaseFamily {
    * Check the identity in the packed manifest before publishing its bytes.
    * @param member - Source member selected for this release.
    * @param manifest - Manifest read from its packed tarball.
+   * @param _familyNames - Names published by the same family, whose packed ranges the family may require exactly.
    */
-  validatePackedManifest(member: ReleaseMember, manifest: Readonly<Record<string, unknown>>): void {
+  validatePackedManifest(
+    member: ReleaseMember,
+    manifest: Readonly<Record<string, unknown>>,
+    _familyNames: ReadonlySet<string>,
+  ): void {
     if (manifest.name !== member.name || manifest.version !== member.version) {
       throw new Error(`${member.name}: packed identity must match ${member.name}@${member.version}`)
     }
@@ -400,14 +405,18 @@ class QuyetFamily extends ReleaseFamily {
     return member.name === '@quyet/harness' ? ON_DEMAND_BUNDLES : []
   }
 
-  /** Require the packed Quyết runtime graph to stay on the shared exact release version. */
-  override validatePackedManifest(member: ReleaseMember, manifest: Readonly<Record<string, unknown>>): void {
-    super.validatePackedManifest(member, manifest)
+  /** Require packed dependencies on this family's members to stay on the shared exact release version. */
+  override validatePackedManifest(
+    member: ReleaseMember,
+    manifest: Readonly<Record<string, unknown>>,
+    familyNames: ReadonlySet<string>,
+  ): void {
+    super.validatePackedManifest(member, manifest, familyNames)
     for (const section of ['dependencies', 'optionalDependencies', 'peerDependencies']) {
       const dependencies = manifest[section]
       if (dependencies === null || typeof dependencies !== 'object' || Array.isArray(dependencies)) continue
       for (const [name, range] of Object.entries(dependencies)) {
-        if (name !== '@quyet/harness' && !name.startsWith('@quyet/')) continue
+        if (!familyNames.has(name)) continue
         if (range !== member.version) {
           throw new Error(`${member.name}: packed ${section}.${name} must equal ${member.version}, got ${String(range)}`)
         }
