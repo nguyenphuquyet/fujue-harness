@@ -1,6 +1,6 @@
-DeepSeek Harness
-DeepSeek Harness
-Welcome to DeepSeek Harness
+FuJue Harness
+FuJue Harness
+Welcome to FuJue Harness
 Build potential. Explore intelligence.
 Sign in
 Add API Key
