@@ -3,7 +3,7 @@ name: Build Desktop · Windows · x64
 on:
   workflow_dispatch:
   push:
-    branches: [main, ui-only]
+    branches: [main]
     paths:
       - '.github/workflows/desktop-build.yml'
       - 'apps/desktop/**'
@@ -69,7 +69,7 @@ jobs:
       - name: Upload installer
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: juetech-harness-windows-x64-unsigned
+          name: fujue-harness-windows-x64-unsigned
           path: apps/desktop/.desktop-build/targets/win-x64/unsigned-artifacts/**
           if-no-files-found: error
           retention-days: 14
