@@ -36,7 +36,6 @@ export const en = {
   'subtitle.collapse': 'Collapse description for {name}',
   'back': 'Back',
   'brand.name': 'FuJue Harness',
-  'brand.localBuild': 'FuJue Harness Local Build',
   'workspace.defaultName': 'Default workspace',
   'unknown': 'Unknown',
   'none': 'None',

@@ -34,7 +34,6 @@ export const zh = {
   'subtitle.collapse': '收起{name}的描述',
   'back': '返回',
   'brand.name': 'FuJue Harness',
-  'brand.localBuild': 'FuJue Harness 本地构建',
   'workspace.defaultName': '默认工作区',
   'unknown': '未知',
   'none': '无',

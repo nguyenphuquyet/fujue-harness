@@ -62,8 +62,7 @@ it('boots the built plugin graph and renders a fixture session end to end', asyn
   // The sidebar renders from the boot graph: every inject layer activated.
   const tree = await screen.findByRole('tree', { name: 'Sessions' }, { timeout: 10_000 })
   if (clientBuildValue('DSH_CLIENT_BUILD_PROFILE') === 'official') {
-    expect(screen.queryByText('FuJue Harness')).not.toBeNull()
-    expect(screen.queryByText('FuJue Harness Local Build')).toBeNull()
+    expect(screen.queryAllByText('FuJue Harness').length).toBeGreaterThan(0)
   } else {
     expect(document.querySelector('svg[viewBox="0 0 23.16 17.04"]')).not.toBeNull()
     const version = clientBuildValue('DSH_CLIENT_VERSION')
@@ -72,8 +71,8 @@ it('boots the built plugin graph and renders a fixture session end to end', asyn
     const buildVersion = version
       + (commit === undefined ? '' : `-${commit}`)
       + (clientBuildValue('DSH_CLIENT_GIT_DIRTY') === 'true' ? '-dirty' : '')
-    screen.getByText('FuJue Harness Local Build')
-    // The local-build label keeps its title only; the badge is gone.
+    screen.getByText('FuJue Harness')
+    // The brand keeps its title only; the version badge is gone.
     expect(screen.queryByText(buildVersion)).toBeNull()
   }
   // The compact layout dropped group session counts; the fixture workspace

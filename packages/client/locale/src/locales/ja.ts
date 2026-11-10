@@ -37,7 +37,6 @@ export const ja = {
   'subtitle.collapse': '{name} の説明を折りたたむ',
   'back': '戻る',
   'brand.name': 'FuJue Harness',
-  'brand.localBuild': 'FuJue Harnessローカルビルド',
   'workspace.defaultName': 'デフォルトワークスペース',
   'unknown': '不明',
   'none': 'なし',

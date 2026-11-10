@@ -37,7 +37,6 @@ export const fr = {
   'subtitle.collapse': 'Réduire la description de {name}',
   'back': 'Retour',
   'brand.name': 'FuJue Harness',
-  'brand.localBuild': 'Version locale de FuJue Harness',
   'workspace.defaultName': 'Espace de travail par défaut',
   'unknown': 'Inconnu',
   'none': 'Aucun',

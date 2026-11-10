@@ -37,7 +37,6 @@ export const de = {
   'subtitle.collapse': 'Beschreibung für {name} einklappen',
   'back': 'Zurück',
   'brand.name': 'FuJue Harness',
-  'brand.localBuild': 'Lokaler FuJue Harness-Build',
   'workspace.defaultName': 'Standardarbeitsbereich',
   'unknown': 'Unbekannt',
   'none': 'Keine',
