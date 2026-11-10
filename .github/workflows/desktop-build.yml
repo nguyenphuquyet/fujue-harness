@@ -3,7 +3,7 @@ name: Build Desktop · Windows · x64
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, ui-only]
     paths:
       - '.github/workflows/desktop-build.yml'
       - 'apps/desktop/**'
