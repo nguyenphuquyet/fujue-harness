@@ -1,0 +1,136 @@
+name: Build Desktop · Windows + macOS
+
+# Unsigned, self-contained installers for every target the packaging scripts
+# support: Windows x64 (NSIS) plus macOS arm64 and x64 (DMG). Trigger it by hand
+# from the Actions tab; the Windows-only desktop-build.yml keeps owning the
+# automatic main-branch builds.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-build-all-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DSH_TELEMETRY_DISABLED: '1'
+
+jobs:
+  windows:
+    name: Package unsigned Windows x64
+    runs-on: windows-latest
+    timeout-minutes: 240
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v5.0.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # An unsigned package still validates the deployment policy. This file is
+      # git-ignored, so the checkout stays clean and the build commit is recorded.
+      - name: Configure unsigned packaging
+        run: |
+          @"
+          DSH_DESKTOP_APP_ID=com.deepseek.dsh
+          DSH_DESKTOP_AUTO_UPDATE_ENV=production
+          DSH_DESKTOP_MANDATORY_UPDATE_PROD_ORIGIN=https://github.com
+          DSH_DESKTOP_WINDOWS_COMPRESSION_LEVEL=7
+          "@ | Set-Content -LiteralPath apps/desktop/.env.windows -Encoding utf8
+
+      - name: Package Electron app
+        run: pnpm run package:desktop:win:x64:unsigned
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: dsh-desktop-win-x64-unsigned
+          path: apps/desktop/.desktop-build/targets/win-x64/unsigned-artifacts/**
+          if-no-files-found: error
+          retention-days: 14
+
+  # `macos-15` is Apple Silicon and `macos-15-intel` is Intel; the packaging
+  # script rejects mac-arm64 on any other host architecture.
+  macos-arm64:
+    name: Package unsigned macOS arm64
+    runs-on: macos-15
+    timeout-minutes: 240
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v5.0.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Local unsigned macOS packaging ignores .env.macos and needs no Apple
+      # account, certificate, or update service configuration.
+      - name: Package Electron app
+        run: pnpm run package:desktop:mac:arm64:unsigned
+
+      - name: Upload disk image
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: dsh-desktop-mac-arm64-unsigned
+          path: apps/desktop/.desktop-build/targets/mac-arm64/unsigned-artifacts/**
+          if-no-files-found: error
+          retention-days: 14
+
+  macos-x64:
+    name: Package unsigned macOS x64
+    runs-on: macos-15-intel
+    timeout-minutes: 240
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v5.0.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Package Electron app
+        run: pnpm run package:desktop:mac:x64:unsigned
+
+      - name: Upload disk image
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: dsh-desktop-mac-x64-unsigned
+          path: apps/desktop/.desktop-build/targets/mac-x64/unsigned-artifacts/**
+          if-no-files-found: error
+          retention-days: 14
