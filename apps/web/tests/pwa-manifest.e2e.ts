@@ -51,7 +51,7 @@ it('ships install metadata with the built web application', async () => {
   expect(index).toContain('<link rel="manifest" href="./manifest.webmanifest" />')
   expect(index).toContain('<link rel="apple-touch-icon" href="./apple-touch-icon.png" />')
   expect(index).toContain('<meta name="mobile-web-app-capable" content="yes" />')
-  expect(index).toContain('<meta name="apple-mobile-web-app-title" content="DSH" />')
+  expect(index).toContain('<meta name="apple-mobile-web-app-title" content="FuJue Harness" />')
   // No `theme-color` here: `ThemePresenter` owns the single metadata node and
   // follows the resolved in-application theme, which a static media query
   // cannot. The manifest's `theme_color` covers the surrounding chrome before

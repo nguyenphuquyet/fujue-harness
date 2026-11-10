@@ -264,7 +264,7 @@ describe('SidebarRoot shell', () => {
         options?.fallback ?? null) as SidebarRootComponentProps['renderSlot']}
     />)
 
-    expect(screen.getByText('DSH Local Build')).toBeTruthy()
+    expect(screen.getByText('FuJue Harness')).toBeTruthy()
     expect(screen.queryByText('1.2.3-rc.4-0123456-dirty')).toBeNull()
     expect(container.querySelector('svg')).not.toBeNull()
   })
@@ -289,7 +289,7 @@ describe('SidebarRoot shell', () => {
         options?.fallback ?? null) as SidebarRootComponentProps['renderSlot']}
     />)
 
-    expect(screen.getByText('DSH Local Build')).toBeTruthy()
+    expect(screen.getByText('FuJue Harness')).toBeTruthy()
     expect(screen.queryByText(expected)).toBeNull()
   })
 
@@ -320,23 +320,23 @@ describe('SidebarRoot shell', () => {
     vi.useFakeTimers()
 
     const copiedToasts = () => screen.queryAllByRole('alert').map(toast => toast.textContent)
-    await act(async () => { fireEvent.click(screen.getByText('DSH Local Build')) })
+    await act(async () => { fireEvent.click(screen.getByText('FuJue Harness')) })
     expect(writeText).toHaveBeenLastCalledWith('1.2.3-abcdef0')
     expect(copiedToasts()).toEqual(['Version copied'])
     // The brand keeps its title without exposing the copied metadata.
-    expect(screen.getByText('DSH Local Build')).toBeTruthy()
+    expect(screen.getByText('FuJue Harness')).toBeTruthy()
     expect(screen.queryByText('1.2.3-abcdef0')).toBeNull()
     act(() => { vi.advanceTimersByTime(4000) })
     expect(copiedToasts()).toEqual([])
 
     // A refused write claims no success.
-    await act(async () => { fireEvent.click(screen.getByText('DSH Local Build')) })
+    await act(async () => { fireEvent.click(screen.getByText('FuJue Harness')) })
     expect(copiedToasts()).toEqual([])
 
     // The fallback mark copies too, and its click still reaches document.
     const documentClick = vi.fn()
     document.addEventListener('click', documentClick)
-    const mark = screen.getByText('DSH Local Build').closest('[aria-hidden]')!.querySelector('svg')!
+    const mark = screen.getByText('FuJue Harness').closest('[aria-hidden]')!.querySelector('svg')!
     await act(async () => { fireEvent.click(mark) })
     document.removeEventListener('click', documentClick)
     expect(documentClick).toHaveBeenCalledOnce()
@@ -370,7 +370,7 @@ describe('SidebarRoot shell', () => {
         options?.fallback ?? null) as SidebarRootComponentProps['renderSlot']}
     />)
 
-    expect(screen.getByText('DSH Local Build')).toBeTruthy()
+    expect(screen.getByText('FuJue Harness')).toBeTruthy()
   })
 
   it('hands the region its wide flag and clamps expandSidebar to the collapsed state', () => {

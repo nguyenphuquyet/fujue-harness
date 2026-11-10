@@ -266,7 +266,7 @@ export function SidebarRoot({
   }, [pointerInside])
 
   const buildVersion = localBuildVersion()
-  // The local-build fallbacks copy the badge text; the brand button below
+  // The fallback brand copies the build version; the brand button below
   // skips New Session for clicks inside them. The click still bubbles, so
   // document-level outside-click listeners see it.
   // Each successful copy bumps the key so a repeated copy replays the toast.
@@ -333,7 +333,7 @@ export function SidebarRoot({
             macOS, where it stays part of the logo row's window-drag surface
             (a button would subtract itself through the global no-drag rule);
             the collapsed rail's logo is the expand toggle below instead.
-            Mouse clicks on the local-build fallbacks copy the version instead. */}
+            Mouse clicks on the fallback brand copy the version instead. */}
         {wide && (() => {
           const identity = (
             <span className={css.brandIdentity} aria-hidden="true">
@@ -347,10 +347,10 @@ export function SidebarRoot({
               <span className={css.brandName}>
                 {renderSlot('sidebar.brand.name', {}, {
                   fallback: buildVersion === undefined
-                    ? <span className={css.fallbackBrandName}>{t('brand.localBuild')}</span>
+                    ? <span className={css.fallbackBrandName}>{t('brand.name')}</span>
                     : (
                       <span className={clsx(css.fallbackBrandName, css.copyVersion)} data-copy-version onClick={copyVersion(buildVersion)}>
-                        {t('brand.localBuild')}
+                        {t('brand.name')}
                       </span>
                     ),
                 })}
