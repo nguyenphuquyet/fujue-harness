@@ -117,10 +117,13 @@
     - id: authorization
       name: '@deepseek-ai/dsh-authorization'
 
+    # FuJue sign-in: the desktop and web surfaces exchange a device code with the FuJue website and
+    # then apply that account's gateway, model catalog, and default model to this installation.
+    # `FUJUE_WEB_URL` points a build at a non-local website without editing the profile.
     - id: deepseek-account
-      name: '@deepseek-ai/dsh-deepseek-account-platform'
+      name: '@deepseek-ai/dsh-fujue-account'
       config:
-        desktopPlatform: !!js "ctx.get('profileContext')?.name === 'desktop' && ['darwin', 'win32'].includes(process.platform) ? process.platform : null"
+        webBaseUrl: !!js "process.env.FUJUE_WEB_URL ?? 'https://harness.nguyenphuquyet.online'"
 
     - id: credentials
       name: '@deepseek-ai/dsh-credentials-local'

@@ -1594,6 +1594,35 @@ export type Config = LocalConfig
 ```
 <!-- END GENERATED config-catalog:@deepseek-ai/dsh-fs-sandbox -->
 
+<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-fujue-account -->
+<a id="deepseek-aidsh-fujue-account"></a>
+
+## `@deepseek-ai/dsh-fujue-account`
+
+- `inject`: `credentials`
+- `source`: [`packages/credentials/fujue-account/src/config.ts:5`](../packages/credentials/fujue-account/src/config.ts)
+
+```ts config-catalog
+/** Website and settings targets this provider owns. */
+export interface Config {
+  /** Base URL of the FuJue website that issues device codes and serves the harness configuration. */
+  webBaseUrl?: string
+  /** Credential reference that receives the issued API key. */
+  apiKeyEnv?: string
+  /** Provider route key written into the pi-ai settings and used as the default model's provider. */
+  providerKey?: string
+  /** Settings namespace of the pi-ai adapter entry. */
+  piAiNamespace?: string
+  /** Label the website shows on its device-approval page; empty omits the label. */
+  deviceLabel?: string
+  /** Deadline for one website request. */
+  requestTimeoutMs?: number
+  /** Upper bound on the whole waiting-for-approval phase; the website's own device TTL still applies. */
+  attemptTimeoutMs?: number
+}
+```
+<!-- END GENERATED config-catalog:@deepseek-ai/dsh-fujue-account -->
+
 <!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-goal -->
 <a id="deepseek-aidsh-goal"></a>
 
