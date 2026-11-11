@@ -9,7 +9,7 @@ English | [中文](README.zh.md)
 
 ## Summary
 
-`@deepseek-ai/dsh-fujue-account` implements the `ctx.deepseekAccount` seam against a FuJue website, so the existing account UI, the `account` Remote namespace, and the model adapters drive it unchanged. Signing in shows a device link, the user approves the code on the website, and the issued API key becomes the credential every model request resolves. A successful sign-in also applies the account's server-owned configuration, so the gateway API base, the model catalog, and the default model in the picker follow what the website publishes.
+`@deepseek-ai/dsh-fujue-account` implements the `ctx.deepseekAccount` seam against a FuJue website, so the existing account UI, the `account` Remote namespace, and the model adapters drive it unchanged. Signing in shows a device link, the user approves the code on the website, and the issued API key becomes the credential every model request resolves. A successful sign-in also applies the account's server-owned configuration, so the gateway API base, the model catalog with its display names, and the default model in the picker follow what the website publishes.
 
 ## Table of Contents
 
@@ -28,13 +28,15 @@ The base bundle mounts this package under the `deepseek-account` row. Its config
 - `deviceLabel` — label the device page shows; empty sends none.
 - `requestTimeoutMs` / `attemptTimeoutMs` — per-request and whole-approval deadlines.
 
-The provider calls three website endpoints: `POST /api/v1/device/start` for the code, `POST /api/v1/device/token` for approval, which answers 428 while the code is pending, and `GET /api/v1/harness/config` with the issued key for the API base, catalog, and default model.
+The provider calls three website endpoints: `POST /api/v1/device/start` for the code, `POST /api/v1/device/token` for approval, which answers 428 while the code is pending, and `GET /api/v1/harness/config` with the issued key for the API base, catalog, and default model. Each catalog entry carries its id, display name, context window, and output limit, so the picker shows the account's own names rather than raw ids.
+
+A key can also arrive without the device flow: the desktop welcome screen and the Models page write keys through the credential seam. A key this website issued is recognisable by its `fj_live_` prefix, so the provider copies it to `apiKeyEnv` and reloads the catalog, filling the picker without a restart.
 
 Signing out removes the stored key and empties the route's model list, so no stale model stays selectable. Rejecting a token from a failed request removes it only while it still matches the stored key, then emits `deepseek-account/session-expired`.
 
 ## Understand the implementation
 
-After a successful token exchange the provider writes the pi-ai settings section first and the credential second, so a key never becomes visible to a model request before the route that consumes it exists. The default model is set through `ctx.agentDefaultModel.saveSelection`, the same path the model picker uses, and only when the current selection is not one of the account's models. A stored key reapplies the configuration once at startup, so a catalog change on the website reaches the next launch.
+After a successful token exchange the provider writes the pi-ai settings section first and the credential second, so a key never becomes visible to a model request before the route that consumes it exists. The route restates each model's id, display name, context window, and output limit on every apply, so a catalog change reaches the next request. The default model is set through `ctx.agentDefaultModel.saveSelection`, the same path the model picker uses, and only when the current selection is not one of the account's models. A stored key reapplies the configuration once at startup, and a key written by another provider re-reads it on the credential notification.
 
 Profile and balance reads come from the harness configuration endpoint, so the account settings page shows the website's account name and address without a second credential. Balance is reported as an empty wallet list; this deployment keeps no wallet.
 

@@ -82,6 +82,8 @@ export class FujueAccount extends DeepSeekAccount {
   private cached: CachedConfig | undefined
   private closed = false
   private removing: Promise<AccountView> | undefined
+  private refreshTask: Promise<void> | undefined
+  private refreshAgain = false
 
   /** @param ctx - Host with the credentials service. @param config - website and settings targets. */
   constructor(ctx: Context, config: Config = {}) {
@@ -97,12 +99,21 @@ export class FujueAccount extends DeepSeekAccount {
     // Applying a stored account needs the settings seams, which may activate after this provider.
     ctx.inject(['settings', 'agentDefaultModel'], (child) => {
       child.effect(() => {
-        void this.refreshStoredConfiguration().catch((error: unknown) => {
-          this.ctx.logger.warn('fujue-account: could not apply the stored account configuration')
-          this.ctx.logger.warn(error)
-        })
+        this.requestRefresh()
         return () => {}
       }, 'fujue-account: stored account configuration')
+    })
+    // A key can arrive without the device flow: pasted into the desktop welcome screen or the
+    // Models page. Reload the account catalog for our own reference, and adopt a FuJue key that a
+    // provider wrote under a different one.
+    ctx.on('credentials/reference-updated', (ref) => {
+      if (String(ref) !== this.config.apiKeyEnv) {
+        this.adoptManualKey(ref)
+        return
+      }
+      // The device sign-in applies the configuration before it commits the key.
+      if (this.attempt?.view.phase === 'committing' || this.attempt?.view.phase === 'succeeded') return
+      this.requestRefresh()
     })
   }
 
@@ -273,10 +284,59 @@ export class FujueAccount extends DeepSeekAccount {
   /** Reapply the account configuration for an existing key without blocking boot. */
   private async refreshStoredConfiguration(): Promise<void> {
     const key = await this.storedKey()
-    if (key === undefined || this.closed) return
+    if (key === undefined || this.closed) {
+      // A removed key must not keep serving the catalog it was read for.
+      this.cached = undefined
+      return
+    }
+    // The catalog reflects the key it was read for; a refresh of the same key has nothing new.
+    if (this.cached?.key === key) return
     const config = await fetchHarnessConfig(this.config, key, this.lifetime.signal)
     this.cached = { key, config }
     await this.applyConfiguration(config)
+  }
+
+  /** Reload the stored configuration in the background, at most one read at a time. */
+  private requestRefresh(): void {
+    if (this.closed) return
+    if (this.refreshTask !== undefined) {
+      this.refreshAgain = true
+      return
+    }
+    this.refreshTask = this.refreshStoredConfiguration()
+      .catch((error: unknown) => {
+        this.ctx.logger.warn('fujue-account: could not apply the stored account configuration')
+        this.ctx.logger.warn(error)
+      })
+      .finally(() => {
+        this.refreshTask = undefined
+        if (this.refreshAgain) {
+          this.refreshAgain = false
+          this.requestRefresh()
+        }
+      })
+  }
+
+  /**
+   * Adopt a FuJue API key stored under another credential reference.
+   *
+   * The desktop welcome flow and the Models page write each provider's own reference, and the
+   * welcome screen writes the official provider's one. A key this website issued is recognisable
+   * by its `fj_live_` prefix, so copying it to this provider's reference makes the account route
+   * serve it; the resulting change notification reloads the catalog and applies it.
+   * @param ref - reference whose stored value changed.
+   */
+  private adoptManualKey(ref: CredentialRef): void {
+    if (this.closed) return
+    void (async () => {
+      const resolved = await this.ctx.credentials.resolve(ref)
+      const key = resolved?.value
+      if (key === undefined || !key.startsWith('fj_live_') || this.closed) return
+      await this.ctx.credentials.set(this.ref, key)
+    })().catch((error: unknown) => {
+      this.ctx.logger.warn('fujue-account: could not adopt a manually entered API key')
+      this.ctx.logger.warn(error)
+    })
   }
 
   /** Read the catalog for a key, reusing the last read that the same key produced. */
@@ -314,6 +374,7 @@ export class FujueAccount extends DeepSeekAccount {
           apiKeyEnv: this.config.apiKeyEnv,
           models: config.models.map(model => ({
             id: model.id,
+            ...model.name === undefined ? {} : { name: model.name },
             ...model.contextWindow === undefined ? {} : { contextWindow: model.contextWindow },
             ...model.maxTokens === undefined ? {} : { maxTokens: model.maxTokens },
           })),

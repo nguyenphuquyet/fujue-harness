@@ -87,11 +87,14 @@
 
     # The transport-independent default for Agents created by entry points.
     # Settings may supply a saved selection; consumers read it at creation time.
+    # The FuJue account provider replaces this with the website's default model
+    # as soon as a key is stored; before that the id is the catalog's own
+    # fallback so the picker still names the route.
     - id: agent-default-model
       name: '@deepseek-ai/dsh-agent-default-model'
       config:
-        provider: deepseek-official
-        model: deepseek-flash
+        provider: fujue
+        model: deepseek-v4
 
     - id: jobs
       name: '@deepseek-ai/dsh-jobs-local'

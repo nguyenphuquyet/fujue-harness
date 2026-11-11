@@ -31,9 +31,21 @@ class FakeCredentials extends CredentialProvider {
     return { configured: this.values.has(ref), writable: true }
   }
 
-  override async set(ref: CredentialRef, value: string): Promise<void> { this.values.set(ref, value) }
+  override async set(ref: CredentialRef, value: string): Promise<void> {
+    this.values.set(ref, value)
+    this.ctx.emit('credentials/reference-updated', ref)
+  }
 
-  override async unset(ref: CredentialRef): Promise<void> { this.values.delete(ref) }
+  override async unset(ref: CredentialRef): Promise<void> {
+    this.values.delete(ref)
+    this.ctx.emit('credentials/reference-updated', ref)
+  }
+
+  /** Commit a value the way another provider would, without going through this one's seam. */
+  async write(ref: string, value: string): Promise<void> {
+    this.values.set(ref, value)
+    this.ctx.emit('credentials/reference-updated', ref as CredentialRef)
+  }
 
   override async readRecord(_key: CredentialKey): Promise<CredentialRecord | undefined> { return undefined }
 
@@ -133,8 +145,12 @@ async function serveSite(polls: Array<number> = [428, 200]): Promise<Site> {
         account: { email: 'linh@fujue.dev', name: 'Linh', plan: 'pro' },
         default_model: DEFAULT_MODEL,
         models: [
-          { id: DEFAULT_MODEL, object: 'model', context_window: 128_000, max_output_tokens: 8_192, default: true },
-          { id: 'fujue-flash', object: 'model', context_window: 65_536, max_output_tokens: 4_096, default: false },
+          {
+            id: DEFAULT_MODEL, name: 'FuJue Pro', object: 'model', context_window: 128_000, max_output_tokens: 8_192, default: true,
+          },
+          {
+            id: 'fujue-flash', name: 'FuJue Flash', object: 'model', context_window: 65_536, max_output_tokens: 4_096, default: false,
+          },
         ],
       })
       return
@@ -207,8 +223,8 @@ it('exchanges a device code for the account catalog, the default model, and the 
           baseURL: GATEWAY,
           apiKeyEnv: 'FUJUE_API_KEY',
           models: [
-            { id: DEFAULT_MODEL, contextWindow: 128_000, maxTokens: 8_192 },
-            { id: 'fujue-flash', contextWindow: 65_536, maxTokens: 4_096 },
+            { id: DEFAULT_MODEL, name: 'FuJue Pro', contextWindow: 128_000, maxTokens: 8_192 },
+            { id: 'fujue-flash', name: 'FuJue Flash', contextWindow: 65_536, maxTokens: 4_096 },
           ],
         },
       },
@@ -225,6 +241,34 @@ it('exchanges a device code for the account catalog, the default model, and the 
   expect(profile).toMatchObject({ status: 'ready', value: { name: 'Linh', contact: 'linh@fujue.dev' } })
   expect(await account.getBalance(client())).toEqual({ status: 'ready', value: [], bonusWallets: [] })
   expect(await account.getPlatformSession()).toBeNull()
+})
+
+it('loads the catalog and names when a FuJue key arrives from another credential', async () => {
+  const site = await serveSite([200])
+  const { credentials, settings, defaults } = await compose(site.origin)
+
+  await credentials.write('DEEPSEEK_API_KEY', 'fj_live_test')
+  for (let attempt = 0; attempt < 300 && settings.writes.length === 0; attempt += 1) {
+    await new Promise(resolve => setTimeout(resolve, 10))
+  }
+
+  expect(credentials.values.get('FUJUE_API_KEY')).toBe('fj_live_test')
+  expect(settings.writes).toHaveLength(1)
+  expect(settings.writes[0]).toMatchObject({
+    ns: 'llm-pi-ai',
+    patch: {
+      providers: {
+        fujue: {
+          apiKeyEnv: 'FUJUE_API_KEY',
+          models: [
+            { id: DEFAULT_MODEL, name: 'FuJue Pro' },
+            { id: 'fujue-flash', name: 'FuJue Flash' },
+          ],
+        },
+      },
+    },
+  })
+  expect(defaults.saved).toEqual([{ provider: 'fujue', model: DEFAULT_MODEL }])
 })
 
 it('keeps a model selection the account already serves', async () => {

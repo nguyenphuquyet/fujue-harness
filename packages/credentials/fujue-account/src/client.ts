@@ -141,10 +141,12 @@ export async function fetchHarnessConfig(
   const models = rawModels.flatMap((entry): HarnessModel[] => {
     const id = field(entry, 'id')
     if (typeof id !== 'string' || id === '') return []
+    const name = field(entry, 'name')
     const contextWindow = numberField(entry, 'context_window')
     const maxTokens = numberField(entry, 'max_output_tokens')
     return [{
       id,
+      ...typeof name !== 'string' || name === '' ? {} : { name },
       ...contextWindow === undefined ? {} : { contextWindow },
       ...maxTokens === undefined ? {} : { maxTokens },
     }]
