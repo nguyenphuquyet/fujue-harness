@@ -6,7 +6,7 @@ import css from './BrandName.module.css'
 /**
  * Render the official mark with the presentation requested by its host surface.
  * @param props - Host-supplied mark presentation.
- * @returns the official whale mark.
+ * @returns the official shark mark.
  */
 export function OfficialBrandMark({ size }: SidebarBrandMarkOwnerProps) {
   return <FishLogo size={size} />
