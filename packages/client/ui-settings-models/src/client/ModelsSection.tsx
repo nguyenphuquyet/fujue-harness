@@ -59,6 +59,9 @@ export interface ModelsSectionInjected {
  */
 type AddMode = 'catalog' | 'custom'
 
+/** The provider route this build ships as its default; its profile comes from the FuJue account. */
+const DEFAULT_PROVIDER = 'fujue'
+
 /** The child slots this section declares and dispatches (see ./slot-contract.ts). */
 type ModelsChildSlots = 'settings.models.provider-card' | 'settings.models.footer'
 
@@ -467,8 +470,10 @@ function Loaded({ injected, renderSlot }: { injected: ModelsSectionFace; renderS
                   <span className={styles['rowName']}>{row.entry.displayName}</span>
                   {/* Only the adapter can tell a hand-declared route from a
                       shipped one it also has a stored profile for, so the tag
-                      follows its answer and stays off when it gives none. */}
-                  {row.entry.declared === true
+                      follows its answer and stays off when it gives none. The
+                      build's own default route is shipped by this composition
+                      rather than typed in by the user, so it wears no tag. */}
+                  {row.entry.declared === true && row.entry.provider !== DEFAULT_PROVIDER
                     ? <span className={styles['rowTag']}>{t('customTag')}</span>
                     : null}
                   {/* The store keeps the account row only while the account lists models. */}
