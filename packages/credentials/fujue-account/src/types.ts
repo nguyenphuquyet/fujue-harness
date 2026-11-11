@@ -26,6 +26,10 @@ export interface HarnessModel {
   readonly contextWindow?: number
   /** Maximum output tokens. */
   readonly maxTokens?: number
+  /** Input modalities the model accepts; absent keeps the installed catalog's answer. */
+  readonly inputTypes?: readonly ('text' | 'image')[]
+  /** Offered reasoning levels mapped to their wire spellings; absent means the model does not reason. */
+  readonly reasoningEfforts?: Readonly<Record<string, string | null>>
 }
 
 /** Response of `GET /api/v1/harness/config`. */

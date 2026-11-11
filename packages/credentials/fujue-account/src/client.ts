@@ -54,6 +54,45 @@ function numberField(node: unknown, key: string): number | undefined {
   return typeof value === 'number' && Number.isFinite(value) ? value : undefined
 }
 
+/** Thinking levels pi-ai accepts as `reasoningEfforts` keys, in escalation order. */
+const THINKING_LEVELS: readonly string[] = ['off', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max']
+
+/**
+ * Read the declared input modalities, keeping known entries in their stated order.
+ * @param node - one catalog entry.
+ * @returns the modalities, or undefined when the entry declares none.
+ */
+function inputTypes(node: unknown): ('text' | 'image')[] | undefined {
+  const value = field(node, 'input_types')
+  if (!Array.isArray(value)) return undefined
+  const known = value.filter((item): item is 'text' | 'image' => item === 'text' || item === 'image')
+  const unique = [...new Set(known)]
+  return unique.length === 0 ? undefined : unique
+}
+
+/**
+ * Read the reasoning levels and their wire spellings.
+ *
+ * A level with no wire value stays `null` (Off sends nothing); a level naming
+ * an unknown level or an empty spelling is dropped, and a map without a
+ * thinking level is dropped whole because pi-ai refuses it.
+ * @param node - one catalog entry.
+ * @returns the level map, or undefined when the model does not reason.
+ */
+function reasoningEfforts(node: unknown): Record<string, string | null> | undefined {
+  const value = field(node, 'reasoning_efforts')
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return undefined
+  const entries = Object.entries(value as Record<string, unknown>).flatMap(
+    ([level, wire]): [string, string | null][] => {
+      if (!THINKING_LEVELS.includes(level)) return []
+      if (wire === null) return [[level, null]]
+      return typeof wire === 'string' && wire !== '' ? [[level, wire]] : []
+    },
+  )
+  if (!entries.some(([level]) => level !== 'off')) return undefined
+  return Object.fromEntries(entries)
+}
+
 /**
  * Start one device authorization.
  * @param config - deployment choices supplying the website URL and the device label.
@@ -144,11 +183,15 @@ export async function fetchHarnessConfig(
     const name = field(entry, 'name')
     const contextWindow = numberField(entry, 'context_window')
     const maxTokens = numberField(entry, 'max_output_tokens')
+    const modalities = inputTypes(entry)
+    const efforts = reasoningEfforts(entry)
     return [{
       id,
       ...typeof name !== 'string' || name === '' ? {} : { name },
       ...contextWindow === undefined ? {} : { contextWindow },
       ...maxTokens === undefined ? {} : { maxTokens },
+      ...modalities === undefined ? {} : { inputTypes: modalities },
+      ...efforts === undefined ? {} : { reasoningEfforts: efforts },
     }]
   })
   if (models.length === 0) {

@@ -147,9 +147,13 @@ async function serveSite(polls: Array<number> = [428, 200]): Promise<Site> {
         models: [
           {
             id: DEFAULT_MODEL, name: 'FuJue Pro', object: 'model', context_window: 128_000, max_output_tokens: 8_192, default: true,
+            input_types: ['text', 'image'],
+            reasoning_efforts: { off: null, low: 'low', medium: 'medium', high: 'high' },
           },
           {
             id: 'fujue-flash', name: 'FuJue Flash', object: 'model', context_window: 65_536, max_output_tokens: 4_096, default: false,
+            input_types: ['text'],
+            reasoning_efforts: null,
           },
         ],
       })
@@ -223,8 +227,12 @@ it('exchanges a device code for the account catalog, the default model, and the 
           baseURL: GATEWAY,
           apiKeyEnv: 'FUJUE_API_KEY',
           models: [
-            { id: DEFAULT_MODEL, name: 'FuJue Pro', contextWindow: 128_000, maxTokens: 8_192 },
-            { id: 'fujue-flash', name: 'FuJue Flash', contextWindow: 65_536, maxTokens: 4_096 },
+            {
+              id: DEFAULT_MODEL, name: 'FuJue Pro', contextWindow: 128_000, maxTokens: 8_192,
+              input: ['text', 'image'],
+              reasoningEfforts: { off: null, low: 'low', medium: 'medium', high: 'high' },
+            },
+            { id: 'fujue-flash', name: 'FuJue Flash', contextWindow: 65_536, maxTokens: 4_096, input: ['text'] },
           ],
         },
       },

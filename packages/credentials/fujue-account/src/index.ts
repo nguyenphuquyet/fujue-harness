@@ -377,6 +377,8 @@ export class FujueAccount extends DeepSeekAccount {
             ...model.name === undefined ? {} : { name: model.name },
             ...model.contextWindow === undefined ? {} : { contextWindow: model.contextWindow },
             ...model.maxTokens === undefined ? {} : { maxTokens: model.maxTokens },
+            ...model.inputTypes === undefined ? {} : { input: [...model.inputTypes] },
+            ...model.reasoningEfforts === undefined ? {} : { reasoningEfforts: { ...model.reasoningEfforts } },
           })),
         },
       },

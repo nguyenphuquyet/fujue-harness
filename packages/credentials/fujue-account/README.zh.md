@@ -28,7 +28,7 @@ kind: "package-reference"
 - `deviceLabel` — device 页面显示的名称；为空则不发送。
 - `requestTimeoutMs` / `attemptTimeoutMs` — 单次请求与整个批准流程的超时。
 
-提供者访问三个网站端点：`POST /api/v1/device/start` 取代码，`POST /api/v1/device/token` 查询批准并在待批准时返回 428，以及携带签发 key 的 `GET /api/v1/harness/config` 读取 API 地址、目录和默认模型。每个目录条目包含 id、显示名称、上下文窗口和输出上限，因此选择器显示账户自己的名称而不是原始 id。
+提供者访问三个网站端点：`POST /api/v1/device/start` 取代码，`POST /api/v1/device/token` 查询批准并在待批准时返回 428，以及携带签发 key 的 `GET /api/v1/harness/config` 读取 API 地址、目录和默认模型。每个目录条目包含 id、显示名称、上下文窗口、输出上限、输入模态和推理级别，因此选择器显示账户自己的名称与能力，而不是原始 id。
 
 key 也可以不经 device 流程到达：桌面欢迎页和 Models 页通过凭据服务写入 key。本站签发的 key 以 `fj_live_` 前缀区分，提供者会把它复制到 `apiKeyEnv` 并重新读取目录，无需重启即可填充选择器。
 
@@ -36,7 +36,7 @@ key 也可以不经 device 流程到达：桌面欢迎页和 Models 页通过凭
 
 ## Understand the implementation
 
-token 交换成功后，提供者先写 pi-ai settings 段、再写凭据，因此 key 不会在消费它的路由存在之前被模型请求看到。每次应用都会重写每个模型的 id、显示名称、上下文窗口和输出上限，因此目录变更会到达下一个请求。默认模型通过 `ctx.agentDefaultModel.saveSelection` 设置，与模型选择器同一路径，并且只在当前选择不属于该账户模型时写入。已保存的 key 在启动时重新应用一次配置，其他提供者写入的 key 则在凭据通知时重新读取。
+token 交换成功后，提供者先写 pi-ai settings 段、再写凭据，因此 key 不会在消费它的路由存在之前被模型请求看到。每次应用都会重写每个模型的 id、显示名称、上下文窗口、输出上限、输入模态和推理级别，因此目录变更会到达下一个请求。默认模型通过 `ctx.agentDefaultModel.saveSelection` 设置，与模型选择器同一路径，并且只在当前选择不属于该账户模型时写入。已保存的 key 在启动时重新应用一次配置，其他提供者写入的 key 则在凭据通知时重新读取。
 
 资料与余额读取来自 harness 配置端点，因此账户设置页显示网站账户的名称与地址，无需第二个凭据。余额报告为空钱包列表；该部署不保留钱包。
 
