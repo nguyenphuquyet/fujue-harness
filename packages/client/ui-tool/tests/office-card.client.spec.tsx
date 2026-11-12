@@ -11,7 +11,7 @@ import { zh as commonZh } from '@deepseek-ai/dsh-client-locale/src/locales/zh.ts
 import type { StartedToolCall, ToolResultNode } from '@deepseek-ai/dsh-client-ui-chat/client'
 import type { SessionListState } from '@deepseek-ai/dsh-api-session-controller/client'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { zh, en, ja, es, fr, de, ru, pt } from '@deepseek-ai/dsh-client-ui-conversation/src/client/locales.ts'
+import { zh, en, vi as viLocale } from '@deepseek-ai/dsh-client-ui-conversation/src/client/locales.ts'
 import { PartialArguments } from '@deepseek-ai/dsh-util-values'
 import { AttachmentId, type ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
 import type { ToolTreeProps } from '../src/client/contract/slots.ts'
@@ -148,12 +148,7 @@ describe('OfficeRow', () => {
 it.each([
   ['zh', zh, ['渲染文档', '转换文档', '重算工作簿']],
   ['en', en, ['Render document', 'Convert document', 'Recalculate workbook']],
-  ['ja', ja, ['文書を描画', '文書を変換', 'ブックを再計算']],
-  ['es', es, ['Representar documento', 'Convertir documento', 'Recalcular libro']],
-  ['fr', fr, ['Afficher le document', 'Convertir le document', 'Recalculer le classeur']],
-  ['de', de, ['Dokument rendern', 'Dokument konvertieren', 'Arbeitsmappe neu berechnen']],
-  ['ru', ru, ['Отрисовать документ', 'Преобразовать документ', 'Пересчитать книгу']],
-  ['pt', pt, ['Renderizar documento', 'Converter documento', 'Recalcular pasta de trabalho']],
-] as const)('keeps the %s Office titles on the dedicated keys', (_language, dictionary, titles) => {
+  ['vi', viLocale, ['Kết xuất tài liệu', 'Chuyển đổi tài liệu', 'Tính lại bảng tính']],
+])('keeps the %s Office titles on the dedicated keys', (_language, dictionary, titles) => {
   expect([dictionary['tool.title.officeRender'], dictionary['tool.title.officeConvert'], dictionary['tool.title.officeRecalculate']]).toEqual(titles)
 })

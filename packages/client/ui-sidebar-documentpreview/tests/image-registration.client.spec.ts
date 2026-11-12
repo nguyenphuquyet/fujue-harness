@@ -6,7 +6,7 @@ import type { TabId } from '@deepseek-ai/dsh-client-ui-dockkit'
 import { DocumentPreviewRegistry } from '../src/client/document/registry.ts'
 import { ImageBody } from '../src/client/image/ImageBody.tsx'
 import { apply, BINARY_IMAGE_EXTENSIONS, IMAGE_BODY_ID, IMAGE_EXTENSIONS, imageBodyDefinition } from '../src/client/image/index.ts'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/image/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/image/locales.ts'
 import type { ImageBodyInjected } from '../src/client/image/ImageBody.tsx'
 import type { ZoomStore } from '../src/client/zoom/store.ts'
 

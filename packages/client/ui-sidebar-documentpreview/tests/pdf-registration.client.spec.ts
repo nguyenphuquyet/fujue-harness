@@ -16,7 +16,7 @@ const renderedPdf = vi.hoisted(() => vi.fn(() => null))
 vi.mock('../src/client/pdf/pdf.tsx', () => ({ PdfBody: renderedPdf }))
 import { apply, PDF_BODY_ID } from '../src/client/pdf/index.ts'
 import { LazyPdfBody } from '../src/client/pdf/LazyPdfBody.tsx'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/pdf/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/pdf/locales.ts'
 
 afterEach(() => { cleanup(); renderedPdf.mockClear() })
 

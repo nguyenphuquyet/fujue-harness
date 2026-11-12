@@ -1,4 +1,4 @@
-import { es, fr, de, ru, pt, vi as viLocale } from '../src/client/locales.ts'
+import { vi as viLocale } from '../src/client/locales.ts'
 /**
  * ui-skill browser half: source and keyed toolview registration +
  * locale dictionaries + source duplicate-name proof +

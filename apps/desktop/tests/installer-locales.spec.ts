@@ -10,26 +10,26 @@ import { readInstallerLocales, renderInstallerStrings } from '../scripts/install
 function fixture(): string {
   const directory = mkdtempSync(join(tmpdir(), 'dsh-installer-locales-'))
   onTestFinished(() => { rmSync(directory, { recursive: true, force: true }) })
-  for (const id of ['en_US', 'zh_CN', 'ja_JP', 'es_ES', 'fr_FR', 'de_DE', 'ru_RU', 'pt_BR', 'vi_VN']) {
+  for (const id of ['en_US', 'zh_CN', 'vi_VN']) {
     writeFileSync(join(directory, `${id}.json`), readFileSync(new URL(`../installer/locales/${id}.json`, import.meta.url)))
   }
   return directory
 }
 
-it('generates Japanese NSIS strings from the same files that select packaged languages', () => {
+it('generates Vietnamese NSIS strings from the same files that select packaged languages', () => {
   const locales = readInstallerLocales()
-  expect(locales.map(locale => locale.id)).toEqual(['en_US', 'de_DE', 'es_ES', 'fr_FR', 'ja_JP', 'pt_BR', 'ru_RU', 'vi_VN', 'zh_CN'])
+  expect(locales.map(locale => locale.id)).toEqual(['en_US', 'vi_VN', 'zh_CN'])
   const source = renderInstallerStrings(locales)
-  expect(source).toContain('LangString INSTALLER_INSTALL ${LANG_JAPANESE} "今すぐインストール"')
-  expect(source).toContain('LangString INSTALLER_NATIVE_PROGRESS ${LANG_JAPANESE} "インストールを準備しています… %d%%"')
-  expect(source).toContain('!ifdef LANG_JAPANESE\n')
-  expect(source.match(/^LangString INSTALLER_UPDATE_WAIT /gmu)).toHaveLength(9)
-  expect(source.match(/^LangString /gmu)).toHaveLength(288)
-  const japanese = locales.filter(locale => locale.id === 'ja_JP')
-  expect(renderInstallerStrings(japanese)).not.toContain('${LANG_ENGLISH}')
+  expect(source).toContain('LangString INSTALLER_INSTALL ${LANG_VIETNAMESE} "Cài đặt ngay"')
+  expect(source).toContain('LangString INSTALLER_NATIVE_PROGRESS ${LANG_VIETNAMESE} "Đang chuẩn bị cài đặt… %d%%"')
+  expect(source).toContain('!ifdef LANG_VIETNAMESE\n')
+  expect(source.match(/^LangString INSTALLER_UPDATE_WAIT /gmu)).toHaveLength(3)
+  expect(source.match(/^LangString /gmu)).toHaveLength(96)
+  const vietnamese = locales.filter(locale => locale.id === 'vi_VN')
+  expect(renderInstallerStrings(vietnamese)).not.toContain('${LANG_ENGLISH}')
 })
 
-it.each(['en_US', 'zh_CN', 'ja_JP', 'es_ES', 'fr_FR', 'de_DE', 'ru_RU', 'pt_BR', 'vi_VN'])('rejects a missing %s configuration', (id) => {
+it.each(['en_US', 'zh_CN', 'vi_VN'])('rejects a missing %s configuration', (id) => {
   const directory = fixture()
   rmSync(join(directory, `${id}.json`))
   expect(() => readInstallerLocales(directory)).toThrow(`missing ${id}.json`)
@@ -49,9 +49,9 @@ it.each([
   ['invalid compiler token', (resource: ReturnType<typeof readInstallerLocales>[number]) => { resource.nsisLanguage = 'JA\n!error' }, 'invalid NSIS language'],
 ])('rejects %s', (_name, mutate, diagnostic) => {
   const directory = fixture()
-  const resource = readInstallerLocales(directory).find(locale => locale.id === 'ja_JP')!
+  const resource = readInstallerLocales(directory).find(locale => locale.id === 'vi_VN')!
   mutate(resource)
-  writeFileSync(join(directory, 'ja_JP.json'), JSON.stringify(resource))
+  writeFileSync(join(directory, 'vi_VN.json'), JSON.stringify(resource))
   expect(() => readInstallerLocales(directory)).toThrow(diagnostic)
 })
 

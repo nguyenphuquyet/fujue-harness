@@ -6,7 +6,7 @@ import { binaryDocumentPath, DocumentPreviewRegistry } from '../src/client/docum
 import { Config } from '../src/config.ts'
 import { apply } from '../src/client/excel/index.ts'
 import { LazyExcelBody } from '../src/client/excel/LazyExcelBody.tsx'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/excel/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/excel/locales.ts'
 
 it('registers complete binary reads and removes the slot and locale on disposal', async () => {
   const ctx = new Context()

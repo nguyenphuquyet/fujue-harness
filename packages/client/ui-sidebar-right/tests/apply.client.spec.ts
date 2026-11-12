@@ -30,7 +30,7 @@ import { ExpandButton } from '../src/client/shell/ExpandButton.tsx'
 import { GuideBody } from '../src/client/tabs/guide/GuideBody.tsx'
 import { GuideTitle } from '../src/client/tabs/guide/GuideTitle.tsx'
 import { GUIDE_ID } from '../src/client/tabs/guide/definition.ts'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/locales.ts'
 
 const SHORTCUT_CATALOG: readonly never[] = []
 

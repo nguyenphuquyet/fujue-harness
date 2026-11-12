@@ -189,15 +189,15 @@ it('removes the command and frame on unload and starts a fresh closed panel on r
   expect(body.view.getByTitle('NodeJS inspector')).not.toBe(frame)
 })
 
-it('uses Japanese panel and shortcut labels through the production registration', async () => {
+it('uses Vietnamese panel and shortcut labels through the production registration', async () => {
   const { runtime, locale, body } = await setup()
   act(() => {
-    locale.addLanguage({ id: 'ja', label: '日本語', fallback: 'en' })
-    locale.setLocale('ja')
+    locale.addLanguage({ id: 'vi', label: 'Tiếng Việt', fallback: 'en' })
+    locale.setLocale('vi')
   })
   press()
-  expect(body.view.getByRole('button', { name: '折りたたむ' })).toBeTruthy()
-  expect(body.view.getByTitle('NodeJS インスペクター')).toBeTruthy()
-  expect(body.container.querySelector('section')?.getAttribute('aria-label')).toBe('NodeJS インスペクター')
-  expect(runtime.ctx.shortcuts.catalog.getSnapshot().find(row => row.id === ID)?.label).toBe('NodeJS インスペクターの表示切り替え')
+  expect(body.view.getByRole('button', { name: 'Thu gọn' })).toBeTruthy()
+  expect(body.view.getByTitle('Trình kiểm tra NodeJS')).toBeTruthy()
+  expect(body.container.querySelector('section')?.getAttribute('aria-label')).toBe('Trình kiểm tra NodeJS')
+  expect(runtime.ctx.shortcuts.catalog.getSnapshot().find(row => row.id === ID)?.label).toBe('Bật/tắt trình kiểm tra NodeJS')
 })

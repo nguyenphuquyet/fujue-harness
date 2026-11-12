@@ -42,7 +42,7 @@ import { derivePresentationPolicy, type CollapseTiming, type FoldedReplies } fro
 import { CHAT_FLOW_INJECT, CHAT_NODE_INJECT } from '../src/client/apply.ts'
 import { ChatView } from '../src/client/chat/ChatView.tsx'
 import { ChatFlow } from '../src/client/chat/ChatFlow.tsx'
-import { en, zh, pt } from '../src/client/locale.ts'
+import { en, zh } from '../src/client/locale.ts'
 import { AssistantNodeView } from '../src/client/chat/AssistantNodeView.tsx'
 import { CommandNodeView, ManualCompactionNodeView } from '../src/client/chat/CommandNodeView.tsx'
 import {

@@ -19,7 +19,7 @@ import { LazyTerminalBody } from '../src/client/LazyTerminalBody.tsx'
 import { TerminalTitle } from '../src/client/TerminalTitle.tsx'
 import { AgentTerminalOpener, type AgentTerminalOpenerInjected } from '../src/client/AgentTerminalOpener.tsx'
 import type { TerminalBodyInjected } from '../src/client/face.ts'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/locales.ts'
 
 vi.mock('@xterm/xterm', () => ({ Terminal: vi.fn() }))
 const SHORTCUT_CATALOG: readonly never[] = []

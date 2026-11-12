@@ -57,7 +57,7 @@ export function localeMetadataProblems(root: string): string[] {
           if (translated[key] === undefined) problems.push(`${directory}/${language}.json: missing ${key}`)
           else if (expected[key] === undefined) problems.push(`${directory}/${language}.json: unexpected ${key}`)
           else {
-            if (language !== 'ja' && key === 'meta.description' && ((zh[key] !== undefined && /\p{Script=Han}/u.test(zh[key]) && translated[key] === zh[key])
+            if (key === 'meta.description' && ((zh[key] !== undefined && /\p{Script=Han}/u.test(zh[key]) && translated[key] === zh[key])
               || (en[key] !== undefined && translated[key] === en[key]))) {
               problems.push(`${directory}/${language}.json: ${key} contains untranslated source text`)
             }

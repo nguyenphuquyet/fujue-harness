@@ -17,7 +17,7 @@ import { createAtScheduleRecord, createDailyScheduleRecord, createRRuleScheduleR
 import { ScheduleId as createScheduleId } from '../../../schedule/schedule/src/domain.ts'
 import { draftTarget, reapplyTaskDraft, taskDraft, taskDraftIssue, taskDraftPatch } from '../src/client/TaskEditorFields.tsx'
 import { formatAvailableAt, formatScheduleFrequency, orderScheduleRecords, zoneLabel, zoneName } from '../src/client/schedule-format.ts'
-import { en, zh, ja, es, fr, de, ru, pt, vi as viLocale } from '../src/client/task-manager-locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/task-manager-locales.ts'
 import { pinSystemZone } from './zone-fixture.ts'
 import css from '../src/client/TaskManagerPage.module.css'
 

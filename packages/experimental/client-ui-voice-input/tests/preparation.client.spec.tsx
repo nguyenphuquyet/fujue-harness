@@ -10,7 +10,7 @@ import { PreparationCard, VoicePreparation } from '../src/client/PreparationCard
 import type { VoiceInputProps } from '../src/client/VoiceInput.tsx'
 import type { SpeechReadiness } from '../src/client/readiness.ts'
 import { Recording } from '../src/client/audio.ts'
-import { zh, en, ja, es, fr, de, ru, pt, vi as viLocale } from '../src/client/locales.ts'
+import { zh, en, vi as viLocale } from '../src/client/locales.ts'
 
 afterEach(() => { cleanup(); vi.useRealTimers() })
 const id = 'local' as SpeechProviderId, t = makeTranslate(zh, commonZh)

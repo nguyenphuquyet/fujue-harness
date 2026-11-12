@@ -1,6 +1,6 @@
 import { SHIPPED_LOCALE_IDS } from '../../../scripts/shipped-locales.ts'
 import { describe, expect, it } from 'vitest'
-import { en, formatDesktopMessage, resolveDesktopLocale, resolveDesktopStartupLocale, ja, zh, es, fr, de, ru, pt, vi } from '../src/locale.ts'
+import { en, formatDesktopMessage, resolveDesktopLocale, resolveDesktopStartupLocale, vi, zh } from '../src/locale.ts'
 
 describe('desktop locale dictionaries', () => {
   it('uses the same concise Chinese configuration error in the toast and details', () => {
@@ -9,18 +9,18 @@ describe('desktop locale dictionaries', () => {
     }
   })
 
-  it('ships baseline and Japanese keys and falls back for unsupported languages', () => {
+  it('ships baseline and Vietnamese keys and falls back for unsupported languages', () => {
     expect(Object.keys(zh)).toEqual(Object.keys(en))
-    expect(Object.keys(ja)).toEqual(Object.keys(en))
-    expect(resolveDesktopLocale('JA-jp')).toEqual({ id: 'ja', messages: ja })
+    expect(Object.keys(vi)).toEqual(Object.keys(en))
+    expect(resolveDesktopLocale('VI-vn')).toEqual({ id: 'vi', messages: vi })
     expect(resolveDesktopLocale('zh-Hans-CN').messages).toEqual(zh)
     expect(resolveDesktopLocale('en-US').messages).toEqual(en)
     expect(resolveDesktopLocale('it-IT').messages).toEqual(en)
+    expect(resolveDesktopLocale('ja-JP').messages).toEqual(en)
   })
 
   it.each([
-    ['es', 'es-MX', es], ['fr', 'fr-CA', fr], ['de', 'de-DE', de],
-    ['ru', 'ru-RU', ru], ['pt', 'pt-BR', pt], ['vi', 'vi-VN', vi],
+    ['vi', 'vi-VN', vi],
   ] as const)('resolves %s, preserves placeholders, and honors saved preferences', (id, tag, messages) => {
     expect(resolveDesktopLocale(tag.toUpperCase())).toEqual({ id, messages })
     expect(resolveDesktopStartupLocale(id, ['zh-CN']).id).toBe(id)
@@ -45,11 +45,11 @@ describe('desktop locale dictionaries', () => {
   it('prefers an explicit supported choice, then the first supported system language', () => {
     expect(resolveDesktopStartupLocale('zh', ['en-US']).id).toBe('zh-CN')
     expect(resolveDesktopStartupLocale('EN', ['zh-CN']).id).toBe('en')
-    expect(resolveDesktopStartupLocale(null, ['ja-JP', 'zh-Hant', 'en-US']).id).toBe('ja')
+    expect(resolveDesktopStartupLocale(null, ['ja-JP', 'zh-Hant', 'en-US']).id).toBe('zh-CN')
     expect(resolveDesktopStartupLocale(null, ['en-US', 'zh-CN']).id).toBe('en')
-    expect(resolveDesktopStartupLocale(null, ['ja-JP']).id).toBe('ja')
+    expect(resolveDesktopStartupLocale(null, ['ja-JP']).id).toBe('en')
     expect(resolveDesktopStartupLocale(null, []).id).toBe('en')
-    expect(resolveDesktopStartupLocale('ja', ['zh-CN']).id).toBe('ja')
+    expect(resolveDesktopStartupLocale('ja', ['zh-CN']).id).toBe('zh-CN')
   })
 
 })

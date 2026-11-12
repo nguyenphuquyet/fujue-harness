@@ -1,5 +1,4 @@
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
-import { es, pt } from '../src/client/locales.ts'
 // @vitest-environment jsdom
 /** Trajectory ledger selection, details, status, and fold behavior. */
 

@@ -8,11 +8,6 @@ import { acknowledgeReloadConnectionLoss, captureStableAria, compareOrRefreshGol
 import { saveFailureShot } from './support.ts'
 
 const languages = [
-  ['es', 'es-MX', 'Menú de cuenta', 'Configuración', 'Complementos', 'Idioma', 'Español'],
-  ['fr', 'fr-CA', 'Menu du compte', 'Paramètres', 'Plugins', 'Langue', 'Français'],
-  ['de', 'de-DE', 'Kontomenü', 'Einstellungen', 'Plugins', 'Sprache', 'Deutsch'],
-  ['ru', 'ru-RU', 'Меню аккаунта', 'Настройки', 'Плагины', 'Язык', 'Русский'],
-  ['pt', 'pt-BR', 'Menu da conta', 'Configurações', 'Plug-ins', 'Idioma', 'Português'],
   ['vi', 'vi-VN', 'Menu tài khoản', 'Cài đặt', 'Plugin', 'Ngôn ngữ', 'Tiếng Việt'],
 ] as const
 
@@ -62,12 +57,7 @@ it.each(languages)('selects %s from the browser, localizes metadata and persists
 })
 
 const forgePreviews = [
-  ['de', 'de-DE', 'Plugins', 'Eine Unterhaltung mit verknüpftem GitHub-Pull-Request, Prüfungen, Reviews, Codeunterschieden und einem separaten Arbeitsbaum'],
-  ['es', 'es-MX', 'Complementos', 'Una conversación vinculada a un pull request de GitHub, con comprobaciones, revisiones, diferencias de código y un árbol de trabajo aislado'],
-  ['fr', 'fr-CA', 'Plugins', 'Une conversation liée à une pull request GitHub, avec vérifications, revues, différences de code et un arbre de travail isolé'],
-  ['ja', 'ja-JP', 'プラグイン', 'GitHub のプルリクエストに関連付けられた会話、チェックとレビューの状況、コードの差分、独立したワークツリー'],
-  ['pt', 'pt-BR', 'Plug-ins', 'Uma conversa vinculada a um pull request do GitHub, com verificações, revisões, diferenças de código e uma árvore de trabalho isolada'],
-  ['ru', 'ru-RU', 'Плагины', 'Беседа, связанная с pull request GitHub: проверки, рецензии, различия в коде и отдельное рабочее дерево'],
+  ['vi', 'vi-VN', 'Plugin', 'Yêu cầu thay đổi và worktree'],
 ] as const
 
 it.each(forgePreviews)('reads the Forge preview in %s before activation', async (id, tag, plugins, alt) => {

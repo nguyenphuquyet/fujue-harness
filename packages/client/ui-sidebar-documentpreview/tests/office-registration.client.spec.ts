@@ -13,7 +13,7 @@ import { Config } from '../src/config.ts'
 import { OfficeBody, type OfficeBodyInjected } from '../src/client/office/OfficeBody.tsx'
 import type { OfficeStore } from '../src/client/office/store.ts'
 import type { TabId } from '@deepseek-ai/dsh-client-ui-dockkit'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/office/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/office/locales.ts'
 import { en as documentEn } from '../src/client/locales.ts'
 
 vi.mock('../src/client/office/face.ts', async (importOriginal) => {

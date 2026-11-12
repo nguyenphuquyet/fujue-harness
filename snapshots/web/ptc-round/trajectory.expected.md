@@ -7,10 +7,4 @@
 - heading "Output Copy output" [level=3]:
   - button "Output"
   - button "Copy output"
-- text: "{"
-- tree "Result JSON":
-  - treeitem "bash:\"CODE_ROUND_OK\","
-  - 'treeitem "Expand readError:{toolName: \"read\", message: \"cannot read \\\"{{cwd}}/workspace/missing.txt\\\": not found\"}"':
-    - button "Expand"
-    - text: "readError:{toolName: \"read\", message: \"cannot read \\\"{{cwd}}/workspace/missing.txt\\\": not found\"}"
-- text: "}"
+- text: "Error: code run failed (exception): TypeError: tools.bash is not a function at eval (eval at evaluate (file:///D:/D%E1%BB%B1%20%C3%81n%201/fujue-harness/packages/ptc-runtime/ptc-runtime-node/lib/process.js:1293:33), <anonymous>:5:32) at Object.evaluate (file:///D:/D%E1%BB%B1%20%C3%81n%201/fujue-harness/packages/ptc-runtime/ptc-runtime-node/lib/process.js:1301:4) at file:///D:/D%E1%BB%B1%20%C3%81n%201/fujue-harness/packages/ptc-runtime/ptc-runtime-node/lib/process.js:7353:16 at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:{{clock}}) at Object.run (file:///D:/D%E1%BB%B1%20%C3%81n%201/fujue-harness/packages/ptc-runtime/ptc-runtime-node/lib/process.js:7298:12) at Proxy.<anonymous> (file:///D:/D%E1%BB%B1%20%C3%81n%201/fujue-harness/packages/ptc-runtime/ptc-runtime-node/lib/process.js:278:99) at onMessage (file:///D:/D%E1%BB%B1%20%C3%81n%201/fujue-harness/packages/ptc-runtime/ptc-runtime-node/lib/process.js:189:23) at process.processTicksAndRejections (node:internal/process/task_queues:104:5) File sandbox: workspace-write; enforcement: partial."

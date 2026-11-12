@@ -5,7 +5,7 @@ import { CommandId } from '@deepseek-ai/dsh-commands/brand'
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
 import { IconUsersOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
 import { TeamCommandRow, type TeamCommandRowProps } from '../src/client/TeamCommandRow.tsx'
-import { zh, en, ja, es, fr, de, ru, pt, vi } from '../src/client/locales.ts'
+import { zh, en, vi } from '../src/client/locales.ts'
 
 afterEach(cleanup)
 

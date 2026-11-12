@@ -1670,7 +1670,7 @@ it.skipIf(MODE === 'record')('aligns localized status rows by their glyphs and k
   for (const [locale, labels] of [
     ['zh', ['检查', '评审', '合并', '变更']],
     ['en', ['Checks', 'Review', 'Merge', 'Changes']],
-    ['de', ['Prüfungen', 'Review', 'Zusammenführen', 'Änderungen']],
+    ['vi', ['Kiểm tra', 'Đánh giá', 'Hợp nhất', 'Thay đổi']],
   ] as const) {
     await scaffold.ctx.settings.update('locale', { preference: locale })
     await change.getByText(labels[0], { exact: true }).waitFor()
@@ -1724,7 +1724,7 @@ it.skipIf(MODE === 'record')('keeps long branch details accessible by touch and 
   const chip = option.locator('[data-forge-current-branch]')
   await chip.waitFor()
   await page.getByRole('button', { name: '收起侧边栏', exact: true }).click()
-  for (const [locale, label] of [['zh', `当前分支：${branch}`], ['en', `Current branch: ${branch}`], ['de', `Aktueller Branch: ${branch}`]] as const) {
+  for (const [locale, label] of [['zh', `当前分支：${branch}`], ['en', `Current branch: ${branch}`], ['vi', `Nhánh hiện tại: ${branch}`]] as const) {
     await scaffold.ctx.settings.update('locale', { preference: locale })
     await option.getByRole('button', { name: label, exact: true }).waitFor()
     for (const width of [390, 600, 601, 700, 1280]) {

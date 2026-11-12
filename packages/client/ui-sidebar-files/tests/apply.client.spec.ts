@@ -24,7 +24,7 @@ import { FileNavigator } from '../src/client/FileNavigator.tsx'
 import { FilesBody } from '../src/client/FilesBody.tsx'
 import { FilesTitle } from '../src/client/FilesTitle.tsx'
 import { NavigatorToggle } from '../src/client/NavigatorToggle.tsx'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/locales.ts'
 import type { createFilesStore } from '../src/client/store.ts'
 
 interface Recorded {

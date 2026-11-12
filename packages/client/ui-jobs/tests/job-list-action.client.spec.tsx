@@ -5,7 +5,7 @@ import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
 import type { JobsSnapshot, JobView, ObservedJob } from '@deepseek-ai/dsh-api-job-controller/client'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'
 import { JobListAction, type JobListActionProps } from '../src/client/JobListAction.tsx'
-import { zh, en, ja, es, fr, de, ru, pt, vi as viLocale } from '../src/client/locales.ts'
+import { zh, en, vi as viLocale } from '../src/client/locales.ts'
 
 beforeEach(() => {
   class TooltipObserver implements ResizeObserver {

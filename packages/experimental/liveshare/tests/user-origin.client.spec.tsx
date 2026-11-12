@@ -14,7 +14,7 @@ import { cleanup, render } from '@testing-library/react'
 import { createElement } from 'react'
 import { afterEach, describe, expect, it, onTestFinished } from 'vitest'
 import { apply } from '../src/client/index.ts'
-import { de, en, es, fr, ja, NS, pt, ru, vi as viLocale, zh } from '../src/client/locales.ts'
+import { en, NS, vi as viLocale, zh } from '../src/client/locales.ts'
 import { shareViewerAuthor, shareViewerSubject, SharedSessionOrigin } from '../src/client/user-origin.tsx'
 import { forgetOwnerDisplay } from '../src/client/owner-display.ts'
 

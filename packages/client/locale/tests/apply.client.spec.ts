@@ -185,27 +185,15 @@ describe('locale apply', () => {
     expect(instance.getSnapshot().options).toEqual([
       { id: 'zh', label: '中文' },
       { id: 'en', label: 'English' },
-      { id: 'ja', label: '日本語' },
-      { id: 'es', label: 'Español' },
-      { id: 'fr', label: 'Français' },
-      { id: 'de', label: 'Deutsch' },
-      { id: 'ru', label: 'Русский' },
-      { id: 'pt', label: 'Português' },
       { id: 'vi', label: 'Tiếng Việt' },
       { id: 'it', label: 'Italiano' },
     ])
 
     await languagePack.dispose()
-    expect(instance.getSnapshot().options.map(option => option.id)).toEqual(['zh', 'en', 'ja', 'es', 'fr', 'de', 'ru', 'pt', 'vi'])
+    expect(instance.getSnapshot().options.map(option => option.id)).toEqual(['zh', 'en', 'vi'])
   })
 
   it.each([
-    ['ja', '日本語', '言語', 'キャンセル'],
-    ['es', 'Español', 'Idioma', 'Cancelar'],
-    ['fr', 'Français', 'Langue', 'Annuler'],
-    ['de', 'Deutsch', 'Sprache', 'Abbrechen'],
-    ['ru', 'Русский', 'Язык', 'Отмена'],
-    ['pt', 'Português', 'Idioma', 'Cancelar'],
     ['vi', 'Tiếng Việt', 'Ngôn ngữ', 'Hủy'],
   ])('restores %s from the Host and releases its language and dictionaries on unload', async (id, label, languageTitle, cancel) => {
     const b = await bench(id)

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Backend terminal thanh bên",
+    "description": "Chạy các terminal liên tục của agent dưới dạng tab thanh bên để người dùng theo dõi và tiếp quản, đồng thời cho phép agent đọc terminal của chính người dùng."
+  }
+}

@@ -7,7 +7,7 @@ import { sessionFileAddress } from '@deepseek-ai/dsh-util-workspace-path'
 import { DocumentPreviewRegistry } from '../src/client/document/registry.ts'
 import { apply, HTML_BODY_ID, htmlBodyDefinition } from '../src/client/html/index.ts'
 import { HtmlBody } from '../src/client/html/HtmlBody.tsx'
-import { en, ja, zh, es, fr, de, ru, pt, vi as viLocale } from '../src/client/html/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/html/locales.ts'
 import type { HtmlBodyProps } from '../src/client/html/HtmlBody.tsx'
 
 type Registration = {

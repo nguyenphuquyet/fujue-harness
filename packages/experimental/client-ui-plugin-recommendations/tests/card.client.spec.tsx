@@ -10,7 +10,7 @@ import { FoldedText } from '@deepseek-ai/dsh-client-ui-action-cards/src/client/C
 import type { ActionCardFields, ActionCardResult } from '@deepseek-ai/dsh-action-cards/types'
 import type { RecommendationDetails } from '@deepseek-ai/dsh-plugin-recommendations/types'
 import { PluginCardBody, type CatalogDetails, type PluginCardProps } from '../src/client/Card.tsx'
-import { de, en, es, fr, ja, pt, ru, zh, vi as viLocale } from '../src/client/locales.ts'
+import { en, zh, vi as viLocale } from '../src/client/locales.ts'
 
 afterEach(cleanup)
 const callId = ToolCallId('call-plugin-1')

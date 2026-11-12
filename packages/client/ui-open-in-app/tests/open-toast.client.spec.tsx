@@ -7,7 +7,7 @@ import {
   OpenInAppToast,
   type OpenInAppToastProps, type OpenInAppToastState,
 } from '../src/client/open-toast.tsx'
-import { en, ja, es, fr, de, ru, pt, vi as viLocale, zh } from '../src/client/locales.ts'
+import { en, vi as viLocale, zh } from '../src/client/locales.ts'
 
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals() })
 
@@ -90,8 +90,7 @@ describe('OpenInAppToast', () => {
   })
 
   it.each([
-    ['en', en], ['zh', zh], ['ja', ja], ['es', es],
-    ['fr', fr], ['de', de], ['ru', ru], ['pt', pt], ['vi', viLocale],
+    ['en', en], ['zh', zh], ['vi', viLocale],
   ] as const)('localizes the other-device file-location confirmation: %s', (_locale, dictionary) => {
     mount({ kind: 'revealed', seq: 2 }, dictionary)
     expect(screen.getByRole('alert').textContent).toBe(dictionary['path.revealed'])

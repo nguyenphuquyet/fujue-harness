@@ -5,7 +5,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { SessionId } from '@deepseek-ai/dsh-session'
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
 import { TeamModeToggle, type TeamModeToggleProps } from '../src/client/TeamModeToggle.tsx'
-import { de, en, es, fr, ja, pt, ru, vi as viLocale, zh } from '../src/client/locales.ts'
+import { en, vi as viLocale, zh } from '../src/client/locales.ts'
 
 afterEach(() => {
   cleanup()

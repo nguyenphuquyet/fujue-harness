@@ -1,4 +1,4 @@
-import { es, fr, de, ru, pt } from '../src/client/locales.ts'
+
 // @vitest-environment jsdom
 /** Section, setup-card, and hand-written editor behavior over a scripted wire face. */
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
