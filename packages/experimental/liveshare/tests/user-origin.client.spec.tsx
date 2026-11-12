@@ -112,7 +112,7 @@ describe('shared-session origin chain', () => {
   })
 
   it('defines the shared-session line in every dictionary', () => {
-    const dictionaries = { zh, en, ja, es, fr, de, ru, pt, vi: viLocale }
+    const dictionaries = { zh, en, vi: viLocale }
     const keys = Object.keys(zh).sort()
     for (const dictionary of Object.values(dictionaries)) {
       expect(Object.keys(dictionary).sort()).toEqual(keys)

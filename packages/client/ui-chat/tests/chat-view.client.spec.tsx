@@ -4895,10 +4895,6 @@ describe('ChatView', () => {
 
 const fileDrag = { prepare: vi.fn(async () => ({ start: () => true, release: () => {} })), reportFailure: vi.fn() }
 
-it('formats Portuguese elapsed minutes with numeric units', () => {
-  expect(formatRunDuration(90_000, key => pt[key])).toBe('1m 30s')
-})
-
 it('does not infer menu targets from links or data attributes inside a plugin flow slot', () => {
   const h = makeHarness()
   const custom = vi.fn()

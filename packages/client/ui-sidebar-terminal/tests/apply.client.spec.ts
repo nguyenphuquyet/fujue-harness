@@ -115,7 +115,7 @@ it('registers terminal views and the agent terminal opener without recovery or c
     expect(renderToStaticMarkup(createElement(Icon, { size: 22 }))).toContain('width="22"')
     expect(renderToStaticMarkup(createElement(Icon))).toContain('width="36"')
     expect(definition.multiple).toBe(true)
-    expect(h.dictionaries.get('sidebarTerminal')).toEqual({ en, zh, ja, es, fr, de, ru, pt, vi: viLocale })
+    expect(h.dictionaries.get('sidebarTerminal')).toEqual({ en, zh, vi: viLocale })
     expect(h.entries.map(entry => [entry.name, entry.component, entry.locale])).toEqual([
       ['sidebar.right.tab.guide.entry', TerminalGuide, 'sidebarTerminal'],
       ['sidebar.right.pane.tab', LazyTerminalBody, 'sidebarTerminal'],

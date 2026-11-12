@@ -125,7 +125,7 @@ describe('ui-sidebar-browser apply', () => {
     expect(definition?.title('sidebar://browser')).toBe('type.label')
     expect(definition?.guide?.map(entry => [entry.order, entry.title(), entry.description?.()]))
       .toEqual([[30, 'guide.title', 'guide.description']])
-    expect(dictionaries.get('sidebarBrowser')).toEqual({ zh, en, ja, es, fr, de, ru, pt, vi: viLocale })
+    expect(dictionaries.get('sidebarBrowser')).toEqual({ zh, en, vi: viLocale })
     expect(dictionaries.get('sidebarBrowser')).toMatchObject({
       zh: { 'guide.description': '浏览网页' },
       en: { 'guide.description': 'Browse web pages' },

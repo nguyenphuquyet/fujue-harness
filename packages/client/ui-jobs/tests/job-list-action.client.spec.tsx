@@ -77,12 +77,6 @@ describe('JobListAction count copy', () => {
   it.each([
     [zh, '1 个后台任务', '2 个后台任务'],
     [en, '1 background job', '2 background jobs'],
-    [ja, 'バックグラウンドジョブ 1 件', 'バックグラウンドジョブ 2 件'],
-    [es, 'Tareas en segundo plano: 1', 'Tareas en segundo plano: 2'],
-    [fr, 'Tâches en arrière-plan : 1', 'Tâches en arrière-plan : 2'],
-    [de, 'Hintergrundaufgaben: 1', 'Hintergrundaufgaben: 2'],
-    [ru, 'Фоновые задачи: 1', 'Фоновые задачи: 2'],
-    [pt, 'Tarefas em segundo plano: 1', 'Tarefas em segundo plano: 2'],
     [viLocale, '1 tác vụ nền', '2 tác vụ nền'],
   ] as const)('uses neutral count copy for live and settled jobs in locale %#', (dictionary, one, two) => {
     const translate: JobListActionProps['t'] = makeTranslate(dictionary)
@@ -939,13 +933,4 @@ describe('JobListAction human kill', () => {
     expect(screen.queryByTitle(stopTitle('pnpm run build'))).toBeNull()
     expect(document.querySelector('[data-kill-state]')).toBeNull()
   })
-})
-
-it.each([1, 2, 5, 21])('renders count-independent Russian labels for %i jobs', (count) => {
-  const jobs = Array.from({ length: count }, (_, i) => job({ id: `job-${i}` as JobView['id'] }))
-  const translate: JobListActionProps['t'] = makeTranslate(ru)
-  const view = render(<JobListAction {...props(jobs)} t={translate} />)
-  expect(screen.getByRole('button', { name: `Фоновые задачи: ${count}` })).toBeDefined()
-  view.rerender(<JobListAction {...props(jobs.map(item => ({ ...item, status: 'completed', finishedAt: 1_700_000_003_000 })))} t={translate} />)
-  expect(screen.getByRole('button', { name: `Фоновые задачи: ${count}` })).toBeDefined()
 })

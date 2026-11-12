@@ -192,7 +192,7 @@ describe('Host task editor on the existing manager', () => {
     expect(Object.hasOwn(h.editor.getSnapshot().drafts, `task:${task.id}`)).toBe(false)
   })
 
-  it.each([en, zh, ja, es, fr, de, ru, pt, viLocale])('localizes empty field hints and lets an untouched form be discarded', (dictionary) => {
+  it.each([en, zh, viLocale])('localizes empty field hints and lets an untouched form be discarded', (dictionary) => {
     const h = mount([], { t: makeTranslate(dictionary) })
     fireEvent.click(screen.getByRole('button', { name: dictionary['empty.action'] }))
     const detail = screen.getByRole('complementary', { name: dictionary['host.manualCreate'] })

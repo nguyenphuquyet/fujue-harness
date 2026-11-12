@@ -247,7 +247,7 @@ describe('ui-sidebar-files apply', () => {
     expect(definition?.title('sidebar://files')).toBe('type.label')
     expect(definition?.guide?.map(entry => [entry.order, entry.title(), entry.description?.()]))
       .toEqual([[10, 'guide.title', 'guide.description']])
-    expect(dictionaries.get('sidebarFiles')).toEqual({ zh, en, ja, es, fr, de, ru, pt, vi: viLocale })
+    expect(dictionaries.get('sidebarFiles')).toEqual({ zh, en, vi: viLocale })
     // The seat key is the implementation's id, not the kind: an extension may
     // take the kind over, and the seat must still find this body.
     expect(registered.map(entry => [entry.name, entry.key, entry.locale])).toEqual([

@@ -215,7 +215,7 @@ it('locks source changes while a preparation request is pending and hides them d
 })
 
 it('gives each speech recognition language a distinct localized name', () => {
-  for (const dictionary of [zh, en, ja, es, fr, de, ru, pt, viLocale]) {
+  for (const dictionary of [zh, en, viLocale]) {
     const names = [
       dictionary.zh, dictionary.en, dictionary.yue, dictionary.ja, dictionary.es,
       dictionary.fr, dictionary.de, dictionary.ru, dictionary.pt, dictionary.ko,

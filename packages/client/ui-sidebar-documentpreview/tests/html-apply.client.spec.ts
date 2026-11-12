@@ -54,7 +54,7 @@ describe('HTML registration', () => {
     await fiber.await()
     expect(registry.candidates('INDEX.HTM').map(entry => entry.id)).toEqual([HTML_BODY_ID])
     expect(registry.getSnapshot()[0]?.title()).toBe(en.title)
-    expect(dictionaries.get('documentHtml')).toEqual({ zh, en, ja, es, fr, de, ru, pt, vi: viLocale })
+    expect(dictionaries.get('documentHtml')).toEqual({ zh, en, vi: viLocale })
     expect(register).toHaveBeenCalledOnce()
     const registration = register.mock.calls[0]?.[0]
     expect(registration).toMatchObject({ name: 'sidebar.right.tab.document', key: HTML_BODY_ID, locale: 'documentHtml' })

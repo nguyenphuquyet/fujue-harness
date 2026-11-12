@@ -58,7 +58,7 @@ describe('PDF registration', () => {
         { id: PDF_BODY_ID, extensions: ['pdf'], priority: 'builtin', loading: 'bytes-complete', wrap: false },
       ])
       expect(previews.candidates('report.pdf')[0]!.title()).toBe('PDF')
-      expect(dictionaries.get('sidebarPdf')).toEqual({ zh, en, ja, es, fr, de, ru, pt, vi: viLocale })
+      expect(dictionaries.get('sidebarPdf')).toEqual({ zh, en, vi: viLocale })
       expect(entries[0]).toMatchObject({ name: 'sidebar.right.tab.document', key: PDF_BODY_ID, locale: 'sidebarPdf' })
       const instance = entries[0]!.store.create()
       const face = entries[0]!.inject('s1' as SessionId, instance.actions)

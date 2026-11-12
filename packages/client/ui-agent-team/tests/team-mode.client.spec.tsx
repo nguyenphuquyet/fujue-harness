@@ -53,7 +53,7 @@ it.each(['returned', 'error', 'string'])('reports rejected mode writes through t
   expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe('false')
 })
 
-it.each(Object.entries({ zh, en, ja, es, fr, de, ru, pt, vi: viLocale }).flatMap(([locale, dictionary]) =>
+it.each(Object.entries({ zh, en, vi: viLocale }).flatMap(([locale, dictionary]) =>
   [false, true].map(locked => ({ locale, dictionary, locked })),
 ))('opens the $locale explanation without changing Team mode (locked: $locked)', ({ dictionary, locked }) => {
   vi.stubGlobal('ResizeObserver', class {

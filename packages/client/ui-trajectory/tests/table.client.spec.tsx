@@ -14,6 +14,7 @@ import type { PropsRenderSlots } from '@deepseek-ai/dsh-client-ui-slots'
 import { TrajectoryTable as LocalizedTrajectoryTable } from '../src/client/TrajectoryTable.tsx'
 import { deriveTrajectoryLayout, type TrajectoryTurnModel } from '../src/client/layout.ts'
 import { trajectoryRecordId, type TrajectoryCellProps } from '../src/client/trajectory-record.ts'
+import { vi as viLocale } from '../src/client/locales.ts'
 import { t, tZh } from './locale.client.ts'
 
 const loadImage: MessageImageLoader = async () => 'blob:trajectory'
@@ -1613,6 +1614,6 @@ describe('TrajectoryTable', () => {
 })
 
 it('preserves seconds and token units in translated metric labels', () => {
-  expect(makeTranslate(es)('unit.seconds', { value: '1.25' })).toBe('1.25 s')
-  expect(makeTranslate(pt)('unit.tokens', { value: 42 })).toBe('42 tok')
+  expect(makeTranslate(viLocale)('unit.seconds', { value: '1.25' })).toBe('1.25 giây')
+  expect(makeTranslate(viLocale)('unit.tokens', { value: 42 })).toBe('42 tok')
 })

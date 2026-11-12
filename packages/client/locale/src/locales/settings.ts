@@ -13,12 +13,6 @@ export const en = {
   'language.title': 'Language',
 } satisfies Record<SettingsLocaleKey, string>
 
-
-
-
-
-
-
 /** Vietnamese dictionary, checked against the English keys. */
 export const vi = {
   'language.title': 'Ngôn ngữ',

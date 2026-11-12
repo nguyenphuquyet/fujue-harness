@@ -15,8 +15,7 @@ function command(args: string | null, outcome: Node['outcome']): Node {
 }
 
 describe.each([
-  { id: 'zh', dictionary: zh }, { id: 'en', dictionary: en }, { id: 'ja', dictionary: ja }, { id: 'es', dictionary: es },
-  { id: 'fr', dictionary: fr }, { id: 'de', dictionary: de }, { id: 'ru', dictionary: ru }, { id: 'pt', dictionary: pt },
+  { id: 'zh', dictionary: zh }, { id: 'en', dictionary: en },
   { id: 'vi', dictionary: vi },
 ])('Team command fallback in $id', ({ dictionary }) => {
   const t = makeTranslate(dictionary)

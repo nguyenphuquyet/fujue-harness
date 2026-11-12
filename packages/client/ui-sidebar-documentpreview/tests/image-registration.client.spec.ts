@@ -66,7 +66,7 @@ describe('image registration', () => {
       expect(registry.candidates(`ASSET.${extension}`).map(entry => entry.id)).toEqual([IMAGE_BODY_ID])
     }
     expect(registry.getSnapshot()[0]?.title()).toBe(en.title)
-    expect(dictionaries.get('sidebarImage')).toEqual({ zh, en, ja, es, fr, de, ru, pt, vi: viLocale })
+    expect(dictionaries.get('sidebarImage')).toEqual({ zh, en, vi: viLocale })
     expect(register).toHaveBeenCalledExactlyOnceWith(expect.objectContaining({
       name: 'sidebar.right.tab.document', key: IMAGE_BODY_ID, locale: 'sidebarImage',
     }), ImageBody)
