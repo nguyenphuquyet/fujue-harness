@@ -27,7 +27,7 @@ jobs:
         shell: pwsh
     steps:
       - name: Check out sources
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
@@ -73,7 +73,7 @@ jobs:
     timeout-minutes: 240
     steps:
       - name: Check out sources
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
@@ -108,7 +108,7 @@ jobs:
     timeout-minutes: 240
     steps:
       - name: Check out sources
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
