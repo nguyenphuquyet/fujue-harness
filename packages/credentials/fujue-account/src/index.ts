@@ -11,8 +11,9 @@ import { arch, platform, release } from 'node:os'
 import { Context } from '@deepseek-ai/cordis'
 import { brandString } from '@deepseek-ai/dsh-brand'
 import {
-  DeepSeekAccount, type AccountBonusBatch, type AccountBonusOrderId, type AccountClientMetadata, type AccountDetails,
-  type AccountUserId, type AccountView, type PlatformSession, type SignInAttemptId, type SignInAttemptView,
+  DeepSeekAccount, type AccountClientMetadata, type AccountDetails, type AccountNotificationBatch,
+  type AccountUserId, type AccountUpdate, type AccountView, type PlatformSession, type SignInAttemptId,
+  type SignInAttemptView,
 } from '@deepseek-ai/dsh-deepseek-account'
 import { credentialRef, type CredentialRef } from '@deepseek-ai/dsh-credentials'
 import type {} from '@deepseek-ai/dsh-settings'
@@ -72,16 +73,14 @@ async function sleep(ms: number, signal: AbortSignal): Promise<void> {
  * credential reference, and default model before the key becomes visible to model requests.
  */
 export class FujueAccount extends DeepSeekAccount {
-  static inject = ['credentials']
-
   private readonly config: ResolvedConfig
   private readonly ref: CredentialRef
   private readonly lifetime = new AbortController()
-  private readonly listeners = new Set<(identityOnly: boolean) => void>()
-  private attempt: Attempt | undefined
+  private readonly watchers = new Set<(kind: 'snapshot' | 'credentials-changed') => void>()
+  private signInAttempt: Attempt | undefined
   private cached: CachedConfig | undefined
-  private closed = false
-  private removing: Promise<AccountView> | undefined
+  private shut = false
+  private removal: Promise<AccountView> | undefined
   private refreshTask: Promise<void> | undefined
   private refreshAgain = false
 
@@ -91,10 +90,10 @@ export class FujueAccount extends DeepSeekAccount {
     this.config = resolveConfig(config)
     this.ref = credentialRef(this.config.apiKeyEnv)
     ctx.effect(() => () => {
-      this.closed = true
+      this.shut = true
       this.lifetime.abort()
-      this.attempt?.controller.abort()
-      this.changed()
+      this.signInAttempt?.controller.abort()
+      this.notify()
     }, 'fujue-account: attempt and request lifetime')
     // Applying a stored account needs the settings seams, which may activate after this provider.
     ctx.inject(['settings', 'agentDefaultModel'], (child) => {
@@ -112,14 +111,14 @@ export class FujueAccount extends DeepSeekAccount {
         return
       }
       // The device sign-in applies the configuration before it commits the key.
-      if (this.attempt?.view.phase === 'committing' || this.attempt?.view.phase === 'succeeded') return
+      if (this.signInAttempt?.view.phase === 'committing' || this.signInAttempt?.view.phase === 'succeeded') return
       this.requestRefresh()
     })
   }
 
   override async getState(): Promise<AccountView> {
     const stored = await this.storedKey()
-    const attempt = this.attempt?.view ?? null
+    const attempt = this.signInAttempt?.view ?? null
     return {
       status: stored === undefined ? 'signed-out' : 'credential-stored',
       // Credential removal notifies watchers before sign-out clears the attempt.
@@ -153,21 +152,15 @@ export class FujueAccount extends DeepSeekAccount {
     return { status: 'ready', value: [], bonusWallets: [] }
   }
 
-  override async getUnnotifiedBonuses(_client: AccountClientMetadata): Promise<AccountBonusBatch | null> {
+  override async getNotifications(_client: AccountClientMetadata): Promise<AccountNotificationBatch | null> {
     return null
-  }
-
-  override async ackBonusNotified(
-    _accountId: AccountUserId, _orderId: AccountBonusOrderId, _client: AccountClientMetadata,
-  ): Promise<boolean> {
-    return false
   }
 
   override async startSignIn(
     _client: AccountClientMetadata, _callbackOrigin: string, _loginSource: 'web' | 'desktop',
   ): Promise<AccountView> {
-    if (this.closed) throw new FujueRequestError('protocol', 'fujue-account: the provider is closed')
-    const active = this.attempt
+    if (this.shut) throw new FujueRequestError('protocol', 'fujue-account: the provider is closed')
+    const active = this.signInAttempt
     if (active !== undefined && RUNNING_PHASES.has(active.view.phase)) return this.getState()
     if (active !== undefined) await active.done
     const id = randomUUID() as SignInAttemptId
@@ -177,14 +170,19 @@ export class FujueAccount extends DeepSeekAccount {
       controller: new AbortController(),
       done: Promise.resolve(),
     }
-    this.attempt = attempt
-    attempt.done = this.run(attempt)
-    this.changed()
+    this.signInAttempt = attempt
+    attempt.done = this.runAttempt(attempt)
+    this.notify()
     return this.getState()
   }
 
+  /**
+   * Cancel one in-flight sign-in attempt and report the resulting account state.
+   * @param id - identifier of the attempt to cancel.
+   * @returns the account view after the attempt settles.
+   */
   override async cancelSignIn(id: SignInAttemptId): Promise<AccountView> {
-    const attempt = this.attempt
+    const attempt = this.signInAttempt
     if (attempt?.id === id) {
       if (attempt.view.phase !== 'committing') attempt.controller.abort()
       await attempt.done
@@ -193,11 +191,11 @@ export class FujueAccount extends DeepSeekAccount {
   }
 
   override signOut(_client: AccountClientMetadata): Promise<AccountView> {
-    this.removing ??= (async () => {
-      if (this.closed) throw new FujueRequestError('protocol', 'fujue-account: the provider is closed')
+    this.removal ??= (async () => {
+      if (this.shut) throw new FujueRequestError('protocol', 'fujue-account: the provider is closed')
       await this.ctx.credentials.unset(this.ref)
       this.cached = undefined
-      this.attempt = undefined
+      this.signInAttempt = undefined
       const settings = this.ctx.get('settings')
       if (settings !== undefined) {
         // An empty catalog keeps the route addressable for the next sign-in while serving no model.
@@ -210,34 +208,34 @@ export class FujueAccount extends DeepSeekAccount {
         })
       }
       this.ctx.emit('deepseek-account/signed-out')
-      this.changed()
+      this.notify('credentials-changed')
       return this.getState()
-    })().finally(() => { this.removing = undefined })
-    return this.removing
+    })().finally(() => { this.removal = undefined })
+    return this.removal
   }
 
-  override async *watch(signal: AbortSignal, includeIdentityChanges = false): AsyncIterable<AccountView> {
-    let dirty = true
+  override async *watch(signal: AbortSignal): AsyncIterable<AccountUpdate> {
+    let pending: 'snapshot' | 'credentials-changed' | undefined = 'snapshot'
     let wake: (() => void) | undefined
-    const wakeUp = (): void => {
-      dirty = true
+    const changed = (kind: 'snapshot' | 'credentials-changed'): void => {
+      pending ??= kind
       wake?.()
     }
-    const changed = (identityOnly: boolean): void => { if (!identityOnly || includeIdentityChanges) wakeUp() }
-    this.listeners.add(changed)
-    signal.addEventListener('abort', wakeUp, { once: true })
+    this.watchers.add(changed)
+    signal.addEventListener('abort', () => { pending ??= 'snapshot'; wake?.() }, { once: true })
     try {
-      while (!this.closed && !signal.aborted) {
-        if (dirty) {
-          dirty = false
-          yield await this.getState()
+      while (!this.shut && !signal.aborted) {
+        if (pending !== undefined) {
+          const type = pending
+          pending = undefined
+          yield { type, state: await this.getState() }
           continue
         }
         await new Promise<void>((resolve) => { wake = resolve })
+        wake = undefined
       }
     } finally {
-      this.listeners.delete(changed)
-      signal.removeEventListener('abort', wakeUp)
+      this.watchers.delete(changed)
     }
   }
 
@@ -258,7 +256,7 @@ export class FujueAccount extends DeepSeekAccount {
     if (stored === undefined || stored !== token) return
     await this.ctx.credentials.unset(this.ref)
     this.cached = undefined
-    this.changed()
+    this.notify('credentials-changed')
     this.ctx.emit('deepseek-account/session-expired')
   }
 
@@ -284,7 +282,7 @@ export class FujueAccount extends DeepSeekAccount {
   /** Reapply the account configuration for an existing key without blocking boot. */
   private async refreshStoredConfiguration(): Promise<void> {
     const key = await this.storedKey()
-    if (key === undefined || this.closed) {
+    if (key === undefined || this.shut) {
       // A removed key must not keep serving the catalog it was read for.
       this.cached = undefined
       return
@@ -298,7 +296,7 @@ export class FujueAccount extends DeepSeekAccount {
 
   /** Reload the stored configuration in the background, at most one read at a time. */
   private requestRefresh(): void {
-    if (this.closed) return
+    if (this.shut) return
     if (this.refreshTask !== undefined) {
       this.refreshAgain = true
       return
@@ -327,11 +325,11 @@ export class FujueAccount extends DeepSeekAccount {
    * @param ref - reference whose stored value changed.
    */
   private adoptManualKey(ref: CredentialRef): void {
-    if (this.closed) return
+    if (this.shut) return
     void (async () => {
       const resolved = await this.ctx.credentials.resolve(ref)
       const key = resolved?.value
-      if (key === undefined || !key.startsWith('fj_live_') || this.closed) return
+      if (key === undefined || !key.startsWith('fj_live_') || this.shut) return
       await this.ctx.credentials.set(this.ref, key)
     })().catch((error: unknown) => {
       this.ctx.logger.warn('fujue-account: could not adopt a manually entered API key')
@@ -395,25 +393,25 @@ export class FujueAccount extends DeepSeekAccount {
   }
 
   /** Wait for approval, then exchange, apply, and commit the credential. */
-  private async run(attempt: Attempt): Promise<void> {
+  private async runAttempt(attempt: Attempt): Promise<void> {
     try {
       const start = await startDevice(this.config, attempt.controller.signal)
       if (attempt.controller.signal.aborted) {
-        this.update(attempt, { phase: 'cancelled' })
+        this.updateAttempt(attempt, { phase: 'cancelled' })
         return
       }
       const deadline = Math.min(
         Date.now() + start.expires_in * 1000,
         Date.now() + this.config.attemptTimeoutMs,
       )
-      this.update(attempt, {
+      this.updateAttempt(attempt, {
         phase: 'waiting-browser',
         authorizeUrl: `${this.config.webBaseUrl}${start.verification_uri}?code=${encodeURIComponent(start.user_code)}`,
         expiresAt: deadline,
       })
       while (!attempt.controller.signal.aborted) {
         if (Date.now() >= deadline) {
-          this.update(attempt, { phase: 'expired' })
+          this.updateAttempt(attempt, { phase: 'expired' })
           return
         }
         await sleep(start.interval * 1000, attempt.controller.signal)
@@ -421,38 +419,38 @@ export class FujueAccount extends DeepSeekAccount {
         const outcome = await pollDeviceToken(this.config, start.device_code, attempt.controller.signal)
         if (outcome.status === 'pending') continue
         if (outcome.status === 'expired') {
-          this.update(attempt, { phase: 'expired' })
+          this.updateAttempt(attempt, { phase: 'expired' })
           return
         }
-        this.update(attempt, { phase: 'exchanging' })
+        this.updateAttempt(attempt, { phase: 'exchanging' })
         const config = await fetchHarnessConfig(this.config, outcome.apiKey, attempt.controller.signal)
-        this.update(attempt, { phase: 'committing' })
+        this.updateAttempt(attempt, { phase: 'committing' })
         await this.applyConfiguration(config)
         await this.ctx.credentials.set(this.ref, outcome.apiKey)
         this.cached = { key: outcome.apiKey, config }
-        this.update(attempt, { phase: 'succeeded' })
+        this.updateAttempt(attempt, { phase: 'succeeded' })
         return
       }
     } catch (error) {
       if (attempt.controller.signal.aborted) {
-        this.update(attempt, { phase: 'cancelled' })
+        this.updateAttempt(attempt, { phase: 'cancelled' })
         return
       }
       const code = error instanceof FujueRequestError ? error.code : 'protocol'
       this.ctx.logger.warn('fujue-account: sign-in failed with %s', code)
-      this.update(attempt, { phase: code === 'expired' ? 'expired' : 'failed', errorCode: code })
+      this.updateAttempt(attempt, { phase: code === 'expired' ? 'expired' : 'failed', errorCode: code })
     }
   }
 
   /** Publish one attempt change to every watcher. */
-  private update(attempt: Attempt, patch: Partial<SignInAttemptView>): void {
+  private updateAttempt(attempt: Attempt, patch: Partial<SignInAttemptView>): void {
     attempt.view = { ...attempt.view, ...patch }
-    this.changed()
+    this.notify()
   }
 
-  /** Notify watchers; identity-only notifications are filtered by each subscriber. */
-  private changed(identityOnly = false): void {
-    for (const listener of this.listeners) listener(identityOnly)
+  /** Notify watchers that the account state changed. */
+  private notify(kind: 'snapshot' | 'credentials-changed' = 'snapshot'): void {
+    for (const listener of this.watchers) listener(kind)
   }
 }
 

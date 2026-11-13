@@ -7,11 +7,11 @@ kind: "package-reference"
 
 [English](README.md) | 中文
 
-## Summary
+## 概述
 
 `@deepseek-ai/dsh-fujue-account` 用 FuJue 网站实现 `ctx.deepseekAccount` 服务，现有账户界面、`account` Remote 命名空间和模型适配器无需修改即可使用。登录时显示 device 链接，用户在网站上批准该代码，签发的 API key 成为每个模型请求解析的凭据。登录成功后还会应用该账户在服务端持有的配置，因此网关 API 地址、带显示名称的模型目录和选择器中的默认模型都跟随网站发布的内容。
 
-## Table of Contents
+## 目录
 
 - [Use this package](#use-this-package)
 - [Model Experience](#model-experience)
@@ -53,3 +53,12 @@ No model request prefix changes. Prompts, tool schemas, and Session events are u
 - 没有刷新或过期流程。被拒绝的 key 通过 `deepseek-account/session-expired` 暴露，需要重新登录。
 - 账户充值、赠送、嵌入式 Platform 页面与设备标识持久化未实现：`getPlatformSession` 返回 null，赠送相关操作为空。
 - 每次启动都会重写模型路由。账户目录内的用户选择会保留，因为只有当前选择不被账户提供时才重新指定默认模型。
+
+<a id="dev-note"></a>
+### 开发备注
+
+设备码流程始终先写本地配置、后写凭据：`startSignIn` 记录本次尝试，轮询 token 端点直到网站批准该验证码，只有批准之后才会写入 pi-ai 路由和 key。等待批准时端点返回 428，因此轮询循环把该状态视为进行中而不是失败；`requestTimeoutMs` 限制单次请求，`attemptTimeoutMs` 限制整个批准过程。
+
+取消会中止该尝试的 controller 并等待尝试结束，因此已取消的登录不可能在之后提交 key。token 被拒绝时，只有当已存储的凭据仍与失败请求使用的凭据一致时才清除它，然后发出 `deepseek-account/session-expired`；期间被替换的 key 不受影响。
+
+每次应用都会重新声明目录，而不是缓存合并后的视图。`getBalance` 与 `getNotifications` 是有意保留的占位实现，分别返回空钱包列表和 null，因为账号页面由网站负责，本部署不保留钱包数据。
