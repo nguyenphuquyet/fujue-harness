@@ -1675,7 +1675,6 @@ export type Config = LocalConfig
 
 ## `@deepseek-ai/dsh-fujue-account`
 
-- `inject`: `credentials`
 - `source`: [`packages/credentials/fujue-account/src/config.ts:5`](../packages/credentials/fujue-account/src/config.ts)
 
 ```ts config-catalog

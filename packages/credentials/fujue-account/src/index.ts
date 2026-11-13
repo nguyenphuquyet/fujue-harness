@@ -176,6 +176,11 @@ export class FujueAccount extends DeepSeekAccount {
     return this.getState()
   }
 
+  /**
+   * Cancel one in-flight sign-in attempt and report the resulting account state.
+   * @param id - identifier of the attempt to cancel.
+   * @returns the account view after the attempt settles.
+   */
   override async cancelSignIn(id: SignInAttemptId): Promise<AccountView> {
     const attempt = this.signInAttempt
     if (attempt?.id === id) {

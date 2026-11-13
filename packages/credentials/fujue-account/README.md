@@ -53,3 +53,13 @@ No model request prefix changes. Prompts, tool schemas, and Session events are u
 - The provider has no refresh or expiry flow. A rejected key surfaces through `deepseek-account/session-expired` and requires signing in again.
 - Account-wide wins and bonuses, embedded Platform pages, and device identity persistence are not implemented: `getPlatformSession` returns null and the bonus operations are empty.
 - Each launch rewrites the model route. A user choice inside the account catalog survives, because the default model is reassigned only when the current selection is not served by the account.
+
+<a id="dev-note"></a>
+### Dev Note
+
+The device flow keeps the local configuration ahead of the credential: `startSignIn` records the attempt, polls the token endpoint until the website approves the code, and only then applies the pi-ai route and the key. A pending approval answers 428, so the poll loop treats that status as progress rather than failure; `requestTimeoutMs` bounds each request and `attemptTimeoutMs` bounds the whole approval.
+
+Cancellation aborts the attempt's controller and awaits the attempt promise, so a cancelled sign-in can never commit a key afterwards. Token rejection clears the stored credential only while it still matches the one the failed request used, then emits `deepseek-account/session-expired`; a key replaced in the meantime is left alone.
+
+The provider restates the catalog on every apply instead of caching a merged view. `getBalance` and `getNotifications` are deliberate stubs that return an empty wallet list and null, because the website owns the account page and keeps no wallet data for this deployment.
+
