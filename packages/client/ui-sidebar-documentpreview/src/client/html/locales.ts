@@ -71,3 +71,11 @@ export const pt = {
   loading: 'Renderizando documento...',
   failed: 'Este documento HTML não pôde ser visualizado.',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  title: 'HTML',
+  frame: 'Xem trước tài liệu HTML',
+  loading: 'Đang kết xuất tài liệu...',
+  failed: 'Không thể xem trước tài liệu HTML này.',
+} satisfies Record<keyof typeof en, string>

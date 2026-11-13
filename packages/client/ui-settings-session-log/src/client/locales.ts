@@ -61,3 +61,11 @@ export const pt = {
   saved: 'Preferência salva',
   failed: 'Não foi possível salvar a preferência',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  title: 'Tải nhật ký phiên lên khi dùng API mô hình chính thức',
+  description: 'Giúp cải thiện các mô hình và sản phẩm DeepSeek.',
+  saved: 'Đã lưu tùy chọn',
+  failed: 'Không thể lưu tùy chọn',
+} satisfies Record<keyof typeof en, string>

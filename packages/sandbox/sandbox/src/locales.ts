@@ -40,13 +40,18 @@ export const pt = {
   escalation: (mode: string, justification: string): string => `Permitir esta operação com permissões ${mode}: ${justification}`,
 } satisfies typeof en
 
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  escalation: (mode: string, justification: string): string => `Cho phép thao tác này với quyền ${mode}: ${justification}`,
+} satisfies typeof en
+
 /**
  * Build translations for the existing Client localized-text resolver.
  * @param mode - requested sandbox mode.
  * @param justification - raw model justification, preserved in every translation.
  * @returns localized approval text.
  */
-export function escalationDisplayReason(mode: string, justification: string): Record<'en' | 'zh' | 'ja' | 'es' | 'fr' | 'de' | 'ru' | 'pt', string> {
+export function escalationDisplayReason(mode: string, justification: string): Record<'en' | 'zh' | 'ja' | 'es' | 'fr' | 'de' | 'ru' | 'pt' | 'vi', string> {
   return {
     en: en.escalation(mode, justification),
     zh: zh.escalation(mode, justification),
@@ -56,5 +61,6 @@ export function escalationDisplayReason(mode: string, justification: string): Re
     de: de.escalation(mode, justification),
     ru: ru.escalation(mode, justification),
     pt: pt.escalation(mode, justification),
+    vi: vi.escalation(mode, justification),
   }
 }

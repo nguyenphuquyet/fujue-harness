@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "api-settings-controller",
+    "description": "Cung cấp cho client khả năng đọc và sửa các mục cài đặt."
+  }
+}

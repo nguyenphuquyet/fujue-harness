@@ -191,11 +191,12 @@ describe('locale apply', () => {
       { id: 'de', label: 'Deutsch' },
       { id: 'ru', label: 'Русский' },
       { id: 'pt', label: 'Português' },
+      { id: 'vi', label: 'Tiếng Việt' },
       { id: 'it', label: 'Italiano' },
     ])
 
     await languagePack.dispose()
-    expect(instance.getSnapshot().options.map(option => option.id)).toEqual(['zh', 'en', 'ja', 'es', 'fr', 'de', 'ru', 'pt'])
+    expect(instance.getSnapshot().options.map(option => option.id)).toEqual(['zh', 'en', 'ja', 'es', 'fr', 'de', 'ru', 'pt', 'vi'])
   })
 
   it.each([
@@ -205,6 +206,7 @@ describe('locale apply', () => {
     ['de', 'Deutsch', 'Sprache', 'Abbrechen'],
     ['ru', 'Русский', 'Язык', 'Отмена'],
     ['pt', 'Português', 'Idioma', 'Cancelar'],
+    ['vi', 'Tiếng Việt', 'Ngôn ngữ', 'Hủy'],
   ])('restores %s from the Host and releases its language and dictionaries on unload', async (id, label, languageTitle, cancel) => {
     const b = await bench(id)
     onTestFinished(() => b.ctx.fiber.dispose())

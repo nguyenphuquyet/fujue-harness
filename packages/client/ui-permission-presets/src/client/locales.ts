@@ -179,6 +179,22 @@ export const pt = {
   'confirm.enable': 'Ativar acesso total',
 } satisfies Record<keyof typeof en, string>
 
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'title': 'Quyền',
+  'description': 'Chọn chế độ quyền mặc định cho phiên mới',
+  'loading': 'Đang tải',
+  'unavailable': 'Không khả dụng',
+  'preset.readOnly': 'Chỉ đọc',
+  'preset.workspaceWrite': 'Ghi trong không gian làm việc',
+  'preset.fullAccess': 'Toàn quyền truy cập',
+  'confirm.title': 'Bật toàn quyền truy cập?',
+  'confirm.description': 'Toàn quyền truy cập giúp phiên mới giảm bớt bước xác nhận và cho phép agent thực hiện trực tiếp nhiều thao tác hơn, bao gồm thao tác nhạy cảm, thay đổi tệp hoặc lệnh bên ngoài. Chỉ nên dùng khi bạn tin tưởng các tác vụ tiếp theo.',
+  'confirm.acknowledge': 'Tôi hiểu rủi ro và muốn tiếp tục',
+  'confirm.cancel': 'Hủy',
+  'confirm.enable': 'Bật toàn quyền truy cập',
+} satisfies Record<keyof typeof en, string>
+
 /** Japanese copy, checked against the English keys. */
 export const accessJa = {
   'mode': 'アクセスモード、現在: {name}',
@@ -303,4 +319,25 @@ export const accessPt = {
   'auto.confirm.description': 'Auto review é executado sem sandbox. Antes de cada chamada de ferramenta nativa e chamada interna PTC, o mesmo modelo do agente atual analisa se deve permitir isso; você aprova ou rejeita cada chamada negada. Este recurso é experimental, pode permitir ou negar ações falsamente e usa tokens adicionais.',
   'auto.confirm.acknowledge': 'Entendo esses riscos e quero continuar',
   'auto.confirm.enable': 'Ativar Auto review',
+} satisfies typeof accessEn
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const accessVi = {
+  'mode': 'Chế độ truy cập, hiện tại: {name}',
+  'close': 'Đóng',
+  'preset.readOnly': 'Chỉ đọc',
+  'preset.workspaceWrite': 'Ghi trong không gian làm việc',
+  'preset.fullAccess': 'Toàn quyền truy cập',
+  'confirm.title': 'Bật toàn quyền truy cập?',
+  'confirm.description': 'Toàn quyền truy cập giảm bớt bước xác nhận và cho phép agent thực hiện trực tiếp nhiều thao tác hơn, bao gồm thao tác nhạy cảm, thay đổi tệp hoặc lệnh bên ngoài. Chỉ dùng khi bạn tin tưởng tác vụ hiện tại.',
+  'confirm.acknowledge': 'Tôi hiểu rủi ro và muốn tiếp tục',
+  'confirm.cancel': 'Hủy',
+  'confirm.enable': 'Bật toàn quyền truy cập',
+  'auto.label': 'Auto review',
+  'auto.badge': 'EXP',
+  'auto.description': 'Chạy không có sandbox sau khi cùng một mô hình thực hiện đánh giá thử nghiệm đối với mọi lệnh gọi công cụ gốc và lệnh gọi nội bộ PTC.',
+  'auto.confirm.title': 'Bật Auto review (thử nghiệm)?',
+  'auto.confirm.description': 'Auto review chạy không có sandbox. Trước mỗi lệnh gọi công cụ gốc và lệnh gọi nội bộ PTC, chính mô hình đang dùng sẽ đánh giá xem có cho phép hay không; bạn phê duyệt hoặc từ chối từng lệnh gọi bị từ chối. Tính năng này đang ở dạng thử nghiệm, có thể cho phép hoặc từ chối nhầm và tiêu tốn thêm token.',
+  'auto.confirm.acknowledge': 'Tôi hiểu những rủi ro này và muốn tiếp tục',
+  'auto.confirm.enable': 'Bật Auto review',
 } satisfies typeof accessEn

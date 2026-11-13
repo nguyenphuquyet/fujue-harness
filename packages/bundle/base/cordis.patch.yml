@@ -87,11 +87,14 @@
 
     # The transport-independent default for Agents created by entry points.
     # Settings may supply a saved selection; consumers read it at creation time.
+    # The FuJue account provider replaces this with the website's default model
+    # as soon as a key is stored; before that the id is the catalog's own
+    # fallback so the picker still names the route.
     - id: agent-default-model
       name: '@deepseek-ai/dsh-agent-default-model'
       config:
-        provider: deepseek-official
-        model: deepseek-flash
+        provider: fujue
+        model: deepseek-v4
 
     - id: jobs
       name: '@deepseek-ai/dsh-jobs-local'
@@ -117,23 +120,35 @@
     - id: authorization
       name: '@deepseek-ai/dsh-authorization'
 
+    # FuJue sign-in: the desktop and web surfaces exchange a device code with the FuJue website and
+    # then apply that account's gateway, model catalog, and default model to this installation.
+    # `FUJUE_WEB_URL` points a build at a non-local website without editing the profile.
     - id: deepseek-account
-      name: '@deepseek-ai/dsh-deepseek-account'
+      name: '@deepseek-ai/dsh-fujue-account'
       config:
-        desktopPlatform: !!js "ctx.get('profileContext')?.name === 'desktop' && ['darwin', 'win32'].includes(process.platform) ? process.platform : null"
+        webBaseUrl: !!js "process.env.FUJUE_WEB_URL ?? 'https://harness.nguyenphuquyet.online'"
 
     - id: credentials
       name: '@deepseek-ai/dsh-credentials-local'
 
-    # The pi-ai multi-provider twin, mounted dormant: zero routes (and no extra
-    # models in the picker) until a `llm-pi-ai:` settings section supplies provider
-    # profiles — then those routes register live, keys resolving per request
-    # through their apiKeyEnv references, and drop again when the section empties.
-    # Supplying those profiles is exactly what the web Models page does. Which
-    # adapters exist is composition; which providers run is the user's settings
-    # document.
+    # The FuJue route is the installation's model provider: this default profile
+    # is what the Models page shows before the first sign-in or API key, and the
+    # FuJue account plugin restates it from the website's catalog once a key is
+    # stored. Keys resolve per request through the `FUJUE_API_KEY` reference.
     - id: llm-pi-ai
       name: '@deepseek-ai/dsh-llm-pi-ai'
+      config:
+        providers:
+          fujue:
+            displayName: FuJue
+            api: openai-completions
+            baseURL: !!js "(process.env.FUJUE_WEB_URL ?? 'https://harness.nguyenphuquyet.online') + '/api/v1'"
+            apiKeyEnv: FUJUE_API_KEY
+            models:
+              - id: deepseek-v4
+                name: DeepSeek V4
+                contextWindow: 131072
+                maxTokens: 16384
 
     - id: session-persistence-jsonl
       name: '@deepseek-ai/dsh-session-persistence-jsonl'
@@ -539,12 +554,15 @@
     - id: fs-sandbox
       name: '@deepseek-ai/dsh-fs-sandbox'
 
-    # The native DeepSeek adapter. No key or endpoint is inlined: both resolve per
-    # request from the `llm-deepseek:` settings section over this entry, with the
-    # key coming from the credential store below. Thinking defaults are a deployment
-    # choice.
+    # This is a FuJue build: every model route is served by the FuJue account
+    # gateway below, so the native DeepSeek adapters stay off and the Models
+    # page lists FuJue in their place. Keeping the rows declared (disabled)
+    # rather than deleting them leaves their settings namespaces addressable
+    # for the search/fetch routes that resolve credentials through them.
     - id: llm-deepseek
       name: '@deepseek-ai/dsh-llm-deepseek-api-key'
+      disabled: true
 
     - id: llm-deepseek-account
       name: '@deepseek-ai/dsh-llm-deepseek-account'
+      disabled: true

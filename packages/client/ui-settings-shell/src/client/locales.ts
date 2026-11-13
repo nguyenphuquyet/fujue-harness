@@ -161,3 +161,21 @@ export const pt = {
   saveFailed: 'A implantação não aceitou esses valores; eles foram deixados para você corrigir.',
   invalidNumber: 'Insira um número ou deixe em branco para usar o padrão.',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  title: 'Shell',
+  description: 'Giới hạn thời gian chạy và lượng đầu ra của mỗi lệnh.',
+  timeoutMs: 'Thời gian chờ của lệnh (ms)',
+  timeoutMsHint: 'Thời gian một lệnh được phép chạy trước khi bị dừng.',
+  maxOutputBytes: 'Giới hạn đầu ra mỗi luồng (byte)',
+  maxOutputBytesHint: 'Phần đầu ra vượt quá giới hạn này sẽ tràn vào một tệp tạm thời thay vì bị mất.',
+  overridden: 'Đã ghi đè',
+  reset: 'Đặt lại về mặc định',
+  readOnly: 'Bản triển khai này lưu cài đặt ở chế độ chỉ đọc.',
+  unavailable: 'Plugin này chưa được tải nên hiện không thể cấu hình.',
+  save: 'Lưu',
+  saving: 'Đang lưu…',
+  saveFailed: 'Bản triển khai không chấp nhận các giá trị này; chúng được giữ lại để bạn sửa.',
+  invalidNumber: 'Nhập một số, hoặc để trống để dùng giá trị mặc định.',
+} satisfies Record<keyof typeof en, string>

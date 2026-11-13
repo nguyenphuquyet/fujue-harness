@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Dịch vụ tài nguyên tĩnh giao diện",
+    "description": "Phục vụ trang đầu vào và các Tệp tĩnh của ứng dụng Web, từ chối đường dẫn nằm ngoài Thư mục tương ứng và trả về 404 cho tài nguyên bị thiếu."
+  }
+}

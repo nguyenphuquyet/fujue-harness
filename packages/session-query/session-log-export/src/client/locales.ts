@@ -147,3 +147,21 @@ export const pt = {
   'dialog.close': 'Fechar',
   'dialog.commandFailed': 'Não foi possível iniciar a exportação da sessão.',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'menu.copyMarkdown': 'Sao chép phiên dưới dạng Markdown',
+  'menu.download': 'Tải nhật ký phiên',
+  'menu.feedback': 'Phản hồi',
+  'toast.copied': 'Đã sao chép phiên dưới dạng Markdown.',
+  'toast.preparationFailed': 'Không thể đọc phiên để sao chép. Hãy thử lại.',
+  'toast.clipboardFailed': 'Không thể ghi vào clipboard. Hãy kiểm tra quyền clipboard và thử lại.',
+  'dialog.session': 'Phiên: {sessionId}',
+  'dialog.preparingTitle': 'Đang xuất phiên',
+  'dialog.preparingDescription': 'Đang chuẩn bị tệp ZIP chứa phiên đã chọn, các phiên con và tệp đính kèm.',
+  'dialog.successTitle': 'Đã bắt đầu tải phiên',
+  'dialog.successDescription': 'Trình duyệt đang tải tệp ZIP của phiên.',
+  'dialog.errorTitle': 'Xuất phiên thất bại',
+  'dialog.close': 'Đóng',
+  'dialog.commandFailed': 'Không thể bắt đầu xuất phiên.',
+} satisfies Record<keyof typeof en, string>

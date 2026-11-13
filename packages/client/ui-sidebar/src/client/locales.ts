@@ -114,3 +114,17 @@ export const pt = {
   'panels.more': 'Mais',
   'version.copied': 'Versão copiada',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'panels.unpinTooltip': 'Bỏ ghim khỏi thanh bên trái',
+  'panels.unpin': 'Bỏ ghim {name} khỏi thanh bên',
+  'session.new': 'Phiên mới',
+  'session.new.label': 'Phiên mới',
+  'toggle.open': 'Mở thanh bên',
+  'toggle.collapse': 'Thu gọn thanh bên',
+  'panels.label': 'Bảng điều khiển toàn cục',
+  'navigation.label': 'Điều hướng',
+  'panels.more': 'Thêm',
+  'version.copied': 'Đã sao chép phiên bản',
+} satisfies Record<keyof typeof en, string>

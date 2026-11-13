@@ -130,3 +130,19 @@ export const pt = {
   'action.edit': 'Editar meta',
   'action.clear': 'Objetivo claro',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'phase.active': 'Mục tiêu đang diễn ra',
+  'phase.active.disarmed': 'Mục tiêu không hoạt động',
+  'phase.paused': 'Mục tiêu đã tạm dừng',
+  'phase.blocked': 'Mục tiêu bị chặn',
+  'objective.aria': 'Nội dung mục tiêu',
+  'commandInput.aria': 'Nhập lệnh',
+  'action.save': 'Lưu mục tiêu',
+  'action.cancel': 'Hủy chỉnh sửa',
+  'action.pause': 'Tạm dừng mục tiêu',
+  'action.resume': 'Tiếp tục mục tiêu',
+  'action.edit': 'Chỉnh sửa mục tiêu',
+  'action.clear': 'Xóa mục tiêu',
+} satisfies Record<GoalKey, string>

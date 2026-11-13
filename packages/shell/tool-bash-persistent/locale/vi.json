@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Công cụ Bash duy trì trạng thái",
+    "description": "Cho phép AI chạy liên tiếp các lệnh trong một phiên Bash giữ nguyên trạng thái."
+  }
+}

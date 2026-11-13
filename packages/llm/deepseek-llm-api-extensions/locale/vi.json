@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Tiện ích mở rộng API DeepSeek",
+    "description": "Cho phép các plugin khác thêm trường mở rộng vào yêu cầu gửi Mô hình DeepSeek."
+  }
+}

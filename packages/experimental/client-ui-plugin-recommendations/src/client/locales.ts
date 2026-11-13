@@ -232,3 +232,32 @@ export const pt = {
   closing: 'O serviço está sendo recarregado. Tente novamente em instantes.',
   transport: 'Não foi possível confirmar o resultado. Atualize e tente novamente.',
 } satisfies Record<RecommendationKey, string>
+
+/** Vietnamese card copy. */
+export const vi = {
+  heading: 'Plugin được đề xuất',
+  official: 'Chính thức',
+  detailsFor: 'Xem chi tiết: {title}',
+  'version-error': 'Plugin này không tương thích với phiên bản DSH hiện tại. Hãy cập nhật DSH và thử lại.',
+  'management-error': 'Không thể bật plugin. Hãy mở chi tiết để kiểm tra lỗi và thử lại.',
+  enable: 'Bật',
+  dismiss: 'Để sau',
+  working: 'Đang xử lý…',
+  scope: 'Dùng được trong mọi hội thoại khi bật',
+  enabled: 'Đã bật',
+  'already-enabled': 'Đã được chọn trong Plugin. Mở chi tiết để xem trạng thái hoạt động.',
+  dismissed: 'Đã bỏ qua',
+  replaced: 'Đã thay thế',
+  'restart-required': 'Đã lưu. Khởi động lại DSH để áp dụng.',
+  failed: 'Không thể bật. Hãy thử lại hoặc kiểm tra Plugin.',
+  retry: 'Thử bật lại',
+  unconfirmed: 'Không thể xác nhận plugin đã được bật hay chưa. Hãy thử lại để kiểm tra.',
+  'lookup-failed': 'Không thể tải thông tin plugin này. Hãy thử lại.',
+  retryLookup: 'Thử lại',
+  unavailable: 'Hiện không thể bật plugin này. Hãy kiểm tra Plugin.',
+  unknown: 'Đề xuất này không khả dụng. Hãy mở lại hội thoại.',
+  'access-denied': 'Bạn không có quyền thay đổi cấu hình này.',
+  'not-live-root': 'Hãy dùng đề xuất này trong hội thoại gốc.',
+  closing: 'Dịch vụ đang tải lại. Hãy thử lại sau giây lát.',
+  transport: 'Không thể xác nhận kết quả. Hãy làm mới và thử lại.',
+} satisfies Record<RecommendationKey, string>

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ui-settings-session-log",
+    "description": "Đặt tùy chọn gửi nhật ký phiên kèm yêu cầu API tới mô hình chính thức của DeepSeek."
+  }
+}

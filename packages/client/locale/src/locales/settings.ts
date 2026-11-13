@@ -42,3 +42,8 @@ export const ru = {
 export const pt = {
   'language.title': 'Idioma',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'language.title': 'Ngôn ngữ',
+} satisfies Record<keyof typeof en, string>

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Gợi ý cá nhân hóa",
+    "description": "Hiển thị thẻ gợi ý bên dưới câu trả lời theo điều bạn muốn từ DSH: khi bạn muốn một trang hoặc công cụ nhỏ có thể giữ lại, hệ thống đề xuất một trang cá nhân hóa mới, được dựng ở chế độ nền sau khi bạn nhấn Tạo; khi bạn hỏi cách làm một việc trong ứng dụng này hoặc nói rằng thiếu một năng lực nào đó, hệ thống gợi ý plugin tích hợp sẵn cung cấp năng lực đó, được bật khi bạn nhấn Bật.",
+    "detail": "docs/DETAIL.md"
+  }
+}

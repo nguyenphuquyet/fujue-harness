@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Công cụ lặp Ralph",
+    "description": "Chạy một Agent con mới theo từng vòng quanh cùng một Mục tiêu và chuyển tiếp báo cáo tóm tắt của vòng trước."
+  }
+}

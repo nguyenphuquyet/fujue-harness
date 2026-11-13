@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Điều khiển máy tính (Cua Driver)",
+    "description": "Cho phép mô hình điều khiển màn hình máy tính bằng môi trường chạy Cua Driver đi kèm; cần quyền truy cập màn hình cho ứng dụng khởi chạy dsh."
+  }
+}

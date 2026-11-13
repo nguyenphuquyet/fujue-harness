@@ -1,6 +1,6 @@
 {
-  "name": "DeepSeek Harness",
-  "short_name": "DSH",
+  "name": "FuJue Harness",
+  "short_name": "FuJue",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

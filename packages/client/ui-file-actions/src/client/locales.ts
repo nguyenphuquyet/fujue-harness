@@ -130,3 +130,19 @@ export const pt = {
   'menu.downloaded': 'Download concluído',
   'path.revealError': 'Não foi possível mostrar o local do arquivo. Tente novamente.',
 } satisfies Record<FileActionKey, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'menu.finder': 'Hiện trong Finder',
+  'menu.reveal': 'Hiện trong thư mục',
+  'menu.saveAs': 'Lưu thành…',
+  'menu.copied': 'Đã sao chép',
+  'menu.copyImage': 'Sao chép hình ảnh',
+  'menu.download': 'Tải xuống',
+  'menu.saveFailed': 'Không thể lưu. Hãy kiểm tra tệp nguồn và vị trí đích, rồi thử lại.',
+  'menu.copyFailed': 'Không thể sao chép. Hãy kiểm tra nội dung có sẵn, rồi thử lại.',
+  'menu.saved': 'Đã lưu',
+  'menu.downloadStarted': 'Đã bắt đầu tải xuống',
+  'menu.downloaded': 'Tải xuống hoàn tất',
+  'path.revealError': 'Không thể hiện vị trí tệp. Hãy thử lại.',
+} satisfies Record<FileActionKey, string>

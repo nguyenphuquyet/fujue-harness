@@ -177,3 +177,21 @@ export const pt = {
   saveFailed: 'A implantação não aceitou esses valores; eles foram deixados para você corrigir.', save: 'Salvar', saving: 'Salvando…',
   copy: 'Copiar', copied: 'Copiado', codeTitle: 'Bloco de código', wrap: 'Quebrar linhas', unwrap: 'Desembrulhar linhas', footnotes: 'Notas de rodapé',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  provider: 'Dịch vụ dịch', google: 'Google', bing: 'Bing',
+  deepseekAccount: 'DeepSeek Flash — tài khoản (trả phí)', deepseekOfficial: 'DeepSeek Flash — API chính thức (trả phí)',
+  providerUnavailableOption: '{provider} — không khả dụng',
+  providerUnavailable: 'Nhà cung cấp này không khả dụng. Hãy cấu hình tài khoản DeepSeek hoặc nhà cung cấp API chính thức, hoặc chọn một dịch vụ khả dụng.',
+  paidNotice: 'Mỗi đoạn chưa được lưu trong bộ nhớ đệm sẽ gửi một yêu cầu DeepSeek Flash trả phí riêng qua tài khoản hoặc thông tin xác thực API chính thức đã chọn. Mở lại phần suy luận sẽ dùng lại kết quả đã lưu; thay đổi nhà cung cấp, ngôn ngữ, văn bản nguồn hoặc cài đặt yêu cầu có thể gửi một yêu cầu trả phí mới.',
+  anonymousNotice: 'Bing và Google không cần đăng nhập dịch hay khóa API. Các điểm cuối ẩn danh của họ có thể từ chối hoặc giới hạn yêu cầu.', targetLanguage: 'Ngôn ngữ đích',
+  targetLanguageHint: 'auto sẽ theo ngôn ngữ giao diện; mã ngôn ngữ như zh, en và ja cũng dùng được.',
+  privacy: 'Phần suy luận được mở rộng sẽ được gửi đến dịch vụ đã chọn. Nội dung có thể chứa mã riêng tư hoặc chi tiết hội thoại.',
+  translation: 'Xem bản dịch', original: 'Xem bản gốc', retry: 'Thử lại', failed: 'Dịch thất bại. Đang hiển thị bản gốc.',
+  translating: 'Đang dịch suy luận', invalidProvider: 'Hãy chọn dịch vụ dịch.', invalidLanguage: 'Nhập auto hoặc mã ngôn ngữ, ví dụ zh, en hoặc ja.',
+  overridden: 'Đã ghi đè', reset: 'Đặt lại về mặc định',
+  unavailable: 'Tùy chọn dịch không khả dụng.', readOnly: 'Bản triển khai này lưu cài đặt ở chế độ chỉ đọc.',
+  saveFailed: 'Bản triển khai không chấp nhận các giá trị này; chúng được giữ lại để bạn sửa.', save: 'Lưu', saving: 'Đang lưu…',
+  copy: 'Sao chép', copied: 'Đã sao chép', codeTitle: 'Khối mã', wrap: 'Ngắt dòng', unwrap: 'Bỏ ngắt dòng', footnotes: 'Chú thích cuối trang',
+} satisfies Record<keyof typeof en, string>

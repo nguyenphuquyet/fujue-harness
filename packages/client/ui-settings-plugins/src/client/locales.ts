@@ -74,3 +74,12 @@ export const pt = {
   tabs: 'Visualizações de plug-in',
   empty: 'Esta implantação não expõe visualizações de plug-ins.',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  nav: 'Plugin tích hợp',
+  title: 'Plugin tích hợp',
+  intro: 'Xem các plugin đi kèm trong bản triển khai này.',
+  tabs: 'Chế độ xem plugin',
+  empty: 'Bản triển khai này không có chế độ xem plugin nào.',
+} satisfies Record<keyof typeof en, string>

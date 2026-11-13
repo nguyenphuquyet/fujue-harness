@@ -155,6 +155,21 @@ export function apply(ctx: ClientContext): void {
         'browser.truncated': 'Há pastas demais; apenas o início é exibido.',
         'browser.showHidden': 'Mostrar arquivos ocultos',
       }],
+      ['vi', {
+        'browser.title': 'Chọn thư mục làm việc',
+        'browser.home': 'Thư mục cá nhân',
+        'browser.newFolder': 'Thư mục mới',
+        'browser.folderName': 'Tên thư mục',
+        'browser.createIn': 'Thư mục mới trong "{name}"',
+        'browser.untitledFolder': 'Thư mục chưa đặt tên',
+        'browser.create': 'Tạo',
+        'browser.cancel': 'Hủy',
+        'browser.open': 'Mở',
+        'browser.editPath': 'Sửa đường dẫn',
+        'browser.loading': 'Đang tải…',
+        'browser.truncated': 'Quá nhiều thư mục; chỉ hiển thị phần đầu.',
+        'browser.showHidden': 'Hiện tệp ẩn',
+      }],
     ]
     try {
       for (const [locale, dict] of dictionaries) disposers.push(ctx.locale.register(LOCALE_NS, locale, dict))

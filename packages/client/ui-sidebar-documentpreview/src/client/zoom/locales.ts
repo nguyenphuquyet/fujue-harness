@@ -80,3 +80,13 @@ export const zoomPt = {
   zoomFitWidth: 'Ajustar largura',
   zoomValue: '{percent}%',
 } satisfies typeof zoomEn
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const zoomVi = {
+  zoomControls: 'Điều khiển thu phóng',
+  zoomMenu: 'Chọn mức thu phóng',
+  zoomOut: 'Thu nhỏ',
+  zoomIn: 'Phóng to',
+  zoomFitWidth: 'Vừa chiều rộng',
+  zoomValue: '{percent}%',
+} satisfies typeof zoomEn

@@ -90,3 +90,14 @@ export const pt = {
   allowOnce: 'Permitir uma vez',
   allowAlways: 'Sempre permitir',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  waiting: 'Đang chờ phê duyệt',
+  'detail.aria': 'Chi tiết phê duyệt',
+  escalation: 'Công cụ {toolName} yêu cầu thực thi đặc quyền',
+  reject: 'Từ chối',
+  allow: 'Cho phép',
+  allowOnce: 'Cho phép một lần',
+  allowAlways: 'Luôn cho phép',
+} satisfies Record<keyof typeof en, string>

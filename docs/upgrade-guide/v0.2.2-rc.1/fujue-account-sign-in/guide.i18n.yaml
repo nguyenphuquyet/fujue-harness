@@ -1,0 +1,16 @@
+# Bilingual-pair consistency record for guide.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write docs/upgrade-guide/v0.2.2-rc.1/fujue-account-sign-in/guide.md
+/:
+  en: e3f5d483af9a89e3
+  zh: aea02a9e89b66b65
+/base-bundle-sign-in-moves-to-the-fujue-account-provider:
+  en: 2dbecb75a34db840
+  zh: bc3eb96a6d19985c
+/base-bundle-sign-in-moves-to-the-fujue-account-provider/change:
+  en: 5b157bf06e5c848c
+  zh: 4c136becf0e9f68a
+/base-bundle-sign-in-moves-to-the-fujue-account-provider/migration:
+  en: 054863ab94f0fdbf
+  zh: d67c4c8cb6c660a2

@@ -101,3 +101,15 @@ export const pt = {
   'row.inspect': 'Inspecionar',
   'menu.userOnly': 'somente usuário',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'row.title': 'Kỹ năng',
+  'row.running': 'Đang tải kỹ năng',
+  'row.preparing': 'Đang chuẩn bị tải kỹ năng',
+  'row.failed': 'Tải kỹ năng thất bại',
+  'row.stopped': 'Đã dừng tải kỹ năng',
+  'row.instructions': 'Hướng dẫn',
+  'row.inspect': 'Xem chi tiết',
+  'menu.userOnly': 'chỉ người dùng',
+} satisfies Record<keyof typeof en, string>

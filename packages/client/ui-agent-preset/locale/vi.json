@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ui-agent-preset",
+    "description": "Chọn Agent preset cho phiên hiện tại và phiên mới, đồng thời chỉnh sửa plugin mà preset sử dụng."
+  }
+}

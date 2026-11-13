@@ -8,4 +8,5 @@ export const dictionaries = {
   de: { back: 'Zurück', failed: 'Die Aktion konnte nicht abgeschlossen werden. Versuchen Sie es erneut.' },
   ru: { back: 'Назад', failed: 'Не удалось выполнить действие. Повторите попытку.' },
   pt: { back: 'Voltar', failed: 'Não foi possível concluir a ação. Tente novamente.' },
+  vi: { back: 'Quay lại', failed: 'Không thể hoàn tất thao tác. Hãy thử lại.' },
 } satisfies Record<string, { back: string; failed: string }>

@@ -6,7 +6,7 @@ import type { CommandId } from '@deepseek-ai/dsh-commands/types'
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
 import { IconUsersOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
 import { TeamCommandRow, type TeamCommandRowProps } from '../src/client/TeamCommandRow.tsx'
-import { zh, en, ja, es, fr, de, ru, pt } from '../src/client/locales.ts'
+import { zh, en, ja, es, fr, de, ru, pt, vi } from '../src/client/locales.ts'
 
 afterEach(cleanup)
 
@@ -18,6 +18,7 @@ function command(args: string | null, outcome: Node['outcome']): Node {
 describe.each([
   { id: 'zh', dictionary: zh }, { id: 'en', dictionary: en }, { id: 'ja', dictionary: ja }, { id: 'es', dictionary: es },
   { id: 'fr', dictionary: fr }, { id: 'de', dictionary: de }, { id: 'ru', dictionary: ru }, { id: 'pt', dictionary: pt },
+  { id: 'vi', dictionary: vi },
 ])('Team command fallback in $id', ({ dictionary }) => {
   const t = makeTranslate(dictionary)
 

@@ -11,7 +11,7 @@ it('keeps the guide interval in macOS configuration and rejects invalid bounds',
   for (const permissionPollIntervalMs of [99, 100.5, 2 ** 31]) expect(() => Config({ permissionPollIntervalMs })).toThrow()
 })
 
-it.each(['en', 'zh', 'ja', 'es', 'fr', 'de', 'ru', 'pt'])('prepares both permissions in %s without sending settings-only callers guide fields', (locale) => {
+it.each(['en', 'zh', 'ja', 'es', 'fr', 'de', 'ru', 'pt', 'vi'])('prepares both permissions in %s without sending settings-only callers guide fields', (locale) => {
   const parameters = createPermissionParameters(250)
   for (const permission of ['accessibility', 'screenRecording'] as const) {
     const guide = parameters('requestPermission', permission, locale)

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Chỉ mục plugin tùy chỉnh",
+    "description": "Thêm thẻ Khám phá vào trang Plugin, nơi bạn duyệt và cài đặt plugin từ các chỉ mục plugin mà bạn thêm vào.",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -80,3 +80,13 @@ export const pt: Record<ActionCardKey, string> = {
   'row.title': 'Cartão de ação', 'row.preparing': 'Preparando um cartão', 'row.running': 'Propondo',
   'row.ok': 'Proposto', 'row.error': 'Não exibido', 'row.stopped': 'Interrompido', 'row.inspect': 'Inspecionar chamada',
 }
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi: Record<ActionCardKey, string> = {
+  expandBrief: 'Xem thêm', collapseBrief: 'Thu gọn',
+  dismiss: 'Không phải bây giờ', dismissed: 'Đã bỏ qua', replaced: 'Đã thay thế',
+  unavailable: 'Hành động này không khả dụng. Kiểm tra plugin trong mục Plugins.',
+  transport: 'Không thể xác nhận kết quả. Hãy kết nối lại và kiểm tra thẻ trước khi thử lại.',
+  'row.title': 'Thẻ hành động', 'row.preparing': 'Đang chuẩn bị thẻ', 'row.running': 'Đang đề xuất',
+  'row.ok': 'Đã đề xuất', 'row.error': 'Không hiển thị', 'row.stopped': 'Đã ngắt', 'row.inspect': 'Kiểm tra lệnh gọi',
+}

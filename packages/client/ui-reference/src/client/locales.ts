@@ -172,3 +172,22 @@ export const pt = {
   'time.months': '{n} mês',
   'time.years': '{n}s',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'section.files': 'Tệp và thư mục',
+  'section.subagents': 'Agent con',
+  'section.sessions': 'Phiên',
+  'candidate.noCwd': '(không có cwd)',
+  'crumb.root': 'Không gian làm việc',
+  'fileOpen.title': 'Không thể mở tệp',
+  'fileOpen.failed': 'Không thể mở “{path}”. Hãy thử lại hoặc đóng thông báo này.',
+  'fileOpen.close': 'Đóng',
+  'fileOpen.retry': 'Thử lại',
+  'time.now': 'vừa xong',
+  'time.minutes': '{n} phút',
+  'time.hours': '{n} giờ',
+  'time.days': '{n} ngày',
+  'time.months': '{n} tháng',
+  'time.years': '{n} năm',
+} satisfies Record<keyof typeof en, string>

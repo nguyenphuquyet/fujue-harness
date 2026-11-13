@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "config-editor",
+    "description": "Lưu cấu hình plugin và áp dụng thay đổi vào cấu hình đang chạy hiện tại."
+  }
+}

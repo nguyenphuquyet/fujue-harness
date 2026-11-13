@@ -69,3 +69,11 @@ export const pt = {
   'press.failed': 'O botão falhou: {message}',
   'press.stale': 'Esse botão pertencia a um desenho anterior; a banda se atualizou',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  band: 'Bản sửa đổi Claude Code',
+  pressing: 'Đang xử lý…',
+  'press.failed': 'Nút thao tác thất bại: {message}',
+  'press.stale': 'Nút đó thuộc về một lần hiển thị trước đó; dải đã được làm mới',
+} satisfies Record<keyof typeof en, string>

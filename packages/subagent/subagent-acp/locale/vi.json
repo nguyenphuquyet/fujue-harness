@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Backend agent con ACP",
+    "description": "Chạy các agent bên ngoài trong tiến trình con thông qua ACP."
+  }
+}

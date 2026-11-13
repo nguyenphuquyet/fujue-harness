@@ -110,3 +110,15 @@ export const pt = {
   charts: 'gráficos', images: 'imagens', shapes: 'formas', conditionalFormatting: 'formatação condicional', featureSeparator: ', ',
   retry: 'Tentar novamente',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  title: 'Bảng tính', language: 'vi', loading: 'Đang kết xuất tài liệu...',
+  invalid: 'Không thể mở bảng tính này. Hãy kiểm tra định dạng, nội dung hoặc mật khẩu bảo vệ.',
+  tooLarge: 'Bảng tính này vượt quá giới hạn kích thước xem trước.', timeout: 'Mở bảng tính này quá thời gian. Hãy thử tệp nhỏ hơn.',
+  encoding: 'Không thể đọc mã hóa văn bản này. Hãy lưu tệp dưới dạng UTF-8 hoặc UTF-16 có BOM rồi thử lại.',
+  formulaWarning: 'Bảng tính này chứa công thức. Kết quả hiển thị có thể bị thiếu hoặc không chính xác.',
+  unsupportedNotice: 'Bản xem trước này không hỗ trợ {features} trong bảng tính này. Hãy mở bằng ứng dụng hệ thống để có trải nghiệm đầy đủ.',
+  charts: 'biểu đồ', images: 'hình ảnh', shapes: 'hình dạng', conditionalFormatting: 'định dạng có điều kiện', featureSeparator: ', ',
+  retry: 'Thử lại',
+} satisfies Record<keyof typeof en, string>

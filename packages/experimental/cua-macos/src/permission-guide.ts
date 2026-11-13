@@ -90,7 +90,17 @@ const pt = {
   screenRecording: 'Gravação de tela',
 } satisfies typeof en
 
-const dictionaries = new Map<string, typeof en>(Object.entries({ en, zh, ja, es, fr, de, ru, pt }))
+const vi = {
+  instruction: 'Kéo {application} vào danh sách phía trên để cho phép {permission}',
+  backLabel: 'Quay lại',
+  finderLabel: 'Hiện trong Finder',
+  unavailableMessage: 'Ứng dụng không khả dụng. Hãy bật lại Computer Use và thử lại.',
+  settingsMessage: 'Mở Cài đặt Hệ thống > Quyền riêng tư & Bảo mật > {permission} theo cách thủ công.',
+  accessibility: 'Trợ năng',
+  screenRecording: 'Ghi màn hình',
+} satisfies typeof en
+
+const dictionaries = new Map<string, typeof en>(Object.entries({ en, zh, ja, es, fr, de, ru, pt, vi }))
 
 /**
  * Resolve native permission copy from the Client language; unsupported languages use English.

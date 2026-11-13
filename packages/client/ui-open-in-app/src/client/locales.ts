@@ -314,3 +314,38 @@ export const pt = {
   'app.filemanager': 'Arquivos',
   'app.terminal': 'Terminais',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'menu.openIn': 'Mở bằng',
+  'menu.openInSidebar': 'Mở trong thanh bên',
+  'menu.openInFloat': 'Mở trong bảng nổi',
+  'menu.finder': 'Hiện trong Finder',
+  'menu.reveal': 'Hiện trong thư mục',
+  'menu.defaultApp': 'Mở bằng ứng dụng mặc định',
+  'menu.external': 'Mở trong trình duyệt ngoài',
+  'menu.copyLink': 'Sao chép địa chỉ liên kết',
+  'menu.copyPath': 'Sao chép đường dẫn tệp',
+  'menu.copyDirectoryPath': 'Sao chép đường dẫn thư mục',
+  'menu.copied': 'Đã sao chép',
+  'menu.copyFailed': 'Không thể sao chép. Kiểm tra nội dung có sẵn rồi thử lại.',
+
+  ...PRODUCT_NAMES,
+  'open.title': 'Mở bằng {app}',
+  'path.appDefault': '{app} (mặc định)',
+  'path.appsError': 'Không thể tải ứng dụng',
+  'shortcut.busy': 'Đang mở không gian làm việc',
+  'shortcut.unavailable': 'Không gian làm việc hiện tại hoặc ứng dụng cục bộ không khả dụng',
+  'open.tooltip': 'Mở cục bộ',
+  'path.open': 'Mở',
+  'path.more': 'Cách mở khác',
+  'path.reveal': 'Hiện vị trí tệp',
+  'path.opened': 'Đã mở trên thiết bị khác',
+  'path.revealed': 'Đã hiện vị trí tệp trên thiết bị khác',
+  'path.openError': 'Không thể mở. Hãy thử lại.',
+  'path.revealError': 'Không thể hiện vị trí tệp. Hãy thử lại.',
+  'app.finder': 'Finder',
+  'app.explorer': 'File Explorer',
+  'app.filemanager': 'Tệp',
+  'app.terminal': 'Terminal',
+} satisfies Record<keyof typeof en, string>

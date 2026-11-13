@@ -345,6 +345,7 @@
     { "path": "./packages/document/tool-office" },
 
     { "path": "./packages/credentials/deepseek-account" },
+    { "path": "./packages/credentials/fujue-account" },
     { "path": "./packages/client/ui-deliverables/tsconfig.host.json" },
     { "path": "./vendor/cosmokit" },
     { "path": "./vendor/schemastery" },

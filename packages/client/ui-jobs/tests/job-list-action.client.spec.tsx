@@ -5,7 +5,7 @@ import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
 import type { JobsSnapshot, JobView, ObservedJob } from '@deepseek-ai/dsh-api-job-controller/client'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'
 import { JobListAction, type JobListActionProps } from '../src/client/JobListAction.tsx'
-import { zh, en, ja, es, fr, de, ru, pt } from '../src/client/locales.ts'
+import { zh, en, ja, es, fr, de, ru, pt, vi as viLocale } from '../src/client/locales.ts'
 
 beforeEach(() => {
   class TooltipObserver implements ResizeObserver {
@@ -83,6 +83,7 @@ describe('JobListAction count copy', () => {
     [de, 'Hintergrundaufgaben: 1', 'Hintergrundaufgaben: 2'],
     [ru, 'Фоновые задачи: 1', 'Фоновые задачи: 2'],
     [pt, 'Tarefas em segundo plano: 1', 'Tarefas em segundo plano: 2'],
+    [viLocale, '1 tác vụ nền', '2 tác vụ nền'],
   ] as const)('uses neutral count copy for live and settled jobs in locale %#', (dictionary, one, two) => {
     const translate: JobListActionProps['t'] = makeTranslate(dictionary)
     const settled = job({ id: 'settled' as JobView['id'], status: 'completed', finishedAt: 1_700_000_003_000 })

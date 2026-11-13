@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Kiểm soát thời gian chờ gọi Công cụ",
+    "description": "Gửi tín hiệu Hủy theo giới hạn thời gian của từng Công cụ và trả về kết quả hết thời gian chờ."
+  }
+}

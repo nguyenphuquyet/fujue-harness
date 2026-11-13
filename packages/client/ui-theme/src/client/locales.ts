@@ -234,3 +234,32 @@ export const pt = {
   'fontFamily.placeholder': 'Padrão',
   'fontSize.more': 'Mais configurações de fonte',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'appearance.title': 'Giao diện',
+  'appearance.light': 'Sáng',
+  'appearance.dark': 'Tối',
+  'appearance.system': 'Hệ thống',
+  'fontSize.text.title': 'Cỡ chữ',
+  'fontSize.text.description': 'Chỉ ảnh hưởng đến nội dung hội thoại',
+  'fontSize.text.increase': 'Tăng cỡ chữ',
+  'fontSize.text.decrease': 'Giảm cỡ chữ',
+  'fontSize.code.title': 'Cỡ chữ mã',
+  'fontSize.code.description': 'Dùng cho khối mã, mã nội tuyến và đầu ra của công cụ',
+  'fontSize.code.increase': 'Tăng cỡ chữ mã',
+  'fontSize.code.decrease': 'Giảm cỡ chữ mã',
+  'fontSize.terminal.title': 'Cỡ chữ terminal',
+  'fontSize.terminal.description': 'Dùng cho terminal ở thanh bên',
+  'fontSize.terminal.increase': 'Tăng cỡ chữ terminal',
+  'fontSize.terminal.decrease': 'Giảm cỡ chữ terminal',
+  'fontSize.unit': 'px',
+  'fontFamily.text.title': 'Phông chữ văn bản',
+  'fontFamily.text.description': 'Dùng cho giao diện và văn bản hội thoại. Phân tách các phông chữ bằng dấu phẩy; để trống để dùng mặc định',
+  'fontFamily.code.title': 'Phông chữ mã',
+  'fontFamily.code.description': 'Dùng cho khối mã, mã nội tuyến và đầu ra của công cụ. Phân tách các phông chữ bằng dấu phẩy; để trống để dùng mặc định',
+  'fontFamily.terminal.title': 'Phông chữ terminal',
+  'fontFamily.terminal.description': 'Dùng cho terminal ở thanh bên. Phân tách các phông chữ bằng dấu phẩy; để trống để dùng mặc định',
+  'fontFamily.placeholder': 'Mặc định',
+  'fontSize.more': 'Thêm cài đặt phông chữ',
+} satisfies Record<keyof typeof en, string>

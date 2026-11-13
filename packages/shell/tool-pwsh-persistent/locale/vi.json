@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Công cụ PowerShell duy trì trạng thái",
+    "description": "Cho phép AI chạy liên tiếp các lệnh trong một phiên PowerShell giữ nguyên trạng thái."
+  }
+}

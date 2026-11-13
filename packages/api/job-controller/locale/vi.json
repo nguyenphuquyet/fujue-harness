@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "api-job-controller",
+    "description": "Liên tục cung cấp trạng thái và đầu ra của tác vụ nền cho client."
+  }
+}

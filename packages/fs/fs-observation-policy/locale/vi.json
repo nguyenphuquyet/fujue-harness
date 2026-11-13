@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Bảo vệ khi chỉnh sửa Tệp",
+    "description": "Yêu cầu AI đọc Tệp trước khi chỉnh sửa và xác nhận lại nội dung khi Tệp thay đổi."
+  }
+}

@@ -17,7 +17,7 @@ import { createAtScheduleRecord, createDailyScheduleRecord, createRRuleScheduleR
 import type { ScheduleId as createScheduleId } from '../../../schedule/schedule/src/types.ts'
 import { draftTarget, reapplyTaskDraft, taskDraft, taskDraftIssue, taskDraftPatch } from '../src/client/TaskEditorFields.tsx'
 import { formatAvailableAt, formatScheduleFrequency, orderScheduleRecords, zoneLabel, zoneName } from '../src/client/schedule-format.ts'
-import { en, zh, ja, es, fr, de, ru, pt } from '../src/client/task-manager-locales.ts'
+import { en, zh, ja, es, fr, de, ru, pt, vi as viLocale } from '../src/client/task-manager-locales.ts'
 import { pinSystemZone } from './zone-fixture.ts'
 import css from '../src/client/TaskManagerPage.module.css'
 import { brandString } from '@deepseek-ai/dsh-brand'
@@ -193,7 +193,7 @@ describe('Host task editor on the existing manager', () => {
     expect(Object.hasOwn(h.editor.getSnapshot().drafts, `task:${task.id}`)).toBe(false)
   })
 
-  it.each([en, zh, ja, es, fr, de, ru, pt])('localizes empty field hints and lets an untouched form be discarded', (dictionary) => {
+  it.each([en, zh, ja, es, fr, de, ru, pt, viLocale])('localizes empty field hints and lets an untouched form be discarded', (dictionary) => {
     const h = mount([], { t: makeTranslate(dictionary) })
     fireEvent.click(screen.getByRole('button', { name: dictionary['empty.action'] }))
     const detail = screen.getByRole('complementary', { name: dictionary['host.manualCreate'] })

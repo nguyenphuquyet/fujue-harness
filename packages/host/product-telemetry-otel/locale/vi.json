@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Báo cáo sự kiện sử dụng sản phẩm",
+    "description": "Báo cáo các sự kiện sử dụng sản phẩm được chỉ định tới dịch vụ đã cấu hình thông qua OpenTelemetry."
+  }
+}

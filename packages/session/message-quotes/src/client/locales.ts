@@ -45,3 +45,8 @@ export const ru = {
 export const pt = {
   'quote.add': 'Citação de texto',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'quote.add': 'Trích dẫn văn bản',
+} satisfies Record<keyof typeof en, string>

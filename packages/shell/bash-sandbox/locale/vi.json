@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Thực thi Bash trong sandbox",
+    "description": "Chạy lệnh Bash trong phạm vi quyền của sandbox hiện tại."
+  }
+}

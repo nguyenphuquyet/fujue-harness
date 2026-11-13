@@ -71,3 +71,11 @@ export const pt = {
   'code.copied': 'Copiado',
   'footnotes': 'Notas de rodapé',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'viewer.label': 'Markdown',
+  'code.copy': 'Sao chép',
+  'code.copied': 'Đã sao chép',
+  'footnotes': 'Chú thích cuối trang',
+} satisfies Record<keyof typeof en, string>

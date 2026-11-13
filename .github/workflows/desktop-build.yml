@@ -1,0 +1,75 @@
+name: Build Desktop · Windows · x64
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/desktop-build.yml'
+      - 'apps/desktop/**'
+      - 'apps/desktop-host/**'
+      - 'packages/**'
+      - 'native/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'tsconfig*.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DSH_TELEMETRY_DISABLED: '1'
+
+jobs:
+  windows:
+    name: Package unsigned Windows x64
+    runs-on: windows-latest
+    timeout-minutes: 240
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v5.0.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # An unsigned package still validates the deployment policy. This file is
+      # git-ignored, so the checkout stays clean and the build commit is recorded.
+      - name: Configure unsigned packaging
+        run: |
+          @"
+          DSH_DESKTOP_APP_ID=com.deepseek.dsh
+          DSH_DESKTOP_AUTO_UPDATE_ENV=production
+          DSH_DESKTOP_MANDATORY_UPDATE_PROD_ORIGIN=https://github.com
+          DSH_DESKTOP_WINDOWS_COMPRESSION_LEVEL=7
+          "@ | Set-Content -LiteralPath apps/desktop/.env.windows -Encoding utf8
+
+      - name: Package Electron app
+        run: pnpm run package:desktop:win:x64:unsigned
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: fujue-harness-windows-x64-unsigned
+          path: apps/desktop/.desktop-build/targets/win-x64/unsigned-artifacts/**
+          if-no-files-found: error
+          retention-days: 14

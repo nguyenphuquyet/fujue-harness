@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ui-settings-shell",
+    "description": "Cấu hình thời gian chờ và giới hạn độ dài đầu ra khi thực thi lệnh."
+  }
+}

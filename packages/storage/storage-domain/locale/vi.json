@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Lưu trữ dữ liệu có cấu trúc",
+    "description": "Kiểm tra và lưu dữ liệu khóa-giá trị theo cấu trúc dữ liệu, đồng thời thông báo thay đổi cho các plugin khác."
+  }
+}

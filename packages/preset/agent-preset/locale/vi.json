@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Định nghĩa preset Agent",
+    "description": "Khai báo một preset Agent và tổ hợp plugin mà nó sử dụng."
+  }
+}

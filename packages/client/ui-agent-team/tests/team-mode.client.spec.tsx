@@ -5,7 +5,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import type { SessionId } from '@deepseek-ai/dsh-session'
 import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
 import { TeamModePane, TeamModeToggle, type TeamModePaneProps, type TeamModeToggleProps } from '../src/client/TeamModeToggle.tsx'
-import { de, en, es, fr, ja, pt, ru, zh } from '../src/client/locales.ts'
+import { de, en, es, fr, ja, pt, ru, vi as viLocale, zh } from '../src/client/locales.ts'
 import { brandString } from '@deepseek-ai/dsh-brand'
 
 afterEach(cleanup)
@@ -102,7 +102,7 @@ it.each(['returned', 'error', 'string'])('reports rejected mode writes through t
   expect(screen.getByRole('switch').hasAttribute('disabled')).toBe(false)
 })
 
-it.each(Object.entries({ zh, en, ja, es, fr, de, ru, pt }).flatMap(([locale, dictionary]) =>
+it.each(Object.entries({ zh, en, ja, es, fr, de, ru, pt, vi: viLocale }).flatMap(([locale, dictionary]) =>
   [false, true].map(locked => ({ locale, dictionary, locked })),
 ))('shows the full $locale explanation in the settings pane (locked: $locked)', ({ dictionary, locked }) => {
   const input = props(false)

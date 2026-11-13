@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Thực thi PowerShell trong sandbox",
+    "description": "Chạy lệnh PowerShell trong phạm vi quyền của sandbox hiện tại."
+  }
+}

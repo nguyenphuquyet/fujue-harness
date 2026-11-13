@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Tạo tiêu đề từ tin nhắn đầu tiên",
+    "description": "Dùng mô hình tạo tiêu đề dựa trên tin nhắn đầu tiên trong phiên."
+  }
+}

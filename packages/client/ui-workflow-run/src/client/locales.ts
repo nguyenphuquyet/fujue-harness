@@ -181,3 +181,25 @@ export const pt = {
   'status.cancelled': 'Cancelado',
   'status.interrupted': 'Interrompido',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  'run.title': '{name}',
+  'run.members.one': '{count} thành viên',
+  'run.members.other': '{count} thành viên',
+  'run.empty': 'Không có thành viên nào được khởi chạy',
+  'phase.unassigned': 'Chưa chia giai đoạn',
+  'phase.empty': 'Tên giai đoạn trống',
+  'statusCount.running': 'Đang chạy {count}',
+  'statusCount.completed': 'Đã hoàn thành {count}',
+  'statusCount.failed': 'Thất bại {count}',
+  'statusCount.cancelled': 'Đã hủy {count}',
+  'statusCount.interrupted': 'Đã gián đoạn {count}',
+  'member.empty': 'Tên thành viên trống',
+  'member.open': 'Mở {name}',
+  'status.running': 'Đang chạy',
+  'status.completed': 'Đã hoàn thành',
+  'status.failed': 'Thất bại',
+  'status.cancelled': 'Đã hủy',
+  'status.interrupted': 'Đã gián đoạn',
+} satisfies Record<keyof typeof en, string>

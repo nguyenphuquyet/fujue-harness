@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ui-input-trigger",
+    "description": "Nhận diện ký tự / và @ trong nội dung nhập, hiển thị và chọn mục gợi ý tương ứng."
+  }
+}

@@ -76,3 +76,12 @@ export const pt = {
   resize: 'Redimensionar painel do inspetor NodeJS',
   frameTitle: 'NodeJS inspetor',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  title: 'Trình kiểm tra NodeJS',
+  toggle: 'Bật/tắt trình kiểm tra NodeJS',
+  close: 'Thu gọn',
+  resize: 'Đổi kích thước bảng trình kiểm tra NodeJS',
+  frameTitle: 'Trình kiểm tra NodeJS',
+} satisfies Record<keyof typeof en, string>

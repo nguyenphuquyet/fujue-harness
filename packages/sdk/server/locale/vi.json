@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Máy chủ SDK",
+    "description": "Phục vụ các máy khách SDK trong tiến trình riêng thông qua JSON-RPC qua đầu vào và đầu ra chuẩn."
+  }
+}

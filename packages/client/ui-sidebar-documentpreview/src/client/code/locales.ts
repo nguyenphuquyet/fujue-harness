@@ -63,3 +63,10 @@ export const pt = {
   copy: 'Copiar',
   copied: 'Copiado',
 } satisfies Record<keyof typeof en, string>
+
+/** Vietnamese dictionary, checked against the English keys. */
+export const vi = {
+  title: 'Mã',
+  copy: 'Sao chép',
+  copied: 'Đã sao chép',
+} satisfies Record<keyof typeof en, string>

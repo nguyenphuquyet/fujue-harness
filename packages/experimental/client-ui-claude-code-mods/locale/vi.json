@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Giao diện tiện ích mở rộng Claude Code",
+    "description": "Hiển thị cây tiện ích mở rộng của từng phiên phía trên ô nhập và gửi thao tác nút tới dịch vụ tiện ích mở rộng."
+  }
+}
