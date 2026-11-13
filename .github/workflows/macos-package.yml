@@ -107,7 +107,7 @@ jobs:
           }
           if(!fs.readFileSync('apps/desktop/scripts/retain-desktop-ci.ts','utf8').includes('--check-runner')) throw Error('Source lacks independent Desktop artifact archival support; select a newer source');
           if(!fs.readFileSync('apps/desktop/scripts/desktop-ci-version.mjs','utf8').includes('PACKAGE_VERSION_MODE')) throw Error('Source lacks Desktop channel/version CI support; select a newer release');"
-      - uses: pnpm/action-setup@v5.0.0
+      - uses: pnpm/action-setup@v5
         with:
           dest: ${{ runner.temp }}/setup-pnpm-${{ github.run_id }}-${{ github.run_attempt }}
       - uses: actions/setup-node@v7.0.0
@@ -193,7 +193,7 @@ jobs:
         with:
           persist-credentials: false
           path: artifact-archiver
-      - uses: pnpm/action-setup@v5.0.0
+      - uses: pnpm/action-setup@v5
         with:
           package_json_file: artifact-archiver/package.json
           dest: ${{ runner.temp }}/archive-pnpm-${{ github.run_id }}-${{ github.run_attempt }}
@@ -211,13 +211,33 @@ jobs:
       - name: Archive verified retained build
         id: archive
         working-directory: artifact-archiver
-        run: node --import tsx apps/desktop/scripts/archive-desktop-ci.ts
-      - name: Retain installers for the selected mode
-        if: success()
+        run: node --import tsx apps/desktop/scripts/archive-desktop-ci.ts --split-macos
+      - name: Retain DMG installer
+        if: ${{ !cancelled() && steps.archive.outcome == 'success' }}
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: ${{ env.DESKTOP_ARCHIVE_NAME }}
-          path: ${{ steps.archive.outputs.path }}
+          name: ${{ steps.archive.outputs.dmg-name }}
+          path: ${{ steps.archive.outputs.dmg-path }}
+          archive: false
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
+      - name: Retain update ZIP
+        if: ${{ !cancelled() && steps.archive.outcome == 'success' }}
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: ${{ steps.archive.outputs.update-name }}
+          path: ${{ steps.archive.outputs.update-path }}
+          archive: false
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
+      - name: Retain package metadata
+        if: ${{ !cancelled() && steps.archive.outcome == 'success' }}
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: ${{ steps.archive.outputs.metadata-name }}
+          path: ${{ steps.archive.outputs.metadata-path }}
           archive: false
           if-no-files-found: error
           retention-days: 14

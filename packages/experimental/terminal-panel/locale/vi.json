@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Phần nền terminal thanh bên",
+    "description": "Chạy các terminal bền vững của agent dưới dạng thẻ ở thanh bên để người dùng theo dõi và tiếp quản, đồng thời cho phép agent đọc terminal của chính người dùng."
+  }
+}
