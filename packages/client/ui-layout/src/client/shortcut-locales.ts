@@ -2,6 +2,7 @@
 export const zh = { toggle: '展开／收起左侧栏' }
 /** English labels for the same layout commands. */
 export const en: Record<keyof typeof zh, string> = { toggle: 'Toggle left sidebar' }
+/** Vietnamese labels for the same layout commands. */
 export const vi: Record<keyof typeof zh, string> = { toggle: 'Bật/tắt thanh bên trái' }
 
 /** Japanese copy, checked against the English keys. */
