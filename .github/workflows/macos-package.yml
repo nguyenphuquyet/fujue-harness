@@ -82,7 +82,7 @@ jobs:
       DSH_PACKAGING_PRESET: ${{ inputs.preset }}
       PACKAGE_TEST_RELEASE_ID: ${{ inputs.test_release_id }}
     steps:
-      - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7
         id: checkout
         with:
           persist-credentials: false
@@ -189,7 +189,7 @@ jobs:
       DESKTOP_PACKAGE_ATTEMPT: ${{ needs.package.outputs.attempt }}
       DESKTOP_PACKAGE_RUNNER: ${{ needs.package.outputs.runner-name }}
     steps:
-      - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
           path: artifact-archiver
@@ -211,13 +211,33 @@ jobs:
       - name: Archive verified retained build
         id: archive
         working-directory: artifact-archiver
-        run: node --import tsx apps/desktop/scripts/archive-desktop-ci.ts
-      - name: Retain installers for the selected mode
-        if: success()
+        run: node --import tsx apps/desktop/scripts/archive-desktop-ci.ts --split-macos
+      - name: Retain DMG installer
+        if: ${{ !cancelled() && steps.archive.outcome == 'success' }}
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: ${{ env.DESKTOP_ARCHIVE_NAME }}
-          path: ${{ steps.archive.outputs.path }}
+          name: ${{ steps.archive.outputs.dmg-name }}
+          path: ${{ steps.archive.outputs.dmg-path }}
+          archive: false
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
+      - name: Retain update ZIP
+        if: ${{ !cancelled() && steps.archive.outcome == 'success' }}
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: ${{ steps.archive.outputs.update-name }}
+          path: ${{ steps.archive.outputs.update-path }}
+          archive: false
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
+      - name: Retain package metadata
+        if: ${{ !cancelled() && steps.archive.outcome == 'success' }}
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: ${{ steps.archive.outputs.metadata-name }}
+          path: ${{ steps.archive.outputs.metadata-path }}
           archive: false
           if-no-files-found: error
           retention-days: 14

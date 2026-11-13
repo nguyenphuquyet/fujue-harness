@@ -1,6 +1,7 @@
 {
   "nsisLanguage": "VIETNAMESE",
   "strings": {
+    "INSTALLER_UPDATE_WAIT": "Installing the update. The app will restart automatically when the update is complete.",
     "INSTALLER_INSTALL": "Cài đặt ngay",
     "INSTALLER_FINISH": "Hoàn tất",
     "INSTALLER_NATIVE_PROGRESS": "Đang chuẩn bị cài đặt… %d%%",
