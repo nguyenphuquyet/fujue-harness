@@ -429,7 +429,7 @@ export const vi = {
   searchGuideUrl: 'https://api-docs.deepseek.com/guides/search',
   apiKeySet: 'Đã định cấu hình một khóa.',
   count: 'Số kết quả mỗi lần tìm kiếm',
-  countHint: 'Số kết quả trả về mỗi truy vấn: số nguyên từ 1 đến 50, mặc định 10. Giá trị này điều khiển số lượng kết quả, không phải số lần gọi tìm kiếm. web_search không giữ nhiều nguồn hơn giới hạn kết quả của chính nó.',
+  countHint: 'Số kết quả trả về mỗi truy vấn: số nguyên từ 1 đến 50, mặc định 10. Giá trị này điều khiển số lượng kết quả, không phải số lần gọi tìm kiếm. Công cụ tìm kiếm không giữ nhiều nguồn hơn giới hạn kết quả của chính nó.',
   overridden: 'Đã ghi đè',
   reset: 'Đặt lại về mặc định',
   readOnly: 'Bản triển khai này lưu cài đặt ở chế độ chỉ đọc.',

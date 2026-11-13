@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Nhập hội thoại DeepSeek",
+    "description": "Tải lên tệp ZIP xuất hội thoại từ trang web DeepSeek bằng nút cạnh Phiên mới; mỗi cuộc hội thoại trở thành một phiên trong không gian làm việc bạn chọn.",
+    "detail": "docs/DETAIL.md"
+  }
+}

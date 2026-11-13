@@ -2162,4 +2162,5 @@ export const vi = {
   'viewer.reason.prompt-identity-missing': 'Lần gửi này không mang danh tính yêu cầu để quy trách nhiệm nên Host không thực hiện',
   'viewer.reason.viewer-not-authorized': 'Tài khoản của bạn không còn quyền truy cập bản chia sẻ này',
   'viewer.reason.liveshare/read-only': 'Phiên này nằm ngoài bản chia sẻ bạn đang giữ nên không có gì được ghi',
+  'dialog.ownerStateHeld': 'Một tiến trình DSH khác đang giữ trạng thái chia sẻ; hãy quản lý tại đó hoặc thoát tiến trình đó trước.',
 } satisfies Record<keyof typeof en, string>

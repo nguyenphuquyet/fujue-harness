@@ -3642,5 +3642,12 @@ export const vi = {
     'tool.title.officeRecalculate': 'Recalculate workbook',
     // The Host terminal_send presenter has no locale seat; keep its fallbacks
   // aligned with these English values.
-  'terminal.sendInput': '(send input)'
+  'terminal.sendInput': '(send input)',
+  'tool.webFetch.failure.dns': 'Không phân giải được tên máy chủ. Kiểm tra mạng, proxy hoặc cài đặt DNS.',
+  'tool.webFetch.failure.refused': 'Kết nối bị từ chối. Kiểm tra địa chỉ, cổng hoặc proxy.',
+  'tool.webFetch.failure.connectionTimeout': 'Kết nối quá thời gian chờ. Kiểm tra mạng hoặc proxy rồi thử lại.',
+  'tool.webFetch.failure.certificate': 'Xác minh chứng chỉ thất bại. Kiểm tra đồng hồ hệ thống, proxy hoặc chứng chỉ.',
+  'tool.webFetch.failure.interrupted': 'Kết nối bị gián đoạn. Hãy thử lại sau.',
+  'tool.webFetch.failure.unreachable': 'Không thể kết nối tới mạng hoặc máy chủ. Kiểm tra kết nối mạng hoặc proxy.',
+  'tool.webFetch.failure.network': 'Yêu cầu mạng thất bại. Xem đầu ra để biết chi tiết.',
 } satisfies Record<keyof typeof en, string>

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Dòng thời gian",
+    "description": "Thay thế Todo trong các phiên chạy dài. Agent duy trì cây công việc luôn cập nhật. Theo dõi tiến độ bằng thanh tiến trình trực tiếp và báo cáo định kỳ.",
+    "detail": "docs/DETAIL.md"
+  }
+}

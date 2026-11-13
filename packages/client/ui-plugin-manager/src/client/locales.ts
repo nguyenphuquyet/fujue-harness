@@ -2543,7 +2543,7 @@ export const vi = {
   updateRunning: 'Đang cập nhật',
   updateStepChecking: 'Kiểm tra {version}',
   updateStepRemoving: 'Dừng và xóa {version}',
-  updateStepInstalling: 'Cài {version} từ {registry}',
+  updateStepInstalling: 'Cài {version} từ {source}',
   updateStepRestoring: 'Cài lại {version}',
   updateDone: 'Đã cập nhật lên {version}',
   updateDoneDetail: 'Phiên bản mới đang chạy.',

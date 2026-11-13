@@ -298,7 +298,6 @@ export const vi = {
   'command.failedReason': 'Thất bại: {reason}',
   trigger: 'Bảng công việc',
   'mode.label': 'Bật cộng tác nhóm agent',
-  'mode.infoLabel': 'Giới thiệu về cộng tác nhóm agent',
   'mode.description': 'Phối hợp phân công và tiến độ giữa nhiều agent bằng bảng công việc chung, cho kết quả tốt hơn với các tác vụ phức tạp, đồng thời chi phí token cũng cao hơn tương ứng.',
   'mode.failed': 'Không thể xác nhận cài đặt cộng tác nhóm agent đã được lưu. Hãy thử lại: {message}',
   'disable.title': 'Tắt cộng tác nhóm agent?',
@@ -318,4 +317,6 @@ export const vi = {
   'status.pending': 'Đang chờ',
   'status.in_progress': 'Đang thực hiện',
   'status.completed': 'Đã hoàn thành',
+  'mode.on': 'Bật',
+  'mode.off': 'Tắt',
 } satisfies Record<keyof typeof en, string>

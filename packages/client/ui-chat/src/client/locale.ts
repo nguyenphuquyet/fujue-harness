@@ -1911,5 +1911,6 @@ export const vi = {
     'chat.loadingOlder': 'Loading earlier',
     'chat.processingOlder': 'Processing',
     'chat.retryOlder': 'Retry loading',
-    'chat.historyStart': 'Start of conversation'
+    'chat.historyStart': 'Start of conversation',
+    'message.inheritedHistory': 'Lịch sử được kế thừa ở trên',
 } satisfies Record<keyof typeof en, string>

@@ -14,5 +14,7 @@ export const de = { close: 'Schließen' }
 export const ru = { close: 'Закрыть' }
 /** Portuguese notification controls. */
 export const pt = { close: 'Fechar' }
+/** Vietnamese notification controls. */
+export const vi = { close: 'Đóng' }
 /** Localized notification control keys. */
 export type NotificationKey = keyof typeof en
