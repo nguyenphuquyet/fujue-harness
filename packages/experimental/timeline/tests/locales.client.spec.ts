@@ -20,12 +20,12 @@ describe('Timeline labels', () => {
       await ctx.fiber.dispose()
     }
   })
-  it('resolves all eight app languages, preserves placeholders, and follows external fallback chains', async () => {
+  it('resolves every registered app language, preserves placeholders, and follows external fallback chains', async () => {
     const ctx = new Context()
     const locale = new LocaleRuntime(ctx, undefined, { languages: ['en'], preference: null })
     try {
       const stop = locale.register('timeline', dictionaries)
-      for (const id of ['ja', 'es', 'fr', 'de', 'ru', 'pt'])
+      for (const id of ['ja', 'es', 'fr', 'de', 'ru', 'pt', 'vi'])
         locale.addLanguage({ id, label: id, fallback: 'en' })
       for (const [id, dictionary] of Object.entries(dictionaries)) {
         expect(Object.keys(dictionary).sort()).toEqual(Object.keys(en).sort())
