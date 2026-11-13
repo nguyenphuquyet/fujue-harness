@@ -32,8 +32,6 @@ export const vi = {
   'more': 'Thêm',
   'collapse': 'Thu gọn',
   'expand': 'Mở rộng',
-  'subtitle.expand': 'Mở rộng mô tả cho {name}',
-  'subtitle.collapse': 'Thu gọn mô tả cho {name}',
   'back': 'Quay lại',
   'brand.name': 'FuJue Harness',
   'workspace.defaultName': 'Không gian làm việc mặc định',

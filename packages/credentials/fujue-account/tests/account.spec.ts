@@ -3,6 +3,7 @@ import { createServer, type IncomingMessage, type ServerResponse } from 'node:ht
 import type { AddressInfo } from 'node:net'
 import { afterEach, expect, it } from 'vitest'
 import { Context, Service } from '@deepseek-ai/cordis'
+import AuthorizationService from '@deepseek-ai/dsh-authorization'
 import type { DeepSeekAccount } from '@deepseek-ai/dsh-deepseek-account'
 import type { AccountClientMetadata, AccountView } from '@deepseek-ai/dsh-deepseek-account/types'
 import {
@@ -178,6 +179,7 @@ async function compose(webBaseUrl: string) {
   await ctx.plugin(FakeCredentials)
   await ctx.plugin(FakeSettings)
   await ctx.plugin(FakeDefaultModel)
+  await ctx.plugin(AuthorizationService)
   await ctx.plugin(FujueAccount, { webBaseUrl })
   return {
     ctx,
@@ -322,5 +324,9 @@ it('rejects a website URL that cannot be a request origin', async () => {
   const ctx = new Context()
   cleanups.push(() => ctx.fiber.dispose())
   await ctx.plugin(FakeCredentials)
-  await expect(ctx.plugin(FujueAccount, { webBaseUrl: 'not-a-url' })).rejects.toThrow('webBaseUrl')
+  await ctx.plugin(AuthorizationService)
+  const failure: unknown = await ctx.plugin(FujueAccount, { webBaseUrl: 'not-a-url' })
+    .then(() => undefined, (error: unknown) => error)
+  expect(failure).toBeInstanceOf(Error)
+  expect((failure as Error).message).toContain('webBaseUrl')
 })
